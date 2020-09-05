@@ -19,6 +19,6 @@ You can always use contextclearall as a simple step, since it does not require a
 Sample pipeline yaml:
 steps:- my.arb.step- pypyr.steps.contextclearall- another.</description></item><item><title>pypyr.steps.contextclear</title><link>https://pypyr.io/docs/steps/contextclear/</link><pubDate>Tue, 30 Jun 2020 19:03:21 +0100</pubDate><guid>https://pypyr.io/docs/steps/contextclear/</guid><description>pypyr.steps.contextclear permalinkRemove the specified items from the context.
 Will iterate contextClear and remove those keys from context.
-steps:- name:pypyr.steps.contextcleardescription:deletethese2contextkeysin:contextClear:- removeMe- removeMeTooFor example, say input context is:
+steps:- name:pypyr.steps.contextcleardescription:delete these 2 context keysin:contextClear:- removeMe- removeMeTooFor example, say input context is:
 key1:value1key2:value2key3:value3key4:value4contextClear:- key2- key4- contextClearThis will result in return context:
 key1:value1key3:value3Notice how contextClear also cleared itself in this example.</description></item></channel></rss>

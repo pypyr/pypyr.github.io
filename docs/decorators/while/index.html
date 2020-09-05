@@ -1,5 +1,5 @@
 <!doctype html><html lang=en dir=ltr prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#"><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><title>while loop decorator | pypyr</title><meta name=description content="Repeat steps until a stop condition is True or until you reach a maximum iteration count."><link rel=stylesheet href=https://pypyr.io/css/styles.min.ea42174a047e9a722b220a3ac467f66a7beaf03483c220eca8addd6df9a0def8.css integrity="sha256-6kIXSgR+mnIrIgo6xGf2anvq8DSDwiDsqK3dbfmg3vg="><link rel=stylesheet href=https://pypyr.io/css/code-highlight.min.78f63f1d4f45beaf423efd3dc8e6914c2abdca1b5391cd91368a32efecd9d7e3.css integrity="sha256-ePY/HU9Fvq9CPv09yOaRTCq9yhtTkc2RNooy7+zZ1+M="><script defer src=https://pypyr.io/js/script.min.1e79eafb63b98bab206760a99aea6be09fdf4de525a6475528969c1e4834ed4b.js integrity="sha256-Hnnq+2O5i6sgZ2Cpmupr4J/fTeUlpkdVKJacHkg07Us="></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700%7cRoboto+Mono:400,400i&display=swap" rel=stylesheet><link rel=canonical href=https://pypyr.io/docs/decorators/while/><script async src="https://www.googletagmanager.com/gtag/js?id=UA-147150909-1"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
-gtag('js',new Date());gtag('config','UA-147150909-1');</script><meta property="og:description" content="Repeat steps until a stop condition is True or until you reach a maximum iteration count."><meta property="og:image" content="https://pypyr.io/images/1.91x1/pypyr-taskrunner-yaml-pipeline-automation-1200x628.5aa6465b3b9d2ca8d0d5a9f794ba7f379c522a8ba503129f2a35d2479ea2452d.png"><meta property="og:image:alt" content="pypyr is an open-source task-runner for automation pipelines defined in simple human-readable yaml."><meta property="og:image:height" content="628"><meta property="og:image:type" content="image/png"><meta property="og:image:width" content="1200"><meta property="og:site_name" content="pypyr technical documentation"><meta property="og:title" content="Do a while loop in task-runner pipeline."><meta property="og:type" content="website"><meta property="og:url" content="https://pypyr.io/docs/decorators/while/"><meta name=twitter:card content="summary_large_image"><meta name=twitter:site content="@pypyrpipes"><script type=application/ld+json>{"@context":"https://schema.org","@graph":[{"@id":"https://pypyr.io/#organization","@type":"Organization","name":"pypyr","url":"https://pypyr.io/","description":"The pypyr project is a free open-source task-runner cli \u0026 python api for automation pipelines.","logo":{"@type":"ImageObject","url":"https://pypyr.io/images/pypyr-taskrunner-logo-square.63875e43ff40d8ae40e93a6043b4328b962f54f52974aaa27cedec52220de665.svg","height":112,"width":112},"sameAs":["https://github.com/pypyr/","https://twitter.com/pypyrpipes/","https://pypi.org/user/pypyr/","https://hub.docker.com/u/pypyr/","https://en.gravatar.com/pypyr/"]},{"@type":"TechArticle","author":{"@type":"Person","name":"pypyr contributor"},"articleSection":"decorators","dateModified":"2020-08-17T19:17:06+01:00","datePublished":"2020-07-14T13:09:24+01:00","headline":"Do a while loop in task-runner pipeline.","image":[{"@type":"ImageObject","url":"https://pypyr.io/images/1x1/pypyr-taskrunner-yaml-pipeline-automation-1200x1200.52764d3c6f40232b3cdc33f5b8fbaeadad56cc310c8dd5588d30828296b5290d.png","height":1200,"width":1200},{"@type":"ImageObject","url":"https://pypyr.io/images/4x3/pypyr-taskrunner-yaml-pipeline-automation-1200x900.e8e70443377aeb11c190835e8d2ed0c844d31a82a0c2e8a744a9999cd03e0de9.png","height":900,"width":1200},{"@type":"ImageObject","url":"https://pypyr.io/images/16x9/pypyr-taskrunner-yaml-pipeline-automation-1920x1080.cc9ae11626c8312e087058adb13bfff702162ce39c355065170c1b87850f3034.png","height":1080,"width":1920}],"inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https://pypyr.io/docs/decorators/while/"},"publisher":{"@id":"https://pypyr.io/#organization"},"url":"https://pypyr.io/docs/decorators/while/","wordCount":1110}]}</script><link rel=apple-touch-icon sizes=180x180 href=/favicons/apple-touch-icon.925deabb48d91a80924b5d04ff56d2b8f42ba1d1e1438cb7d8948cce1138208c.png><link rel=icon type=image/png sizes=32x32 href=/favicons/favicon-32x32.1641c9e43ac671cad6f741e4cee4ba0cc153d0bb4a577d620d7f7306f8e47227.png><link rel=icon type=image/png sizes=16x16 href=/favicons/favicon-16x16.db5c9fdd3646c9f360e8ab0c94bda84ca261f0de7a17e684f94a984607440e2c.png><link rel=manifest href=/favicons/site.3dad2bd5063ad6bc11f741ea28adf4df8b9370196f6e64af6789cf181cef05c6.webmanifest><link rel=mask-icon href=/favicons/safari-pinned-tab.5d5f5d4e05cdd733ea9957bdf664db67a75fd9b1d2ab56e9c5561136f3ffb5d8.svg color=#4f9a94><link rel="shortcut icon" href=/favicons/favicon.dca49ca2cfdb497af8cfd9c557b26b5e29d6b28774623c8375e633d4a6ee9166.ico><meta name=msapplication-TileColor content="#00aba9"><meta name=msapplication-config content="/favicons/browserconfig.bbdaec7f39b7bd1f2d6bc484afdd0c7246e3af9c5b45d91198d8a3b42e024e1f.xml"><meta name=theme-color content="#121212"></head><body class=docs-grid><header class="header elevation-01"><a href=/ class=top-nav-logo aria-label=home><img class=top-nav-logo-img src=https://pypyr.io/images/pypyr-logotype.2c9aa98c472f0ea8d436597c26ef1b0f042624ee19cdf69bcb89ac0025d146c4.svg alt="pypyr logo"></a><nav class=top-nav-links aria-label="top navigation"><ul><li><a href=/docs/ class=top-active>docs</a></li><li><a href=/updates/>updates</a></li><li><a href=/topics/>topics</a></li><li><a href=https://twitter.com/pypyrpipes/><span class=top-nav-links-pre><svg viewBox="0 0 250 203.18"><title>twitter link</title><use xlink:href="https://pypyr.io/images/twitter-logo.32b6991dff0a6cdd82b85ab0ac665f0bcd9169e7de5f5fafab2faf82af03bbef.svg#twitter-logo"/></svg></span></a></li><li><a href=https://github.com/pypyr/pypyr/><span class=top-nav-links-pre><svg viewBox="0 0 477 97.41"><title>github repo</title><use xlink:href="https://pypyr.io/images/github-mark-and-logo.886cf0c92233b5996c7d33c45283ce17e926bc4c2dd432712cfd2b903dca4b22.svg#github-mark-and-logo"/></svg></span></a></li></ul></nav></header><button id=show-leftnav class="neutral-button icon-button primary-button"><svg class="show-leftnav-chevron"><title>open main navigation menu</title><use href="https://pypyr.io/icons/chevron-right.e586e5df0f820697b2ce08d042d0110568a2faeb11c7f0bab5a33df79dd3d6db.svg#chevron-right"/></svg></button><nav id=leftnavmenu class="leftnavmenu elevation-03" aria-label="Primary Navigation"><button id=hide-leftnav class="neutral-button icon-button"><svg class="hide-leftnav-chevron"><title>close navigation menu</title><use href="https://pypyr.io/icons/chevron-right.e586e5df0f820697b2ce08d042d0110568a2faeb11c7f0bab5a33df79dd3d6db.svg#chevron-right"/></svg></button><ul class=leftnavroot><li><button class="nav-section-chevron-title neutral-button">
+gtag('js',new Date());gtag('config','UA-147150909-1');</script><meta property="og:description" content="Repeat steps until a stop condition is True or until you reach a maximum iteration count."><meta property="og:image" content="https://pypyr.io/images/1.91x1/pypyr-taskrunner-yaml-pipeline-automation-1200x628.5aa6465b3b9d2ca8d0d5a9f794ba7f379c522a8ba503129f2a35d2479ea2452d.png"><meta property="og:image:alt" content="pypyr is an open-source task-runner for automation pipelines defined in simple human-readable yaml."><meta property="og:image:height" content="628"><meta property="og:image:type" content="image/png"><meta property="og:image:width" content="1200"><meta property="og:site_name" content="pypyr technical documentation"><meta property="og:title" content="Do a while loop in task-runner pipeline."><meta property="og:type" content="website"><meta property="og:url" content="https://pypyr.io/docs/decorators/while/"><meta name=twitter:card content="summary_large_image"><meta name=twitter:site content="@pypyrpipes"><script type=application/ld+json>{"@context":"https://schema.org","@graph":[{"@id":"https://pypyr.io/#organization","@type":"Organization","name":"pypyr","url":"https://pypyr.io/","description":"The pypyr project is a free open-source task-runner cli \u0026 python api for automation pipelines.","logo":{"@type":"ImageObject","url":"https://pypyr.io/images/pypyr-taskrunner-logo-square.63875e43ff40d8ae40e93a6043b4328b962f54f52974aaa27cedec52220de665.svg","height":112,"width":112},"sameAs":["https://github.com/pypyr/","https://twitter.com/pypyrpipes/","https://pypi.org/user/pypyr/","https://hub.docker.com/u/pypyr/","https://en.gravatar.com/pypyr/"]},{"@type":"TechArticle","author":{"@type":"Person","name":"pypyr contributor"},"articleSection":"decorators","dateModified":"2020-08-17T19:17:06+01:00","datePublished":"2020-07-14T13:09:24+01:00","headline":"Do a while loop in task-runner pipeline.","image":[{"@type":"ImageObject","url":"https://pypyr.io/images/1x1/pypyr-taskrunner-yaml-pipeline-automation-1200x1200.52764d3c6f40232b3cdc33f5b8fbaeadad56cc310c8dd5588d30828296b5290d.png","height":1200,"width":1200},{"@type":"ImageObject","url":"https://pypyr.io/images/4x3/pypyr-taskrunner-yaml-pipeline-automation-1200x900.e8e70443377aeb11c190835e8d2ed0c844d31a82a0c2e8a744a9999cd03e0de9.png","height":900,"width":1200},{"@type":"ImageObject","url":"https://pypyr.io/images/16x9/pypyr-taskrunner-yaml-pipeline-automation-1920x1080.cc9ae11626c8312e087058adb13bfff702162ce39c355065170c1b87850f3034.png","height":1080,"width":1920}],"inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https://pypyr.io/docs/decorators/while/"},"publisher":{"@id":"https://pypyr.io/#organization"},"url":"https://pypyr.io/docs/decorators/while/","wordCount":1308}]}</script><link rel=apple-touch-icon sizes=180x180 href=/favicons/apple-touch-icon.925deabb48d91a80924b5d04ff56d2b8f42ba1d1e1438cb7d8948cce1138208c.png><link rel=icon type=image/png sizes=32x32 href=/favicons/favicon-32x32.1641c9e43ac671cad6f741e4cee4ba0cc153d0bb4a577d620d7f7306f8e47227.png><link rel=icon type=image/png sizes=16x16 href=/favicons/favicon-16x16.db5c9fdd3646c9f360e8ab0c94bda84ca261f0de7a17e684f94a984607440e2c.png><link rel=manifest href=/favicons/site.3dad2bd5063ad6bc11f741ea28adf4df8b9370196f6e64af6789cf181cef05c6.webmanifest><link rel=mask-icon href=/favicons/safari-pinned-tab.5d5f5d4e05cdd733ea9957bdf664db67a75fd9b1d2ab56e9c5561136f3ffb5d8.svg color=#4f9a94><link rel="shortcut icon" href=/favicons/favicon.dca49ca2cfdb497af8cfd9c557b26b5e29d6b28774623c8375e633d4a6ee9166.ico><meta name=msapplication-TileColor content="#00aba9"><meta name=msapplication-config content="/favicons/browserconfig.bbdaec7f39b7bd1f2d6bc484afdd0c7246e3af9c5b45d91198d8a3b42e024e1f.xml"><meta name=theme-color content="#121212"></head><body class=docs-grid><header class="header elevation-01"><a href=/ class=top-nav-logo aria-label=home><img class=top-nav-logo-img src=https://pypyr.io/images/pypyr-logotype.2c9aa98c472f0ea8d436597c26ef1b0f042624ee19cdf69bcb89ac0025d146c4.svg alt="pypyr logo"></a><nav class=top-nav-links aria-label="top navigation"><ul><li><a href=/docs/ class=top-active>docs</a></li><li><a href=/updates/>updates</a></li><li><a href=/topics/>topics</a></li><li><a href=https://twitter.com/pypyrpipes/><span class=top-nav-links-pre><svg viewBox="0 0 250 203.18"><title>twitter link</title><use xlink:href="https://pypyr.io/images/twitter-logo.32b6991dff0a6cdd82b85ab0ac665f0bcd9169e7de5f5fafab2faf82af03bbef.svg#twitter-logo"/></svg></span></a></li><li><a href=https://github.com/pypyr/pypyr/><span class=top-nav-links-pre><svg viewBox="0 0 477 97.41"><title>github repo</title><use xlink:href="https://pypyr.io/images/github-mark-and-logo.886cf0c92233b5996c7d33c45283ce17e926bc4c2dd432712cfd2b903dca4b22.svg#github-mark-and-logo"/></svg></span></a></li></ul></nav></header><button id=show-leftnav class="neutral-button icon-button primary-button"><svg class="show-leftnav-chevron"><title>open main navigation menu</title><use href="https://pypyr.io/icons/chevron-right.e586e5df0f820697b2ce08d042d0110568a2faeb11c7f0bab5a33df79dd3d6db.svg#chevron-right"/></svg></button><nav id=leftnavmenu class="leftnavmenu elevation-03" aria-label="Primary Navigation"><button id=hide-leftnav class="neutral-button icon-button"><svg class="hide-leftnav-chevron"><title>close navigation menu</title><use href="https://pypyr.io/icons/chevron-right.e586e5df0f820697b2ce08d042d0110568a2faeb11c7f0bab5a33df79dd3d6db.svg#chevron-right"/></svg></button><ul class=leftnavroot><li><button class="nav-section-chevron-title neutral-button">
 <span class=nav-section-pointer><svg class="nav-chevron"><title>open or close sub-menu</title><use href="https://pypyr.io/icons/chevron-right.e586e5df0f820697b2ce08d042d0110568a2faeb11c7f0bab5a33df79dd3d6db.svg#chevron-right"/></svg><span>getting started</span></span></button><ul class=nested><li><a href=/docs/getting-started/>overview</a></li><li><a href=/docs/getting-started/installation/>install pypyr</a></li><li><a href=/docs/getting-started/run-your-first-pipeline/>run your first pipeline</a></li><li><a href=/docs/getting-started/basic-concepts/>basic concepts</a></li><li><a href=/docs/getting-started/error-handling/>error handling</a></li></ul></li><li><button class="nav-section-chevron-title neutral-button">
 <span class=nav-section-pointer><svg class="nav-chevron"><title>open or close sub-menu</title><use href="https://pypyr.io/icons/chevron-right.e586e5df0f820697b2ce08d042d0110568a2faeb11c7f0bab5a33df79dd3d6db.svg#chevron-right"/></svg><span>cli</span></span></button><ul class=nested><li><a href=/docs/cli/>overview</a></li><li><a href=/docs/cli/run-a-pipeline/>run a pipeline</a></li><li><a href=/docs/cli/custom-args/>custom args</a></li></ul></li><li><button class="nav-section-chevron-title neutral-button">
 <span class=nav-section-pointer><svg class="nav-chevron"><title>open or close sub-menu</title><use href="https://pypyr.io/icons/chevron-right.e586e5df0f820697b2ce08d042d0110568a2faeb11c7f0bab5a33df79dd3d6db.svg#chevron-right"/></svg><span>pipelines</span></span></button><ul class=nested><li><a href=/docs/pipelines/>overview</a></li><li><a href=/docs/pipelines/pipeline-structure/>pipeline structure</a></li><li><a href=/docs/pipelines/lookup-order/>lookup order</a></li><li><a href=/docs/pipelines/builtin-pipelines/>built-in pipelines</a></li></ul></li><li><button class="nav-section-chevron-title neutral-button">
@@ -20,11 +20,11 @@ long as it&rsquo;s still under <code>max</code> iterations.</p><p><code>max</cod
 and stop processing when <code>max</code> exhausts set <code>errorOnMax</code> to <code>True</code>. For example,
 maybe you are waiting for <code>stop</code> to reach <code>True</code> but want to timeout after
 <code>max</code>.</p><p>The iterator is <code>context['whileCounter']</code>. If you want to use the iterator
-value in your step with a substitution expression, you&rsquo;d use <code>{whileCounter}</code>.</p><p>These are all the options to configure a <code>while</code> loop:</p><div class=highlight><pre class=chroma><code class=language-yaml data-lang=yaml><span class=k>while</span><span class=p>:</span><span class=w> </span><span class=c># optional. repeat step until stop is True or max iterations reached.</span><span class=w>
-</span><span class=w>  </span><span class=k>stop</span><span class=p>:</span><span class=w> </span><span class=s1>&#39;{keyhere}&#39;</span><span class=w> </span><span class=c># loop until this evaluates True.</span><span class=w>
-</span><span class=w>  </span><span class=k>max</span><span class=p>:</span><span class=w> </span><span class=m>1</span><span class=w> </span><span class=c># max loop iterations to run. integer. Defaults None (infinite).</span><span class=w>
-</span><span class=w>  </span><span class=k>sleep</span><span class=p>:</span><span class=w> </span><span class=m>0</span><span class=w> </span><span class=c># sleep between iterations, in seconds. Decimals allowed. Defaults 0.</span><span class=w>
-</span><span class=w>  </span><span class=k>errorOnMax</span><span class=p>:</span><span class=w> </span>False<span class=w> </span><span class=c># raise error if max reached. Defaults False.</span><span class=w>
+value in your step with a substitution expression, you&rsquo;d use <code>{whileCounter}</code>.</p><p>These are all the options to configure a <code>while</code> loop:</p><div class=highlight><pre class=chroma><code class=language-yaml data-lang=yaml><span class=nt>while</span><span class=p>:</span><span class=w> </span><span class=c># optional. repeat step until stop is True or max iterations reached.</span><span class=w>
+</span><span class=w>  </span><span class=nt>stop</span><span class=p>:</span><span class=w> </span><span class=s1>&#39;{keyhere}&#39;</span><span class=w> </span><span class=c># loop until this evaluates True.</span><span class=w>
+</span><span class=w>  </span><span class=nt>max</span><span class=p>:</span><span class=w> </span><span class=m>1</span><span class=w> </span><span class=c># max loop iterations to run. integer. Defaults None (infinite).</span><span class=w>
+</span><span class=w>  </span><span class=nt>sleep</span><span class=p>:</span><span class=w> </span><span class=m>0</span><span class=w> </span><span class=c># sleep between iterations, in seconds. Decimals allowed. Defaults 0.</span><span class=w>
+</span><span class=w>  </span><span class=nt>errorOnMax</span><span class=p>:</span><span class=w> </span><span class=kc>False</span><span class=w> </span><span class=c># raise error if max reached. Defaults False.</span><span class=w>
 </span></code></pre></div><p>All the inputs support <a href=https://pypyr.io/docs/substitutions/>substitutions</a>, so
 you can assign values to these properties dynamically at run-time. <code>stop</code>
 evaluates on each loop iteration.</p><h2 id=loop-until-stop-condition-true>loop until stop condition true <a href=#loop-until-stop-condition-true class=headline-anchor aria-label=anchor><svg class="permalink"><title>permalink</title><use href="https://pypyr.io/icons/external-link.054f8ebb57944b2bc52ea4f0ecd16197.svg#external-link"/></svg></a></h2><p>The <code>stop</code> condition re-evaluates on every loop iteration. This means that you
@@ -34,30 +34,30 @@ same step, or alternatively somewhere in a preceding step like
 <code>contextcopy</code> or <code>contextsetf</code>.</p><div class="admonition tip" role=figure><div class=admonition-tip-icon></div><div class=admonition-content><p>Remember that you can use
 <a href=https://pypyr.io/docs/substitutions/py-strings/>py strings</a> for the <code>stop</code>
 condition. This allows you to use more advanced python expressions for your
-<code>stop</code> condition.</p><div class=highlight><pre class=chroma><code class=language-yaml data-lang=yaml><span class=k>stop</span><span class=p>:</span><span class=w> </span>!py<span class=w> </span>responseCode<span class=w> </span>==<span class=w> </span><span class=s2>&#34;OK&#34;</span><span class=w>
+<code>stop</code> condition.</p><div class=highlight><pre class=chroma><code class=language-yaml data-lang=yaml><span class=nt>stop</span><span class=p>:</span><span class=w> </span>!<span class=l>py responseCode == &#34;OK&#34;</span><span class=w>
 </span></code></pre></div></div></div><p>This example uses an inline py step to execute some arbitrary python that
 changes the variable that the while <code>stop</code> condition evaluates:</p><div class=highlight><pre class=chroma><code class=language-yaml data-lang=yaml><span class=c># ./while-stop.yaml</span><span class=w>
-</span><span class=w></span><span class=k>steps</span><span class=p>:</span><span class=w>
-</span><span class=w>  </span>- <span class=k>name</span><span class=p>:</span><span class=w> </span>pypyr.steps.echo<span class=w>
-</span><span class=w>    </span><span class=k>in</span><span class=p>:</span><span class=w>
-</span><span class=w>      </span><span class=k>echoMe</span><span class=p>:</span><span class=w> </span>begin<span class=w>
-</span><span class=w>  </span>- <span class=k>name</span><span class=p>:</span><span class=w> </span>pypyr.steps.py<span class=w>
-</span><span class=w>    </span><span class=k>comment</span><span class=p>:</span><span class=w> </span>while<span class=w> </span>with<span class=w> </span>a<span class=w> </span>stop<span class=w> </span>condition<span class=w>
-</span><span class=w>             </span>the<span class=w> </span>step<span class=w> </span>changes<span class=w> </span>the<span class=w> </span>value<span class=w>
-</span><span class=w>             </span>the<span class=w> </span>stop<span class=w> </span>condition<span class=w> </span>checks<span class=w> </span>for<span class=w>
-</span><span class=w>             </span>on<span class=w> </span>the<span class=w> </span>3rd<span class=w> </span>iteration.<span class=w>
-</span><span class=w>    </span><span class=k>in</span><span class=p>:</span><span class=w>
+</span><span class=w></span><span class=nt>steps</span><span class=p>:</span><span class=w>
+</span><span class=w>  </span>- <span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>pypyr.steps.echo</span><span class=w>
+</span><span class=w>    </span><span class=nt>in</span><span class=p>:</span><span class=w>
+</span><span class=w>      </span><span class=nt>echoMe</span><span class=p>:</span><span class=w> </span><span class=l>begin</span><span class=w>
+</span><span class=w>  </span>- <span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>pypyr.steps.py</span><span class=w>
+</span><span class=w>    </span><span class=nt>comment</span><span class=p>:</span><span class=w> </span><span class=l>while with a stop condition</span><span class=w>
+</span><span class=w>             </span><span class=l>the step changes the value</span><span class=w>
+</span><span class=w>             </span><span class=l>the stop condition checks for</span><span class=w>
+</span><span class=w>             </span><span class=kc>on</span><span class=w> </span><span class=l>the 3rd iteration.</span><span class=w>
+</span><span class=w>    </span><span class=nt>in</span><span class=p>:</span><span class=w>
 </span><span class=w>      </span><span class=c># initialize the stop boolean here</span><span class=w>
-</span><span class=w>      </span><span class=k>stopWhenImTrue</span><span class=p>:</span><span class=w> </span>False<span class=w>
-</span><span class=w>      </span><span class=k>pycode</span><span class=p>:</span><span class=w> </span><span class=sd>|
-</span><span class=sd>                print(f&#34;this is while {context[&#39;whileCounter&#39;]} executing like a boss.&#34;)</span><span class=w>
-</span><span class=w>                </span><span class=k>if context[&#39;whileCounter&#39;] == 3</span><span class=p>:</span><span class=w>
-</span><span class=w>                  </span>context<span class=p>[</span><span class=s1>&#39;stopWhenImTrue&#39;</span><span class=p>]</span><span class=w> </span>=<span class=w> </span>True<span class=w>
-</span><span class=w>    </span><span class=k>while</span><span class=p>:</span><span class=w>
-</span><span class=w>      </span><span class=k>stop</span><span class=p>:</span><span class=w> </span><span class=s1>&#39;{stopWhenImTrue}&#39;</span><span class=w>
-</span><span class=w>  </span>- <span class=k>name</span><span class=p>:</span><span class=w> </span>pypyr.steps.echo<span class=w>
-</span><span class=w>    </span><span class=k>in</span><span class=p>:</span><span class=w>
-</span><span class=w>      </span><span class=k>echoMe</span><span class=p>:</span><span class=w> </span>end<span class=w>
+</span><span class=w>      </span><span class=nt>stopWhenImTrue</span><span class=p>:</span><span class=w> </span><span class=kc>False</span><span class=w>
+</span><span class=w>      </span><span class=nt>pycode</span><span class=p>:</span><span class=w> </span><span class=sd>|
+</span><span class=sd>                print(f&#34;this is while {context[&#39;whileCounter&#39;]} executing like a boss.&#34;)
+</span><span class=sd>                if context[&#39;whileCounter&#39;] == 3:
+</span><span class=sd>                  context[&#39;stopWhenImTrue&#39;] = True
+</span><span class=sd>    while:
+</span><span class=sd>      stop: &#39;{stopWhenImTrue}&#39;
+</span><span class=sd>  - name: pypyr.steps.echo
+</span><span class=sd>    in:
+</span><span class=sd>      echoMe: end
 </span></code></pre></div><p>This will result in:</p><div class=highlight><pre class=chroma><code class=language-text data-lang=text>$ pypyr while-stop
 begin
 this is while 1 executing like a boss.
@@ -69,23 +69,23 @@ end
 pipeline that does exactly the above, but with using multiple steps instead.</p><h2 id=loop-until-maximum-iteration-count>loop until maximum iteration count <a href=#loop-until-maximum-iteration-count class=headline-anchor aria-label=anchor><svg class="permalink"><title>permalink</title><use href="https://pypyr.io/icons/external-link.054f8ebb57944b2bc52ea4f0ecd16197.svg#external-link"/></svg></a></h2><p>You can set <code>max</code> to a static positive integer, or you can use a formatting
 expression to set the loop upper bound dynamically.</p><p>You can&rsquo;t change <code>max</code> mid-loop, however. <code>max</code> evaluates at the start of the
 <code>while</code> loop and becomes fixed at that point.</p><div class=highlight><pre class=chroma><code class=language-yaml data-lang=yaml><span class=c># ./while-max.yaml</span><span class=w>
-</span><span class=w></span><span class=k>context_parser</span><span class=p>:</span><span class=w> </span>pypyr.parser.string<span class=w>
-</span><span class=w></span><span class=k>steps</span><span class=p>:</span><span class=w>
-</span><span class=w>  </span>- <span class=k>name</span><span class=p>:</span><span class=w> </span>pypyr.steps.echo<span class=w>
-</span><span class=w>    </span><span class=k>comment</span><span class=p>:</span><span class=w> </span>loop<span class=w> </span>5X<span class=w>
-</span><span class=w>    </span><span class=k>while</span><span class=p>:</span><span class=w>
-</span><span class=w>      </span><span class=k>max</span><span class=p>:</span><span class=w> </span><span class=m>5</span><span class=w>    
-</span><span class=w>    </span><span class=k>in</span><span class=p>:</span><span class=w>
-</span><span class=w>      </span><span class=k>echoMe</span><span class=p>:</span><span class=w> </span>Static<span class=w> </span>Max<span class=w> </span>-&gt;<span class=w> </span>this<span class=w> </span>is<span class=w> </span>step<span class=w> </span>{whileCounter}<span class=w>
-</span><span class=w>  </span>- <span class=k>name</span><span class=p>:</span><span class=w> </span>pypyr.steps.echo<span class=w>
-</span><span class=w>    </span><span class=k>comment</span><span class=p>:</span><span class=w> </span>get<span class=w> </span>loop<span class=w> </span>counter<span class=w> </span>from<span class=w> </span>cli<span class=w> </span>arg<span class=w> </span>input<span class=w>
-</span><span class=w>             </span>pypyr<span class=w> </span>makes<span class=w> </span>the<span class=w> </span>string<span class=w> </span>an<span class=w> </span>int<span class=w> </span>under<span class=w>
-</span><span class=w>             </span>the<span class=w> </span>covers<span class=w> </span>for<span class=w> </span>you.<span class=w>
-</span><span class=w>             </span>argString<span class=w> </span>comes<span class=w> </span>from<span class=w> </span>the<span class=w> </span>cli<span class=w> </span>arg.<span class=w>
-</span><span class=w>    </span><span class=k>while</span><span class=p>:</span><span class=w>
-</span><span class=w>      </span><span class=k>max</span><span class=p>:</span><span class=w> </span><span class=s1>&#39;{argString}&#39;</span><span class=w>
-</span><span class=w>    </span><span class=k>in</span><span class=p>:</span><span class=w>
-</span><span class=w>      </span><span class=k>echoMe</span><span class=p>:</span><span class=w> </span>Dynamic<span class=w> </span>Max<span class=w> </span>-&gt;<span class=w> </span>this<span class=w> </span>is<span class=w> </span>step<span class=w> </span>{whileCounter}<span class=w>
+</span><span class=w></span><span class=nt>context_parser</span><span class=p>:</span><span class=w> </span><span class=l>pypyr.parser.string</span><span class=w>
+</span><span class=w></span><span class=nt>steps</span><span class=p>:</span><span class=w>
+</span><span class=w>  </span>- <span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>pypyr.steps.echo</span><span class=w>
+</span><span class=w>    </span><span class=nt>comment</span><span class=p>:</span><span class=w> </span><span class=l>loop 5X</span><span class=w>
+</span><span class=w>    </span><span class=nt>while</span><span class=p>:</span><span class=w>
+</span><span class=w>      </span><span class=nt>max</span><span class=p>:</span><span class=w> </span><span class=m>5</span><span class=w>    
+</span><span class=w>    </span><span class=nt>in</span><span class=p>:</span><span class=w>
+</span><span class=w>      </span><span class=nt>echoMe</span><span class=p>:</span><span class=w> </span><span class=l>Static Max -&gt; this is step {whileCounter}</span><span class=w>
+</span><span class=w>  </span>- <span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>pypyr.steps.echo</span><span class=w>
+</span><span class=w>    </span><span class=nt>comment</span><span class=p>:</span><span class=w> </span><span class=l>get loop counter from cli arg input</span><span class=w>
+</span><span class=w>             </span><span class=l>pypyr makes the string an int under</span><span class=w>
+</span><span class=w>             </span><span class=l>the covers for you.</span><span class=w>
+</span><span class=w>             </span><span class=l>argString comes from the cli arg.</span><span class=w>
+</span><span class=w>    </span><span class=nt>while</span><span class=p>:</span><span class=w>
+</span><span class=w>      </span><span class=nt>max</span><span class=p>:</span><span class=w> </span><span class=s1>&#39;{argString}&#39;</span><span class=w>
+</span><span class=w>    </span><span class=nt>in</span><span class=p>:</span><span class=w>
+</span><span class=w>      </span><span class=nt>echoMe</span><span class=p>:</span><span class=w> </span><span class=l>Dynamic Max -&gt; this is step {whileCounter}</span><span class=w>
 </span></code></pre></div><p>This results in:</p><div class=highlight><pre class=chroma><code class=language-text data-lang=text>$ pypyr while-max 3
 Static Max -&gt; this is step 1
 Static Max -&gt; this is step 2
@@ -100,31 +100,31 @@ $
 </code></pre></div><h2 id=combine-max--stop-condition>combine max & stop condition <a href=#combine-max--stop-condition class=headline-anchor aria-label=anchor><svg class="permalink"><title>permalink</title><use href="https://pypyr.io/icons/external-link.054f8ebb57944b2bc52ea4f0ecd16197.svg#external-link"/></svg></a></h2><p>You can set a maximum loop iteration count in addition to a stop condition.
 This is pretty useful for situations where you want your task to repeat but
 stop after a certain number of iterations.</p><div class=highlight><pre class=chroma><code class=language-yaml data-lang=yaml><span class=c>#  ./while-max-stop.yaml</span><span class=w>
-</span><span class=w></span><span class=k>steps</span><span class=p>:</span><span class=w>
-</span><span class=w>  </span>- <span class=k>name</span><span class=p>:</span><span class=w> </span>pypyr.steps.echo<span class=w>
-</span><span class=w>    </span><span class=k>in</span><span class=p>:</span><span class=w>
-</span><span class=w>      </span><span class=k>echoMe</span><span class=p>:</span><span class=w> </span>begin<span class=w>
-</span><span class=w>  </span>- <span class=k>name</span><span class=p>:</span><span class=w> </span>pypyr.steps.contextsetf<span class=w>
-</span><span class=w>    </span><span class=k>comment</span><span class=p>:</span><span class=w> </span>arbitrary<span class=w> </span>context<span class=w> </span>key<span class=w> </span>with<span class=w> </span>value<span class=w> </span><span class=s2>&#34;actual&#34;</span>.<span class=w>
-</span><span class=w>             </span>the<span class=w> </span>loop<span class=w> </span>stop<span class=w> </span>condition<span class=w> </span>will<span class=w> </span>be<span class=w> </span>looking<span class=w> </span>for<span class=w>
-</span><span class=w>             </span>value<span class=w> </span><span class=s2>&#34;expected&#34;</span><span class=w> </span>to<span class=w> </span>stop<span class=w> </span>the<span class=w> </span>loop.<span class=w>
-</span><span class=w>    </span><span class=k>in</span><span class=p>:</span><span class=w>
-</span><span class=w>      </span><span class=k>contextSetf</span><span class=p>:</span><span class=w>
-</span><span class=w>        </span><span class=k>arbKey</span><span class=p>:</span><span class=w> </span>actual<span class=w>
-</span><span class=w>  </span>- <span class=k>name</span><span class=p>:</span><span class=w> </span>pypyr.steps.echo<span class=w>
-</span><span class=w>    </span><span class=k>comment</span><span class=p>:</span><span class=w> </span>stop<span class=w> </span>evaluates<span class=w> </span>on<span class=w> </span>every<span class=w> </span>loop<span class=w> </span>iteration.<span class=w>
-</span><span class=w>             </span>If<span class=w> </span>arbKey<span class=w> </span>becomes<span class=w> </span><span class=s1>&#39;expected&#39;</span><span class=w> </span>during<span class=w> 
-</span><span class=w>             </span>loop<span class=w> </span>iteration<span class=p>,</span><span class=w> </span>will<span class=w> </span>stop<span class=w> </span>loop.<span class=w>
-</span><span class=w>             </span>Since<span class=w> </span>arbKey<span class=w> </span>never<span class=w> </span>becomes<span class=w> </span>expected<span class=p>,</span><span class=w> 
-</span><span class=w>             </span>loop<span class=w> </span>will<span class=w> </span>exhaust<span class=w> </span>on<span class=w> </span>3X.<span class=w>
-</span><span class=w>    </span><span class=k>while</span><span class=p>:</span><span class=w> 
-</span><span class=w>      </span><span class=k>max</span><span class=p>:</span><span class=w> </span><span class=m>3</span><span class=w>
-</span><span class=w>      </span><span class=k>stop</span><span class=p>:</span><span class=w> </span>!py<span class=w> </span>arbKey<span class=w> </span>==<span class=w> </span><span class=s1>&#39;expected&#39;</span><span class=w>
-</span><span class=w>    </span><span class=k>in</span><span class=p>:</span><span class=w>
-</span><span class=w>      </span><span class=k>echoMe</span><span class=p>:</span><span class=w> </span>counter<span class=w> </span>{whileCounter}<span class=w> </span>- arbKey<span class=w> </span>is<span class=w> </span><span class=s2>&#34;{arbKey}&#34;</span><span class=p>,</span><span class=w> </span>not<span class=w> </span><span class=s2>&#34;expected&#34;</span><span class=w>
-</span><span class=w>  </span>- <span class=k>name</span><span class=p>:</span><span class=w> </span>pypyr.steps.echo<span class=w>
-</span><span class=w>    </span><span class=k>in</span><span class=p>:</span><span class=w>
-</span><span class=w>      </span><span class=k>echoMe</span><span class=p>:</span><span class=w> </span>end!<span class=w>
+</span><span class=w></span><span class=nt>steps</span><span class=p>:</span><span class=w>
+</span><span class=w>  </span>- <span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>pypyr.steps.echo</span><span class=w>
+</span><span class=w>    </span><span class=nt>in</span><span class=p>:</span><span class=w>
+</span><span class=w>      </span><span class=nt>echoMe</span><span class=p>:</span><span class=w> </span><span class=l>begin</span><span class=w>
+</span><span class=w>  </span>- <span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>pypyr.steps.contextsetf</span><span class=w>
+</span><span class=w>    </span><span class=nt>comment</span><span class=p>:</span><span class=w> </span><span class=l>arbitrary context key with value &#34;actual&#34;.</span><span class=w>
+</span><span class=w>             </span><span class=l>the loop stop condition will be looking for</span><span class=w>
+</span><span class=w>             </span><span class=l>value &#34;expected&#34; to stop the loop.</span><span class=w>
+</span><span class=w>    </span><span class=nt>in</span><span class=p>:</span><span class=w>
+</span><span class=w>      </span><span class=nt>contextSetf</span><span class=p>:</span><span class=w>
+</span><span class=w>        </span><span class=nt>arbKey</span><span class=p>:</span><span class=w> </span><span class=l>actual</span><span class=w>
+</span><span class=w>  </span>- <span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>pypyr.steps.echo</span><span class=w>
+</span><span class=w>    </span><span class=nt>comment</span><span class=p>:</span><span class=w> </span><span class=l>stop evaluates on every loop iteration.</span><span class=w>
+</span><span class=w>             </span><span class=l>If arbKey becomes &#39;expected&#39; during </span><span class=w>
+</span><span class=w>             </span><span class=l>loop iteration, will stop loop.</span><span class=w>
+</span><span class=w>             </span><span class=l>Since arbKey never becomes expected, </span><span class=w>
+</span><span class=w>             </span><span class=l>loop will exhaust on 3X.</span><span class=w>
+</span><span class=w>    </span><span class=nt>while</span><span class=p>:</span><span class=w> 
+</span><span class=w>      </span><span class=nt>max</span><span class=p>:</span><span class=w> </span><span class=m>3</span><span class=w>
+</span><span class=w>      </span><span class=nt>stop</span><span class=p>:</span><span class=w> </span>!<span class=l>py arbKey == &#39;expected&#39;</span><span class=w>
+</span><span class=w>    </span><span class=nt>in</span><span class=p>:</span><span class=w>
+</span><span class=w>      </span><span class=nt>echoMe</span><span class=p>:</span><span class=w> </span><span class=l>counter {whileCounter} - arbKey is &#34;{arbKey}&#34;, not &#34;expected&#34;</span><span class=w>
+</span><span class=w>  </span>- <span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>pypyr.steps.echo</span><span class=w>
+</span><span class=w>    </span><span class=nt>in</span><span class=p>:</span><span class=w>
+</span><span class=w>      </span><span class=nt>echoMe</span><span class=p>:</span><span class=w> </span><span class=l>end!</span><span class=w>
 </span></code></pre></div><p>This will result in:</p><div class=highlight><pre class=chroma><code class=language-text data-lang=text>$ pypyr while-max-stop
 begin
 counter 1 - arbKey is &#34;actual&#34;, not &#34;expected&#34;
@@ -140,23 +140,23 @@ stop processing after a maximum amount of iterations when the <code>stop</code> 
 never evaluates to <code>True</code>.</p><p>Here is a simple example. In the real world, <code>stop</code> is likely to use a
 <code>{formatting expression}</code> that while evaluate dynamically on each loop
 iteration, rather than just a hard-coded <code>False</code>.</p><div class=highlight><pre class=chroma><code class=language-yaml data-lang=yaml><span class=c>#  ./while-max-stop-err.yaml</span><span class=w>
-</span><span class=w></span><span class=k>steps</span><span class=p>:</span><span class=w>
-</span><span class=w>  </span>- <span class=k>name</span><span class=p>:</span><span class=w> </span>pypyr.steps.echo<span class=w>
-</span><span class=w>    </span><span class=k>in</span><span class=p>:</span><span class=w>
-</span><span class=w>      </span><span class=k>echoMe</span><span class=p>:</span><span class=w> </span>begin<span class=w>
-</span><span class=w>  </span>- <span class=k>name</span><span class=p>:</span><span class=w> </span>pypyr.steps.echo<span class=w>
-</span><span class=w>    </span><span class=k>comment</span><span class=p>:</span><span class=w> </span>stop<span class=w> </span>will<span class=w> </span>never<span class=w> </span>be<span class=w> </span>True.<span class=w>
-</span><span class=w>             </span>loop<span class=w> </span>will<span class=w> </span>exhaust<span class=w> </span>on<span class=w> </span>3X.<span class=w>
-</span><span class=w>             </span>And<span class=w> </span>raise<span class=w> </span>an<span class=w> </span>error.<span class=w>
-</span><span class=w>    </span><span class=k>while</span><span class=p>:</span><span class=w> 
-</span><span class=w>      </span><span class=k>max</span><span class=p>:</span><span class=w> </span><span class=m>3</span><span class=w>
-</span><span class=w>      </span><span class=k>stop</span><span class=p>:</span><span class=w> </span>False<span class=w>
-</span><span class=w>      </span><span class=k>errorOnMax</span><span class=p>:</span><span class=w> </span>True<span class=w>
-</span><span class=w>    </span><span class=k>in</span><span class=p>:</span><span class=w>
-</span><span class=w>      </span><span class=k>echoMe</span><span class=p>:</span><span class=w> </span>counter<span class=w> </span>{whileCounter}<span class=w>
-</span><span class=w>  </span>- <span class=k>name</span><span class=p>:</span><span class=w> </span>pypyr.steps.echo<span class=w>
-</span><span class=w>    </span><span class=k>in</span><span class=p>:</span><span class=w>
-</span><span class=w>      </span><span class=k>echoMe</span><span class=p>:</span><span class=w> </span>end!<span class=w>
+</span><span class=w></span><span class=nt>steps</span><span class=p>:</span><span class=w>
+</span><span class=w>  </span>- <span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>pypyr.steps.echo</span><span class=w>
+</span><span class=w>    </span><span class=nt>in</span><span class=p>:</span><span class=w>
+</span><span class=w>      </span><span class=nt>echoMe</span><span class=p>:</span><span class=w> </span><span class=l>begin</span><span class=w>
+</span><span class=w>  </span>- <span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>pypyr.steps.echo</span><span class=w>
+</span><span class=w>    </span><span class=nt>comment</span><span class=p>:</span><span class=w> </span><span class=l>stop will never be True.</span><span class=w>
+</span><span class=w>             </span><span class=l>loop will exhaust on 3X.</span><span class=w>
+</span><span class=w>             </span><span class=l>And raise an error.</span><span class=w>
+</span><span class=w>    </span><span class=nt>while</span><span class=p>:</span><span class=w> 
+</span><span class=w>      </span><span class=nt>max</span><span class=p>:</span><span class=w> </span><span class=m>3</span><span class=w>
+</span><span class=w>      </span><span class=nt>stop</span><span class=p>:</span><span class=w> </span><span class=kc>False</span><span class=w>
+</span><span class=w>      </span><span class=nt>errorOnMax</span><span class=p>:</span><span class=w> </span><span class=kc>True</span><span class=w>
+</span><span class=w>    </span><span class=nt>in</span><span class=p>:</span><span class=w>
+</span><span class=w>      </span><span class=nt>echoMe</span><span class=p>:</span><span class=w> </span><span class=l>counter {whileCounter}</span><span class=w>
+</span><span class=w>  </span>- <span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>pypyr.steps.echo</span><span class=w>
+</span><span class=w>    </span><span class=nt>in</span><span class=p>:</span><span class=w>
+</span><span class=w>      </span><span class=nt>echoMe</span><span class=p>:</span><span class=w> </span><span class=l>end!</span><span class=w>
 </span></code></pre></div><div class=highlight><pre class=chroma><code class=language-text data-lang=text>$ pypyr while-max-stop-err
 begin
 counter 1
@@ -170,15 +170,15 @@ LoopMaxExhaustedError: while loop reached 3.
 $ echo $?
 255
 </code></pre></div><h2 id=sleep-between-while-iterations>sleep between while iterations <a href=#sleep-between-while-iterations class=headline-anchor aria-label=anchor><svg class="permalink"><title>permalink</title><use href="https://pypyr.io/icons/external-link.054f8ebb57944b2bc52ea4f0ecd16197.svg#external-link"/></svg></a></h2><p>Use <code>sleep</code> to set the interval in seconds to wait in between step iterations.</p><p>If you don&rsquo;t set <code>sleep</code> it defaults to 0, which is no wait at all.</p><div class=highlight><pre class=chroma><code class=language-yaml data-lang=yaml><span class=c># ./while-sleep</span><span class=w>
-</span><span class=w></span><span class=k>steps</span><span class=p>:</span><span class=w>
-</span><span class=w>  </span>- <span class=k>name</span><span class=p>:</span><span class=w> </span>pypyr.steps.echo<span class=w>
-</span><span class=w>    </span><span class=k>comment</span><span class=p>:</span><span class=w> </span>loop<span class=w> </span><span class=m>5</span><span class=w> </span>times<span class=w> </span>with<span class=w> </span><span class=m>2</span><span class=w> </span>seconds<span class=w> </span>sleep<span class=w> 
-</span><span class=w>             </span>in<span class=w> </span>between<span class=w> </span>executions.<span class=w>
-</span><span class=w>    </span><span class=k>in</span><span class=p>:</span><span class=w>
-</span><span class=w>      </span><span class=k>echoMe</span><span class=p>:</span><span class=w> </span>this<span class=w> </span>is<span class=w> </span>step<span class=w> </span>{whileCounter}.<span class=w> </span>ctrl-c<span class=w> </span>if<span class=w> </span>you&#39;re<span class=w> </span>bored.<span class=w>
-</span><span class=w>    </span><span class=k>while</span><span class=p>:</span><span class=w>
-</span><span class=w>      </span><span class=k>max</span><span class=p>:</span><span class=w> </span><span class=m>5</span><span class=w>
-</span><span class=w>      </span><span class=k>sleep</span><span class=p>:</span><span class=w> </span><span class=m>2</span><span class=w>
+</span><span class=w></span><span class=nt>steps</span><span class=p>:</span><span class=w>
+</span><span class=w>  </span>- <span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>pypyr.steps.echo</span><span class=w>
+</span><span class=w>    </span><span class=nt>comment</span><span class=p>:</span><span class=w> </span><span class=l>loop 5 times with 2 seconds sleep </span><span class=w>
+</span><span class=w>             </span><span class=l>in between executions.</span><span class=w>
+</span><span class=w>    </span><span class=nt>in</span><span class=p>:</span><span class=w>
+</span><span class=w>      </span><span class=nt>echoMe</span><span class=p>:</span><span class=w> </span><span class=l>this is step {whileCounter}. ctrl-c if you&#39;re bored.</span><span class=w>
+</span><span class=w>    </span><span class=nt>while</span><span class=p>:</span><span class=w>
+</span><span class=w>      </span><span class=nt>max</span><span class=p>:</span><span class=w> </span><span class=m>5</span><span class=w>
+</span><span class=w>      </span><span class=nt>sleep</span><span class=p>:</span><span class=w> </span><span class=m>2</span><span class=w>
 </span></code></pre></div><p>This results in:</p><div class=highlight><pre class=chroma><code class=language-text data-lang=text>$ pypyr while-sleep
 this is step 1. ctrl-c if you&#39;re bored.
 this is step 2. ctrl-c if you&#39;re bored.
@@ -188,15 +188,15 @@ this is step 5. ctrl-c if you&#39;re bored.
 
 $
 </code></pre></div><h2 id=infinite-loop>infinite loop <a href=#infinite-loop class=headline-anchor aria-label=anchor><svg class="permalink"><title>permalink</title><use href="https://pypyr.io/icons/external-link.054f8ebb57944b2bc52ea4f0ecd16197.svg#external-link"/></svg></a></h2><p>You can run an infinite loop by never having <code>stop</code> always evaluate to <code>False</code>.</p><div class=highlight><pre class=chroma><code class=language-yaml data-lang=yaml><span class=c># ./while-infinite.yaml</span><span class=w>
-</span><span class=w></span><span class=k>steps</span><span class=p>:</span><span class=w>
-</span><span class=w>  </span>- <span class=k>name</span><span class=p>:</span><span class=w> </span>pypyr.steps.echo<span class=w>
-</span><span class=w>    </span><span class=k>description</span><span class=p>:</span><span class=w> </span>runs<span class=w> </span>infinitely<span class=w>
-</span><span class=w>    </span><span class=k>comment</span><span class=p>:</span><span class=w> </span>3s<span class=w> </span>sleep<span class=w> </span>between<span class=w> </span>iterations<span class=w>
-</span><span class=w>    </span><span class=k>in</span><span class=p>:</span><span class=w>
-</span><span class=w>      </span><span class=k>echoMe</span><span class=p>:</span><span class=w> </span>this<span class=w> </span>is<span class=w> </span>a<span class=w> </span>deliberate<span class=w> </span>infinite<span class=w> </span>loop.<span class=w> </span>ctrl+c<span class=w> </span>to<span class=w> </span>break.<span class=w>
-</span><span class=w>    </span><span class=k>while</span><span class=p>:</span><span class=w>
-</span><span class=w>      </span><span class=k>stop</span><span class=p>:</span><span class=w> </span>False<span class=w>
-</span><span class=w>      </span><span class=k>sleep</span><span class=p>:</span><span class=w> </span><span class=m>3</span><span class=w>
+</span><span class=w></span><span class=nt>steps</span><span class=p>:</span><span class=w>
+</span><span class=w>  </span>- <span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>pypyr.steps.echo</span><span class=w>
+</span><span class=w>    </span><span class=nt>description</span><span class=p>:</span><span class=w> </span><span class=l>runs infinitely</span><span class=w>
+</span><span class=w>    </span><span class=nt>comment</span><span class=p>:</span><span class=w> </span><span class=l>3s sleep between iterations</span><span class=w>
+</span><span class=w>    </span><span class=nt>in</span><span class=p>:</span><span class=w>
+</span><span class=w>      </span><span class=nt>echoMe</span><span class=p>:</span><span class=w> </span><span class=l>this is a deliberate infinite loop. ctrl+c to break.</span><span class=w>
+</span><span class=w>    </span><span class=nt>while</span><span class=p>:</span><span class=w>
+</span><span class=w>      </span><span class=nt>stop</span><span class=p>:</span><span class=w> </span><span class=kc>False</span><span class=w>
+</span><span class=w>      </span><span class=nt>sleep</span><span class=p>:</span><span class=w> </span><span class=m>3</span><span class=w>
 </span></code></pre></div><p>This will result in:</p><div class=highlight><pre class=chroma><code class=language-text data-lang=text>$ pypyr while-infinite
 pypyr.steps.echo: runs infinitely
 this is a deliberate infinite loop. ctrl+c to break.
@@ -211,19 +211,19 @@ this is a deliberate infinite loop. ctrl+c to break.
 $
 </code></pre></div><h2 id=nesting-foreach-in-while>nesting foreach in while <a href=#nesting-foreach-in-while class=headline-anchor aria-label=anchor><svg class="permalink"><title>permalink</title><use href="https://pypyr.io/icons/external-link.054f8ebb57944b2bc52ea4f0ecd16197.svg#external-link"/></svg></a></h2><p>A <code>foreach</code> on the same step will run the entire <code>foreach</code> loop once for each
 <code>while</code> iteration.</p><div class=highlight><pre class=chroma><code class=language-yaml data-lang=yaml><span class=w> </span><span class=c># ./while-foreach</span><span class=w>
-</span><span class=w></span><span class=k>steps</span><span class=p>:</span><span class=w>
-</span><span class=w>  </span>- <span class=k>name</span><span class=p>:</span><span class=w> </span>pypyr.steps.echo<span class=w>
-</span><span class=w>    </span><span class=k>comment</span><span class=p>:</span><span class=w> </span>loop<span class=w> </span>3X<span class=w> </span>while.<span class=w>
-</span><span class=w>             </span>the<span class=w> </span>entire<span class=w> </span>foreach<span class=w> </span>runs<span class=w>
-</span><span class=w>             </span>for<span class=w> </span>each<span class=w> </span>while<span class=w> </span>iteration.<span class=w>
-</span><span class=w>    </span><span class=k>in</span><span class=p>:</span><span class=w>
-</span><span class=w>      </span><span class=k>echoMe</span><span class=p>:</span><span class=w> </span>this<span class=w> </span>is<span class=w> </span>{whileCounter}<span class=w> </span>- {i}<span class=w>
-</span><span class=w>    </span><span class=k>foreach</span><span class=p>:</span><span class=w> </span><span class=p>[</span><span class=s1>&#39;eggs&#39;</span><span class=p>,</span><span class=w> </span><span class=s1>&#39;bacon&#39;</span><span class=p>,</span><span class=w> </span><span class=s1>&#39;spam&#39;</span><span class=p>]</span><span class=w>
-</span><span class=w>    </span><span class=k>while</span><span class=p>:</span><span class=w>
-</span><span class=w>      </span><span class=k>max</span><span class=p>:</span><span class=w> </span><span class=m>3</span><span class=w>
-</span><span class=w>  </span>- <span class=k>name</span><span class=p>:</span><span class=w> </span>pypyr.steps.echo<span class=w>
-</span><span class=w>    </span><span class=k>in</span><span class=p>:</span><span class=w>
-</span><span class=w>      </span><span class=k>echoMe</span><span class=p>:</span><span class=w> </span>done!<span class=w>
+</span><span class=w></span><span class=nt>steps</span><span class=p>:</span><span class=w>
+</span><span class=w>  </span>- <span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>pypyr.steps.echo</span><span class=w>
+</span><span class=w>    </span><span class=nt>comment</span><span class=p>:</span><span class=w> </span><span class=l>loop 3X while.</span><span class=w>
+</span><span class=w>             </span><span class=l>the entire foreach runs</span><span class=w>
+</span><span class=w>             </span><span class=l>for each while iteration.</span><span class=w>
+</span><span class=w>    </span><span class=nt>in</span><span class=p>:</span><span class=w>
+</span><span class=w>      </span><span class=nt>echoMe</span><span class=p>:</span><span class=w> </span><span class=l>this is {whileCounter} - {i}</span><span class=w>
+</span><span class=w>    </span><span class=nt>foreach</span><span class=p>:</span><span class=w> </span><span class=p>[</span><span class=s1>&#39;eggs&#39;</span><span class=p>,</span><span class=w> </span><span class=s1>&#39;bacon&#39;</span><span class=p>,</span><span class=w> </span><span class=s1>&#39;spam&#39;</span><span class=p>]</span><span class=w>
+</span><span class=w>    </span><span class=nt>while</span><span class=p>:</span><span class=w>
+</span><span class=w>      </span><span class=nt>max</span><span class=p>:</span><span class=w> </span><span class=m>3</span><span class=w>
+</span><span class=w>  </span>- <span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>pypyr.steps.echo</span><span class=w>
+</span><span class=w>    </span><span class=nt>in</span><span class=p>:</span><span class=w>
+</span><span class=w>      </span><span class=nt>echoMe</span><span class=p>:</span><span class=w> </span><span class=l>done!</span><span class=w>
 </span></code></pre></div><p>This results in output:</p><div class=highlight><pre class=chroma><code class=language-text data-lang=text>$ pypyr while-foreach
 this is 1 - eggs
 this is 1 - bacon
@@ -241,35 +241,35 @@ you loop on a <a href=https://pypyr.io/docs/steps/call/>call</a> step, you will 
 you loop over multiple steps as a unit.</p><p>If you want to loop over an entire pipeline, use
 <a href=https://pypyr.io/docs/steps/pype/>pype</a> to invoke the pipeline and decorate the
 <code>pype</code> step in the same way.</p><div class=highlight><pre class=chroma><code class=language-yaml data-lang=yaml><span class=c># ./while-call.yaml</span><span class=w>
-</span><span class=w></span><span class=k>steps</span><span class=p>:</span><span class=w>
-</span><span class=w>  </span>- <span class=k>name</span><span class=p>:</span><span class=w> </span>pypyr.steps.echo<span class=w>
-</span><span class=w>    </span><span class=k>in</span><span class=p>:</span><span class=w>
-</span><span class=w>      </span><span class=k>echoMe</span><span class=p>:</span><span class=w> </span>begin<span class=w>
-</span><span class=w>  </span>- <span class=k>name</span><span class=p>:</span><span class=w> </span>pypyr.steps.call<span class=w>
-</span><span class=w>    </span><span class=k>comment</span><span class=p>:</span><span class=w> </span>run<span class=w> </span>entire<span class=w> </span>sequence<span class=w> </span>of<span class=w> </span>steps<span class=w>
-</span><span class=w>             </span>in<span class=w> </span>loop_me<span class=w> </span>step-group<span class=w> </span>in<span class=w> </span>a<span class=w> </span>loop.<span class=w>
-</span><span class=w>    </span><span class=k>in</span><span class=p>:</span><span class=w>
+</span><span class=w></span><span class=nt>steps</span><span class=p>:</span><span class=w>
+</span><span class=w>  </span>- <span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>pypyr.steps.echo</span><span class=w>
+</span><span class=w>    </span><span class=nt>in</span><span class=p>:</span><span class=w>
+</span><span class=w>      </span><span class=nt>echoMe</span><span class=p>:</span><span class=w> </span><span class=l>begin</span><span class=w>
+</span><span class=w>  </span>- <span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>pypyr.steps.call</span><span class=w>
+</span><span class=w>    </span><span class=nt>comment</span><span class=p>:</span><span class=w> </span><span class=l>run entire sequence of steps</span><span class=w>
+</span><span class=w>             </span><span class=l>in loop_me step-group in a loop.</span><span class=w>
+</span><span class=w>    </span><span class=nt>in</span><span class=p>:</span><span class=w>
 </span><span class=w>      </span><span class=c># initialize the stop boolean here</span><span class=w>
-</span><span class=w>      </span><span class=k>stopWhenImTrue</span><span class=p>:</span><span class=w> </span>False<span class=w>
-</span><span class=w>      </span><span class=k>call</span><span class=p>:</span><span class=w> </span>loop_me<span class=w>
-</span><span class=w>    </span><span class=k>while</span><span class=p>:</span><span class=w>
-</span><span class=w>      </span><span class=k>stop</span><span class=p>:</span><span class=w> </span><span class=s1>&#39;{stopWhenImTrue}&#39;</span><span class=w>
-</span><span class=w>  </span>- <span class=k>name</span><span class=p>:</span><span class=w> </span>pypyr.steps.echo<span class=w>
-</span><span class=w>    </span><span class=k>in</span><span class=p>:</span><span class=w>
-</span><span class=w>      </span><span class=k>echoMe</span><span class=p>:</span><span class=w> </span>end<span class=w>
+</span><span class=w>      </span><span class=nt>stopWhenImTrue</span><span class=p>:</span><span class=w> </span><span class=kc>False</span><span class=w>
+</span><span class=w>      </span><span class=nt>call</span><span class=p>:</span><span class=w> </span><span class=l>loop_me</span><span class=w>
+</span><span class=w>    </span><span class=nt>while</span><span class=p>:</span><span class=w>
+</span><span class=w>      </span><span class=nt>stop</span><span class=p>:</span><span class=w> </span><span class=s1>&#39;{stopWhenImTrue}&#39;</span><span class=w>
+</span><span class=w>  </span>- <span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>pypyr.steps.echo</span><span class=w>
+</span><span class=w>    </span><span class=nt>in</span><span class=p>:</span><span class=w>
+</span><span class=w>      </span><span class=nt>echoMe</span><span class=p>:</span><span class=w> </span><span class=l>end</span><span class=w>
 </span><span class=w>
-</span><span class=w></span><span class=k>loop_me</span><span class=p>:</span><span class=w>
-</span><span class=w>  </span>- <span class=k>name</span><span class=p>:</span><span class=w> </span>pypyr.steps.echo<span class=w>
-</span><span class=w>    </span><span class=k>in</span><span class=p>:</span><span class=w>
-</span><span class=w>      </span><span class=k>echoMe</span><span class=p>:</span><span class=w> </span>this<span class=w> </span>is<span class=w> </span>while<span class=w> </span>{whileCounter}<span class=w> </span>executing<span class=w> </span>like<span class=w> </span>a<span class=w> </span>boss.<span class=w>
-</span><span class=w>  </span>- <span class=k>name</span><span class=p>:</span><span class=w> </span>pypyr.steps.contextsetf<span class=w>
-</span><span class=w>    </span><span class=k>comment</span><span class=p>:</span><span class=w> </span>set<span class=w> </span>stopWhenImTrue<span class=w> </span>to<span class=w> </span>True<span class=w> </span>on<span class=w> </span>the<span class=w> </span>3rd<span class=w> </span>iteration<span class=w>
-</span><span class=w>             </span>you&#39;re<span class=w> </span>likely<span class=w> </span>to<span class=w> </span>do<span class=w> </span>more<span class=w> </span>meaningful<span class=w> </span>work<span class=w> </span>in<span class=w> </span>your<span class=w>
-</span><span class=w>             </span>own<span class=w> </span>pipelines.<span class=w>
-</span><span class=w>    </span><span class=k>run</span><span class=p>:</span><span class=w> </span>!py<span class=w> </span>whileCounter<span class=w> </span>==<span class=w> </span><span class=m>3</span><span class=w>
-</span><span class=w>    </span><span class=k>in</span><span class=p>:</span><span class=w>
-</span><span class=w>      </span><span class=k>contextSetf</span><span class=p>:</span><span class=w>
-</span><span class=w>        </span><span class=k>stopWhenImTrue</span><span class=p>:</span><span class=w> </span>True<span class=w>
+</span><span class=w></span><span class=nt>loop_me</span><span class=p>:</span><span class=w>
+</span><span class=w>  </span>- <span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>pypyr.steps.echo</span><span class=w>
+</span><span class=w>    </span><span class=nt>in</span><span class=p>:</span><span class=w>
+</span><span class=w>      </span><span class=nt>echoMe</span><span class=p>:</span><span class=w> </span><span class=l>this is while {whileCounter} executing like a boss.</span><span class=w>
+</span><span class=w>  </span>- <span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>pypyr.steps.contextsetf</span><span class=w>
+</span><span class=w>    </span><span class=nt>comment</span><span class=p>:</span><span class=w> </span><span class=l>set stopWhenImTrue to True on the 3rd iteration</span><span class=w>
+</span><span class=w>             </span><span class=l>you&#39;re likely to do more meaningful work in your</span><span class=w>
+</span><span class=w>             </span><span class=l>own pipelines.</span><span class=w>
+</span><span class=w>    </span><span class=nt>run</span><span class=p>:</span><span class=w> </span>!<span class=l>py whileCounter == 3</span><span class=w>
+</span><span class=w>    </span><span class=nt>in</span><span class=p>:</span><span class=w>
+</span><span class=w>      </span><span class=nt>contextSetf</span><span class=p>:</span><span class=w>
+</span><span class=w>        </span><span class=nt>stopWhenImTrue</span><span class=p>:</span><span class=w> </span><span class=kc>True</span><span class=w>
 </span></code></pre></div><p>This will result in:</p><div class=highlight><pre class=chroma><code class=language-text data-lang=text>$ pypyr while-call
 begin
 this is while 1 executing like a boss.

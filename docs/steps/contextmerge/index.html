@@ -18,23 +18,23 @@ gtag('js',new Date());gtag('config','UA-147150909-1');</script><meta property="o
 updating the differing values as specified in the <code>contextMerge</code> input.</p><p>By comparison, <a href=https://pypyr.io/docs/steps/contextcopy/>contextcopy</a> and
 <a href=https://pypyr.io/docs/steps/contextsetf/>contextsetf</a> overwrite the destination hierarchy
 that is in context already.</p><p>This step merges the contents of the context key <code>contextMerge</code> into
-context. The contents of the <code>contextMerge</code> key must be a dictionary.</p><h2 id=examples>examples <a href=#examples class=headline-anchor aria-label=anchor><svg class="permalink"><title>permalink</title><use href="https://pypyr.io/icons/external-link.054f8ebb57944b2bc52ea4f0ecd16197.svg#external-link"/></svg></a></h2><p>For example, say input context is:</p><div class=highlight><pre class=chroma><code class=language-yaml data-lang=yaml><span class=k>key1</span><span class=p>:</span><span class=w> </span>value1<span class=w>
-</span><span class=w></span><span class=k>key2</span><span class=p>:</span><span class=w> </span>value2<span class=w>
-</span><span class=w></span><span class=k>key3</span><span class=p>:</span><span class=w>
-</span><span class=w>    </span><span class=k>k31</span><span class=p>:</span><span class=w> </span>value31<span class=w>
-</span><span class=w>    </span><span class=k>k32</span><span class=p>:</span><span class=w> </span>value32<span class=w>
-</span><span class=w></span><span class=k>contextMerge</span><span class=p>:</span><span class=w>
-</span><span class=w>    </span><span class=k>key2</span><span class=p>:</span><span class=w> </span><span class=s1>&#39;aaa_{key1}_zzz&#39;</span><span class=w>
-</span><span class=w>    </span><span class=k>key3</span><span class=p>:</span><span class=w>
-</span><span class=w>        </span><span class=k>k33</span><span class=p>:</span><span class=w> </span>value33_{key1}<span class=w>
-</span><span class=w>    </span><span class=k>key4</span><span class=p>:</span><span class=w> </span><span class=s1>&#39;bbb_{key2}_yyy&#39;</span><span class=w>
-</span></code></pre></div><p>This will result in return context:</p><div class=highlight><pre class=chroma><code class=language-yaml data-lang=yaml><span class=k>key1</span><span class=p>:</span><span class=w> </span>value1<span class=w>
-</span><span class=w></span><span class=k>key2</span><span class=p>:</span><span class=w> </span>aaa_value1_zzz<span class=w>
-</span><span class=w></span><span class=k>key3</span><span class=p>:</span><span class=w>
-</span><span class=w>    </span><span class=k>k31</span><span class=p>:</span><span class=w> </span>value31<span class=w>
-</span><span class=w>    </span><span class=k>k32</span><span class=p>:</span><span class=w> </span>value32<span class=w>
-</span><span class=w>    </span><span class=k>k33</span><span class=p>:</span><span class=w> </span>value33_value1<span class=w>
-</span><span class=w></span><span class=k>key4</span><span class=p>:</span><span class=w> </span>bbb_aaa_value1_zzz_yyy<span class=w>
+context. The contents of the <code>contextMerge</code> key must be a dictionary.</p><h2 id=examples>examples <a href=#examples class=headline-anchor aria-label=anchor><svg class="permalink"><title>permalink</title><use href="https://pypyr.io/icons/external-link.054f8ebb57944b2bc52ea4f0ecd16197.svg#external-link"/></svg></a></h2><p>For example, say input context is:</p><div class=highlight><pre class=chroma><code class=language-yaml data-lang=yaml><span class=nt>key1</span><span class=p>:</span><span class=w> </span><span class=l>value1</span><span class=w>
+</span><span class=w></span><span class=nt>key2</span><span class=p>:</span><span class=w> </span><span class=l>value2</span><span class=w>
+</span><span class=w></span><span class=nt>key3</span><span class=p>:</span><span class=w>
+</span><span class=w>    </span><span class=nt>k31</span><span class=p>:</span><span class=w> </span><span class=l>value31</span><span class=w>
+</span><span class=w>    </span><span class=nt>k32</span><span class=p>:</span><span class=w> </span><span class=l>value32</span><span class=w>
+</span><span class=w></span><span class=nt>contextMerge</span><span class=p>:</span><span class=w>
+</span><span class=w>    </span><span class=nt>key2</span><span class=p>:</span><span class=w> </span><span class=s1>&#39;aaa_{key1}_zzz&#39;</span><span class=w>
+</span><span class=w>    </span><span class=nt>key3</span><span class=p>:</span><span class=w>
+</span><span class=w>        </span><span class=nt>k33</span><span class=p>:</span><span class=w> </span><span class=l>value33_{key1}</span><span class=w>
+</span><span class=w>    </span><span class=nt>key4</span><span class=p>:</span><span class=w> </span><span class=s1>&#39;bbb_{key2}_yyy&#39;</span><span class=w>
+</span></code></pre></div><p>This will result in return context:</p><div class=highlight><pre class=chroma><code class=language-yaml data-lang=yaml><span class=nt>key1</span><span class=p>:</span><span class=w> </span><span class=l>value1</span><span class=w>
+</span><span class=w></span><span class=nt>key2</span><span class=p>:</span><span class=w> </span><span class=l>aaa_value1_zzz</span><span class=w>
+</span><span class=w></span><span class=nt>key3</span><span class=p>:</span><span class=w>
+</span><span class=w>    </span><span class=nt>k31</span><span class=p>:</span><span class=w> </span><span class=l>value31</span><span class=w>
+</span><span class=w>    </span><span class=nt>k32</span><span class=p>:</span><span class=w> </span><span class=l>value32</span><span class=w>
+</span><span class=w>    </span><span class=nt>k33</span><span class=p>:</span><span class=w> </span><span class=l>value33_value1</span><span class=w>
+</span><span class=w></span><span class=nt>key4</span><span class=p>:</span><span class=w> </span><span class=l>bbb_aaa_value1_zzz_yyy</span><span class=w>
 </span></code></pre></div><p>See a worked <a href=https://github.com/pypyr/pypyr-example/blob/master/pipelines/contextmerge.yaml>example for contextmerge</a>.</p><h2 id=merging-collections-like-lists-dicts-sets--tuples>merging collections like lists, dicts, sets & tuples <a href=#merging-collections-like-lists-dicts-sets--tuples class=headline-anchor aria-label=anchor><svg class="permalink"><title>permalink</title><use href="https://pypyr.io/icons/external-link.054f8ebb57944b2bc52ea4f0ecd16197.svg#external-link"/></svg></a></h2><p>List, Set and Tuple merging is purely additive, with no checks for
 uniqueness or already existing list items. E.g context [0,1,2] with
 <code>contextMerge</code> [2,3,4] will result in [0,1,2,2,3,4].</p><p>Keep this in mind especially where complex types like dicts nest inside

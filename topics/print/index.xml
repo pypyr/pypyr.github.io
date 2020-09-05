@@ -2,7 +2,7 @@
 For example, if you had a pipeline like this:
 # ./mypipeline.yamlcontext_parser:pypyr.parser.keyvaluepairssteps:- name:pypyr.steps.echoYou can run:
 $ pypyr mypipeline &amp;#34;echoMe=Ceci n&amp;#39;est pas une pipe&amp;#34; Alternatively, if you had a pipeline like this:
-# ./look-ma-no-params.yamlsteps:- name:pypyr.steps.echocomment:OutputechoMein:echoMe:Cecin&amp;#39;estpasunepipeYou can run:
+# ./look-ma-no-params.yamlsteps:- name:pypyr.steps.echocomment:Output echoMein:echoMe:Ceci n&amp;#39;est pas une pipeYou can run:
 $ pypyr look-ma-no-params Supports string substitutions.
 write complex objects to output permalinkecho will serialize complex objects like dict or list to stdout for you.</description></item><item><title>description decorator</title><link>https://pypyr.io/docs/decorators/description/</link><pubDate>Sat, 11 Jul 2020 20:35:07 +0100</pubDate><guid>https://pypyr.io/docs/decorators/description/</guid><description>description permalink provide step status output permalinkdescription is text that prints to the output when the pipeline runs. This is useful to provide operators with visibility of pipeline progress, especially where steps themselves do not provide any output.
 The description outputs at NOTIFY - 25 level. This means you will see it by default. If you want to suppress description output, run pypyr with --log higher than 25.
