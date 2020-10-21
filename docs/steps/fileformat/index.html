@@ -42,7 +42,7 @@ files in-place.</li><li>If in-path refers to >1 file (e.g it&rsquo;s a glob or l
 out path can only be a directory - it doesn&rsquo;t make sense to
 write >1 file to the same single file output (this is not
 an appender.)</li><li>To ensure out path means a directory and not a file,
-be sure to have the os&rsquo; path separator (<code>/</code> on a sane
+be sure to have the os' path separator (<code>/</code> on a sane
 filesystem) at the end.</li><li>If you specify an <code>out</code> directory without a file-name, out files will
 have the same name they had in <code>in</code>.</li></ul></li></ul></li></ul><h3 id=multiple-files--globs>multiple files & globs <a href=#multiple-files--globs class=headline-anchor aria-label=anchor><svg class="permalink"><title>permalink</title><use href="https://pypyr.io/icons/external-link.054f8ebb57944b2bc52ea4f0ecd16197.svg#external-link"/></svg></a></h3><p>You can format multiple files in the same step. This works in two ways:</p><ul><li><code>in</code> is glob like <code>./**/myfile.arb</code></li></ul><div class=highlight><pre class=chroma><code class=language-yaml data-lang=yaml><span class=nt>fileFormat</span><span class=p>:</span><span class=w>
 </span><span class=w>  </span><span class=c># ** recurses sub-dirs per usual globbing</span><span class=w>
