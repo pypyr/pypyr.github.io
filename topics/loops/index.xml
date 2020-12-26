@@ -4,6 +4,6 @@ max will exit the loop even if stop is still False. If you want to error and sto
 The retry iteration counter is context['retryCounter']. You can use this as usual for any context value in a formatting string expression as {retryCounter}.
 These are all the available configuration parameters for retry:</description></item><item><title>foreach loop decorator</title><link>https://pypyr.io/docs/decorators/foreach/</link><pubDate>Fri, 10 Jul 2020 19:07:51 +0100</pubDate><guid>https://pypyr.io/docs/decorators/foreach/</guid><description>foreach permalink repeat step for each item in list permalinkRun the step once for each item in the list.
 The iterator is context['i']. If you want to use the iterator value in your step with a substitution expression, you&amp;rsquo;d use {i}.
-foreach is a list []. In your pipeline, you can specify this in two ways:
+foreach takes any iterable. In your pipeline yaml, you can specify this as a list [] in two ways:
 foreach:[item 1, item 2, item 3]or
-foreach:- item 1- item 2- item 3 loop static input list permalinkThe foreach input is a list.</description></item></channel></rss>
+foreach:- item 1- item 2- item 3 loop static input list permalinkThe foreach input here is a standard list.</description></item></channel></rss>
