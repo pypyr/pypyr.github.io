@@ -57,7 +57,7 @@
 <h6 id=table-of-contents>on this page</h6>
 <nav id=TableOfContents>
 <ol>
-<li><a href=#args>args</a></li><li><a href=#built-in-summary-tables>built-in summary tables</a></li><li><a href=#context>context</a></li><li><a href=#control-of-flow>control-of-flow</a></li><li><a href=#custom-code>custom code</a></li><li><a href=#debug>debug</a></li><li><a href=#environment-variables>environment variables</a></li><li><a href=#error-handling>error handling</a></li><li><a href=#execute-external-program>execute external program</a></li><li><a href=#filesystem>filesystem</a></li><li><a href=#inline-code>inline code</a></li><li><a href=#json>json</a></li><li><a href=#loops>loops</a></li><li><a href=#paths>paths</a></li><li><a href=#pipeline-format>pipeline format</a></li><li><a href=#print>print</a></li><li><a href=#time>time</a></li><li><a href=#yaml>yaml</a></li>
+<li><a href=#args>args</a></li><li><a href=#built-in-summary-tables>built-in summary tables</a></li><li><a href=#collections>collections</a></li><li><a href=#context>context</a></li><li><a href=#control-of-flow>control-of-flow</a></li><li><a href=#custom-code>custom code</a></li><li><a href=#debug>debug</a></li><li><a href=#environment-variables>environment variables</a></li><li><a href=#error-handling>error handling</a></li><li><a href=#execute-external-program>execute external program</a></li><li><a href=#filesystem>filesystem</a></li><li><a href=#inline-code>inline code</a></li><li><a href=#json>json</a></li><li><a href=#loops>loops</a></li><li><a href=#paths>paths</a></li><li><a href=#pipeline-format>pipeline format</a></li><li><a href=#print>print</a></li><li><a href=#time>time</a></li><li><a href=#yaml>yaml</a></li>
 </ol>
 </nav>
 </aside>
@@ -121,12 +121,32 @@
 <li class=skip-grid>
 <article class=skip-grid>
 <header class=aio-row-full>
+<h2 id=collections class=aio-heading>collections</h2><a href=/topics/collections/ class=muted-with-hover>#</a>
+<p class=aio-tagline>Using collections like lists, sets & dicts in the pypyr context.</p>
+</header>
+<dl class=aio-pages>
+<dt class=aio-col1><a href=https://pypyr.io/docs/steps/add/>pypyr.steps.add</a></dt>
+<dd class=aio-col2>Add item to a set.</dd>
+<dt class=aio-col1><a href=https://pypyr.io/docs/steps/append/>pypyr.steps.append</a></dt>
+<dd class=aio-col2>Append item to a list.</dd>
+</dl>
+</article>
+</li>
+<li class=skip-grid>
+<article class=skip-grid>
+<header class=aio-row-full>
 <h2 id=context class=aio-heading>context</h2><a href=/topics/context/ class=muted-with-hover>#</a>
 <p class=aio-tagline>The pypyr context maintains state for the duration of the pipeline. You use the context to persist & pass values between steps in the pipeline.</p>
 </header>
 <dl class=aio-pages>
 <dt class=aio-col1><a href=https://pypyr.io/docs/getting-started/variables/>variables</a></dt>
 <dd class=aio-col2>How to use variables & arguments in a pipeline.</dd>
+<dt class=aio-col1><a href=https://pypyr.io/docs/steps/add/>pypyr.steps.add</a></dt>
+<dd class=aio-col2>Add item to a set.</dd>
+<dt class=aio-col1><a href=https://pypyr.io/docs/steps/append/>pypyr.steps.append</a></dt>
+<dd class=aio-col2>Append item to a list.</dd>
+<dt class=aio-col1><a href=https://pypyr.io/docs/steps/set/>pypyr.steps.set</a></dt>
+<dd class=aio-col2>Set & format context keys.</dd>
 <dt class=aio-col1><a href=https://pypyr.io/docs/steps/contextcopy/>pypyr.steps.contextcopy</a></dt>
 <dd class=aio-col2>Copy entire context keys.</dd>
 <dt class=aio-col1><a href=https://pypyr.io/docs/api/context-parser/>custom context parser</a></dt>
@@ -138,7 +158,7 @@
 <dt class=aio-col1><a href=https://pypyr.io/docs/steps/default/>pypyr.steps.default</a></dt>
 <dd class=aio-col2>Set values if they do not exist already.</dd>
 <dt class=aio-col1><a href=https://pypyr.io/docs/steps/contextsetf/>pypyr.steps.contextsetf</a></dt>
-<dd class=aio-col2>Set & format context keys.</dd>
+<dd class=aio-col2>Old name for <code>set</code>. Use set instead.</dd>
 <dt class=aio-col1><a href=https://pypyr.io/docs/steps/contextmerge/>pypyr.steps.contextmerge</a></dt>
 <dd class=aio-col2>Merges values into context, preserving the existing context hierarchy.</dd>
 <dt class=aio-col1><a href=https://pypyr.io/docs/steps/contextclearall/>pypyr.steps.contextclearall</a></dt>

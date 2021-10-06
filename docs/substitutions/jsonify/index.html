@@ -23,7 +23,7 @@
 <meta property="og:url" content="https://pypyr.io/docs/substitutions/jsonify/">
 <meta name=twitter:card content="summary_large_image">
 <meta name=twitter:site content="@pypyrpipes">
-<script type=application/ld+json>{"@context":"https://schema.org","@graph":[{"@id":"https://pypyr.io/#organization","@type":"Organization","name":"pypyr","url":"https://pypyr.io/","description":"The pypyr project is a free open-source task-runner cli \u0026 python api for automation pipelines.","logo":{"@type":"ImageObject","url":"https://pypyr.io/images/pypyr-taskrunner-logo-square.63875e43ff40d8ae40e93a6043b4328b962f54f52974aaa27cedec52220de665.svg","height":112,"width":112},"sameAs":["https://github.com/pypyr/","https://twitter.com/pypyrpipes/","https://pypi.org/user/pypyr/","https://hub.docker.com/u/pypyr/","https://en.gravatar.com/pypyr/"]},{"@type":"TechArticle","author":{"@type":"Person","name":"pypyr contributor"},"articleSection":"substitutions","dateModified":"2020-10-29T21:14:55Z","datePublished":"2020-06-13T21:38:57+01:00","headline":"Serialize a context object to json in pypyr task-runner.","image":[{"@type":"ImageObject","url":"https://pypyr.io/images/1x1/pypyr-taskrunner-yaml-pipeline-automation-1200x1200.52764d3c6f40232b3cdc33f5b8fbaeadad56cc310c8dd5588d30828296b5290d.png","height":1200,"width":1200},{"@type":"ImageObject","url":"https://pypyr.io/images/4x3/pypyr-taskrunner-yaml-pipeline-automation-1200x900.e8e70443377aeb11c190835e8d2ed0c844d31a82a0c2e8a744a9999cd03e0de9.png","height":900,"width":1200},{"@type":"ImageObject","url":"https://pypyr.io/images/16x9/pypyr-taskrunner-yaml-pipeline-automation-1920x1080.cc9ae11626c8312e087058adb13bfff702162ce39c355065170c1b87850f3034.png","height":1080,"width":1920}],"inLanguage":"en","keywords":["json,","serialize,","convert"],"mainEntityOfPage":{"@type":"WebPage","@id":"https://pypyr.io/docs/substitutions/jsonify/"},"publisher":{"@id":"https://pypyr.io/#organization"},"url":"https://pypyr.io/docs/substitutions/jsonify/","wordCount":300}]}</script>
+<script type=application/ld+json>{"@context":"https://schema.org","@graph":[{"@id":"https://pypyr.io/#organization","@type":"Organization","name":"pypyr","url":"https://pypyr.io/","description":"The pypyr project is a free open-source task-runner cli \u0026 python api for automation pipelines.","logo":{"@type":"ImageObject","url":"https://pypyr.io/images/pypyr-taskrunner-logo-square.63875e43ff40d8ae40e93a6043b4328b962f54f52974aaa27cedec52220de665.svg","height":112,"width":112},"sameAs":["https://github.com/pypyr/","https://twitter.com/pypyrpipes/","https://pypi.org/user/pypyr/","https://hub.docker.com/u/pypyr/","https://en.gravatar.com/pypyr/"]},{"@type":"TechArticle","author":{"@type":"Person","name":"pypyr contributor"},"articleSection":"substitutions","dateModified":"2021-10-05T14:41:15+01:00","datePublished":"2020-06-13T21:38:57+01:00","headline":"Serialize a context object to json in pypyr task-runner.","image":[{"@type":"ImageObject","url":"https://pypyr.io/images/1x1/pypyr-taskrunner-yaml-pipeline-automation-1200x1200.52764d3c6f40232b3cdc33f5b8fbaeadad56cc310c8dd5588d30828296b5290d.png","height":1200,"width":1200},{"@type":"ImageObject","url":"https://pypyr.io/images/4x3/pypyr-taskrunner-yaml-pipeline-automation-1200x900.e8e70443377aeb11c190835e8d2ed0c844d31a82a0c2e8a744a9999cd03e0de9.png","height":900,"width":1200},{"@type":"ImageObject","url":"https://pypyr.io/images/16x9/pypyr-taskrunner-yaml-pipeline-automation-1920x1080.cc9ae11626c8312e087058adb13bfff702162ce39c355065170c1b87850f3034.png","height":1080,"width":1920}],"inLanguage":"en","keywords":["json,","serialize,","convert"],"mainEntityOfPage":{"@type":"WebPage","@id":"https://pypyr.io/docs/substitutions/jsonify/"},"publisher":{"@id":"https://pypyr.io/#organization"},"url":"https://pypyr.io/docs/substitutions/jsonify/","wordCount":300}]}</script>
 <link rel=apple-touch-icon sizes=180x180 href=/favicons/apple-touch-icon.925deabb48d91a80924b5d04ff56d2b8f42ba1d1e1438cb7d8948cce1138208c.png>
 <link rel=icon type=image/png sizes=32x32 href=/favicons/favicon-32x32.b869433d27c4679a5fbce03a8489268a539cbc781259bff14618ae2f018334e6.png>
 <link rel=icon type=image/png sizes=16x16 href=/favicons/favicon-16x16.8bcd9f870e0a86445e0505ce6e816b76a40b08a06e2dcd1ec1f90c395ecbeaf6.png>
@@ -209,6 +209,12 @@
 <a href=/docs/steps/>overview</a>
 </li>
 <li>
+<a href=/docs/steps/add/>add</a>
+</li>
+<li>
+<a href=/docs/steps/append/>append</a>
+</li>
+<li>
 <a href=/docs/steps/assert/>assert</a>
 </li>
 <li>
@@ -303,6 +309,9 @@
 </li>
 <li>
 <a href=/docs/steps/safeshell/>safeshell</a>
+</li>
+<li>
+<a href=/docs/steps/set/>set</a>
 </li>
 <li>
 <a href=/docs/steps/shell/>shell</a>
@@ -532,9 +541,9 @@
 <article>
 <h1 id=jsonify>jsonify <a href=#jsonify class=headline-anchor aria-label=anchor><svg class="permalink"><title>permalink</title><use href="https://pypyr.io/icons/external-link.054f8ebb57944b2bc52ea4f0ecd16197.svg#external-link"/></svg></a></h1>
 <h2 id=convert-object-to-json-string>convert object to json string <a href=#convert-object-to-json-string class=headline-anchor aria-label=anchor><svg class="permalink"><title>permalink</title><use href="https://pypyr.io/icons/external-link.054f8ebb57944b2bc52ea4f0ecd16197.svg#external-link"/></svg></a></h2><p>Use <code>jsonify</code> to serialize a pypyr context object to a json string.</p>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-yaml data-lang=yaml>- <span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>pypyr.steps.contextsetf</span><span class=w>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-yaml data-lang=yaml>- <span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>pypyr.steps.set</span><span class=w>
 </span><span class=w>  </span><span class=nt>in</span><span class=p>:</span><span class=w>
-</span><span class=w>    </span><span class=nt>contextSetf</span><span class=p>:</span><span class=w>
+</span><span class=w>    </span><span class=nt>set</span><span class=p>:</span><span class=w>
 </span><span class=w>        </span><span class=nt>myJsonDict</span><span class=p>:</span><span class=w> </span>!<span class=l>jsonify</span><span class=w>
 </span><span class=w>            </span><span class=nt>k1</span><span class=p>:</span><span class=w> </span><span class=l>v1</span><span class=w>
 </span><span class=w>            </span><span class=nt>k2</span><span class=p>:</span><span class=w> </span><span class=m>123</span><span class=w>
@@ -577,13 +586,13 @@ equally well if you manipulate context directly via the api.</p>
 <a href=https://pypyr.io/docs/substitutions/format-string/>substitutions</a>, including
 <a href=/docs/substitutions/py-strings/>py strings for inline python</a> and
 <a href=/docs/substitutions/sic-strings/>sic strings to avoid processing curly braces</a>.</p>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-yaml data-lang=yaml>- <span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>pypyr.steps.contextsetf</span><span class=w>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-yaml data-lang=yaml>- <span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>pypyr.steps.set</span><span class=w>
 </span><span class=w>  </span><span class=nt>comment</span><span class=p>:</span><span class=w> </span><span class=l>combine jsonify with other formatting expressions</span><span class=w>
 </span><span class=w>  </span><span class=nt>in</span><span class=p>:</span><span class=w>
 </span><span class=w>    </span><span class=nt>a_string</span><span class=p>:</span><span class=w> </span><span class=l>hello there</span><span class=w>
 </span><span class=w>    </span><span class=nt>replace_me</span><span class=p>:</span><span class=w> </span><span class=m>123</span><span class=w>
 </span><span class=w>    
-</span><span class=w>    </span><span class=nt>contextSetf</span><span class=p>:</span><span class=w>
+</span><span class=w>    </span><span class=nt>set</span><span class=p>:</span><span class=w>
 </span><span class=w>      </span><span class=nt>arb_payload</span><span class=p>:</span><span class=w> </span>!<span class=l>jsonify</span><span class=w>
 </span><span class=w>        </span><span class=nt>k1</span><span class=p>:</span><span class=w> </span><span class=l>value {a_string}</span><span class=w>
 </span><span class=w>        </span><span class=nt>k2</span><span class=p>:</span><span class=w> </span>!<span class=l>py hex(255)</span><span class=w>
@@ -610,13 +619,13 @@ replacement token expression, use the <code>ff</code>
 <a href=https://pypyr.io/docs/substitutions/format-string/#explicitly-set-flat>flat format directive</a>
 to prevent pypyr from interpreting the json string&rsquo;s {curly braces} as pypyr formatting
 expressions:</p>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-yaml data-lang=yaml>- <span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>pypyr.steps.contextsetf</span><span class=w>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-yaml data-lang=yaml>- <span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>pypyr.steps.set</span><span class=w>
 </span><span class=w>  </span><span class=nt>comment</span><span class=p>:</span><span class=w> </span><span class=l>combine jsonify with other formatting expressions</span><span class=w>
 </span><span class=w>  </span><span class=nt>in</span><span class=p>:</span><span class=w>
 </span><span class=w>    </span><span class=nt>a_string</span><span class=p>:</span><span class=w> </span><span class=l>hello there</span><span class=w>
 </span><span class=w>    </span><span class=nt>replace_me</span><span class=p>:</span><span class=w> </span><span class=m>123</span><span class=w>
 </span><span class=w>    
-</span><span class=w>    </span><span class=nt>contextSetf</span><span class=p>:</span><span class=w>
+</span><span class=w>    </span><span class=nt>set</span><span class=p>:</span><span class=w>
 </span><span class=w>      </span><span class=nt>arb_payload</span><span class=p>:</span><span class=w> </span>!<span class=l>jsonify</span><span class=w>
 </span><span class=w>        </span><span class=nt>k1</span><span class=p>:</span><span class=w> </span><span class=l>value {a_string}</span><span class=w>
 </span><span class=w>        </span><span class=nt>k2</span><span class=p>:</span><span class=w> </span>!<span class=l>py hex(255)</span><span class=w>
@@ -660,7 +669,7 @@ expressions:</p>
 </ul>
 </aside>
 <div class="page-git-info elevation-02">
-<small class=small-block>last updated on <time datetime=2020-10-29T21:14:55Z>2020-10-29 21:14</time>.</small>
+<small class=small-block>last updated on <time datetime=2021-10-05T14:41:15+01:00>2021-10-05 14:41</time>.</small>
 </div>
 </div>
 <footer class="footer elevation-01">

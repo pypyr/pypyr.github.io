@@ -23,7 +23,7 @@
 <meta property="og:url" content="https://pypyr.io/docs/substitutions/format-string/">
 <meta name=twitter:card content="summary_large_image">
 <meta name=twitter:site content="@pypyrpipes">
-<script type=application/ld+json>{"@context":"https://schema.org","@graph":[{"@id":"https://pypyr.io/#organization","@type":"Organization","name":"pypyr","url":"https://pypyr.io/","description":"The pypyr project is a free open-source task-runner cli \u0026 python api for automation pipelines.","logo":{"@type":"ImageObject","url":"https://pypyr.io/images/pypyr-taskrunner-logo-square.63875e43ff40d8ae40e93a6043b4328b962f54f52974aaa27cedec52220de665.svg","height":112,"width":112},"sameAs":["https://github.com/pypyr/","https://twitter.com/pypyrpipes/","https://pypi.org/user/pypyr/","https://hub.docker.com/u/pypyr/","https://en.gravatar.com/pypyr/"]},{"@type":"TechArticle","author":{"@type":"Person","name":"pypyr contributor"},"articleSection":"substitutions","dateModified":"2020-10-28T21:01:13Z","datePublished":"2020-06-13T21:38:57+01:00","headline":"Format string interpolation expressions in the pypyr task-runner.","image":[{"@type":"ImageObject","url":"https://pypyr.io/images/1x1/pypyr-taskrunner-yaml-pipeline-automation-1200x1200.52764d3c6f40232b3cdc33f5b8fbaeadad56cc310c8dd5588d30828296b5290d.png","height":1200,"width":1200},{"@type":"ImageObject","url":"https://pypyr.io/images/4x3/pypyr-taskrunner-yaml-pipeline-automation-1200x900.e8e70443377aeb11c190835e8d2ed0c844d31a82a0c2e8a744a9999cd03e0de9.png","height":900,"width":1200},{"@type":"ImageObject","url":"https://pypyr.io/images/16x9/pypyr-taskrunner-yaml-pipeline-automation-1920x1080.cc9ae11626c8312e087058adb13bfff702162ce39c355065170c1b87850f3034.png","height":1080,"width":1920}],"inLanguage":"en","keywords":["token","replacement,","string","substitutions"],"mainEntityOfPage":{"@type":"WebPage","@id":"https://pypyr.io/docs/substitutions/format-string/"},"publisher":{"@id":"https://pypyr.io/#organization"},"url":"https://pypyr.io/docs/substitutions/format-string/","wordCount":1387}]}</script>
+<script type=application/ld+json>{"@context":"https://schema.org","@graph":[{"@id":"https://pypyr.io/#organization","@type":"Organization","name":"pypyr","url":"https://pypyr.io/","description":"The pypyr project is a free open-source task-runner cli \u0026 python api for automation pipelines.","logo":{"@type":"ImageObject","url":"https://pypyr.io/images/pypyr-taskrunner-logo-square.63875e43ff40d8ae40e93a6043b4328b962f54f52974aaa27cedec52220de665.svg","height":112,"width":112},"sameAs":["https://github.com/pypyr/","https://twitter.com/pypyrpipes/","https://pypi.org/user/pypyr/","https://hub.docker.com/u/pypyr/","https://en.gravatar.com/pypyr/"]},{"@type":"TechArticle","author":{"@type":"Person","name":"pypyr contributor"},"articleSection":"substitutions","dateModified":"2021-10-05T14:41:15+01:00","datePublished":"2020-06-13T21:38:57+01:00","headline":"Format string interpolation expressions in the pypyr task-runner.","image":[{"@type":"ImageObject","url":"https://pypyr.io/images/1x1/pypyr-taskrunner-yaml-pipeline-automation-1200x1200.52764d3c6f40232b3cdc33f5b8fbaeadad56cc310c8dd5588d30828296b5290d.png","height":1200,"width":1200},{"@type":"ImageObject","url":"https://pypyr.io/images/4x3/pypyr-taskrunner-yaml-pipeline-automation-1200x900.e8e70443377aeb11c190835e8d2ed0c844d31a82a0c2e8a744a9999cd03e0de9.png","height":900,"width":1200},{"@type":"ImageObject","url":"https://pypyr.io/images/16x9/pypyr-taskrunner-yaml-pipeline-automation-1920x1080.cc9ae11626c8312e087058adb13bfff702162ce39c355065170c1b87850f3034.png","height":1080,"width":1920}],"inLanguage":"en","keywords":["token","replacement,","string","substitutions"],"mainEntityOfPage":{"@type":"WebPage","@id":"https://pypyr.io/docs/substitutions/format-string/"},"publisher":{"@id":"https://pypyr.io/#organization"},"url":"https://pypyr.io/docs/substitutions/format-string/","wordCount":1388}]}</script>
 <link rel=apple-touch-icon sizes=180x180 href=/favicons/apple-touch-icon.925deabb48d91a80924b5d04ff56d2b8f42ba1d1e1438cb7d8948cce1138208c.png>
 <link rel=icon type=image/png sizes=32x32 href=/favicons/favicon-32x32.b869433d27c4679a5fbce03a8489268a539cbc781259bff14618ae2f018334e6.png>
 <link rel=icon type=image/png sizes=16x16 href=/favicons/favicon-16x16.8bcd9f870e0a86445e0505ce6e816b76a40b08a06e2dcd1ec1f90c395ecbeaf6.png>
@@ -209,6 +209,12 @@
 <a href=/docs/steps/>overview</a>
 </li>
 <li>
+<a href=/docs/steps/add/>add</a>
+</li>
+<li>
+<a href=/docs/steps/append/>append</a>
+</li>
+<li>
 <a href=/docs/steps/assert/>assert</a>
 </li>
 <li>
@@ -303,6 +309,9 @@
 </li>
 <li>
 <a href=/docs/steps/safeshell/>safeshell</a>
+</li>
+<li>
+<a href=/docs/steps/set/>set</a>
 </li>
 <li>
 <a href=/docs/steps/shell/>shell</a>
@@ -540,7 +549,7 @@
 <li><a href=#do-not-recurse-iterable-objects>do not recurse iterable objects</a></li>
 </ol>
 </li>
-<li><a href=#working-with-contextsetf>working with contextsetf</a></li>
+<li><a href=#assign-variables-with-set>assign variables with set</a></li>
 <li><a href=#escape-sequences>escape sequences</a></li>
 <li><a href=#interpolate-complex-types>interpolate complex types</a></li>
 <li><a href=#format-specification-mini-language>format specification mini language</a></li>
@@ -751,16 +760,16 @@ recursively by default.</p>
 </span><span class=w>      </span>- <span class=s1>&#39;{k2}&#39;</span><span class=w>
 </span><span class=w>      </span>- <span class=l>two</span><span class=w>
 </span></code></pre></div>
-<h2 id=working-with-contextsetf>working with contextsetf <a href=#working-with-contextsetf class=headline-anchor aria-label=anchor><svg class="permalink"><title>permalink</title><use href="https://pypyr.io/icons/external-link.054f8ebb57944b2bc52ea4f0ecd16197.svg#external-link"/></svg></a></h2><p>When you use the <a href=https://pypyr.io/docs/steps/contextsetf/>contextsetf step</a> pypyr
+<h2 id=assign-variables-with-set>assign variables with set <a href=#assign-variables-with-set class=headline-anchor aria-label=anchor><svg class="permalink"><title>permalink</title><use href="https://pypyr.io/icons/external-link.054f8ebb57944b2bc52ea4f0ecd16197.svg#external-link"/></svg></a></h2><p>When you use the <a href=https://pypyr.io/docs/steps/set/>set step</a> pypyr
 evaluates each assignment in order from the top down. Each assignment is
 atomic.</p>
 <p>This might look like a recursive format, but it isn&rsquo;t - it&rsquo;s just that each
 line evaluates individually before pypyr moves on to the next.</p>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-yaml data-lang=yaml>- <span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>pypyr.steps.contextsetf</span><span class=w>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-yaml data-lang=yaml>- <span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>pypyr.steps.set</span><span class=w>
 </span><span class=w>  </span><span class=nt>comment</span><span class=p>:</span><span class=w> </span><span class=l>each assignment evaluates atomically,</span><span class=w>
 </span><span class=w>           </span><span class=l>in order from the top down</span><span class=w>
 </span><span class=w>  </span><span class=nt>in</span><span class=p>:</span><span class=w>
-</span><span class=w>    </span><span class=nt>contextSetf</span><span class=p>:</span><span class=w>
+</span><span class=w>    </span><span class=nt>set</span><span class=p>:</span><span class=w>
 </span><span class=w>      </span><span class=nt>k3</span><span class=p>:</span><span class=w> </span><span class=s1>&#39;the end&#39;</span><span class=w>
 </span><span class=w>      </span><span class=nt>k2</span><span class=p>:</span><span class=w> </span><span class=s1>&#39;2 {k3}&#39;</span><span class=w> </span><span class=c># == &#39;2 the end&#39;</span><span class=w>
 </span><span class=w>      </span><span class=nt>k1</span><span class=p>:</span><span class=w> </span><span class=s1>&#39;1 {k2}&#39;</span><span class=w> </span><span class=c># == &#39;1 2 the end&#39;</span><span class=w>
@@ -809,9 +818,9 @@ under <code>key1</code>.</p>
 </span></code></pre></div><p>You can use the entirety of <code>key1</code> in any other complex nested configuration
 context values you assemble in pypyr, so you effectively compose new
 configuration context structures from existing building blocks.</p>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-yaml data-lang=yaml>- <span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>pypyr.steps.contextsetf</span><span class=w>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-yaml data-lang=yaml>- <span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>pypyr.steps.set</span><span class=w>
 </span><span class=w>  </span><span class=nt>in</span><span class=p>:</span><span class=w>
-</span><span class=w>    </span><span class=nt>contextSetf</span><span class=p>:</span><span class=w> 
+</span><span class=w>    </span><span class=nt>set</span><span class=p>:</span><span class=w> 
 </span><span class=w>      </span><span class=nt>newkey</span><span class=p>:</span><span class=w>
 </span><span class=w>        </span><span class=nt>nestedkey1</span><span class=p>:</span><span class=w> </span><span class=l>nested value 1</span><span class=w>
 </span><span class=w>        </span><span class=nt>nestedkey2</span><span class=p>:</span><span class=w>
@@ -926,7 +935,7 @@ rf/ff combined with other mini-format syntax
 </ul>
 </aside>
 <div class="page-git-info elevation-02">
-<small class=small-block>last updated on <time datetime=2020-10-28T21:01:13Z>2020-10-28 21:01</time>.</small>
+<small class=small-block>last updated on <time datetime=2021-10-05T14:41:15+01:00>2021-10-05 14:41</time>.</small>
 </div>
 </div>
 <footer class="footer elevation-01">

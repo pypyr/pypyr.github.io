@@ -23,7 +23,7 @@
 <meta property="og:url" content="https://pypyr.io/docs/steps/default/">
 <meta name=twitter:card content="summary_large_image">
 <meta name=twitter:site content="@pypyrpipes">
-<script type=application/ld+json>{"@context":"https://schema.org","@graph":[{"@id":"https://pypyr.io/#organization","@type":"Organization","name":"pypyr","url":"https://pypyr.io/","description":"The pypyr project is a free open-source task-runner cli \u0026 python api for automation pipelines.","logo":{"@type":"ImageObject","url":"https://pypyr.io/images/pypyr-taskrunner-logo-square.63875e43ff40d8ae40e93a6043b4328b962f54f52974aaa27cedec52220de665.svg","height":112,"width":112},"sameAs":["https://github.com/pypyr/","https://twitter.com/pypyrpipes/","https://pypi.org/user/pypyr/","https://hub.docker.com/u/pypyr/","https://en.gravatar.com/pypyr/"]},{"@type":"TechArticle","author":{"@type":"Person","name":"pypyr contributor"},"articleSection":"steps","dateModified":"2020-08-17T19:17:06+01:00","datePublished":"2020-07-01T12:22:55+01:00","headline":"Initialize the task-runner pipeline context with default values","image":[{"@type":"ImageObject","url":"https://pypyr.io/images/1x1/pypyr-taskrunner-yaml-pipeline-automation-1200x1200.52764d3c6f40232b3cdc33f5b8fbaeadad56cc310c8dd5588d30828296b5290d.png","height":1200,"width":1200},{"@type":"ImageObject","url":"https://pypyr.io/images/4x3/pypyr-taskrunner-yaml-pipeline-automation-1200x900.e8e70443377aeb11c190835e8d2ed0c844d31a82a0c2e8a744a9999cd03e0de9.png","height":900,"width":1200},{"@type":"ImageObject","url":"https://pypyr.io/images/16x9/pypyr-taskrunner-yaml-pipeline-automation-1920x1080.cc9ae11626c8312e087058adb13bfff702162ce39c355065170c1b87850f3034.png","height":1080,"width":1920}],"inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https://pypyr.io/docs/steps/default/"},"publisher":{"@id":"https://pypyr.io/#organization"},"url":"https://pypyr.io/docs/steps/default/","wordCount":193}]}</script>
+<script type=application/ld+json>{"@context":"https://schema.org","@graph":[{"@id":"https://pypyr.io/#organization","@type":"Organization","name":"pypyr","url":"https://pypyr.io/","description":"The pypyr project is a free open-source task-runner cli \u0026 python api for automation pipelines.","logo":{"@type":"ImageObject","url":"https://pypyr.io/images/pypyr-taskrunner-logo-square.63875e43ff40d8ae40e93a6043b4328b962f54f52974aaa27cedec52220de665.svg","height":112,"width":112},"sameAs":["https://github.com/pypyr/","https://twitter.com/pypyrpipes/","https://pypi.org/user/pypyr/","https://hub.docker.com/u/pypyr/","https://en.gravatar.com/pypyr/"]},{"@type":"TechArticle","author":{"@type":"Person","name":"pypyr contributor"},"articleSection":"steps","dateModified":"2021-10-05T14:41:15+01:00","datePublished":"2020-07-01T12:22:55+01:00","headline":"Initialize the task-runner pipeline context with default values","image":[{"@type":"ImageObject","url":"https://pypyr.io/images/1x1/pypyr-taskrunner-yaml-pipeline-automation-1200x1200.52764d3c6f40232b3cdc33f5b8fbaeadad56cc310c8dd5588d30828296b5290d.png","height":1200,"width":1200},{"@type":"ImageObject","url":"https://pypyr.io/images/4x3/pypyr-taskrunner-yaml-pipeline-automation-1200x900.e8e70443377aeb11c190835e8d2ed0c844d31a82a0c2e8a744a9999cd03e0de9.png","height":900,"width":1200},{"@type":"ImageObject","url":"https://pypyr.io/images/16x9/pypyr-taskrunner-yaml-pipeline-automation-1920x1080.cc9ae11626c8312e087058adb13bfff702162ce39c355065170c1b87850f3034.png","height":1080,"width":1920}],"inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https://pypyr.io/docs/steps/default/"},"publisher":{"@id":"https://pypyr.io/#organization"},"url":"https://pypyr.io/docs/steps/default/","wordCount":195}]}</script>
 <link rel=apple-touch-icon sizes=180x180 href=/favicons/apple-touch-icon.925deabb48d91a80924b5d04ff56d2b8f42ba1d1e1438cb7d8948cce1138208c.png>
 <link rel=icon type=image/png sizes=32x32 href=/favicons/favicon-32x32.b869433d27c4679a5fbce03a8489268a539cbc781259bff14618ae2f018334e6.png>
 <link rel=icon type=image/png sizes=16x16 href=/favicons/favicon-16x16.8bcd9f870e0a86445e0505ce6e816b76a40b08a06e2dcd1ec1f90c395ecbeaf6.png>
@@ -209,6 +209,12 @@
 <a href=/docs/steps/>overview</a>
 </li>
 <li>
+<a href=/docs/steps/add/>add</a>
+</li>
+<li>
+<a href=/docs/steps/append/>append</a>
+</li>
+<li>
 <a href=/docs/steps/assert/>assert</a>
 </li>
 <li>
@@ -303,6 +309,9 @@
 </li>
 <li>
 <a href=/docs/steps/safeshell/>safeshell</a>
+</li>
+<li>
+<a href=/docs/steps/set/>set</a>
 </li>
 <li>
 <a href=/docs/steps/shell/>shell</a>
@@ -538,9 +547,10 @@ from the cli.</p>
 <p>This step sets the contents of the context key <code>defaults</code> into context
 where keys in <code>defaults</code> do not exist in context already. The contents
 of the <code>defaults</code> key must be a dictionary.</p>
-<p>By comparison, the <code>in</code> step decorator, and the steps <a href=https://pypyr.io/docs/steps/contextcopy/>contextcopy</a>,
-<a href=https://pypyr.io/docs/steps/contextsetf/>contextsetf</a> and <a href=https://pypyr.io/docs/steps/contextmerge/>contextmerge</a>
-overwrite values even if they are in context already.</p>
+<p>By comparison, the <code>in</code> step decorator, and also the steps
+<a href=https://pypyr.io/docs/steps/contextcopy/>contextcopy</a>, <a href=https://pypyr.io/docs/steps/set/>set</a> and
+<a href=https://pypyr.io/docs/steps/contextmerge/>contextmerge</a> overwrite values even if they are in
+context already.</p>
 <p>The recursive if-not-exists-then-set check happens for dictionaries, but
 not for items in Lists, Sets and Tuples. You can set default values of
 type List, Set or Tuple if their keys don&rsquo;t exist in context already,
@@ -553,10 +563,13 @@ applies to keys and values.</p>
 </span><span class=w>    </span><span class=nt>key2.1</span><span class=p>:</span><span class=w> </span><span class=l>value2.1</span><span class=w>
 </span><span class=w></span><span class=nt>key3</span><span class=p>:</span><span class=w> </span><span class=l>None</span><span class=w>
 </span></code></pre></div><p>And <code>defaults</code> input like this:</p>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-yaml data-lang=yaml><span class=nt>key1</span><span class=p>:</span><span class=w> </span><span class=l>updated value here won&#39;t overwrite since it already exists</span><span class=w>
-</span><span class=w></span><span class=nt>key2</span><span class=p>:</span><span class=w>
-</span><span class=w>    </span><span class=nt>key2.2</span><span class=p>:</span><span class=w> </span><span class=l>value2.2</span><span class=w>
-</span><span class=w></span><span class=nt>key3</span><span class=p>:</span><span class=w> </span><span class=l>key 3 exists so I won&#39;t overwrite</span><span class=w>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-yaml data-lang=yaml>- <span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>pypyr.steps.default</span><span class=w>
+</span><span class=w>  </span><span class=nt>in</span><span class=p>:</span><span class=w>
+</span><span class=w>    </span><span class=nt>defaults</span><span class=p>:</span><span class=w>
+</span><span class=w>      </span><span class=nt>key1</span><span class=p>:</span><span class=w> </span><span class=l>updated value here won&#39;t overwrite since it already exists</span><span class=w>
+</span><span class=w>      </span><span class=nt>key2</span><span class=p>:</span><span class=w>
+</span><span class=w>          </span><span class=nt>key2.2</span><span class=p>:</span><span class=w> </span><span class=l>value2.2</span><span class=w>
+</span><span class=w>      </span><span class=nt>key3</span><span class=p>:</span><span class=w> </span><span class=l>key 3 exists so I won&#39;t overwrite</span><span class=w>
 </span></code></pre></div><p>Will result in context:</p>
 <div class=highlight><pre tabindex=0 class=chroma><code class=language-yaml data-lang=yaml><span class=nt>key1</span><span class=p>:</span><span class=w> </span><span class=l>value1</span><span class=w>
 </span><span class=w></span><span class=nt>key2</span><span class=p>:</span><span class=w>
@@ -568,11 +581,11 @@ applies to keys and values.</p>
 <section class="see-also elevation-02">
 <h2>see also</h2>
 <ul>
+<li><a href=/docs/steps/add/>pypyr.steps.add</a></li>
+<li><a href=/docs/steps/append/>pypyr.steps.append</a></li>
+<li><a href=/docs/steps/set/>pypyr.steps.set</a></li>
 <li><a href=/docs/steps/contextcopy/>pypyr.steps.contextcopy</a></li>
 <li><a href=/docs/steps/contextsetf/>pypyr.steps.contextsetf</a></li>
-<li><a href=/docs/steps/contextmerge/>pypyr.steps.contextmerge</a></li>
-<li><a href=/docs/steps/contextclearall/>pypyr.steps.contextclearall</a></li>
-<li><a href=/docs/steps/contextclear/>pypyr.steps.contextclear</a></li>
 </ul>
 </section>
 </main>
@@ -599,7 +612,7 @@ applies to keys and values.</p>
 </ul>
 </aside>
 <div class="page-git-info elevation-02">
-<small class=small-block>last updated on <time datetime=2020-08-17T19:17:06+01:00>2020-08-17 19:17</time>.</small>
+<small class=small-block>last updated on <time datetime=2021-10-05T14:41:15+01:00>2021-10-05 14:41</time>.</small>
 </div>
 </div>
 <footer class="footer elevation-01">

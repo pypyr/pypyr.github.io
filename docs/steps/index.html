@@ -209,6 +209,12 @@
 <a href=/docs/steps/>overview</a>
 </li>
 <li>
+<a href=/docs/steps/add/>add</a>
+</li>
+<li>
+<a href=/docs/steps/append/>append</a>
+</li>
+<li>
 <a href=/docs/steps/assert/>assert</a>
 </li>
 <li>
@@ -303,6 +309,9 @@
 </li>
 <li>
 <a href=/docs/steps/safeshell/>safeshell</a>
+</li>
+<li>
+<a href=/docs/steps/set/>set</a>
 </li>
 <li>
 <a href=/docs/steps/shell/>shell</a>
@@ -525,187 +534,202 @@ Making your own <a href=https://pypyr.io/docs/api/step/>custom step</a> is super
 <th>input context</th>
 </tr>
 <tr property="itemListElement" typeof="ListItem">
-<td><a href=https://pypyr.io/docs/steps/assert/ property="url">assert</a><meta property="position" content="1"></td>
+<td><a href=https://pypyr.io/docs/steps/add/ property="url">add</a><meta property="position" content="1"></td>
+<td>Add item to a set.</td>
+<td><code>add</code> (dict)</td>
+</tr>
+<tr property="itemListElement" typeof="ListItem">
+<td><a href=https://pypyr.io/docs/steps/append/ property="url">append</a><meta property="position" content="2"></td>
+<td>Append item to a list.</td>
+<td><code>append</code> (dict)</td>
+</tr>
+<tr property="itemListElement" typeof="ListItem">
+<td><a href=https://pypyr.io/docs/steps/assert/ property="url">assert</a><meta property="position" content="3"></td>
 <td>Stop pipeline if item in context is not as expected.</td>
 <td><code>assert</code> (dict)</td>
 </tr>
 <tr property="itemListElement" typeof="ListItem">
-<td><a href=https://pypyr.io/docs/steps/call/ property="url">call</a><meta property="position" content="2"></td>
+<td><a href=https://pypyr.io/docs/steps/call/ property="url">call</a><meta property="position" content="4"></td>
 <td>Call another step-group. Continue from the same place after the called groups complete.</td>
 <td><code>call</code> (dict | str)</td>
 </tr>
 <tr property="itemListElement" typeof="ListItem">
-<td><a href=https://pypyr.io/docs/steps/cmd/ property="url">cmd</a><meta property="position" content="3"></td>
+<td><a href=https://pypyr.io/docs/steps/cmd/ property="url">cmd</a><meta property="position" content="5"></td>
 <td>Run any external program, command, script.</td>
 <td><code>cmd</code> (dict | str)</td>
 </tr>
 <tr property="itemListElement" typeof="ListItem">
-<td><a href=https://pypyr.io/docs/steps/contextclear/ property="url">contextclear</a><meta property="position" content="4"></td>
+<td><a href=https://pypyr.io/docs/steps/contextclear/ property="url">contextclear</a><meta property="position" content="6"></td>
 <td>Remove specified items from context.</td>
 <td><code>contextClear</code> (list)</td>
 </tr>
 <tr property="itemListElement" typeof="ListItem">
-<td><a href=https://pypyr.io/docs/steps/contextclearall/ property="url">contextclearall</a><meta property="position" content="5"></td>
+<td><a href=https://pypyr.io/docs/steps/contextclearall/ property="url">contextclearall</a><meta property="position" content="7"></td>
 <td>Wipe the entire context.</td>
 <td></td>
 </tr>
 <tr property="itemListElement" typeof="ListItem">
-<td><a href=https://pypyr.io/docs/steps/contextcopy/ property="url">contextcopy</a><meta property="position" content="6"></td>
+<td><a href=https://pypyr.io/docs/steps/contextcopy/ property="url">contextcopy</a><meta property="position" content="8"></td>
 <td>Copy entire context keys.</td>
 <td><code>contextCopy</code> (dict)</td>
 </tr>
 <tr property="itemListElement" typeof="ListItem">
-<td><a href=https://pypyr.io/docs/steps/contextmerge/ property="url">contextmerge</a><meta property="position" content="7"></td>
+<td><a href=https://pypyr.io/docs/steps/contextmerge/ property="url">contextmerge</a><meta property="position" content="9"></td>
 <td>Merges values into context, preserving the existing context hierarchy.</td>
 <td><code>contextMerge</code> (dict)</td>
 </tr>
 <tr property="itemListElement" typeof="ListItem">
-<td><a href=https://pypyr.io/docs/steps/contextsetf/ property="url">contextsetf</a><meta property="position" content="8"></td>
-<td>Set & format context keys.</td>
+<td><a href=https://pypyr.io/docs/steps/contextsetf/ property="url">contextsetf</a><meta property="position" content="10"></td>
+<td>Old name for <code>set</code>. Use set instead.</td>
 <td><code>contextSetf</code> (dict)</td>
 </tr>
 <tr property="itemListElement" typeof="ListItem">
-<td><a href=https://pypyr.io/docs/steps/debug/ property="url">debug</a><meta property="position" content="9"></td>
+<td><a href=https://pypyr.io/docs/steps/debug/ property="url">debug</a><meta property="position" content="11"></td>
 <td>Pretty print context to output.</td>
 <td><code>debug</code> (dict)</td>
 </tr>
 <tr property="itemListElement" typeof="ListItem">
-<td><a href=https://pypyr.io/docs/steps/default/ property="url">default</a><meta property="position" content="10"></td>
+<td><a href=https://pypyr.io/docs/steps/default/ property="url">default</a><meta property="position" content="12"></td>
 <td>Set values if they do not exist already.</td>
 <td><code>defaults</code> (dict)</td>
 </tr>
 <tr property="itemListElement" typeof="ListItem">
-<td><a href=https://pypyr.io/docs/steps/echo/ property="url">echo</a><meta property="position" content="11"></td>
+<td><a href=https://pypyr.io/docs/steps/echo/ property="url">echo</a><meta property="position" content="13"></td>
 <td>Echo context value of <code>echoMe</code> to the output.</td>
 <td><code>echoMe</code> (any)</td>
 </tr>
 <tr property="itemListElement" typeof="ListItem">
-<td><a href=https://pypyr.io/docs/steps/env/ property="url">env</a><meta property="position" content="12"></td>
+<td><a href=https://pypyr.io/docs/steps/env/ property="url">env</a><meta property="position" content="14"></td>
 <td>Get, set or unset $ENVs.</td>
 <td><code>env</code> (dict)</td>
 </tr>
 <tr property="itemListElement" typeof="ListItem">
-<td><a href=https://pypyr.io/docs/steps/envget/ property="url">envget</a><meta property="position" content="13"></td>
+<td><a href=https://pypyr.io/docs/steps/envget/ property="url">envget</a><meta property="position" content="15"></td>
 <td>Get $ENVs & use a default fallback if they don&rsquo;t exist.</td>
 <td><code>envget</code> (list)</td>
 </tr>
 <tr property="itemListElement" typeof="ListItem">
-<td><a href=https://pypyr.io/docs/steps/fetchjson/ property="url">fetchjson</a><meta property="position" content="14"></td>
+<td><a href=https://pypyr.io/docs/steps/fetchjson/ property="url">fetchjson</a><meta property="position" content="16"></td>
 <td>Load json file into pypyr context.</td>
 <td><code>fetchJson</code> (dict)</td>
 </tr>
 <tr property="itemListElement" typeof="ListItem">
-<td><a href=https://pypyr.io/docs/steps/fetchyaml/ property="url">fetchyaml</a><meta property="position" content="15"></td>
+<td><a href=https://pypyr.io/docs/steps/fetchyaml/ property="url">fetchyaml</a><meta property="position" content="17"></td>
 <td>Load yaml file into pypyr context.</td>
 <td><code>fetchYaml</code> (dict)</td>
 </tr>
 <tr property="itemListElement" typeof="ListItem">
-<td><a href=https://pypyr.io/docs/steps/fileformat/ property="url">fileformat</a><meta property="position" content="16"></td>
+<td><a href=https://pypyr.io/docs/steps/fileformat/ property="url">fileformat</a><meta property="position" content="18"></td>
 <td>Find & replace substitution {tokens} in any file.</td>
 <td><code>fileFormat</code> (dict)</td>
 </tr>
 <tr property="itemListElement" typeof="ListItem">
-<td><a href=https://pypyr.io/docs/steps/fileformatjson/ property="url">fileformatjson</a><meta property="position" content="17"></td>
+<td><a href=https://pypyr.io/docs/steps/fileformatjson/ property="url">fileformatjson</a><meta property="position" content="19"></td>
 <td>Find & replace substitution {tokens} in a json file.</td>
 <td><code>fileFormatJson</code> (dict)</td>
 </tr>
 <tr property="itemListElement" typeof="ListItem">
-<td><a href=https://pypyr.io/docs/steps/fileformatyaml/ property="url">fileformatyaml</a><meta property="position" content="18"></td>
+<td><a href=https://pypyr.io/docs/steps/fileformatyaml/ property="url">fileformatyaml</a><meta property="position" content="20"></td>
 <td>Find & replace substitution {tokens} in a yaml file.</td>
 <td><code>fileFormatYaml</code> (dict)</td>
 </tr>
 <tr property="itemListElement" typeof="ListItem">
-<td><a href=https://pypyr.io/docs/steps/filereplace/ property="url">filereplace</a><meta property="position" content="19"></td>
+<td><a href=https://pypyr.io/docs/steps/filereplace/ property="url">filereplace</a><meta property="position" content="21"></td>
 <td>Find & replace any arbitrary search strings in a file.</td>
 <td><code>fileReplace</code> (dict)</td>
 </tr>
 <tr property="itemListElement" typeof="ListItem">
-<td><a href=https://pypyr.io/docs/steps/filewritejson/ property="url">filewritejson</a><meta property="position" content="20"></td>
+<td><a href=https://pypyr.io/docs/steps/filewritejson/ property="url">filewritejson</a><meta property="position" content="22"></td>
 <td>Write payload to file in json format.</td>
 <td><code>fileWriteJson</code> (dict)</td>
 </tr>
 <tr property="itemListElement" typeof="ListItem">
-<td><a href=https://pypyr.io/docs/steps/filewriteyaml/ property="url">filewriteyaml</a><meta property="position" content="21"></td>
+<td><a href=https://pypyr.io/docs/steps/filewriteyaml/ property="url">filewriteyaml</a><meta property="position" content="23"></td>
 <td>Write payload to file in yaml format.</td>
 <td><code>fileWriteYaml</code> (dict)</td>
 </tr>
 <tr property="itemListElement" typeof="ListItem">
-<td><a href=https://pypyr.io/docs/steps/glob/ property="url">glob</a><meta property="position" content="22"></td>
+<td><a href=https://pypyr.io/docs/steps/glob/ property="url">glob</a><meta property="position" content="24"></td>
 <td>Get paths from glob expression.</td>
 <td><code>glob</code> (dict)</td>
 </tr>
 <tr property="itemListElement" typeof="ListItem">
-<td><a href=https://pypyr.io/docs/steps/jsonparse/ property="url">jsonparse</a><meta property="position" content="23"></td>
+<td><a href=https://pypyr.io/docs/steps/jsonparse/ property="url">jsonparse</a><meta property="position" content="25"></td>
 <td>Parse json string into pypyr context.</td>
 <td><code>jsonParse</code> (dict)</td>
 </tr>
 <tr property="itemListElement" typeof="ListItem">
-<td><a href=https://pypyr.io/docs/steps/jump/ property="url">jump</a><meta property="position" content="24"></td>
+<td><a href=https://pypyr.io/docs/steps/jump/ property="url">jump</a><meta property="position" content="26"></td>
 <td>Jump to another step-group. The rest of the current step-group doesn&rsquo;t run.</td>
 <td><code>jump</code> (dict | str)</td>
 </tr>
 <tr property="itemListElement" typeof="ListItem">
-<td><a href=https://pypyr.io/docs/steps/now/ property="url">now</a><meta property="position" content="25"></td>
+<td><a href=https://pypyr.io/docs/steps/now/ property="url">now</a><meta property="position" content="27"></td>
 <td>Saves current local date-time to context <code>now</code>.</td>
 <td><code>nowIn</code> (str)</td>
 </tr>
 <tr property="itemListElement" typeof="ListItem">
-<td><a href=https://pypyr.io/docs/steps/nowutc/ property="url">nowutc</a><meta property="position" content="26"></td>
+<td><a href=https://pypyr.io/docs/steps/nowutc/ property="url">nowutc</a><meta property="position" content="28"></td>
 <td>Saves current utc date-time to context <code>nowUtc</code>.</td>
 <td><code>nowUtcIn</code> (str)</td>
 </tr>
 <tr property="itemListElement" typeof="ListItem">
-<td><a href=https://pypyr.io/docs/steps/pathcheck/ property="url">pathcheck</a><meta property="position" content="27"></td>
+<td><a href=https://pypyr.io/docs/steps/pathcheck/ property="url">pathcheck</a><meta property="position" content="29"></td>
 <td>Check if paths exist on filesystem.</td>
 <td><code>pathCheck</code> (list | str)</td>
 </tr>
 <tr property="itemListElement" typeof="ListItem">
-<td><a href=https://pypyr.io/docs/steps/py/ property="url">py</a><meta property="position" content="28"></td>
+<td><a href=https://pypyr.io/docs/steps/py/ property="url">py</a><meta property="position" content="30"></td>
 <td>Execute inline python code.</td>
 <td><code>py</code> or <code>pycode</code> (str)</td>
 </tr>
 <tr property="itemListElement" typeof="ListItem">
-<td><a href=https://pypyr.io/docs/steps/pyimport/ property="url">pyimport</a><meta property="position" content="29"></td>
+<td><a href=https://pypyr.io/docs/steps/pyimport/ property="url">pyimport</a><meta property="position" content="31"></td>
 <td>Use external libraries in your !py expressions.</td>
 <td><code>pyImport</code> (str)</td>
 </tr>
 <tr property="itemListElement" typeof="ListItem">
-<td><a href=https://pypyr.io/docs/steps/pype/ property="url">pype</a><meta property="position" content="30"></td>
+<td><a href=https://pypyr.io/docs/steps/pype/ property="url">pype</a><meta property="position" content="32"></td>
 <td>Call another pipeline from the current pipeline.</td>
 <td><code>pype</code> (dict)</td>
 </tr>
 <tr property="itemListElement" typeof="ListItem">
-<td><a href=https://pypyr.io/docs/steps/pypyrversion/ property="url">pypyrversion</a><meta property="position" content="31"></td>
+<td><a href=https://pypyr.io/docs/steps/pypyrversion/ property="url">pypyrversion</a><meta property="position" content="33"></td>
 <td>Write current pypyr version number to output.</td>
 <td></td>
 </tr>
 <tr property="itemListElement" typeof="ListItem">
-<td><a href=https://pypyr.io/docs/steps/safeshell/ property="url">safeshell</a><meta property="position" content="32"></td>
+<td><a href=https://pypyr.io/docs/steps/safeshell/ property="url">safeshell</a><meta property="position" content="34"></td>
 <td>Deprecated alias for <code>cmd</code></td>
 <td><code>cmd</code> (dict | str)</td>
 </tr>
 <tr property="itemListElement" typeof="ListItem">
-<td><a href=https://pypyr.io/docs/steps/shell/ property="url">shell</a><meta property="position" content="33"></td>
+<td><a href=https://pypyr.io/docs/steps/set/ property="url">set</a><meta property="position" content="35"></td>
+<td>Set & format context keys.</td>
+<td><code>set</code> (dict)</td>
+</tr>
+<tr property="itemListElement" typeof="ListItem">
+<td><a href=https://pypyr.io/docs/steps/shell/ property="url">shell</a><meta property="position" content="36"></td>
 <td>Run commands in the default shell. Use for pipes, wildcards, $ENVs, ~</td>
 <td><code>cmd</code> (dict | str)</td>
 </tr>
 <tr property="itemListElement" typeof="ListItem">
-<td><a href=https://pypyr.io/docs/steps/stop/ property="url">stop</a><meta property="position" content="34"></td>
+<td><a href=https://pypyr.io/docs/steps/stop/ property="url">stop</a><meta property="position" content="37"></td>
 <td>Stop pypyr entirely.</td>
 <td></td>
 </tr>
 <tr property="itemListElement" typeof="ListItem">
-<td><a href=https://pypyr.io/docs/steps/stoppipeline/ property="url">stoppipeline</a><meta property="position" content="35"></td>
+<td><a href=https://pypyr.io/docs/steps/stoppipeline/ property="url">stoppipeline</a><meta property="position" content="38"></td>
 <td>Stop current pipeline.</td>
 <td></td>
 </tr>
 <tr property="itemListElement" typeof="ListItem">
-<td><a href=https://pypyr.io/docs/steps/stopstepgroup/ property="url">stopstepgroup</a><meta property="position" content="36"></td>
+<td><a href=https://pypyr.io/docs/steps/stopstepgroup/ property="url">stopstepgroup</a><meta property="position" content="39"></td>
 <td>Stop current step-group.</td>
 <td></td>
 </tr>
 <tr property="itemListElement" typeof="ListItem">
-<td><a href=https://pypyr.io/docs/steps/tar/ property="url">tar</a><meta property="position" content="37"></td>
+<td><a href=https://pypyr.io/docs/steps/tar/ property="url">tar</a><meta property="position" content="40"></td>
 <td>Archive and/or extract tars with/without compression. Supports gzip, bzip2 & lzma.</td>
 <td><code>tar</code> (dict)</td>
 </tr>

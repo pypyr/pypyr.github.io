@@ -23,7 +23,7 @@
 <meta property="og:url" content="https://pypyr.io/docs/decorators/foreach/">
 <meta name=twitter:card content="summary_large_image">
 <meta name=twitter:site content="@pypyrpipes">
-<script type=application/ld+json>{"@context":"https://schema.org","@graph":[{"@id":"https://pypyr.io/#organization","@type":"Organization","name":"pypyr","url":"https://pypyr.io/","description":"The pypyr project is a free open-source task-runner cli \u0026 python api for automation pipelines.","logo":{"@type":"ImageObject","url":"https://pypyr.io/images/pypyr-taskrunner-logo-square.63875e43ff40d8ae40e93a6043b4328b962f54f52974aaa27cedec52220de665.svg","height":112,"width":112},"sameAs":["https://github.com/pypyr/","https://twitter.com/pypyrpipes/","https://pypi.org/user/pypyr/","https://hub.docker.com/u/pypyr/","https://en.gravatar.com/pypyr/"]},{"@type":"TechArticle","author":{"@type":"Person","name":"pypyr contributor"},"articleSection":"decorators","dateModified":"2020-12-26T19:34:19Z","datePublished":"2020-07-10T19:07:51+01:00","headline":"Repeat task-runner step for each item in list.","image":[{"@type":"ImageObject","url":"https://pypyr.io/images/1x1/pypyr-taskrunner-yaml-pipeline-automation-1200x1200.52764d3c6f40232b3cdc33f5b8fbaeadad56cc310c8dd5588d30828296b5290d.png","height":1200,"width":1200},{"@type":"ImageObject","url":"https://pypyr.io/images/4x3/pypyr-taskrunner-yaml-pipeline-automation-1200x900.e8e70443377aeb11c190835e8d2ed0c844d31a82a0c2e8a744a9999cd03e0de9.png","height":900,"width":1200},{"@type":"ImageObject","url":"https://pypyr.io/images/16x9/pypyr-taskrunner-yaml-pipeline-automation-1920x1080.cc9ae11626c8312e087058adb13bfff702162ce39c355065170c1b87850f3034.png","height":1080,"width":1920}],"inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https://pypyr.io/docs/decorators/foreach/"},"publisher":{"@id":"https://pypyr.io/#organization"},"url":"https://pypyr.io/docs/decorators/foreach/","wordCount":882}]}</script>
+<script type=application/ld+json>{"@context":"https://schema.org","@graph":[{"@id":"https://pypyr.io/#organization","@type":"Organization","name":"pypyr","url":"https://pypyr.io/","description":"The pypyr project is a free open-source task-runner cli \u0026 python api for automation pipelines.","logo":{"@type":"ImageObject","url":"https://pypyr.io/images/pypyr-taskrunner-logo-square.63875e43ff40d8ae40e93a6043b4328b962f54f52974aaa27cedec52220de665.svg","height":112,"width":112},"sameAs":["https://github.com/pypyr/","https://twitter.com/pypyrpipes/","https://pypi.org/user/pypyr/","https://hub.docker.com/u/pypyr/","https://en.gravatar.com/pypyr/"]},{"@type":"TechArticle","author":{"@type":"Person","name":"pypyr contributor"},"articleSection":"decorators","dateModified":"2021-10-05T14:41:15+01:00","datePublished":"2020-07-10T19:07:51+01:00","headline":"Repeat task-runner step for each item in list.","image":[{"@type":"ImageObject","url":"https://pypyr.io/images/1x1/pypyr-taskrunner-yaml-pipeline-automation-1200x1200.52764d3c6f40232b3cdc33f5b8fbaeadad56cc310c8dd5588d30828296b5290d.png","height":1200,"width":1200},{"@type":"ImageObject","url":"https://pypyr.io/images/4x3/pypyr-taskrunner-yaml-pipeline-automation-1200x900.e8e70443377aeb11c190835e8d2ed0c844d31a82a0c2e8a744a9999cd03e0de9.png","height":900,"width":1200},{"@type":"ImageObject","url":"https://pypyr.io/images/16x9/pypyr-taskrunner-yaml-pipeline-automation-1920x1080.cc9ae11626c8312e087058adb13bfff702162ce39c355065170c1b87850f3034.png","height":1080,"width":1920}],"inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https://pypyr.io/docs/decorators/foreach/"},"publisher":{"@id":"https://pypyr.io/#organization"},"url":"https://pypyr.io/docs/decorators/foreach/","wordCount":882}]}</script>
 <link rel=apple-touch-icon sizes=180x180 href=/favicons/apple-touch-icon.925deabb48d91a80924b5d04ff56d2b8f42ba1d1e1438cb7d8948cce1138208c.png>
 <link rel=icon type=image/png sizes=32x32 href=/favicons/favicon-32x32.b869433d27c4679a5fbce03a8489268a539cbc781259bff14618ae2f018334e6.png>
 <link rel=icon type=image/png sizes=16x16 href=/favicons/favicon-16x16.8bcd9f870e0a86445e0505ce6e816b76a40b08a06e2dcd1ec1f90c395ecbeaf6.png>
@@ -209,6 +209,12 @@
 <a href=/docs/steps/>overview</a>
 </li>
 <li>
+<a href=/docs/steps/add/>add</a>
+</li>
+<li>
+<a href=/docs/steps/append/>append</a>
+</li>
+<li>
 <a href=/docs/steps/assert/>assert</a>
 </li>
 <li>
@@ -303,6 +309,9 @@
 </li>
 <li>
 <a href=/docs/steps/safeshell/>safeshell</a>
+</li>
+<li>
+<a href=/docs/steps/set/>set</a>
 </li>
 <li>
 <a href=/docs/steps/shell/>shell</a>
@@ -587,9 +596,9 @@ this time it&#39;s: ham
 types. Depending on your input to <code>foreach</code>, you can either iterate only on the
 keys, or on the keys and values together:</p>
 <div class=highlight><pre tabindex=0 class=chroma><code class=language-yaml data-lang=yaml><span class=nt>steps</span><span class=p>:</span><span class=w>
-</span><span class=w>  </span>- <span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>pypyr.steps.contextsetf</span><span class=w>
+</span><span class=w>  </span>- <span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>pypyr.steps.set</span><span class=w>
 </span><span class=w>    </span><span class=nt>in</span><span class=p>:</span><span class=w>
-</span><span class=w>      </span><span class=nt>contextSetf</span><span class=p>:</span><span class=w>
+</span><span class=w>      </span><span class=nt>set</span><span class=p>:</span><span class=w>
 </span><span class=w>        </span><span class=nt>my_mapping</span><span class=p>:</span><span class=w>
 </span><span class=w>          </span><span class=nt>a</span><span class=p>:</span><span class=w> </span><span class=l>b</span><span class=w>
 </span><span class=w>          </span><span class=nt>c</span><span class=p>:</span><span class=w> </span><span class=l>d</span><span class=w>
@@ -666,9 +675,9 @@ execute on the next iteration.</p>
 </span><span class=w>  </span>- <span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>pypyr.steps.echo</span><span class=w>
 </span><span class=w>    </span><span class=nt>in</span><span class=p>:</span><span class=w>
 </span><span class=w>      </span><span class=nt>echoMe</span><span class=p>:</span><span class=w> </span><span class=l>begin</span><span class=w>
-</span><span class=w>  </span>- <span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>pypyr.steps.contextsetf</span><span class=w>
+</span><span class=w>  </span>- <span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>pypyr.steps.set</span><span class=w>
 </span><span class=w>    </span><span class=nt>in</span><span class=p>:</span><span class=w>
-</span><span class=w>      </span><span class=nt>contextSetf</span><span class=p>:</span><span class=w>
+</span><span class=w>      </span><span class=nt>set</span><span class=p>:</span><span class=w>
 </span><span class=w>        </span><span class=nt>myThings</span><span class=p>:</span><span class=w>
 </span><span class=w>          </span>- <span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>thing 1</span><span class=w>
 </span><span class=w>            </span><span class=nt>isReady</span><span class=p>:</span><span class=w> </span><span class=kc>True</span><span class=w>
@@ -700,7 +709,7 @@ want to iterate.</p>
 <h3 id=nesting-loops-with-call>nesting loops with call <a href=#nesting-loops-with-call class=headline-anchor aria-label=anchor><svg class="permalink"><title>permalink</title><use href="https://pypyr.io/icons/external-link.054f8ebb57944b2bc52ea4f0ecd16197.svg#external-link"/></svg></a></h3><p>When you <code>call</code> a group that contains another loop, pypyr will iterate the inner
 loop for each invocation of the outer. Pay attention to the value of <code>i</code> -
 because <code>i</code> will always be the iterator value of the current, innermost loop,
-grab the value of the parent&rsquo;s iterator with <code>contextsetf</code> before the inner loop
+grab the value of the parent&rsquo;s iterator with <code>set</code> before the inner loop
 starts.</p>
 <div class=highlight><pre tabindex=0 class=chroma><code class=language-yaml data-lang=yaml><span class=nt>steps</span><span class=p>:</span><span class=w>
 </span><span class=w>  </span>- <span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>pypyr.steps.call</span><span class=w>
@@ -713,9 +722,9 @@ starts.</p>
 </span><span class=w>      </span><span class=nt>echoMe</span><span class=p>:</span><span class=w> </span><span class=l>done!</span><span class=w>
 </span><span class=w>
 </span><span class=w></span><span class=nt>looping_group</span><span class=p>:</span><span class=w>
-</span><span class=w>  </span>- <span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>pypyr.steps.contextsetf</span><span class=w>
+</span><span class=w>  </span>- <span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>pypyr.steps.set</span><span class=w>
 </span><span class=w>    </span><span class=nt>in</span><span class=p>:</span><span class=w>
-</span><span class=w>      </span><span class=nt>contextSetf</span><span class=p>:</span><span class=w>
+</span><span class=w>      </span><span class=nt>set</span><span class=p>:</span><span class=w>
 </span><span class=w>        </span><span class=nt>current_parent_iterator</span><span class=p>:</span><span class=w> </span><span class=s1>&#39;{i}&#39;</span><span class=w>
 </span><span class=w>  </span>- <span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>pypyr.steps.echo</span><span class=w>
 </span><span class=w>    </span><span class=nt>foreach</span><span class=p>:</span><span class=w> </span><span class=p>[</span><span class=s1>&#39;one&#39;</span><span class=p>,</span><span class=w> </span><span class=s1>&#39;two&#39;</span><span class=p>,</span><span class=w> </span><span class=s1>&#39;three&#39;</span><span class=p>]</span><span class=w>
@@ -748,9 +757,9 @@ done!
 </span></code></pre></div><p>Calling a child pipeline that looks like this:</p>
 <div class=highlight><pre tabindex=0 class=chroma><code class=language-yaml data-lang=yaml><span class=c># ./foreach-nest-pype-child.yaml</span><span class=w>
 </span><span class=w></span><span class=nt>steps</span><span class=p>:</span><span class=w>
-</span><span class=w>  </span>- <span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>pypyr.steps.contextsetf</span><span class=w>
+</span><span class=w>  </span>- <span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>pypyr.steps.set</span><span class=w>
 </span><span class=w>    </span><span class=nt>in</span><span class=p>:</span><span class=w>
-</span><span class=w>      </span><span class=nt>contextSetf</span><span class=p>:</span><span class=w>
+</span><span class=w>      </span><span class=nt>set</span><span class=p>:</span><span class=w>
 </span><span class=w>        </span><span class=nt>current_parent_iterator</span><span class=p>:</span><span class=w> </span><span class=s1>&#39;{i}&#39;</span><span class=w>
 </span><span class=w>  </span>- <span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>pypyr.steps.echo</span><span class=w>
 </span><span class=w>    </span><span class=nt>foreach</span><span class=p>:</span><span class=w> </span><span class=p>[</span><span class=s1>&#39;one&#39;</span><span class=p>,</span><span class=w> </span><span class=s1>&#39;two&#39;</span><span class=p>,</span><span class=w> </span><span class=s1>&#39;three&#39;</span><span class=p>]</span><span class=w>
@@ -769,7 +778,7 @@ C.three
 done!
 </code></pre></div><p>As with nesting loops with <code>call</code>, pay attention to the value of <code>i</code> - because
 <code>i</code> will always be the iterator value of the current, innermost loop, grab the
-value of the parent&rsquo;s iterator with <code>contextsetf</code> before the inner loop starts.</p>
+value of the parent&rsquo;s iterator with <code>set</code> before the inner loop starts.</p>
 <h3 id=flatten-nested-loops>flatten nested loops <a href=#flatten-nested-loops class=headline-anchor aria-label=anchor><svg class="permalink"><title>permalink</title><use href="https://pypyr.io/icons/external-link.054f8ebb57944b2bc52ea4f0ecd16197.svg#external-link"/></svg></a></h3><p>You can achieve the same thing by using the built-in itertools' handy
 <a href=https://docs.python.org/3/library/itertools.html#itertools.product>product</a>
 function. This is especially handy to simplify your pipeline structure if you
@@ -778,9 +787,9 @@ are nesting several levels deep.</p>
 </span><span class=w>  </span><span class=nt>in</span><span class=p>:</span><span class=w>
 </span><span class=w>    </span><span class=nt>pyImport</span><span class=p>:</span><span class=w> </span><span class=l>from itertools import product</span><span class=w>
 </span><span class=w>
-</span><span class=w></span>- <span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>pypyr.steps.contextsetf</span><span class=w>
+</span><span class=w></span>- <span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>pypyr.steps.set</span><span class=w>
 </span><span class=w>  </span><span class=nt>in</span><span class=p>:</span><span class=w>
-</span><span class=w>    </span><span class=nt>contextSetf</span><span class=p>:</span><span class=w>
+</span><span class=w>    </span><span class=nt>set</span><span class=p>:</span><span class=w>
 </span><span class=w>      </span><span class=nt>list_a</span><span class=p>:</span><span class=w> </span><span class=p>[</span><span class=s1>&#39;A&#39;</span><span class=p>,</span><span class=w> </span><span class=s1>&#39;B&#39;</span><span class=p>,</span><span class=w> </span><span class=s1>&#39;C&#39;</span><span class=p>]</span><span class=w>
 </span><span class=w>      </span><span class=nt>list_b</span><span class=p>:</span><span class=w> </span><span class=p>[</span><span class=s1>&#39;one&#39;</span><span class=p>,</span><span class=w> </span><span class=s1>&#39;two&#39;</span><span class=p>,</span><span class=w> </span><span class=s1>&#39;three&#39;</span><span class=p>]</span><span class=w>
 </span><span class=w>
@@ -805,7 +814,7 @@ C.three
 done!
 </code></pre></div><p>Notice in this case <code>i</code> is the tuple that <code>product</code> returns, so you can use the
 tuple index to access the current values of the iterator without having to grab
-a reference to the parent iterator first with <code>contextsetf</code> as in the nested
+a reference to the parent iterator first with <code>set</code> as in the nested
 <code>call</code> or <code>pype</code> examples above.</p>
 </article>
 <section class="see-also elevation-02">
@@ -838,7 +847,7 @@ a reference to the parent iterator first with <code>contextsetf</code> as in the
 </ul>
 </aside>
 <div class="page-git-info elevation-02">
-<small class=small-block>last updated on <time datetime=2020-12-26T19:34:19Z>2020-12-26 19:34</time>.</small>
+<small class=small-block>last updated on <time datetime=2021-10-05T14:41:15+01:00>2021-10-05 14:41</time>.</small>
 </div>
 </div>
 <footer class="footer elevation-01">
