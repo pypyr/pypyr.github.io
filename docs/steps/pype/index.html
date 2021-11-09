@@ -23,7 +23,7 @@
 <meta property="og:url" content="https://pypyr.io/docs/steps/pype/">
 <meta name=twitter:card content="summary_large_image">
 <meta name=twitter:site content="@pypyrpipes">
-<script type=application/ld+json>{"@context":"https://schema.org","@graph":[{"@id":"https://pypyr.io/#organization","@type":"Organization","name":"pypyr","url":"https://pypyr.io/","description":"The pypyr project is a free open-source task-runner cli \u0026 python api for automation pipelines.","logo":{"@type":"ImageObject","url":"https://pypyr.io/images/pypyr-taskrunner-logo-square.63875e43ff40d8ae40e93a6043b4328b962f54f52974aaa27cedec52220de665.svg","height":112,"width":112},"sameAs":["https://github.com/pypyr/","https://twitter.com/pypyrpipes/","https://pypi.org/user/pypyr/","https://hub.docker.com/u/pypyr/","https://en.gravatar.com/pypyr/"]},{"@type":"TechArticle","author":{"@type":"Person","name":"pypyr contributor"},"articleSection":"steps","dateModified":"2020-10-31T22:26:09Z","datePublished":"2020-07-06T18:44:14+01:00","headline":"Call pipeline from running pipeline.","image":[{"@type":"ImageObject","url":"https://pypyr.io/images/1x1/pypyr-taskrunner-yaml-pipeline-automation-1200x1200.52764d3c6f40232b3cdc33f5b8fbaeadad56cc310c8dd5588d30828296b5290d.png","height":1200,"width":1200},{"@type":"ImageObject","url":"https://pypyr.io/images/4x3/pypyr-taskrunner-yaml-pipeline-automation-1200x900.e8e70443377aeb11c190835e8d2ed0c844d31a82a0c2e8a744a9999cd03e0de9.png","height":900,"width":1200},{"@type":"ImageObject","url":"https://pypyr.io/images/16x9/pypyr-taskrunner-yaml-pipeline-automation-1920x1080.cc9ae11626c8312e087058adb13bfff702162ce39c355065170c1b87850f3034.png","height":1080,"width":1920}],"inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https://pypyr.io/docs/steps/pype/"},"publisher":{"@id":"https://pypyr.io/#organization"},"url":"https://pypyr.io/docs/steps/pype/","wordCount":1688}]}</script>
+<script type=application/ld+json>{"@context":"https://schema.org","@graph":[{"@id":"https://pypyr.io/#organization","@type":"Organization","name":"pypyr","url":"https://pypyr.io/","description":"The pypyr project is a free open-source task-runner cli \u0026 python api for automation pipelines.","logo":{"@type":"ImageObject","url":"https://pypyr.io/images/pypyr-taskrunner-logo-square.63875e43ff40d8ae40e93a6043b4328b962f54f52974aaa27cedec52220de665.svg","height":112,"width":112},"sameAs":["https://github.com/pypyr/","https://twitter.com/pypyrpipes/","https://pypi.org/user/pypyr/","https://hub.docker.com/u/pypyr/","https://en.gravatar.com/pypyr/"]},{"@type":"TechArticle","author":{"@type":"Person","name":"pypyr contributor"},"articleSection":"steps","dateModified":"2021-11-09T14:29:55Z","datePublished":"2020-07-06T18:44:14+01:00","headline":"Call pipeline from running pipeline.","image":[{"@type":"ImageObject","url":"https://pypyr.io/images/1x1/pypyr-taskrunner-yaml-pipeline-automation-1200x1200.52764d3c6f40232b3cdc33f5b8fbaeadad56cc310c8dd5588d30828296b5290d.png","height":1200,"width":1200},{"@type":"ImageObject","url":"https://pypyr.io/images/4x3/pypyr-taskrunner-yaml-pipeline-automation-1200x900.e8e70443377aeb11c190835e8d2ed0c844d31a82a0c2e8a744a9999cd03e0de9.png","height":900,"width":1200},{"@type":"ImageObject","url":"https://pypyr.io/images/16x9/pypyr-taskrunner-yaml-pipeline-automation-1920x1080.cc9ae11626c8312e087058adb13bfff702162ce39c355065170c1b87850f3034.png","height":1080,"width":1920}],"inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https://pypyr.io/docs/steps/pype/"},"publisher":{"@id":"https://pypyr.io/#organization"},"url":"https://pypyr.io/docs/steps/pype/","wordCount":1688}]}</script>
 <link rel=apple-touch-icon sizes=180x180 href=/favicons/apple-touch-icon.925deabb48d91a80924b5d04ff56d2b8f42ba1d1e1438cb7d8948cce1138208c.png>
 <link rel=icon type=image/png sizes=32x32 href=/favicons/favicon-32x32.b869433d27c4679a5fbce03a8489268a539cbc781259bff14618ae2f018334e6.png>
 <link rel=icon type=image/png sizes=16x16 href=/favicons/favicon-16x16.8bcd9f870e0a86445e0505ce6e816b76a40b08a06e2dcd1ec1f90c395ecbeaf6.png>
@@ -568,7 +568,7 @@ the first steps provision expensive resources in the environment and later steps
 just tweak settings on the existing environment.</p>
 <p>The parent pipeline is the current, executing pipeline. The child pipeline is
 the pipeline you are calling from this step.</p>
-<p>See a worked <a href=https://github.com/pypyr/pypyr-example/tree/master/pipelines/pype.yaml>example of
+<p>See a worked <a href=https://github.com/pypyr/pypyr-example/tree/main/pipelines/pype.yaml>example of
 pype</a>.</p>
 <h2 id=child-pipeline-execution-arguments>child pipeline execution arguments <a href=#child-pipeline-execution-arguments class=headline-anchor aria-label=anchor><svg class="permalink"><title>permalink</title><use href="https://pypyr.io/icons/external-link.054f8ebb57944b2bc52ea4f0ecd16197.svg#external-link"/></svg></a></h2><p>You only need to specify the pipeline name you want to call by way of minimal
 input arguments:</p>
@@ -642,7 +642,7 @@ before the child executes.</p>
 <p>If you explicitly set <code>useParentContext</code> to <code>True</code> AND you specify <code>args</code>,
 pypyr will merge args into the parent context in addition to applying all
 {formatting expressions} before running the child pipeline.</p>
-<p>Here is an <a href=https://github.com/pypyr/pypyr-example/blob/master/pipelines/pype-args.yaml>example with pipe args</a>.</p>
+<p>Here is an <a href=https://github.com/pypyr/pypyr-example/blob/main/pipelines/pype-args.yaml>example with pipe args</a>.</p>
 <h3 id=out>out <a href=#out class=headline-anchor aria-label=anchor><svg class="permalink"><title>permalink</title><use href="https://pypyr.io/icons/external-link.054f8ebb57944b2bc52ea4f0ecd16197.svg#external-link"/></svg></a></h3><p>If the child pipeline ran with a fresh new Context, because you set <code>args</code> or
 you set <code>useParentContext</code> to <code>False</code>, <code>out</code> saves values from the child
 pipeline context back to the parent context.</p>
@@ -793,13 +793,13 @@ for more advanced mappings:</p>
 <li>dynamic-pype-child-3</li>
 </ol>
 <p>You can find the example for
-<a href=https://github.com/pypyr/pypyr-example/blob/master/pipelines/dynamic-pype.yaml>dynamic pipeline execution in the pypyr example repo</a>.</p>
+<a href=https://github.com/pypyr/pypyr-example/blob/main/pipelines/dynamic-pype.yaml>dynamic pipeline execution in the pypyr example repo</a>.</p>
 <h2 id=recursion>recursion <a href=#recursion class=headline-anchor aria-label=anchor><svg class="permalink"><title>permalink</title><use href="https://pypyr.io/icons/external-link.054f8ebb57944b2bc52ea4f0ecd16197.svg#external-link"/></svg></a></h2><p>Yes, you can call another pipeline recursively - i.e a child pipeline can call
 its parent pipeline. It&rsquo;s up to you to avoid infinite recursion, though. Since
 we&rsquo;re all responsible adults here, pypyr does not protect you from
 infinite recursion other than the default python recursion limit.</p>
 <p>So don&rsquo;t come crying if you blew your stack. Or a seal.</p>
-<p>Here is a worked <a href=https://github.com/pypyr/pypyr-example/tree/master/pipelines/pype-recursion.yaml>example of pipeline
+<p>Here is a worked <a href=https://github.com/pypyr/pypyr-example/tree/main/pipelines/pype-recursion.yaml>example of pipeline
 recursion</a>.</p>
 </article>
 <section class="see-also elevation-02">
@@ -830,13 +830,13 @@ recursion</a>.</p>
 <aside class="grid-improve elevation-02" aria-labelledby=feedback>
 <h6 id=feedback>feedback</h6>
 <ul class=small-list>
-<li><a href=https://github.com/pypyr/docs/edit/master/content/docs/steps/pype.md class=muted-with-hover>edit me</a></li>
+<li><a href=https://github.com/pypyr/docs/edit/main/content/docs/steps/pype.md class=muted-with-hover>edit me</a></li>
 <li><a href="https://github.com/pypyr/docs/issues/new?title=docs%20issue:pypyr.steps.pype&body=File:%20[pypyr.steps.pype]%28https://pypyr.io/docs/steps/pype/%29" class=muted-with-hover>report typo</a></li>
 <li><a href="https://github.com/pypyr/pypyr/issues/new?title=Re:%20pypyr.steps.pype&labels=bug" class=muted-with-hover>report bug!</a></li>
 </ul>
 </aside>
 <div class="page-git-info elevation-02">
-<small class=small-block>last updated on <time datetime=2020-10-31T22:26:09Z>2020-10-31 22:26</time>.</small>
+<small class=small-block>last updated on <time datetime=2021-11-09T14:29:55Z>2021-11-09 14:29</time>.</small>
 </div>
 </div>
 <footer class="footer elevation-01">
