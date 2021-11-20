@@ -23,7 +23,7 @@
 <meta property="og:url" content="https://pypyr.io/docs/api/run-pipeline/">
 <meta name=twitter:card content="summary_large_image">
 <meta name=twitter:site content="@pypyrpipes">
-<script type=application/ld+json>{"@context":"https://schema.org","@graph":[{"@id":"https://pypyr.io/#organization","@type":"Organization","name":"pypyr","url":"https://pypyr.io/","description":"The pypyr project is a free open-source task-runner cli \u0026 python api for automation pipelines.","logo":{"@type":"ImageObject","url":"https://pypyr.io/images/pypyr-taskrunner-logo-square.63875e43ff40d8ae40e93a6043b4328b962f54f52974aaa27cedec52220de665.svg","height":112,"width":112},"sameAs":["https://github.com/pypyr/","https://twitter.com/pypyrpipes/","https://pypi.org/user/pypyr/","https://hub.docker.com/u/pypyr/","https://en.gravatar.com/pypyr/"]},{"@type":"TechArticle","author":{"@type":"Person","name":"pypyr contributor"},"articleSection":"api","dateModified":"2021-10-05T14:41:15+01:00","datePublished":"2020-08-13T00:00:00Z","headline":"Run an automation pipeline programmatically in your own code.","image":[{"@type":"ImageObject","url":"https://pypyr.io/images/1x1/pypyr-taskrunner-yaml-pipeline-automation-1200x1200.52764d3c6f40232b3cdc33f5b8fbaeadad56cc310c8dd5588d30828296b5290d.png","height":1200,"width":1200},{"@type":"ImageObject","url":"https://pypyr.io/images/4x3/pypyr-taskrunner-yaml-pipeline-automation-1200x900.e8e70443377aeb11c190835e8d2ed0c844d31a82a0c2e8a744a9999cd03e0de9.png","height":900,"width":1200},{"@type":"ImageObject","url":"https://pypyr.io/images/16x9/pypyr-taskrunner-yaml-pipeline-automation-1920x1080.cc9ae11626c8312e087058adb13bfff702162ce39c355065170c1b87850f3034.png","height":1080,"width":1920}],"inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https://pypyr.io/docs/api/run-pipeline/"},"publisher":{"@id":"https://pypyr.io/#organization"},"url":"https://pypyr.io/docs/api/run-pipeline/","wordCount":1205}]}</script>
+<script type=application/ld+json>{"@context":"https://schema.org","@graph":[{"@id":"https://pypyr.io/#organization","@type":"Organization","name":"pypyr","url":"https://pypyr.io/","description":"The pypyr project is a free open-source task-runner cli \u0026 python api for automation pipelines.","logo":{"@type":"ImageObject","url":"https://pypyr.io/images/pypyr-taskrunner-logo-square.63875e43ff40d8ae40e93a6043b4328b962f54f52974aaa27cedec52220de665.svg","height":112,"width":112},"sameAs":["https://github.com/pypyr/","https://twitter.com/pypyrpipes/","https://pypi.org/user/pypyr/","https://hub.docker.com/u/pypyr/","https://en.gravatar.com/pypyr/"]},{"@type":"TechArticle","author":{"@type":"Person","name":"pypyr contributor"},"articleSection":"api","dateModified":"2021-11-20T15:55:39Z","datePublished":"2020-08-13T00:00:00Z","headline":"Run an automation pipeline programmatically in your own code.","image":[{"@type":"ImageObject","url":"https://pypyr.io/images/1x1/pypyr-taskrunner-yaml-pipeline-automation-1200x1200.52764d3c6f40232b3cdc33f5b8fbaeadad56cc310c8dd5588d30828296b5290d.png","height":1200,"width":1200},{"@type":"ImageObject","url":"https://pypyr.io/images/4x3/pypyr-taskrunner-yaml-pipeline-automation-1200x900.e8e70443377aeb11c190835e8d2ed0c844d31a82a0c2e8a744a9999cd03e0de9.png","height":900,"width":1200},{"@type":"ImageObject","url":"https://pypyr.io/images/16x9/pypyr-taskrunner-yaml-pipeline-automation-1920x1080.cc9ae11626c8312e087058adb13bfff702162ce39c355065170c1b87850f3034.png","height":1080,"width":1920}],"inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https://pypyr.io/docs/api/run-pipeline/"},"publisher":{"@id":"https://pypyr.io/#organization"},"url":"https://pypyr.io/docs/api/run-pipeline/","wordCount":1709}]}</script>
 <link rel=apple-touch-icon sizes=180x180 href=/favicons/apple-touch-icon.925deabb48d91a80924b5d04ff56d2b8f42ba1d1e1438cb7d8948cce1138208c.png>
 <link rel=icon type=image/png sizes=32x32 href=/favicons/favicon-32x32.b869433d27c4679a5fbce03a8489268a539cbc781259bff14618ae2f018334e6.png>
 <link rel=icon type=image/png sizes=16x16 href=/favicons/favicon-16x16.8bcd9f870e0a86445e0505ce6e816b76a40b08a06e2dcd1ec1f90c395ecbeaf6.png>
@@ -455,6 +455,9 @@
 <a href=/docs/api/>overview</a>
 </li>
 <li>
+<a href=/docs/api/custom-module-search-path/>custom module search path</a>
+</li>
+<li>
 <a href=/docs/api/context-parser/>context parser</a>
 </li>
 <li>
@@ -531,19 +534,19 @@
 <h6 id=table-of-contents>on this page</h6>
 <nav id=TableOfContents>
 <ol>
-<li><a href=#main-entry-point>main entry-point</a>
+<li><a href=#run-entry-point>run() entry-point</a>
 <ol>
 <li><a href=#input-args>input args</a></li>
 <li><a href=#returns>returns</a></li>
 </ol>
 </li>
-<li><a href=#main-with-context-entry-point>main with context entry-point</a>
+<li><a href=#passing-values-to-the-pipeline>passing values to the pipeline</a>
 <ol>
-<li><a href=#input-args-1>input args</a></li>
-<li><a href=#returns-1>returns</a></li>
+<li><a href=#args_in-vs-dict_in>args_in vs dict_in</a></li>
+<li><a href=#args_in-list>args_in list</a></li>
+<li><a href=#invoke-pipeline-from-api-with-no-input-context>invoke pipeline from api with no input context</a></li>
 </ol>
 </li>
-<li><a href=#invoke-pipeline-from-api-with-no-input-context>invoke pipeline from api with no input context</a></li>
 <li><a href=#logging>logging</a>
 <ol>
 <li><a href=#log-levels>log levels</a></li>
@@ -557,6 +560,7 @@
 <article>
 <h1 id=run-a-pipeline-from-the-api>run a pipeline from the api <a href=#run-a-pipeline-from-the-api class=headline-anchor aria-label=anchor><svg class="permalink"><title>permalink</title><use href="https://pypyr.io/icons/external-link.054f8ebb57944b2bc52ea4f0ecd16197.svg#external-link"/></svg></a></h1><p>You can run a pypyr automation pipeline programmatically from your own code
 using the python api.</p>
+<p>Here&rsquo;s a silly pipeline:</p>
 <div class=highlight><pre tabindex=0 class=chroma><code class=language-yaml data-lang=yaml><span class=c># ./pipeline-dir/my-pipe.yaml</span><span class=w>
 </span><span class=w></span><span class=nt>context_parser</span><span class=p>:</span><span class=w> </span><span class=l>pypyr.parser.keyvaluepairs</span><span class=w>
 </span><span class=w></span><span class=nt>steps</span><span class=p>:</span><span class=w>
@@ -589,57 +593,209 @@ piper pipe that song again
 $</code></pre></div>
 </div>
 </div>
-<p>You can run this same pipeline programmatically like this:</p>
+<p>You can run this same pipeline programmatically with the same inputs like this:</p>
 <div class=highlight><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=c1># Optional. If you want to see pypyr stdout output, log level should be &lt;= 25</span>
 <span class=c1># import logging</span>
 <span class=c1># logging.basicConfig(level=25)</span>
 
 <span class=kn>from</span> <span class=nn>pypyr</span> <span class=kn>import</span> <span class=n>pipelinerunner</span>
 
-<span class=c1># You can run via API like this:</span>
-<span class=n>pipelinerunner</span><span class=o>.</span><span class=n>main</span><span class=p>(</span><span class=n>pipeline_name</span><span class=o>=</span><span class=s1>&#39;pipeline-dir/my-pipe&#39;</span><span class=p>,</span>
-                    <span class=n>pipeline_context_input</span><span class=o>=</span><span class=p>[</span><span class=s1>&#39;arbkey=pipe&#39;</span><span class=p>,</span> <span class=s1>&#39;anotherkey=song&#39;</span><span class=p>])</span>
+<span class=c1># You can run a pipeline via the API like this:</span>
+<span class=n>context</span> <span class=o>=</span> <span class=n>pipelinerunner</span><span class=o>.</span><span class=n>run</span><span class=p>(</span><span class=n>pipeline_name</span><span class=o>=</span><span class=s1>&#39;pipeline-dir/my-pipe&#39;</span><span class=p>,</span>
+                             <span class=n>args_in</span><span class=o>=</span><span class=p>[</span><span class=s1>&#39;arbkey=pipe&#39;</span><span class=p>,</span> <span class=s1>&#39;anotherkey=song&#39;</span><span class=p>])</span>
 
 <span class=c1># Or like this:</span>
-<span class=n>context_out</span> <span class=o>=</span> <span class=n>pipelinerunner</span><span class=o>.</span><span class=n>main_with_context</span><span class=p>(</span>
-    <span class=n>pipeline_name</span><span class=o>=</span><span class=s1>&#39;pipeline-dir/my-pipe&#39;</span><span class=p>,</span>
-    <span class=n>dict_in</span><span class=o>=</span><span class=p>{</span><span class=s1>&#39;arbkey&#39;</span><span class=p>:</span> <span class=s1>&#39;pipe&#39;</span><span class=p>,</span>
-             <span class=s1>&#39;anotherkey&#39;</span><span class=p>:</span> <span class=s1>&#39;song&#39;</span><span class=p>})</span>
+<span class=n>context</span> <span class=o>=</span> <span class=n>pipelinerunner</span><span class=o>.</span><span class=n>run</span><span class=p>(</span><span class=n>pipeline_name</span><span class=o>=</span><span class=s1>&#39;pipeline-dir/my-pipe&#39;</span><span class=p>,</span>
+                             <span class=n>dict_in</span><span class=o>=</span><span class=p>{</span><span class=s1>&#39;arbkey&#39;</span><span class=p>:</span> <span class=s1>&#39;pipe&#39;</span><span class=p>,</span>
+                                      <span class=s1>&#39;anotherkey&#39;</span><span class=p>:</span> <span class=s1>&#39;song&#39;</span><span class=p>})</span>
 
-<span class=c1># context_out behaves like a dict</span>
-<span class=nb>print</span><span class=p>(</span><span class=n>context_out</span><span class=p>[</span><span class=s1>&#39;myoutput&#39;</span><span class=p>])</span>  <span class=c1># I was set in the pipeline!</span>
-<span class=nb>print</span><span class=p>(</span><span class=n>context_out</span><span class=p>[</span><span class=s1>&#39;input_values&#39;</span><span class=p>][</span><span class=mi>0</span><span class=p>])</span>  <span class=c1># pipe</span>
-<span class=nb>print</span><span class=p>(</span><span class=n>context_out</span><span class=p>[</span><span class=s1>&#39;some_nesting&#39;</span><span class=p>][</span><span class=s1>&#39;down_level&#39;</span><span class=p>][</span><span class=s1>&#39;arb_number&#39;</span><span class=p>])</span>  <span class=c1># 123</span>
-</code></pre></div><p>Use the <code>pypyr.pipelinerunner</code> module. There are two sensible entry-points for
-most developers:</p>
+<span class=c1># context behaves like a dict</span>
+<span class=nb>print</span><span class=p>(</span><span class=n>context</span><span class=p>[</span><span class=s1>&#39;myoutput&#39;</span><span class=p>])</span>  <span class=c1># I was set in the pipeline!</span>
+<span class=nb>print</span><span class=p>(</span><span class=n>context</span><span class=p>[</span><span class=s1>&#39;input_values&#39;</span><span class=p>][</span><span class=mi>0</span><span class=p>])</span>  <span class=c1># pipe</span>
+<span class=nb>print</span><span class=p>(</span><span class=n>context</span><span class=p>[</span><span class=s1>&#39;some_nesting&#39;</span><span class=p>][</span><span class=s1>&#39;down_level&#39;</span><span class=p>][</span><span class=s1>&#39;arb_number&#39;</span><span class=p>])</span>  <span class=c1># 123</span>
+</code></pre></div><p>Use the <code>run()</code> function in the <code>pypyr.pipelinerunner</code> module to run a pipeline.</p>
+<p>This example shows two different ways of initializing the pipeline&rsquo;s context:
+both are equivalent and results in the same values being passed to the pipeline -
+the pipeline step sequences run identically. For this example pipeline, the
+output <code>context</code> for both <code>run()</code> calls is identical. See <a href=#passing-values-to-the-pipeline>initialize
+context</a> for details on <code>args_in</code> vs <code>dict_in</code>.</p>
+<p><code>run()</code> returns the pypyr <code>Context</code> object to you as it is after the pipeline
+completes, giving you access to any mutations the pipeline made to it.</p>
+<h2 id=run-entry-point>run() entry-point <a href=#run-entry-point class=headline-anchor aria-label=anchor><svg class="permalink"><title>permalink</title><use href="https://pypyr.io/icons/external-link.054f8ebb57944b2bc52ea4f0ecd16197.svg#external-link"/></svg></a></h2><p>This is the full <code>pypyr.pipelinerunner.run()</code> function signature:</p>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=n>run</span><span class=p>(</span>
+  <span class=n>pipeline_name</span><span class=p>:</span> <span class=nb>str</span><span class=p>,</span>
+  <span class=n>args_in</span><span class=p>:</span> <span class=nb>list</span><span class=p>[</span><span class=nb>str</span><span class=p>]</span> <span class=o>|</span> <span class=kc>None</span> <span class=o>=</span> <span class=kc>None</span><span class=p>,</span>
+  <span class=n>parse_args</span><span class=p>:</span> <span class=nb>bool</span> <span class=o>|</span> <span class=kc>None</span> <span class=o>=</span> <span class=kc>None</span><span class=p>,</span>
+  <span class=n>dict_in</span><span class=p>:</span> <span class=nb>dict</span> <span class=o>|</span> <span class=kc>None</span> <span class=o>=</span> <span class=kc>None</span><span class=p>,</span>
+  <span class=n>groups</span><span class=p>:</span> <span class=nb>list</span><span class=p>[</span><span class=nb>str</span><span class=p>]</span> <span class=o>|</span> <span class=kc>None</span> <span class=o>=</span> <span class=kc>None</span><span class=p>,</span>
+  <span class=n>success_group</span><span class=p>:</span> <span class=nb>str</span> <span class=o>|</span> <span class=kc>None</span> <span class=o>=</span> <span class=kc>None</span><span class=p>,</span>
+  <span class=n>failure_group</span><span class=p>:</span> <span class=nb>str</span> <span class=o>|</span> <span class=kc>None</span> <span class=o>=</span> <span class=kc>None</span><span class=p>,</span>
+  <span class=n>loader</span><span class=p>:</span> <span class=nb>str</span> <span class=o>|</span> <span class=kc>None</span> <span class=o>=</span> <span class=kc>None</span><span class=p>,</span>
+  <span class=n>py_dir</span><span class=p>:</span> <span class=nb>str</span> <span class=o>|</span> <span class=nb>bytes</span> <span class=o>|</span> <span class=n>PathLike</span> <span class=o>|</span> <span class=kc>None</span> <span class=o>=</span> <span class=kc>None</span>
+<span class=p>)</span> <span class=o>-&gt;</span> <span class=n>pypyr</span><span class=o>.</span><span class=n>context</span><span class=o>.</span><span class=n>Context</span><span class=p>:</span>
+</code></pre></div>
+<h3 id=input-args>input args <a href=#input-args class=headline-anchor aria-label=anchor><svg class="permalink"><title>permalink</title><use href="https://pypyr.io/icons/external-link.054f8ebb57944b2bc52ea4f0ecd16197.svg#external-link"/></svg></a></h3><div class=highlight><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=kn>import</span> <span class=nn>pypyr.pipelinerunner</span>
+
+<span class=n>out</span> <span class=o>=</span> <span class=n>pypyr</span><span class=o>.</span><span class=n>pipelinerunner</span><span class=o>.</span><span class=n>run</span><span class=p>(</span><span class=n>pipeline_name</span><span class=o>=</span><span class=s1>&#39;arb-pipe&#39;</span><span class=p>,</span>
+                               <span class=n>args_in</span><span class=o>=</span><span class=p>[</span><span class=s1>&#39;arb&#39;</span><span class=p>,</span> <span class=s1>&#39;context input&#39;</span><span class=p>],</span>
+                               <span class=n>parse_args</span><span class=o>=</span><span class=kc>True</span><span class=p>,</span>
+                               <span class=n>dict_in</span><span class=o>=</span><span class=p>{</span><span class=s1>&#39;key&#39;</span><span class=p>:</span> <span class=s1>&#39;value&#39;</span><span class=p>,</span> <span class=s1>&#39;arbkey&#39;</span><span class=p>:</span> <span class=s1>&#39;arb value&#39;</span><span class=p>},</span>
+                               <span class=n>groups</span><span class=o>=</span><span class=p>[</span><span class=s1>&#39;group1&#39;</span><span class=p>,</span> <span class=s1>&#39;group2&#39;</span><span class=p>],</span>
+                               <span class=n>success_group</span><span class=o>=</span><span class=s1>&#39;success_group&#39;</span><span class=p>,</span>
+                               <span class=n>failure_group</span><span class=o>=</span><span class=s1>&#39;failure_group&#39;</span><span class=p>,</span>
+                               <span class=n>loader</span><span class=o>=</span><span class=s1>&#39;mypackage.myloader&#39;</span>
+                               <span class=n>py_dir</span><span class=o>=</span><span class=s1>&#39;arb/dir&#39;</span><span class=p>)</span>
+</code></pre></div><ul>
+<li><code>pipeline_name</code>: string. Required.
 <ul>
-<li><a href=#main-entry-point>main()</a>
-<ul>
-<li>Use this if you want to pass context arguments to the pipeline&rsquo;s
-<code>context_parser</code> in exactly the same way as the cli does.</li>
+<li>Name of pipeline, sans .yaml at end.</li>
+<li><code>{pipeline_name}.yaml</code> is relative to the current working directory.</li>
+<li>You can also specify an absolute path here (again, just leave out the
+.yaml at the end).</li>
 </ul>
 </li>
-<li><a href=#main-with-context-entry-point>main_with_context()</a>
+<li><code>args_in</code>: list of string. Optional.
+<ul>
+<li>Initialize the pypyr context with this list of strings.</li>
+<li>Use the python shlex split function on a string to get a parsed list.</li>
+<li>If not specified pypyr will create an empty <code>Context</code> object for you,
+depending on how the pipeline&rsquo;s <code>context_parser</code> handles <code>None</code> input.</li>
+</ul>
+</li>
+<li><code>parse_args</code>: Boolean. Optional.
+<ul>
+<li>Explicitly set whether to run the <code>context_parser</code> on the pipeline.</li>
+<li>If you set <code>args_in</code>, <code>parse_args</code> defaults to <code>True</code>.</li>
+<li>If you set <code>dict_in</code> and NOT <code>args_in</code>, pypyr assumes you don&rsquo;t want to run
+the pipeline&rsquo;s context parser to initiate context and defaults <code>parse_args</code>
+to <code>False</code>.</li>
+</ul>
+</li>
+<li><code>dict_in</code>: dict. Optional.
+<ul>
+<li>Initialize the pypyr <code>Context</code> object with this dict.</li>
+<li>If not specified pypyr will create an empty <code>Context</code> for you.</li>
+<li>If you set both <code>dict_in</code> AND <code>args_in</code>, pypyr will initialize Context with
+<code>dict_in</code> and then merge the results of <code>args_in</code> processed by the
+pipeline&rsquo;s <code>context_parser</code> into that before running the pipeline with the
+resulting combined context. This is probably what you want by default, since
+the point of using <code>dict_in</code> is to bypass the inefficient string parsing of
+the context_parser.</li>
+</ul>
+</li>
+<li><code>groups</code>: list of string. Optional.
+<ul>
+<li>Step-group names to run in pipeline.</li>
+<li>Defaults to <code>['steps']</code> if not specified.</li>
+</ul>
+</li>
+<li><code>success_group</code>: string. Optional.
+<ul>
+<li>Step-group name to run on success completion.</li>
+<li>Defaults to <code>on_success</code> if not specified.</li>
+</ul>
+</li>
+<li><code>failure_group</code>: string. Optional.
+<ul>
+<li>Step-group name to run on pipeline failure.</li>
+<li>Defaults to <code>on_failure</code> if not specified.</li>
+</ul>
+</li>
+<li><code>loader</code>: string. Optional.
+<ul>
+<li>Absolute name of pipeline loader module.</li>
+<li>If not specified will use <code>pypyr.loaders.file</code> - the standard builtin pypyr
+pipeline loader.</li>
+</ul>
+</li>
+<li><code>py_dir</code>: Path-like. Optional.
+<ul>
+<li>Look for custom modules in this directory.</li>
+<li>Under the hood, pypyr adds this directory to <code>sys.path</code>.</li>
+<li>This is useful if your pipeline uses <em>ad hoc</em> .py files that are NOT
+installed in the current Python environment.</li>
+<li>Be aware that if you use the standard default file loader, pypyr will add
+the pipeline&rsquo;s parent directory automatically for you after it finds the
+pipeline. You therefore do NOT need to set <code>py_dir</code> to the pipeline
+directory when using the default loader.</li>
+<li>If you are using a custom loader that is not installed in the current Python
+environment, you have to set <code>py_dir</code> to allow pypyr to find it.</li>
+<li>If you have installed (typically with <code>$ pip install</code>) all the custom
+modules your pipeline uses into the current Python environment you do NOT
+need to set <code>py_dir</code>.</li>
+<li>If your <code>sys.path</code> already contains the necessary paths to discover the
+custom modules that your pipeline uses, you do NOT need to set this.</li>
+<li>If your pipeline does NOT use any custom Python modules, you do NOT need to
+set <code>py_dir</code>.</li>
+</ul>
+</li>
+</ul>
+<h3 id=returns>returns <a href=#returns class=headline-anchor aria-label=anchor><svg class="permalink"><title>permalink</title><use href="https://pypyr.io/icons/external-link.054f8ebb57944b2bc52ea4f0ecd16197.svg#external-link"/></svg></a></h3><p>The pypyr context as it is after the pipeline completes. This is of type
+<code>pypyr.context.Context()</code>. Each pipeline invocation uses its own fresh context -
+a context is unique to a single root pipeline run.</p>
+<p>The <code>Context</code> object behaves pretty much like a standard <code>dict</code>.</p>
+<h2 id=passing-values-to-the-pipeline>passing values to the pipeline <a href=#passing-values-to-the-pipeline class=headline-anchor aria-label=anchor><svg class="permalink"><title>permalink</title><use href="https://pypyr.io/icons/external-link.054f8ebb57944b2bc52ea4f0ecd16197.svg#external-link"/></svg></a></h2><p>If you want to inject values into the pipeline you are running, you do so by
+initializing the context for the pipeline run with the data you need.</p>
+<h3 id=args_in-vs-dict_in>args_in vs dict_in <a href=#args_in-vs-dict_in class=headline-anchor aria-label=anchor><svg class="permalink"><title>permalink</title><use href="https://pypyr.io/icons/external-link.054f8ebb57944b2bc52ea4f0ecd16197.svg#external-link"/></svg></a></h3><div class=highlight><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=c1># Initialize context with args_in:</span>
+<span class=n>context_out_1</span> <span class=o>=</span> <span class=n>pipelinerunner</span><span class=o>.</span><span class=n>run</span><span class=p>(</span><span class=n>pipeline_name</span><span class=o>=</span><span class=s1>&#39;pipeline-dir/my-pipe&#39;</span><span class=p>,</span>
+                                   <span class=n>args_in</span><span class=o>=</span><span class=p>[</span><span class=s1>&#39;arbkey=pipe&#39;</span><span class=p>,</span> <span class=s1>&#39;anotherkey=song&#39;</span><span class=p>])</span>
+
+<span class=c1># Or with dict_in:</span>
+<span class=n>context_out_2</span> <span class=o>=</span> <span class=n>pipelinerunner</span><span class=o>.</span><span class=n>run</span><span class=p>(</span><span class=n>pipeline_name</span><span class=o>=</span><span class=s1>&#39;pipeline-dir/my-pipe&#39;</span><span class=p>,</span>
+                                   <span class=n>dict_in</span><span class=o>=</span><span class=p>{</span><span class=s1>&#39;arbkey&#39;</span><span class=p>:</span> <span class=s1>&#39;pipe&#39;</span><span class=p>,</span>
+                                            <span class=s1>&#39;anotherkey&#39;</span><span class=p>:</span> <span class=s1>&#39;song&#39;</span><span class=p>})</span>
+
+<span class=c1># Both results in the pipeline running the same, with the same output</span>
+<span class=k>assert</span> <span class=n>context_out_1</span> <span class=o>==</span> <span class=n>context_out_2</span>
+</code></pre></div><p>You can initialize context in 2 different ways:</p>
+<ul>
+<li><code>args_in</code>
+<ul>
+<li>Use this if you want to pass context arguments to the pipeline&rsquo;s
+<code>context_parser</code> in exactly the same way as the cli does - as a list of
+strings.</li>
+<li>This makes it the pipeline&rsquo;s <code>context_parser</code>&rsquo;s responsibility to
+interpret & parse those strings.</li>
+</ul>
+</li>
+<li><code>dict_in</code>
 <ul>
 <li>Use this if you have your own dict-like structure you want to pass to
 your pipeline.</li>
 <li>This will bypass the pipeline&rsquo;s <code>context_parser</code> and use
-your input dict directly.</li>
-<li>This function also returns the pypyr <code>Context</code> object to you after the
-pipeline completes.</li>
+your input dict directly to initialize the pypyr Context.</li>
+<li>This way you can directly control the context structure and the types of
+the values you put in it.</li>
 </ul>
 </li>
 </ul>
-<p>Call whichever you prefer once per pypyr pipeline invocation. Both entry-points
-are identical for actual pipeline control-of-flow execution - the only
-difference is how you initialize the context that the pipeline will use.</p>
-<h2 id=main-entry-point>main entry-point <a href=#main-entry-point class=headline-anchor aria-label=anchor><svg class="permalink"><title>permalink</title><use href="https://pypyr.io/icons/external-link.054f8ebb57944b2bc52ea4f0ecd16197.svg#external-link"/></svg></a></h2><p>Use <code>main()</code> if you want to run a pipeline exactly like the cli does, by using
-the pipeline&rsquo;s <code>context_parser</code> to initialize context with a list of string
-arguments.</p>
-<p><code>pipeline_context_input</code> takes a list of strings. This is a POSIX style argument
-split on the input arguments following the pipeline name as passed from the cli.</p>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-fish data-lang=fish><span class=nv>$ </span>pypyr mypipeline arg1 <span class=s2>&#34;arg 2&#34;</span> <span class=nv>arg3</span><span class=o>=</span><span class=m>4</span>
-</code></pre></div><p>Equates to a <code>pipeline_context_input</code> of:</p>
+<p>You can also set both <code>dict_in</code> and <code>args_in</code> - in which case pypyr will
+initialize context with <code>dict_in</code>, run the <code>context_parser</code> with <code>args_in</code> and
+then merge the results of both into a single context before running the
+pipeline with the combined context.</p>
+<p>You can use whichever you prefer when you invoke your pipelines
+programmatically. Either way is identical for actual pipeline control-of-flow
+execution - the only difference is how you initialize the context that the
+pipeline will use.</p>
+<div class="admonition tip" role=figure>
+<div class=admonition-tip-icon></div>
+<div class=admonition-content><p>Now, having said that, parsing input strings and inferring types with the
+<code>context_parser</code> (like you have to when the cli is passing the values) is
+inherently inefficient. Since you are in structured Python code already when
+using the API, you might as well prefer <code>dict_in</code> to <code>args_in</code>.</p>
+<p>What works well is to set a <code>context_parser</code> in your pipeline yaml, which allows
+you to use it from the cli with custom arguments, and then you can just bypass
+the <code>context_parser</code> when you use the API by using <code>dict_in</code> explicitly to
+initialize the Context exactly how you want it. This allows you to call the same
+pipeline from both the cli and the api - and if you only pass <code>dict_in</code> to the
+api rather than <code>args_in</code>, pypyr will automatically bypass the <code>context_parser</code>
+for you unless you explicitly set <code>parse_args</code> to <code>True</code>.</p>
+</div>
+</div>
+<h3 id=args_in-list>args_in list <a href=#args_in-list class=headline-anchor aria-label=anchor><svg class="permalink"><title>permalink</title><use href="https://pypyr.io/icons/external-link.054f8ebb57944b2bc52ea4f0ecd16197.svg#external-link"/></svg></a></h3><p><code>args_in</code> takes a list of strings. This is a POSIX style argument split on the
+input arguments following the pipeline name as passed from the cli.</p>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text>$ pypyr mypipeline arg1 &#34;arg 2&#34; arg3=4
+</code></pre></div><p>Equates to <code>args_in</code> of:</p>
 <div class=highlight><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=p>[</span><span class=s1>&#39;arg1&#39;</span><span class=p>,</span> <span class=s1>&#39;arg 2&#39;</span><span class=p>,</span> <span class=s1>&#39;arg3=4&#39;</span><span class=p>]</span>
 </code></pre></div><p>If you have a single string representing all the input arguments, a convenient
 way to split it into a list while honoring escape sequences & quotes is to use
@@ -652,139 +808,13 @@ split</a> function.</p>
 <span class=c1># $ pypyr pipeline-dir/my-pipe arbkey=pipe anotherkey=&#34;song with a space&#34;</span>
 
 <span class=n>in_args</span> <span class=o>=</span> <span class=n>shlex</span><span class=o>.</span><span class=n>split</span><span class=p>(</span><span class=s1>&#39;arbkey=pipe anotherkey=&#34;song with a space &#34;&#39;</span><span class=p>)</span>
-<span class=c1># in_args == [&#39;arbkey=pipe&#39;, &#39;anotherkey=song with a space &#39;]</span>
+<span class=c1># shlex result: [&#39;arbkey=pipe&#39;, &#39;anotherkey=song with a space &#39;]</span>
 
-<span class=n>pipelinerunner</span><span class=o>.</span><span class=n>main</span><span class=p>(</span><span class=n>pipeline_name</span><span class=o>=</span><span class=s1>&#39;pipeline-dir/my-pipe&#39;</span><span class=p>,</span>
-                    <span class=n>pipeline_context_input</span><span class=o>=</span><span class=n>in_args</span><span class=p>)</span>
+<span class=n>pipelinerunner</span><span class=o>.</span><span class=n>run</span><span class=p>(</span><span class=n>pipeline_name</span><span class=o>=</span><span class=s1>&#39;pipeline-dir/my-pipe&#39;</span><span class=p>,</span>
+                   <span class=n>args_in</span><span class=o>=</span><span class=n>in_args</span><span class=p>)</span>
 </code></pre></div>
-<h3 id=input-args>input args <a href=#input-args class=headline-anchor aria-label=anchor><svg class="permalink"><title>permalink</title><use href="https://pypyr.io/icons/external-link.054f8ebb57944b2bc52ea4f0ecd16197.svg#external-link"/></svg></a></h3><div class=highlight><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=kn>import</span> <span class=nn>pypyr.pipelinerunner</span>
-
-<span class=n>pypyr</span><span class=o>.</span><span class=n>pipelinerunner</span><span class=o>.</span><span class=n>main</span><span class=p>(</span><span class=n>pipeline_name</span><span class=o>=</span><span class=s1>&#39;arb-pipe&#39;</span><span class=p>,</span>
-                          <span class=n>pipeline_context_input</span><span class=o>=</span><span class=p>[</span><span class=s1>&#39;arb&#39;</span><span class=p>,</span> <span class=s1>&#39;context input&#39;</span><span class=p>],</span>
-                          <span class=n>working_dir</span><span class=o>=</span><span class=s1>&#39;arb/dir&#39;</span><span class=p>,</span>
-                          <span class=n>groups</span><span class=o>=</span><span class=p>[</span><span class=s1>&#39;group1&#39;</span><span class=p>,</span> <span class=s1>&#39;group2&#39;</span><span class=p>],</span>
-                          <span class=n>success_group</span><span class=o>=</span><span class=s1>&#39;success_group&#39;</span><span class=p>,</span>
-                          <span class=n>failure_group</span><span class=o>=</span><span class=s1>&#39;failure_group&#39;</span><span class=p>,</span>
-                          <span class=n>loader</span><span class=o>=</span><span class=s1>&#39;mypackage.myloader&#39;</span><span class=p>)</span>
-</code></pre></div><ul>
-<li><code>pipeline_name</code>: string. Required.
-<ul>
-<li>Name of pipeline, sans .yaml at end.</li>
-<li><code>{pipeline_name}.yaml</code> is relative to the <code>working_dir</code>.</li>
-</ul>
-</li>
-<li><code>pipeline_context_input</code>: list of string. Optional.
-<ul>
-<li>Initialize the pypyr context with this list of strings.</li>
-<li>Use the python shlex split function on a string to get a parsed list.</li>
-<li>If not specified pypyr will create an empty <code>Context</code> object for you,
-depending on how the pipeline&rsquo;s <code>context_parser</code> handles <code>None</code> input.</li>
-</ul>
-</li>
-<li><code>working_dir</code>: Path-like. Optional.
-<ul>
-<li>Look for pipelines and modules in this directory.</li>
-<li>Default to the current directory if not specified.</li>
-</ul>
-</li>
-<li><code>groups</code>: list of string. Optional.
-<ul>
-<li>Step-group names to run in pipeline.</li>
-<li>Default to <code>steps</code> if not specified.</li>
-</ul>
-</li>
-<li><code>success_group</code>: string. Optional.
-<ul>
-<li>Step-group name to run on success completion.</li>
-<li>Default to <code>on_success</code> if not specified.</li>
-</ul>
-</li>
-<li><code>failure_group</code>: string. Optional.
-<ul>
-<li>Step-group name to run on pipeline failure.</li>
-<li>Default to <code>on_failure</code> if not specified.</li>
-</ul>
-</li>
-<li><code>loader</code>: string. Optional.
-<ul>
-<li>Absolute name of pipeline loader module.</li>
-<li>If not specified will use <code>pypyr.pypeloaders.fileloader</code> - the standard
-pypyr pipeline loader.</li>
-</ul>
-</li>
-</ul>
-<h3 id=returns>returns <a href=#returns class=headline-anchor aria-label=anchor><svg class="permalink"><title>permalink</title><use href="https://pypyr.io/icons/external-link.054f8ebb57944b2bc52ea4f0ecd16197.svg#external-link"/></svg></a></h3><p>None. If you want to interact with the <code>Context</code> object after the pipeline
-run completes, call <code>main_with_context</code> instead.</p>
-<h2 id=main-with-context-entry-point>main with context entry-point <a href=#main-with-context-entry-point class=headline-anchor aria-label=anchor><svg class="permalink"><title>permalink</title><use href="https://pypyr.io/icons/external-link.054f8ebb57944b2bc52ea4f0ecd16197.svg#external-link"/></svg></a></h2><p>Use <code>main_with_context</code> instead of <code>main</code> if you have a a dict-like object you
-want to use to initialize the context, rather than using the context parser with
-a string input that pypyr needs to parse first.</p>
-<p><code>main_with_context</code> also returns the context after the pipeline completes,
-giving you access to the values the pipeline stored to context during its run.</p>
-<p>If you do want to run the pipeline&rsquo;s <code>context_parser</code>, use <code>main()</code> instead.</p>
-<h3 id=input-args-1>input args <a href=#input-args-1 class=headline-anchor aria-label=anchor><svg class="permalink"><title>permalink</title><use href="https://pypyr.io/icons/external-link.054f8ebb57944b2bc52ea4f0ecd16197.svg#external-link"/></svg></a></h3><div class=highlight><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=kn>import</span> <span class=nn>pypyr.pipelinerunner</span>
-
-<span class=n>context_out</span> <span class=o>=</span> <span class=n>pypyr</span><span class=o>.</span><span class=n>pipelinerunner</span><span class=o>.</span><span class=n>main_with_context</span><span class=p>(</span>
-    <span class=n>pipeline_name</span><span class=o>=</span><span class=s1>&#39;mypath/arb-pipe&#39;</span><span class=p>,</span>
-    <span class=n>dict_in</span><span class=o>=</span><span class=p>{</span><span class=s1>&#39;key&#39;</span><span class=p>:</span> <span class=s1>&#39;value&#39;</span><span class=p>,</span> <span class=s1>&#39;arbkey&#39;</span><span class=p>:</span> <span class=s1>&#39;arb value&#39;</span><span class=p>},</span>
-    <span class=n>working_dir</span><span class=o>=</span><span class=s1>&#39;arb/dir&#39;</span><span class=p>,</span>
-    <span class=n>groups</span><span class=o>=</span><span class=p>[</span><span class=s1>&#39;group1&#39;</span><span class=p>,</span> <span class=s1>&#39;group2&#39;</span><span class=p>],</span>
-    <span class=n>success_group</span><span class=o>=</span><span class=s1>&#39;success_group&#39;</span><span class=p>,</span>
-    <span class=n>failure_group</span><span class=o>=</span><span class=s1>&#39;failure_group&#39;</span><span class=p>,</span>
-    <span class=n>loader</span><span class=o>=</span><span class=s1>&#39;mypackage.myloader&#39;</span><span class=p>)</span>
-</code></pre></div><p>The input arguments are the same as for <code>main()</code>, with the only difference being
-that instead of passing a list of string in <code>pipeline_context_in</code> you pass a
-dict-like object in <code>dict_in</code>.</p>
-<ul>
-<li><code>pipeline_name</code>: string. Required.
-<ul>
-<li>Name of pipeline, sans .yaml at end.</li>
-<li><code>{pipeline_name}.yaml</code> is relative to the <code>working_dir</code>.</li>
-</ul>
-</li>
-<li><code>dict_in</code>: dict. Optional.
-<ul>
-<li>Initialize the pypyr <code>Context</code> object with this dict.</li>
-<li>If not specified pypyr will create an empty <code>Context</code> for you.</li>
-<li>The function returns the created <code>Context</code> object with any mutations
-made by the pipeline.</li>
-</ul>
-</li>
-<li><code>working_dir</code>: Path-like. Optional.
-<ul>
-<li>Look for pipelines and modules in this directory.</li>
-<li>Default to the current directory if not specified.</li>
-</ul>
-</li>
-<li><code>groups</code>: list of string. Optional.
-<ul>
-<li>Step-group names to run in pipeline.</li>
-<li>Default to <code>steps</code> if not specified.</li>
-</ul>
-</li>
-<li><code>success_group</code>: string. Optional.
-<ul>
-<li>Step-group name to run on success completion.</li>
-<li>Default to <code>on_success</code> if not specified.</li>
-</ul>
-</li>
-<li><code>failure_group</code>: string. Optional.
-<ul>
-<li>Step-group name to run on pipeline failure.</li>
-<li>Default to <code>on_failure</code> if not specified.</li>
-</ul>
-</li>
-<li><code>loader</code>: string. Optional.
-<ul>
-<li>Absolute name of pipeline loader module.</li>
-<li>If not specified will use <code>pypyr.pypeloaders.fileloader</code> - the standard
-pypyr pipeline loader.</li>
-</ul>
-</li>
-</ul>
-<h3 id=returns-1>returns <a href=#returns-1 class=headline-anchor aria-label=anchor><svg class="permalink"><title>permalink</title><use href="https://pypyr.io/icons/external-link.054f8ebb57944b2bc52ea4f0ecd16197.svg#external-link"/></svg></a></h3><p>The pypyr context as it is after the pipeline completes. This is of type
-<code>pypyr.context.Context()</code>. The <code>Context</code> object behaves pretty much like a
-standard <code>dict</code>.</p>
-<h2 id=invoke-pipeline-from-api-with-no-input-context>invoke pipeline from api with no input context <a href=#invoke-pipeline-from-api-with-no-input-context class=headline-anchor aria-label=anchor><svg class="permalink"><title>permalink</title><use href="https://pypyr.io/icons/external-link.054f8ebb57944b2bc52ea4f0ecd16197.svg#external-link"/></svg></a></h2><p>Setting an input context is optional.</p>
+<h3 id=invoke-pipeline-from-api-with-no-input-context>invoke pipeline from api with no input context <a href=#invoke-pipeline-from-api-with-no-input-context class=headline-anchor aria-label=anchor><svg class="permalink"><title>permalink</title><use href="https://pypyr.io/icons/external-link.054f8ebb57944b2bc52ea4f0ecd16197.svg#external-link"/></svg></a></h3><p>Setting an input context is optional. It&rsquo;s only relevant when you have to pass
+values into your pipeline.</p>
 <div class=highlight><pre tabindex=0 class=chroma><code class=language-yaml data-lang=yaml><span class=c># ./no-input-context.yaml</span><span class=w>
 </span><span class=w></span><span class=nt>steps</span><span class=p>:</span><span class=w>
 </span><span class=w>  </span>- <span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>pypyr.steps.py</span><span class=w>
@@ -801,10 +831,7 @@ standard <code>dict</code>.</p>
 
 <span class=kn>from</span> <span class=nn>pypyr</span> <span class=kn>import</span> <span class=n>pipelinerunner</span>
 
-<span class=n>pipelinerunner</span><span class=o>.</span><span class=n>main</span><span class=p>(</span><span class=n>pipeline_name</span><span class=o>=</span><span class=s1>&#39;no-input-context&#39;</span><span class=p>)</span>
-
-<span class=c1># or if you want to work with return context from pipeline</span>
-<span class=n>out</span> <span class=o>=</span> <span class=n>pipelinerunner</span><span class=o>.</span><span class=n>main_with_context</span><span class=p>(</span><span class=n>pipeline_name</span><span class=o>=</span><span class=s1>&#39;no-input-context&#39;</span><span class=p>)</span>
+<span class=n>out</span> <span class=o>=</span> <span class=n>pipelinerunner</span><span class=o>.</span><span class=n>run</span><span class=p>(</span><span class=s1>&#39;no-input-context&#39;</span><span class=p>)</span>
 <span class=nb>print</span><span class=p>(</span><span class=n>out</span><span class=p>[</span><span class=s1>&#39;arbkey&#39;</span><span class=p>])</span> <span class=c1># I was set in the pipeline!</span>
 </code></pre></div>
 <h2 id=logging>logging <a href=#logging class=headline-anchor aria-label=anchor><svg class="permalink"><title>permalink</title><use href="https://pypyr.io/icons/external-link.054f8ebb57944b2bc52ea4f0ecd16197.svg#external-link"/></svg></a></h2><p>By default python runs with a log level of 30 (WARNING). This means you won&rsquo;t
@@ -817,7 +844,7 @@ tell it to do so.</p>
 responsibility to set up and configure logging. If you just want the same log
 handlers & formatters that the pypyr cli uses, you can call
 <a href=#set_root_logger-input-args>pypyr.log.logger.set_root_logger()</a> before
-invoking <code>pipelinerunner.main()</code> or <code>pipelinerunner.main_with_context()</code>.</p>
+invoking <code>pipelinerunner.run()</code>.</p>
 <div class=highlight><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=kn>import</span> <span class=nn>pypyr.log.logger</span>
 <span class=kn>from</span> <span class=nn>pypyr</span> <span class=kn>import</span> <span class=n>pipelinerunner</span>
 
@@ -827,12 +854,12 @@ invoking <code>pipelinerunner.main()</code> or <code>pipelinerunner.main_with_co
 <span class=c1># For a pipeline that you&#39;d run from the cli like this:</span>
 <span class=c1># $ pypyr pipeline-dir/my-pipe arbkey=pipe anotherkey=song</span>
 
-<span class=n>context_out</span> <span class=o>=</span> <span class=n>pipelinerunner</span><span class=o>.</span><span class=n>main_with_context</span><span class=p>(</span>
-    <span class=n>pipeline_name</span><span class=o>=</span><span class=s1>&#39;pipeline-dir/my-pipe&#39;</span><span class=p>,</span>
-    <span class=n>dict_in</span><span class=o>=</span><span class=p>{</span><span class=s1>&#39;arbkey&#39;</span><span class=p>:</span> <span class=s1>&#39;pipe&#39;</span><span class=p>,</span>
-             <span class=s1>&#39;anotherkey&#39;</span><span class=p>:</span> <span class=s1>&#39;song&#39;</span><span class=p>})</span>
+<span class=n>context_out</span> <span class=o>=</span> <span class=n>pipelinerunner</span><span class=o>.</span><span class=n>run</span><span class=p>(</span><span class=s1>&#39;pipeline-dir/my-pipe&#39;</span><span class=p>,</span>
+                                 <span class=n>dict_in</span><span class=o>=</span><span class=p>{</span><span class=s1>&#39;arbkey&#39;</span><span class=p>:</span> <span class=s1>&#39;pipe&#39;</span><span class=p>,</span>
+                                          <span class=s1>&#39;anotherkey&#39;</span><span class=p>:</span> <span class=s1>&#39;song&#39;</span><span class=p>})</span>
 </code></pre></div><p>Be aware that pypyr adds a <code>NOTIFY</code> - <code>25</code> custom log-level and a <code>notify()</code>
-function to <code>logging</code>.</p>
+function to <code>logging</code> in all cases, even when you don&rsquo;t call
+<code>set_root_logger()</code>.</p>
 <h3 id=log-levels>log levels <a href=#log-levels class=headline-anchor aria-label=anchor><svg class="permalink"><title>permalink</title><use href="https://pypyr.io/icons/external-link.054f8ebb57944b2bc52ea4f0ecd16197.svg#external-link"/></svg></a></h3><p>Log level enumeration:</p>
 <ul>
 <li>&lt; 10 gives full traceback on errors.</li>
@@ -846,6 +873,8 @@ function to <code>logging</code>.</p>
 <h3 id=set_root_logger-input-args>set_root_logger input args <a href=#set_root_logger-input-args class=headline-anchor aria-label=anchor><svg class="permalink"><title>permalink</title><use href="https://pypyr.io/icons/external-link.054f8ebb57944b2bc52ea4f0ecd16197.svg#external-link"/></svg></a></h3><p>Use <code>set_root_logger</code> when you want to use the same logging format as the cli.</p>
 <p>This is optional. Your application is free to define its own log level and
 handlers - in which case, don&rsquo;t bother with <code>set_root_logger()</code>.</p>
+<p>If you do call <code>set_root_logger</code> do so once and only once at program
+initialization.</p>
 <div class=highlight><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=kn>import</span> <span class=nn>pypyr.log.logger</span>
 
 <span class=n>pypyr</span><span class=o>.</span><span class=n>log</span><span class=o>.</span><span class=n>logger</span><span class=o>.</span><span class=n>set_root_logger</span><span class=p>(</span><span class=n>log_level</span><span class=o>=</span><span class=mi>25</span><span class=p>,</span>
@@ -859,7 +888,8 @@ handlers - in which case, don&rsquo;t bother with <code>set_root_logger()</code>
 <li><code>log_path</code>: Path-like. Optional.
 <ul>
 <li>If specified, append pypyr output to this file.</li>
-<li>Defaults to <code>None</code> if not specified.</li>
+<li>Defaults to <code>None</code> if not specified - which means output only goes to the
+console.</li>
 </ul>
 </li>
 </ul>
@@ -867,11 +897,11 @@ handlers - in which case, don&rsquo;t bother with <code>set_root_logger()</code>
 <section class="see-also elevation-02">
 <h2>see also</h2>
 <ul>
+<li><a href=/docs/api/custom-module-search-path/>custom module name resolution</a></li>
 <li><a href=/docs/api/retry-backoff/>custom retry backoff</a></li>
 <li><a href=/docs/api/>api</a></li>
 <li><a href=/docs/api/context-parser/>custom context parser</a></li>
 <li><a href=/docs/api/pipeline-loader/>custom pype loader</a></li>
-<li><a href=/docs/api/step/>custom step</a></li>
 </ul>
 </section>
 </main>
@@ -892,7 +922,7 @@ handlers - in which case, don&rsquo;t bother with <code>set_root_logger()</code>
 </ul>
 </aside>
 <div class="page-git-info elevation-02">
-<small class=small-block>last updated on <time datetime=2021-10-05T14:41:15+01:00>2021-10-05 14:41</time>.</small>
+<small class=small-block>last updated on <time datetime=2021-11-20T15:55:39Z>2021-11-20 15:55</time>.</small>
 </div>
 </div>
 <footer class="footer elevation-01">

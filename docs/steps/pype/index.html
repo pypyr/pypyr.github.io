@@ -23,7 +23,7 @@
 <meta property="og:url" content="https://pypyr.io/docs/steps/pype/">
 <meta name=twitter:card content="summary_large_image">
 <meta name=twitter:site content="@pypyrpipes">
-<script type=application/ld+json>{"@context":"https://schema.org","@graph":[{"@id":"https://pypyr.io/#organization","@type":"Organization","name":"pypyr","url":"https://pypyr.io/","description":"The pypyr project is a free open-source task-runner cli \u0026 python api for automation pipelines.","logo":{"@type":"ImageObject","url":"https://pypyr.io/images/pypyr-taskrunner-logo-square.63875e43ff40d8ae40e93a6043b4328b962f54f52974aaa27cedec52220de665.svg","height":112,"width":112},"sameAs":["https://github.com/pypyr/","https://twitter.com/pypyrpipes/","https://pypi.org/user/pypyr/","https://hub.docker.com/u/pypyr/","https://en.gravatar.com/pypyr/"]},{"@type":"TechArticle","author":{"@type":"Person","name":"pypyr contributor"},"articleSection":"steps","dateModified":"2021-11-09T14:29:55Z","datePublished":"2020-07-06T18:44:14+01:00","headline":"Call pipeline from running pipeline.","image":[{"@type":"ImageObject","url":"https://pypyr.io/images/1x1/pypyr-taskrunner-yaml-pipeline-automation-1200x1200.52764d3c6f40232b3cdc33f5b8fbaeadad56cc310c8dd5588d30828296b5290d.png","height":1200,"width":1200},{"@type":"ImageObject","url":"https://pypyr.io/images/4x3/pypyr-taskrunner-yaml-pipeline-automation-1200x900.e8e70443377aeb11c190835e8d2ed0c844d31a82a0c2e8a744a9999cd03e0de9.png","height":900,"width":1200},{"@type":"ImageObject","url":"https://pypyr.io/images/16x9/pypyr-taskrunner-yaml-pipeline-automation-1920x1080.cc9ae11626c8312e087058adb13bfff702162ce39c355065170c1b87850f3034.png","height":1080,"width":1920}],"inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https://pypyr.io/docs/steps/pype/"},"publisher":{"@id":"https://pypyr.io/#organization"},"url":"https://pypyr.io/docs/steps/pype/","wordCount":1688}]}</script>
+<script type=application/ld+json>{"@context":"https://schema.org","@graph":[{"@id":"https://pypyr.io/#organization","@type":"Organization","name":"pypyr","url":"https://pypyr.io/","description":"The pypyr project is a free open-source task-runner cli \u0026 python api for automation pipelines.","logo":{"@type":"ImageObject","url":"https://pypyr.io/images/pypyr-taskrunner-logo-square.63875e43ff40d8ae40e93a6043b4328b962f54f52974aaa27cedec52220de665.svg","height":112,"width":112},"sameAs":["https://github.com/pypyr/","https://twitter.com/pypyrpipes/","https://pypi.org/user/pypyr/","https://hub.docker.com/u/pypyr/","https://en.gravatar.com/pypyr/"]},{"@type":"TechArticle","author":{"@type":"Person","name":"pypyr contributor"},"articleSection":"steps","dateModified":"2021-11-20T15:55:39Z","datePublished":"2020-07-06T18:44:14+01:00","headline":"Call pipeline from running pipeline.","image":[{"@type":"ImageObject","url":"https://pypyr.io/images/1x1/pypyr-taskrunner-yaml-pipeline-automation-1200x1200.52764d3c6f40232b3cdc33f5b8fbaeadad56cc310c8dd5588d30828296b5290d.png","height":1200,"width":1200},{"@type":"ImageObject","url":"https://pypyr.io/images/4x3/pypyr-taskrunner-yaml-pipeline-automation-1200x900.e8e70443377aeb11c190835e8d2ed0c844d31a82a0c2e8a744a9999cd03e0de9.png","height":900,"width":1200},{"@type":"ImageObject","url":"https://pypyr.io/images/16x9/pypyr-taskrunner-yaml-pipeline-automation-1920x1080.cc9ae11626c8312e087058adb13bfff702162ce39c355065170c1b87850f3034.png","height":1080,"width":1920}],"inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https://pypyr.io/docs/steps/pype/"},"publisher":{"@id":"https://pypyr.io/#organization"},"url":"https://pypyr.io/docs/steps/pype/","wordCount":2064}]}</script>
 <link rel=apple-touch-icon sizes=180x180 href=/favicons/apple-touch-icon.925deabb48d91a80924b5d04ff56d2b8f42ba1d1e1438cb7d8948cce1138208c.png>
 <link rel=icon type=image/png sizes=32x32 href=/favicons/favicon-32x32.b869433d27c4679a5fbce03a8489268a539cbc781259bff14618ae2f018334e6.png>
 <link rel=icon type=image/png sizes=16x16 href=/favicons/favicon-16x16.8bcd9f870e0a86445e0505ce6e816b76a40b08a06e2dcd1ec1f90c395ecbeaf6.png>
@@ -455,6 +455,9 @@
 <a href=/docs/api/>overview</a>
 </li>
 <li>
+<a href=/docs/api/custom-module-search-path/>custom module search path</a>
+</li>
+<li>
 <a href=/docs/api/context-parser/>context parser</a>
 </li>
 <li>
@@ -545,6 +548,8 @@
 <li><a href=#skipparse>skipParse</a></li>
 <li><a href=#useparentcontext>useParentContext</a></li>
 <li><a href=#loader>loader</a></li>
+<li><a href=#pydir>pyDir</a></li>
+<li><a href=#resolvefromparent>resolveFromParent</a></li>
 </ol>
 </li>
 <li><a href=#dynamically-choose-which-pipeline-to-run>dynamically choose which pipeline to run</a></li>
@@ -576,7 +581,7 @@ input arguments:</p>
 </span><span class=w>  </span><span class=nt>comment</span><span class=p>:</span><span class=w> </span><span class=l>only pype name is required.</span><span class=w>
 </span><span class=w>  </span><span class=nt>in</span><span class=p>:</span><span class=w>
 </span><span class=w>    </span><span class=nt>pype</span><span class=p>:</span><span class=w>
-</span><span class=w>      </span><span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>child-pipeline</span><span class=w> </span><span class=c># this will run ./child-pipeline.yaml</span><span class=w>
+</span><span class=w>      </span><span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>child-pipeline</span><span class=w> </span><span class=c># run {parent pipeline dir}/child-pipeline.yaml</span><span class=w>
 </span></code></pre></div><p>There are many further optional properties you can set for more fine-grained
 control of the child pipeline execution:</p>
 <div class=highlight><pre tabindex=0 class=chroma><code class=language-yaml data-lang=yaml>- <span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>pypyr.steps.pype</span><span class=w>
@@ -597,22 +602,46 @@ control of the child pipeline execution:</p>
 </span><span class=w>      </span><span class=nt>raiseError</span><span class=p>:</span><span class=w> </span><span class=kc>True</span><span class=w> </span><span class=c># optional. bool. Defaults True.</span><span class=w>
 </span><span class=w>      </span><span class=nt>skipParse</span><span class=p>:</span><span class=w> </span><span class=kc>True</span><span class=w> </span><span class=c># optional. bool. Defaults True.</span><span class=w>
 </span><span class=w>      </span><span class=nt>useParentContext</span><span class=p>:</span><span class=w> </span><span class=kc>True</span><span class=w>  </span><span class=c># optional. bool. Defaults True.</span><span class=w>
-</span><span class=w>      </span><span class=nt>loader</span><span class=p>:</span><span class=w> </span><span class=l>None</span><span class=w> </span><span class=c># optional. string. Defaults to standard file loader.</span><span class=w>
+</span><span class=w>      </span><span class=nt>loader</span><span class=p>:</span><span class=w> </span><span class=l>None</span><span class=w> </span><span class=c># optional. string. Defaults to the parent&#39;s loader.</span><span class=w>
+</span><span class=w>      </span><span class=nt>resolveFromParent</span><span class=p>:</span><span class=w> </span><span class=kc>True</span><span class=w> </span><span class=c># optional. bool. Defaults True.</span><span class=w>
+</span><span class=w>      </span><span class=nt>pyDir</span><span class=p>:</span><span class=w> </span><span class=l>None</span><span class=w> </span><span class=c># optional. Path-like. Resolve custom modules from this dir.</span><span class=w>
 </span></code></pre></div><p>The default values apply when you do not specify an option at all.</p>
 <p>All inputs support <a href=https://pypyr.io/docs/substitutions/>substitutions</a>. This
 means you can
 <a href=#dynamically-choose-which-pipeline-to-run>dynamically set which pipeline you want to run</a>
 and also set at run-time what parameters to use for the child pipeline.</p>
-<h3 id=name>name <a href=#name class=headline-anchor aria-label=anchor><svg class="permalink"><title>permalink</title><use href="https://pypyr.io/icons/external-link.054f8ebb57944b2bc52ea4f0ecd16197.svg#external-link"/></svg></a></h3><p>Name of child pipeline to execute. The pipeline name resolves to a pipeline in
-exactly the same way as the pipeline name you call from the cli, following the
-<a href=https://pypyr.io/docs/pipelines/lookup-order/>pipeline lookup order</a>.</p>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=c1># call ./path/to/my-pipeline.yaml</span>
-$ pypyr path/to/my-pipeline
-</code></pre></div><p>pypyr will try to resolve <code>{name}.yaml</code> you set here from the working directory
-from which you invoked pypyr originally.</p>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-yaml data-lang=yaml><span class=nt>pype</span><span class=p>:</span><span class=w>
-</span><span class=w>  </span><span class=c># this will run ./path/to/my-pipeline.yaml</span><span class=w>
-</span><span class=w>  </span><span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>path/to/my-pipeline</span><span class=w>
+<h3 id=name>name <a href=#name class=headline-anchor aria-label=anchor><svg class="permalink"><title>permalink</title><use href="https://pypyr.io/icons/external-link.054f8ebb57944b2bc52ea4f0ecd16197.svg#external-link"/></svg></a></h3><p>Name of child pipeline to execute. You can use relative or absolute paths. In
+all cases, don&rsquo;t add the .yaml at the end, pypyr will do that for you.</p>
+<p>For relative paths, the pipeline name first tries to resolve relative to the
+current parent pipeline&rsquo;s containing directory, and if not found, then follows
+the usual <a href=https://pypyr.io/docs/pipelines/lookup-order/>pipeline lookup order</a>.</p>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text>|- arbdir/
+  |- parent-pipe.yaml
+  |- child-pipe.yaml
+</code></pre></div><p>You can call the parent pipeline like this:</p>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=c1># call ./arbdir/parent-pipe.yaml</span>
+$ pypyr arbdir/parent-pipe
+</code></pre></div><p>And then in <code>parent-pipe</code> use <code>pype</code> to call <code>child-pipe</code> relative to the
+parent:</p>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-yaml data-lang=yaml><span class=c># ./arbdir/parent-pipe.yaml</span><span class=w>
+</span><span class=w></span><span class=nt>steps</span><span class=p>:</span><span class=w>
+</span><span class=w>  </span>- <span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>pypyr.steps.pype</span><span class=w>
+</span><span class=w>    </span><span class=nt>in</span><span class=p>:</span><span class=w>
+</span><span class=w>      </span><span class=nt>pype</span><span class=p>:</span><span class=w>
+</span><span class=w>        </span><span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>child-pipe</span><span class=w> </span><span class=c># {parent pipeline dir}/child-pipe.yaml</span><span class=w>
+</span></code></pre></div><p>Child pipelines can be in sub-directories relative to the parent:</p>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-yaml data-lang=yaml><span class=c># ./arbdir/parent-pipe.yaml</span><span class=w>
+</span><span class=w></span><span class=nt>steps</span><span class=p>:</span><span class=w>
+</span><span class=w>  </span>- <span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>pypyr.steps.pype</span><span class=w>
+</span><span class=w>    </span><span class=nt>in</span><span class=p>:</span><span class=w>
+</span><span class=w>      </span><span class=nt>pype</span><span class=p>:</span><span class=w>
+</span><span class=w>        </span><span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>mydir/child-pipe</span><span class=w> </span><span class=c># {parent pipeline dir}/mydir/child-pipe.yaml</span><span class=w>
+</span></code></pre></div><p>Using an absolute path looks like this:</p>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-yaml data-lang=yaml><span class=nt>steps</span><span class=p>:</span><span class=w>
+</span><span class=w>  </span>- <span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>pypyr.steps.pype</span><span class=w>
+</span><span class=w>    </span><span class=nt>in</span><span class=p>:</span><span class=w>
+</span><span class=w>      </span><span class=nt>pype</span><span class=p>:</span><span class=w>
+</span><span class=w>        </span><span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>/mydir/mysub/child-pipe</span><span class=w> </span><span class=c># /mydir/mysub/child-pipe.yaml</span><span class=w>
 </span></code></pre></div><p>If you want to load pipelines from elsewhere, use a <a href=#loader>custom loader</a>.</p>
 <h3 id=args>args <a href=#args class=headline-anchor aria-label=anchor><svg class="permalink"><title>permalink</title><use href="https://pypyr.io/icons/external-link.054f8ebb57944b2bc52ea4f0ecd16197.svg#external-link"/></svg></a></h3><p>Initialize the child pipeline context with these args.</p>
 <p>Setting <code>args</code> creates a fresh context for the child pipeline that contains
@@ -717,7 +746,8 @@ context keys from different pipelines that share the same name.</p>
 parameters to the child pipeline via <code>pipeArg</code>.</p>
 <p><code>pipeArg</code> is relatively brittle, in that the child pipeline&rsquo;s context parser
 will have to parse the <code>pipeArg</code> string to initialize the child context, making
-for extra inefficient processing, if nothing else.</p>
+for extra inefficient processing. But if you have a good reason to prefer the
+<code>context_parser</code> running, by all means do so.</p>
 </div>
 </div>
 <p>If you combine <code>args</code> and <code>pipeArg</code>, pypyr will merge values resulting from
@@ -755,11 +785,40 @@ this under the hood for you. Be careful of your own custom context properties,
 however, the parent and child shares these.</p>
 </div>
 </div>
-<h3 id=loader>loader <a href=#loader class=headline-anchor aria-label=anchor><svg class="permalink"><title>permalink</title><use href="https://pypyr.io/icons/external-link.054f8ebb57944b2bc52ea4f0ecd16197.svg#external-link"/></svg></a></h3><p>Load the child pipeline with this loader. The default is the standard pypyr
-<code>pypyr.pypeloaders.fileloader</code>, which looks for pipelines on the file system.</p>
-<p>This is useful if you are loading your pipelines using a
-<a href=https://pypyr.io/docs/api/pipeline-loader/>custom loader</a> to fetch your
-pipelines from your own external systems or locations.</p>
+<h3 id=loader>loader <a href=#loader class=headline-anchor aria-label=anchor><svg class="permalink"><title>permalink</title><use href="https://pypyr.io/icons/external-link.054f8ebb57944b2bc52ea4f0ecd16197.svg#external-link"/></svg></a></h3><p>Load the child pipeline with this loader. This is useful if you are loading your
+pipelines using a <a href=https://pypyr.io/docs/api/pipeline-loader/>custom loader</a> to
+fetch your pipelines from your own external systems or locations.</p>
+<p>This defaults to the parent loader, so you do NOT need to set this explicitly if
+you want to load the child with the same loader that did the parent.</p>
+<p>The default pipeline loader is the built-in <code>pypyr.loaders.file</code>, which looks
+for pipelines on the file system. pypyr will interpret explicitly setting
+<code>loader</code> to <code>pypyr.loaders.file</code>, <code>null</code> or empty all to mean using the standard
+<code>pypyr.loaders.file</code> loader.</p>
+<p>If you do not want to inherit which loader to use from the parent, you can
+either explicitly set <code>loader</code>, or if your parent used a custom loader, code
+the
+<a href=https://pypyr.io/docs/api/pipeline-loader/#non-cascading-loader>loader not to cascade</a>.</p>
+<h3 id=pydir>pyDir <a href=#pydir class=headline-anchor aria-label=anchor><svg class="permalink"><title>permalink</title><use href="https://pypyr.io/icons/external-link.054f8ebb57944b2bc52ea4f0ecd16197.svg#external-link"/></svg></a></h3><p>Load ad hoc custom python modules from this directory. You only need to set this
+if your custom modules do not resolve from the child pipeline&rsquo;s parent directory
+AND the modules are not installed to the current python environment.</p>
+<p>By default, the current directory ($PWD), the parent pipeline&rsquo;s directory and
+the child pipeline&rsquo;s directory are in the module resolution path by already, so
+if your custom modules are relative to these locations you do NOT need to set
+<code>pyDir</code>.</p>
+<p>You do NOT need to set this if another pipeline in the same session has already
+referenced the same directory.</p>
+<p>See
+<a href=https://pypyr.io/docs/api/custom-module-search-path/>custom module import resolution rules</a>
+for details.</p>
+<h3 id=resolvefromparent>resolveFromParent <a href=#resolvefromparent class=headline-anchor aria-label=anchor><svg class="permalink"><title>permalink</title><use href="https://pypyr.io/icons/external-link.054f8ebb57944b2bc52ea4f0ecd16197.svg#external-link"/></svg></a></h3><p>Boolean to indicate whether to resolve pipeline <code>name</code> relative to the parent.
+This is <code>True</code> by default, which for the standard file loader means that pypyr
+will first look for the child relative to the parent&rsquo;s directory, and if it
+isn&rsquo;t there go on to search the usual <a href=https://pypyr.io/docs/pipelines/lookup-order/>pipeline lookup order</a>.</p>
+<p><code>resolveFromParent</code> overrides the <code>is_parent_cascading</code> property on the
+<code>PipelineInfo</code> object returned by the parent&rsquo;s loader.</p>
+<p>If you are using the standard file loader and you set <code>resolveFromParent</code> to
+<code>False</code>, pypyr will immediately fall back to the usual pipeline look-up order
+and look in the current directory ($PWD) first.</p>
 <h2 id=dynamically-choose-which-pipeline-to-run>dynamically choose which pipeline to run <a href=#dynamically-choose-which-pipeline-to-run class=headline-anchor aria-label=anchor><svg class="permalink"><title>permalink</title><use href="https://pypyr.io/icons/external-link.054f8ebb57944b2bc52ea4f0ecd16197.svg#external-link"/></svg></a></h2><p>You can use <a href=https://pypyr.io/docs/substitutions/>substitution expressions</a> to set
 the child pipeline you want to execute dynamically at run-time. You can do this
 as a simple substitution of the pipeline name, or you could use a look-up table
@@ -836,7 +895,7 @@ recursion</a>.</p>
 </ul>
 </aside>
 <div class="page-git-info elevation-02">
-<small class=small-block>last updated on <time datetime=2021-11-09T14:29:55Z>2021-11-09 14:29</time>.</small>
+<small class=small-block>last updated on <time datetime=2021-11-20T15:55:39Z>2021-11-20 15:55</time>.</small>
 </div>
 </div>
 <footer class="footer elevation-01">

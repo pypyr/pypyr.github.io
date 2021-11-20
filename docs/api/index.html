@@ -455,6 +455,9 @@
 <a href=/docs/api/>overview</a>
 </li>
 <li>
+<a href=/docs/api/custom-module-search-path/>custom module search path</a>
+</li>
+<li>
 <a href=/docs/api/context-parser/>context parser</a>
 </li>
 <li>
@@ -528,35 +531,40 @@
 <h1 id=the-pypyr-api>the pypyr api <a href=#the-pypyr-api class=headline-anchor aria-label=anchor><svg class="permalink"><title>permalink</title><use href="https://pypyr.io/icons/external-link.054f8ebb57944b2bc52ea4f0ecd16197.svg#external-link"/></svg></a></h1><p>You can easily extend pypyr with your own custom steps, cli input arguments &
 you can invoke pipelines programmatically from the API.</p>
 <p>At simplest, you can run a pipeline with one line of code.</p>
-<p>Don&rsquo;t be put off & think of this as advanced functionality: it is very much
-the idea of how to use pypyr effectively. Specifically making your own custom
-step is likely to be a regular activity - and happily, you can do so with a
-single simple function signature.</p>
+<p>Don&rsquo;t be put off & think of this as advanced functionality: it is very much the
+idea of how to use pypyr effectively. Specifically making your own <a href=https://pypyr.io/docs/api/step/>custom
+step</a> is likely to be a regular activity - and
+happily, you can do so with a single simple function signature.</p>
 <ul class=section-summary-cards vocab="http://schema.org/" typeof="ItemList">
 <li class="section-summary-card elevation-01" property="itemListElement" typeof="ListItem">
-<h5><a href=/docs/api/context-parser/ property="url">context parser</a></h5>
-<p>Create your own context parser to parse cli input arguments.</p>
+<h5><a href=/docs/api/custom-module-search-path/ property="url">custom module name resolution</a></h5>
+<p>How to reference custom modules in your pipelines.</p>
 <meta property="position" content="1">
 </li>
 <li class="section-summary-card elevation-01" property="itemListElement" typeof="ListItem">
-<h5><a href=/docs/api/pipeline-loader/ property="url">custom pype loader</a></h5>
-<p>Create a custom pipeline loader to load pipelines from elsewhere.</p>
+<h5><a href=/docs/api/context-parser/ property="url">context parser</a></h5>
+<p>Create your own context parser to parse cli input arguments.</p>
 <meta property="position" content="2">
+</li>
+<li class="section-summary-card elevation-01" property="itemListElement" typeof="ListItem">
+<h5><a href=/docs/api/pipeline-loader/ property="url">custom pype loader</a></h5>
+<p>Create a custom pipeline loader to load pipelines from a different place.</p>
+<meta property="position" content="3">
 </li>
 <li class="section-summary-card elevation-01" property="itemListElement" typeof="ListItem">
 <h5><a href=/docs/api/retry-backoff/ property="url">retry backoff</a></h5>
 <p>Create your own custom retry backoff algorithm.</p>
-<meta property="position" content="3">
+<meta property="position" content="4">
 </li>
 <li class="section-summary-card elevation-01" property="itemListElement" typeof="ListItem">
 <h5><a href=/docs/api/run-pipeline/ property="url">run pipeline api</a></h5>
 <p>Run pipeline programmatically from the API in your own code.</p>
-<meta property="position" content="4">
+<meta property="position" content="5">
 </li>
 <li class="section-summary-card elevation-01" property="itemListElement" typeof="ListItem">
 <h5><a href=/docs/api/step/ property="url">step</a></h5>
 <p>Create your own custom step.</p>
-<meta property="position" content="5">
+<meta property="position" content="6">
 </li>
 </ul>
 </article>
@@ -578,7 +586,7 @@ single simple function signature.</p>
 </ul>
 </aside>
 <div class="page-git-info elevation-02">
-<small class=small-block>last updated on <time datetime=2020-11-12T13:08:27Z>2020-11-12 13:08</time>.</small>
+<small class=small-block>last updated on <time datetime=2021-11-20T15:55:39Z>2021-11-20 15:55</time>.</small>
 </div>
 </div>
 <footer class="footer elevation-01">

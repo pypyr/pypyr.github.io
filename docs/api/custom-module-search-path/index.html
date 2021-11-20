@@ -2,28 +2,28 @@
 <head>
 <meta charset=utf-8>
 <meta name=viewport content="width=device-width,initial-scale=1">
-<title>jsonify | pypyr</title>
-<meta name=description content="Convert object structures like lists & dictionaries from yaml to a string of json.">
+<title>custom module name resolution | pypyr</title>
+<meta name=description content="You can use ad hoc custom Python modules (.py files) without doing pip install first.">
 <link rel=stylesheet href=https://pypyr.io/css/styles.min.99e596997d7f6f9df9ec7bb05cdd3e8c62dd9d484bbe6858e05e90aebf2c1ec2.css integrity="sha256-meWWmX1/b5357HuwXN0+jGLdnUhLvmhY4F6Qrr8sHsI=">
 <link rel=stylesheet href=https://pypyr.io/css/code-highlight.min.78f63f1d4f45beaf423efd3dc8e6914c2abdca1b5391cd91368a32efecd9d7e3.css integrity="sha256-ePY/HU9Fvq9CPv09yOaRTCq9yhtTkc2RNooy7+zZ1+M=">
 <script defer src=https://pypyr.io/js/script.min.45064b9f444bbb1631eeef9f9ef2be6985c45b5f06bddb6644ce049732706a06.js integrity="sha256-RQZLn0RLuxYx7u+fnvK+aYXEW18GvdtmRM4ElzJwagY="></script>
 <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700%7cRoboto+Mono:400,400i&display=swap" rel=stylesheet>
-<link rel=canonical href=https://pypyr.io/docs/substitutions/jsonify/>
+<link rel=canonical href=https://pypyr.io/docs/api/custom-module-search-path/>
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-147150909-1"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','UA-147150909-1')</script>
-<meta property="og:description" content="Convert object structures like lists & dictionaries from yaml to a string of json.">
+<meta property="og:description" content="You can use ad hoc custom Python modules (.py files) without doing pip install first.">
 <meta property="og:image" content="https://pypyr.io/images/1.91x1/pypyr-taskrunner-yaml-pipeline-automation-1200x628.5aa6465b3b9d2ca8d0d5a9f794ba7f379c522a8ba503129f2a35d2479ea2452d.png">
 <meta property="og:image:alt" content="pypyr is an open-source task-runner for automation pipelines defined in simple human-readable yaml.">
 <meta property="og:image:height" content="628">
 <meta property="og:image:type" content="image/png">
 <meta property="og:image:width" content="1200">
 <meta property="og:site_name" content="pypyr technical documentation">
-<meta property="og:title" content="Serialize a context object to json in pypyr task-runner.">
+<meta property="og:title" content="How to import custom Python modules in your automation pipeline.">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://pypyr.io/docs/substitutions/jsonify/">
+<meta property="og:url" content="https://pypyr.io/docs/api/custom-module-search-path/">
 <meta name=twitter:card content="summary_large_image">
 <meta name=twitter:site content="@pypyrpipes">
-<script type=application/ld+json>{"@context":"https://schema.org","@graph":[{"@id":"https://pypyr.io/#organization","@type":"Organization","name":"pypyr","url":"https://pypyr.io/","description":"The pypyr project is a free open-source task-runner cli \u0026 python api for automation pipelines.","logo":{"@type":"ImageObject","url":"https://pypyr.io/images/pypyr-taskrunner-logo-square.63875e43ff40d8ae40e93a6043b4328b962f54f52974aaa27cedec52220de665.svg","height":112,"width":112},"sameAs":["https://github.com/pypyr/","https://twitter.com/pypyrpipes/","https://pypi.org/user/pypyr/","https://hub.docker.com/u/pypyr/","https://en.gravatar.com/pypyr/"]},{"@type":"TechArticle","author":{"@type":"Person","name":"pypyr contributor"},"articleSection":"substitutions","dateModified":"2021-10-05T14:41:15+01:00","datePublished":"2020-06-13T21:38:57+01:00","headline":"Serialize a context object to json in pypyr task-runner.","image":[{"@type":"ImageObject","url":"https://pypyr.io/images/1x1/pypyr-taskrunner-yaml-pipeline-automation-1200x1200.52764d3c6f40232b3cdc33f5b8fbaeadad56cc310c8dd5588d30828296b5290d.png","height":1200,"width":1200},{"@type":"ImageObject","url":"https://pypyr.io/images/4x3/pypyr-taskrunner-yaml-pipeline-automation-1200x900.e8e70443377aeb11c190835e8d2ed0c844d31a82a0c2e8a744a9999cd03e0de9.png","height":900,"width":1200},{"@type":"ImageObject","url":"https://pypyr.io/images/16x9/pypyr-taskrunner-yaml-pipeline-automation-1920x1080.cc9ae11626c8312e087058adb13bfff702162ce39c355065170c1b87850f3034.png","height":1080,"width":1920}],"inLanguage":"en","keywords":["json,","serialize,","convert"],"mainEntityOfPage":{"@type":"WebPage","@id":"https://pypyr.io/docs/substitutions/jsonify/"},"publisher":{"@id":"https://pypyr.io/#organization"},"url":"https://pypyr.io/docs/substitutions/jsonify/","wordCount":300}]}</script>
+<script type=application/ld+json>{"@context":"https://schema.org","@graph":[{"@id":"https://pypyr.io/#organization","@type":"Organization","name":"pypyr","url":"https://pypyr.io/","description":"The pypyr project is a free open-source task-runner cli \u0026 python api for automation pipelines.","logo":{"@type":"ImageObject","url":"https://pypyr.io/images/pypyr-taskrunner-logo-square.63875e43ff40d8ae40e93a6043b4328b962f54f52974aaa27cedec52220de665.svg","height":112,"width":112},"sameAs":["https://github.com/pypyr/","https://twitter.com/pypyrpipes/","https://pypi.org/user/pypyr/","https://hub.docker.com/u/pypyr/","https://en.gravatar.com/pypyr/"]},{"@type":"TechArticle","author":{"@type":"Person","name":"pypyr contributor"},"articleSection":"api","dateModified":"2021-11-20T15:55:39Z","datePublished":"2021-11-15T00:00:00Z","headline":"How to import custom Python modules in your automation pipeline.","image":[{"@type":"ImageObject","url":"https://pypyr.io/images/1x1/pypyr-taskrunner-yaml-pipeline-automation-1200x1200.52764d3c6f40232b3cdc33f5b8fbaeadad56cc310c8dd5588d30828296b5290d.png","height":1200,"width":1200},{"@type":"ImageObject","url":"https://pypyr.io/images/4x3/pypyr-taskrunner-yaml-pipeline-automation-1200x900.e8e70443377aeb11c190835e8d2ed0c844d31a82a0c2e8a744a9999cd03e0de9.png","height":900,"width":1200},{"@type":"ImageObject","url":"https://pypyr.io/images/16x9/pypyr-taskrunner-yaml-pipeline-automation-1920x1080.cc9ae11626c8312e087058adb13bfff702162ce39c355065170c1b87850f3034.png","height":1080,"width":1920}],"inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https://pypyr.io/docs/api/custom-module-search-path/"},"publisher":{"@id":"https://pypyr.io/#organization"},"url":"https://pypyr.io/docs/api/custom-module-search-path/","wordCount":1023}]}</script>
 <link rel=apple-touch-icon sizes=180x180 href=/favicons/apple-touch-icon.925deabb48d91a80924b5d04ff56d2b8f42ba1d1e1438cb7d8948cce1138208c.png>
 <link rel=icon type=image/png sizes=32x32 href=/favicons/favicon-32x32.b869433d27c4679a5fbce03a8489268a539cbc781259bff14618ae2f018334e6.png>
 <link rel=icon type=image/png sizes=16x16 href=/favicons/favicon-16x16.8bcd9f870e0a86445e0505ce6e816b76a40b08a06e2dcd1ec1f90c395ecbeaf6.png>
@@ -333,17 +333,17 @@
 <li>
 <button class="nav-section-chevron-title neutral-button">
 <span class=nav-section-pointer>
-<svg class="nav-chevron nav-chevron-down"><title>open or close sub-menu</title><use href="https://pypyr.io/icons/chevron-right.e586e5df0f820697b2ce08d042d0110568a2faeb11c7f0bab5a33df79dd3d6db.svg#chevron-right"/></svg><span>substitutions</span>
+<svg class="nav-chevron"><title>open or close sub-menu</title><use href="https://pypyr.io/icons/chevron-right.e586e5df0f820697b2ce08d042d0110568a2faeb11c7f0bab5a33df79dd3d6db.svg#chevron-right"/></svg><span>substitutions</span>
 </span>
 </button>
-<ul class="nested expand">
+<ul class=nested>
 <li>
 <a href=/docs/substitutions/>overview</a>
 </li>
 <li>
 <a href=/docs/substitutions/format-string/>format string</a>
 </li>
-<li class=currentpage>
+<li>
 <a href=/docs/substitutions/jsonify/>jsonify</a>
 </li>
 <li>
@@ -447,14 +447,14 @@
 <li>
 <button class="nav-section-chevron-title neutral-button">
 <span class=nav-section-pointer>
-<svg class="nav-chevron"><title>open or close sub-menu</title><use href="https://pypyr.io/icons/chevron-right.e586e5df0f820697b2ce08d042d0110568a2faeb11c7f0bab5a33df79dd3d6db.svg#chevron-right"/></svg><span>api</span>
+<svg class="nav-chevron nav-chevron-down"><title>open or close sub-menu</title><use href="https://pypyr.io/icons/chevron-right.e586e5df0f820697b2ce08d042d0110568a2faeb11c7f0bab5a33df79dd3d6db.svg#chevron-right"/></svg><span>api</span>
 </span>
 </button>
-<ul class=nested>
+<ul class="nested expand">
 <li>
 <a href=/docs/api/>overview</a>
 </li>
-<li>
+<li class=currentpage>
 <a href=/docs/api/custom-module-search-path/>custom module search path</a>
 </li>
 <li>
@@ -523,135 +523,217 @@
 <meta property="position" content="2">
 </li>
 <li property="itemListElement" typeof="ListItem">
-<a property="item" typeof="WebPage" href=https://pypyr.io/docs/substitutions/><span property="name">substitutions</span></a>
+<a property="item" typeof="WebPage" href=https://pypyr.io/docs/api/><span property="name">api</span></a>
 <meta property="position" content="3">
 </li>
 <li property="itemListElement" typeof="ListItem">
-<span property="name">jsonify</span>
+<span property="name">custom module name resolution</span>
 <meta property="position" content="4">
 </li></ol>
 <aside class="grid-toc elevation-02">
 <h6 id=table-of-contents>on this page</h6>
 <nav id=TableOfContents>
 <ol>
-<li><a href=#convert-object-to-json-string>convert object to json string</a></li>
-<li><a href=#use-with-substitutions>use with substitutions</a></li>
-<li><a href=#use-with-flat-format>use with flat format</a></li>
+<li><a href=#special-characters>special characters</a></li>
+<li><a href=#ad-hoc-modules>ad hoc modules</a>
+<ol>
+<li><a href=#search-paths>search paths</a></li>
+<li><a href=#name-hiding>name hiding</a></li>
+<li><a href=#resolve-from-current-directory-with-the-api>resolve from current directory with the API</a></li>
+<li><a href=#adding-a-custom-module-directory>adding a custom module directory</a></li>
+</ol>
+</li>
+<li><a href=#installed-packages>installed packages</a></li>
 </ol>
 </nav>
 </aside>
 <main class=grid-main>
 <article>
-<h1 id=jsonify>jsonify <a href=#jsonify class=headline-anchor aria-label=anchor><svg class="permalink"><title>permalink</title><use href="https://pypyr.io/icons/external-link.054f8ebb57944b2bc52ea4f0ecd16197.svg#external-link"/></svg></a></h1>
-<h2 id=convert-object-to-json-string>convert object to json string <a href=#convert-object-to-json-string class=headline-anchor aria-label=anchor><svg class="permalink"><title>permalink</title><use href="https://pypyr.io/icons/external-link.054f8ebb57944b2bc52ea4f0ecd16197.svg#external-link"/></svg></a></h2><p>Use <code>jsonify</code> to serialize a pypyr context object to a json string.</p>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-yaml data-lang=yaml>- <span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>pypyr.steps.set</span><span class=w>
-</span><span class=w>  </span><span class=nt>in</span><span class=p>:</span><span class=w>
-</span><span class=w>    </span><span class=nt>set</span><span class=p>:</span><span class=w>
-</span><span class=w>        </span><span class=nt>myJsonDict</span><span class=p>:</span><span class=w> </span>!<span class=l>jsonify</span><span class=w>
-</span><span class=w>            </span><span class=nt>k1</span><span class=p>:</span><span class=w> </span><span class=l>v1</span><span class=w>
-</span><span class=w>            </span><span class=nt>k2</span><span class=p>:</span><span class=w> </span><span class=m>123</span><span class=w>
-</span><span class=w>            </span><span class=nt>k3</span><span class=p>:</span><span class=w> </span><span class=kc>False</span><span class=w>
-</span><span class=w>            </span><span class=nt>k4</span><span class=p>:</span><span class=w>
-</span><span class=w>            </span>- <span class=m>1</span><span class=w>
-</span><span class=w>            </span>- <span class=m>2</span><span class=w>
-</span><span class=w>            </span>- <span class=nt>a</span><span class=p>:</span><span class=w> </span><span class=l>b</span><span class=w>
-</span><span class=w>                </span><span class=nt>c</span><span class=p>:</span><span class=w> </span><span class=l>d</span><span class=w>
-</span><span class=w>        </span><span class=nt>myJsonList</span><span class=p>:</span><span class=w> </span>!<span class=l>jsonify</span><span class=w>
-</span><span class=w>            </span>- <span class=l>zero</span><span class=w>
-</span><span class=w>            </span>- <span class=l>one</span><span class=w>
-</span><span class=w>            </span>- <span class=l>two</span><span class=w>
-</span><span class=w>        </span><span class=nt>myJsonNull</span><span class=p>:</span><span class=w> </span>!<span class=l>jsonify null</span><span class=w>
-</span><span class=w>        </span><span class=nt>myJsonNumber</span><span class=p>:</span><span class=w> </span>!<span class=l>jsonify 99</span><span class=w>
-</span><span class=w>        </span><span class=nt>myJsonQuotedString</span><span class=p>:</span><span class=w> </span>!<span class=l>jsonify &#34;0123&#34;</span><span class=w>
-</span><span class=w>        </span><span class=nt>myJsonBareString</span><span class=p>:</span><span class=w> </span>!<span class=l>jsonify arbitrary string</span><span class=w>
-</span><span class=w></span>- <span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>pypyr.steps.echo</span><span class=w>
-</span><span class=w>  </span><span class=nt>in</span><span class=p>:</span><span class=w>
-</span><span class=w>    </span><span class=nt>echoMe</span><span class=p>:</span><span class=w> </span><span class=p>|</span><span class=sd>
-</span><span class=sd>        myJsonDict: {myJsonDict}
-</span><span class=sd>        myJsonList: {myJsonList}
-</span><span class=sd>        myJsonNull: {myJsonNull}
-</span><span class=sd>        myJsonNumber: {myJsonNumber}
-</span><span class=sd>        myJsonQuotedString: {myJsonQuotedString}
-</span><span class=sd>        myJsonBareString: {myJsonBareString}</span><span class=w>        
-</span></code></pre></div><p>This gives output:</p>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text>myJsonDict: {&#34;k1&#34;: &#34;v1&#34;, &#34;k2&#34;: 123, &#34;k3&#34;: false, &#34;k4&#34;: [1, 2, {&#34;a&#34;: &#34;b&#34;, &#34;c&#34;: &#34;d&#34;}]}
-myJsonList: [&#34;zero&#34;, &#34;one&#34;, &#34;two&#34;]
-myJsonNull: null
-myJsonNumber: 99
-myJsonQuotedString: &#34;0123&#34;
-myJsonBareString: &#34;arbitrary string&#34;
-</code></pre></div><p>You could think of this as converting yaml to json, however, in actuality under
-the hood pypyr will serialize any given object in context to json with
-<code>jsonify</code> so it&rsquo;s not necessarily just yaml as the input. It just so happens
-that yaml from pipeline is the likeliest input, but <code>jsonify</code> will work
-equally well if you manipulate context directly via the api.</p>
-<h2 id=use-with-substitutions>use with substitutions <a href=#use-with-substitutions class=headline-anchor aria-label=anchor><svg class="permalink"><title>permalink</title><use href="https://pypyr.io/icons/external-link.054f8ebb57944b2bc52ea4f0ecd16197.svg#external-link"/></svg></a></h2><p>A <code>jsonify</code> structure can contain pypyr formatting expressions for
-<a href=https://pypyr.io/docs/substitutions/format-string/>substitutions</a>, including
-<a href=/docs/substitutions/py-strings/>py strings for inline python</a> and
-<a href=/docs/substitutions/sic-strings/>sic strings to avoid processing curly braces</a>.</p>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-yaml data-lang=yaml>- <span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>pypyr.steps.set</span><span class=w>
-</span><span class=w>  </span><span class=nt>comment</span><span class=p>:</span><span class=w> </span><span class=l>combine jsonify with other formatting expressions</span><span class=w>
-</span><span class=w>  </span><span class=nt>in</span><span class=p>:</span><span class=w>
-</span><span class=w>    </span><span class=nt>a_string</span><span class=p>:</span><span class=w> </span><span class=l>hello there</span><span class=w>
-</span><span class=w>    </span><span class=nt>replace_me</span><span class=p>:</span><span class=w> </span><span class=m>123</span><span class=w>
-</span><span class=w>    
-</span><span class=w>    </span><span class=nt>set</span><span class=p>:</span><span class=w>
-</span><span class=w>      </span><span class=nt>arb_payload</span><span class=p>:</span><span class=w> </span>!<span class=l>jsonify</span><span class=w>
-</span><span class=w>        </span><span class=nt>k1</span><span class=p>:</span><span class=w> </span><span class=l>value {a_string}</span><span class=w>
-</span><span class=w>        </span><span class=nt>k2</span><span class=p>:</span><span class=w> </span>!<span class=l>py hex(255)</span><span class=w>
-</span><span class=w>        </span><span class=nt>k3</span><span class=p>:</span><span class=w> </span>!<span class=l>sic a string with {literal} curly braces</span><span class=w>
-</span><span class=w>        </span><span class=nt>k4</span><span class=p>:</span><span class=w> </span><span class=s1>&#39;{replace_me}&#39;</span><span class=w>
-</span><span class=w>        </span><span class=nt>k5</span><span class=p>:</span><span class=w> </span><span class=kc>False</span><span class=w>
-</span><span class=w>
-</span><span class=w></span>- <span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>pypyr.steps.cmd</span><span class=w>
-</span><span class=w>  </span><span class=nt>comment</span><span class=p>:</span><span class=w> </span><span class=l>post the json payload string to a web-server via curl</span><span class=w>
-</span><span class=w>  </span><span class=nt>in</span><span class=p>:</span><span class=w>
-</span><span class=w>    </span><span class=nt>cmd</span><span class=p>:</span><span class=w> </span><span class=p>|</span><span class=sd>
-</span><span class=sd>      </span><span class=w>      </span><span class=nt>curl -H &#39;Content-Type</span><span class=p>:</span><span class=w> </span><span class=l>application/json&#39; -d &#39;{arb_payload}&#39; -X POST &#39;https://httpbin.org/post&#39;</span><span class=w>
-</span></code></pre></div><p>The json payload posted to the web-server looks like this:</p>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-json data-lang=json><span class=p>{</span>
-  <span class=nt>&#34;k1&#34;</span><span class=p>:</span> <span class=s2>&#34;value hello there&#34;</span><span class=p>,</span>
-  <span class=nt>&#34;k2&#34;</span><span class=p>:</span> <span class=s2>&#34;0xff&#34;</span><span class=p>,</span>
-  <span class=nt>&#34;k3&#34;</span><span class=p>:</span> <span class=s2>&#34;a string with {literal} curly braces&#34;</span><span class=p>,</span>
-  <span class=nt>&#34;k4&#34;</span><span class=p>:</span> <span class=mi>123</span><span class=p>,</span>
-  <span class=nt>&#34;k5&#34;</span><span class=p>:</span> <span class=kc>false</span>
-<span class=p>}</span>
+<h1 id=reference-custom-modules-in-your-pipeline>reference custom modules in your pipeline <a href=#reference-custom-modules-in-your-pipeline class=headline-anchor aria-label=anchor><svg class="permalink"><title>permalink</title><use href="https://pypyr.io/icons/external-link.054f8ebb57944b2bc52ea4f0ecd16197.svg#external-link"/></svg></a></h1><div class="admonition tip" role=figure>
+<div class=admonition-tip-icon></div>
+<div class=admonition-content><p>TLDR:</p>
+<p>Custom modules resolve relative to the current pipeline.</p>
+<p>Although you can also resolve from the current directory as a fallback, this
+will make your pipeline less portable than it should be.</p>
+<p>Prefer only using absolute names relative to the pipeline itself.</p>
+</div>
+</div>
+<p>Each custom step, parser, loader & retry algo you write lives in a .py
+file. In Python speak, this .py file is known as a &ldquo;module&rdquo;.</p>
+<p>To use these modules in your pipelines, you have to refer to the module&rsquo;s
+absolute name:</p>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-yaml data-lang=yaml><span class=nt>steps</span><span class=p>:</span><span class=w>
+</span><span class=w>  </span>- <span class=l>mystep</span><span class=w> </span><span class=c># {pipeline dir}/mystep.py</span><span class=w>
+</span><span class=w>  </span>- <span class=l>dir.mystep</span><span class=w> </span><span class=c># {pipeline dir}/dir/mystep.py</span><span class=w>
+</span><span class=w>  </span>- <span class=l>dir.sub.mystep</span><span class=w> </span><span class=c># {pipeline dir}/dir/sub/mystep.py</span><span class=w>
+</span></code></pre></div><p><code>{pipeline dir}</code> is the directory on the filesystem that the pipeline is in.</p>
+<h2 id=special-characters>special characters <a href=#special-characters class=headline-anchor aria-label=anchor><svg class="permalink"><title>permalink</title><use href="https://pypyr.io/icons/external-link.054f8ebb57944b2bc52ea4f0ecd16197.svg#external-link"/></svg></a></h2><p>For an easy life, the more your directory & file names can stick to
+<a href=https://www.python.org/dev/peps/pep-0008/#package-and-module-names>PEP8 package & module names</a>
+the better. Simply put, avoid punctuation other than underscore _. Especially
+avoid full-stops/periods (.).</p>
+<p>Although pypyr is more flexible than the standard Python import rules - e.g you
+can have <code>-</code> in directory/file names and it will work for pypyr custom modules
+such as custom steps - be aware that if you have to do a standard <code>import x.y</code>/<code>from x import y</code> style statement of such modules in a custom Python
+code-block it will fail.</p>
+<h2 id=ad-hoc-modules>ad hoc modules <a href=#ad-hoc-modules class=headline-anchor aria-label=anchor><svg class="permalink"><title>permalink</title><use href="https://pypyr.io/icons/external-link.054f8ebb57944b2bc52ea4f0ecd16197.svg#external-link"/></svg></a></h2><p>Take <em>ad hoc</em> modules to mean modules that are on your file-system somewhere but
+that are NOT installed as packages into the Python environment.</p>
+<p>To make your life easier, pypyr adds the current directory and also the
+pipeline&rsquo;s parent directory to python&rsquo;s <code>sys.path</code>. This allows you to use
+ad hoc modules relative to your current pipeline&rsquo;s location WITHOUT having to
+install these first.</p>
+<p>Simply put, you can just have a .py file relative to your pipeline, and pypyr
+will find it without you having to do anything extra. pypyr will also look in
+your current directory,</p>
+<p>No need to package and <code>pip install</code> your code first, you can just use your
+ad hoc modules on the fly!</p>
+<p>So assuming a directory structure like this:</p>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text>- mydir/
+    |- astep.py
+    |- mypipe.yaml
+    |- mypipestuff/
+        |- mystep.py
+</code></pre></div><p>You can reference your custom step in the pipeline like this:</p>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-yaml data-lang=yaml><span class=nt>steps</span><span class=p>:</span><span class=w>
+</span><span class=w>  </span>- <span class=l>astep</span><span class=w> </span><span class=c># {pipeline dir}/astep.py</span><span class=w>
+</span><span class=w>  </span>- <span class=l>mypipestuff.mystep</span><span class=w> </span><span class=c># {pipeline dir}/mypipestuff/mystep.py</span><span class=w>
+</span></code></pre></div><p>And run the pipeline like this:
+<div class=app-window>
+<div class=app-window-top-bar>
+<span class=app-window-buttons>
+<span class="circle red"></span><span class="circle yellow"></span><span class="circle green"></span>
+</span>
+<span class=app-window-title>term</span>
+</div>
+<div class=app-window-content>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text>$ pypyr mydir/mypipe</code></pre></div>
+</div>
+</div>
+</p>
+<p>Notice that <code>astep</code> and <code>mypipestuff.mystep</code> both resolve relative to the
+pipeline location itself, not the current directory.</p>
+<h3 id=search-paths>search paths <a href=#search-paths class=headline-anchor aria-label=anchor><svg class="permalink"><title>permalink</title><use href="https://pypyr.io/icons/external-link.054f8ebb57944b2bc52ea4f0ecd16197.svg#external-link"/></svg></a></h3><p>When you run pypyr from the CLI, pypyr automatically adds the current directory
+($PWD) to <code>sys.path</code>, allowing you to use custom modules relative to the
+current directory (without having to install your code as a package first).</p>
+<p>For each pipeline you invoke with the builtin default file loader, pypyr also
+adds the pipeline&rsquo;s parent directory to <code>sys.path</code>. This is the pipeline
+directory.</p>
+<p>The pypyr module resolution order is:</p>
+<ol>
+<li>published packages in the current Python environment</li>
+<li>directory set by <code>--dir</code>/<code>py_dir</code> (for cli this is current directory by
+default)</li>
+<li>pipeline directory (for pipelines loaded with the default builtin file loader)</li>
+<li><code>py_dir</code> if set by child pipeline on <a href=https://pypyr.io/docs/steps/pype/>pypyr.steps.pype</a></li>
+<li>pipeline directory of any child pipelines called with <code>pypyr.steps.pype</code> with
+the default builtin file loader.</li>
+</ol>
+<p>Note that 2 - 5 might well refer to the same directory location if the pipeline
+and any child pipelines it calls are all directly in the current directory, or
+some of these might be equal if different pipelines are in the same directory.
+In this case the import system only searches that directory once.</p>
+<h3 id=name-hiding>name hiding <a href=#name-hiding class=headline-anchor aria-label=anchor><svg class="permalink"><title>permalink</title><use href="https://pypyr.io/icons/external-link.054f8ebb57944b2bc52ea4f0ecd16197.svg#external-link"/></svg></a></h3><p>A side effect of this (and indeed any) search order is that if you have .py
+files with the same name in different locations, the file found earlier in the
+resolution order will mask a file with the same name later in the search order.</p>
+<p>Assuming two <code>mystep.py</code> files at different locations like this:</p>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text>|- mydir/
+    |- mypipe.yaml
+    |- mystep.py
+|- mystep.py
+</code></pre></div><p>And you ran this pipeline like this:
+<div class=app-window>
+<div class=app-window-top-bar>
+<span class=app-window-buttons>
+<span class="circle red"></span><span class="circle yellow"></span><span class="circle green"></span>
+</span>
+<span class=app-window-title>term</span>
+</div>
+<div class=app-window-content>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text>$ pypyr mydir/mypipe</code></pre></div>
+</div>
+</div>
+</p>
+<p>If <code>mypipe</code> references <code>mystep</code>, it will use <code>./mystep.py</code>, not
+<code>mydir/mystep.py</code>, because $PWD comes before the pipeline directory in the
+search order.</p>
+<p>If you are creating reusable child pipelines that you will call from other
+pipelines with <a href=https://pypyr.io/docs/steps/pype/>pypyr.steps.pype</a>, it is
+therefore a good idea to put your custom code in some sort of namespace to
+minimize the potential for naming clashes.</p>
+<p>Simply put, save your custom modules inside a directory with a relatively unique
+name next to your pipeline:</p>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text>|- mydir/
+    |- mypipe.yaml
+    |- mypipe/
+        |- mystep.py
+</code></pre></div><p>In the pipeline itself, you will reference <code>mypipe.mystep</code></p>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-yaml data-lang=yaml><span class=c># ./mydir/mypipe.yaml</span><span class=w>
+</span><span class=w></span><span class=nt>steps</span><span class=p>:</span><span class=w>
+</span><span class=w>    </span>- <span class=l>mypipe.mystep</span><span class=w>
+</span></code></pre></div><p>In this case, we are relying on the idea that the pipeline name will be
+relatively unique in the pipeline call-stack, thereby serving as a namespace for
+its custom modules.</p>
+<p>It might be tempting to think of this resource directory name as a uri and use a
+full-stop/period (&ldquo;myarbdomain.com&rdquo;) - don&rsquo;t do this. See <a href=#special-characters>special character
+rules</a>.</p>
+<h3 id=resolve-from-current-directory-with-the-api>resolve from current directory with the API <a href=#resolve-from-current-directory-with-the-api class=headline-anchor aria-label=anchor><svg class="permalink"><title>permalink</title><use href="https://pypyr.io/icons/external-link.054f8ebb57944b2bc52ea4f0ecd16197.svg#external-link"/></svg></a></h3><p>If you are calling pypyr from the API and you also want to
+resolve ad hoc modules from the current directory like the CLI does, you have to
+use the <code>py_dir</code> argument:</p>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=kn>from</span> <span class=nn>pathlib</span> <span class=kn>import</span> <span class=n>Path</span>
+<span class=kn>import</span> <span class=nn>pypyr.pipelinerunner</span>
+
+<span class=n>CWD</span> <span class=o>=</span> <span class=n>Path</span><span class=o>.</span><span class=n>cwd</span><span class=p>()</span>
+
+<span class=n>pypyr</span><span class=o>.</span><span class=n>pipelinerunner</span><span class=o>.</span><span class=n>run</span><span class=p>(</span><span class=n>pipeline_name</span><span class=o>=</span><span class=s1>&#39;pipeline-name&#39;</span><span class=p>,</span>
+                         <span class=n>py_dir</span><span class=o>=</span><span class=n>CWD</span><span class=p>)</span>
+</code></pre></div><p>You do NOT need to specify <code>py_dir</code> if you only want to resolve modules
+relative to the pipeline itself, because the default file-loader will add the
+pipeline&rsquo;s parent directory to <code>sys.path</code> for you when it finds the pipeline.</p>
+<h3 id=adding-a-custom-module-directory>adding a custom module directory <a href=#adding-a-custom-module-directory class=headline-anchor aria-label=anchor><svg class="permalink"><title>permalink</title><use href="https://pypyr.io/icons/external-link.054f8ebb57944b2bc52ea4f0ecd16197.svg#external-link"/></svg></a></h3><p>If your pipeline&rsquo;s custom ad hoc modules are in a different directory, you can
+use the <code>--dir</code> switch from the CLI:</p>
+<div class=app-window>
+<div class=app-window-top-bar>
+<span class=app-window-buttons>
+<span class="circle red"></span><span class="circle yellow"></span><span class="circle green"></span>
+</span>
+<span class=app-window-title>term</span>
+</div>
+<div class=app-window-content>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text># run ./mydir/mypipe.yaml
+# look for modules in /path/to/modules
+
+$ pypyr --dir /path/to/modules mydir/mypipe</code></pre></div>
+</div>
+</div>
+<p>In the API, you achieve the same thing with the <code>py_dir</code> argument of the <code>run()</code>
+function:</p>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=kn>import</span> <span class=nn>pypyr.pipelinerunner</span>
+
+<span class=c1># run ./pipeline-name.yaml</span>
+<span class=c1># look for modules in /path/to/modules</span>
+<span class=n>pypyr</span><span class=o>.</span><span class=n>pipelinerunner</span><span class=o>.</span><span class=n>run</span><span class=p>(</span><span class=n>pipeline_name</span><span class=o>=</span><span class=s1>&#39;pipeline-name&#39;</span><span class=p>,</span>
+                         <span class=n>py_dir</span><span class=o>=</span><span class=s1>&#39;/path/to/modules&#39;</span><span class=p>)</span>
 </code></pre></div>
-<h2 id=use-with-flat-format>use with flat format <a href=#use-with-flat-format class=headline-anchor aria-label=anchor><svg class="permalink"><title>permalink</title><use href="https://pypyr.io/icons/external-link.054f8ebb57944b2bc52ea4f0ecd16197.svg#external-link"/></svg></a></h2><p>If you want to assign a jsonified string to another context key using a single
-replacement token expression, use the <code>ff</code>
-<a href=https://pypyr.io/docs/substitutions/format-string/#explicitly-set-flat>flat format directive</a>
-to prevent pypyr from interpreting the json string&rsquo;s {curly braces} as pypyr formatting
-expressions:</p>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-yaml data-lang=yaml>- <span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>pypyr.steps.set</span><span class=w>
-</span><span class=w>  </span><span class=nt>comment</span><span class=p>:</span><span class=w> </span><span class=l>combine jsonify with other formatting expressions</span><span class=w>
-</span><span class=w>  </span><span class=nt>in</span><span class=p>:</span><span class=w>
-</span><span class=w>    </span><span class=nt>a_string</span><span class=p>:</span><span class=w> </span><span class=l>hello there</span><span class=w>
-</span><span class=w>    </span><span class=nt>replace_me</span><span class=p>:</span><span class=w> </span><span class=m>123</span><span class=w>
-</span><span class=w>    
-</span><span class=w>    </span><span class=nt>set</span><span class=p>:</span><span class=w>
-</span><span class=w>      </span><span class=nt>arb_payload</span><span class=p>:</span><span class=w> </span>!<span class=l>jsonify</span><span class=w>
-</span><span class=w>        </span><span class=nt>k1</span><span class=p>:</span><span class=w> </span><span class=l>value {a_string}</span><span class=w>
-</span><span class=w>        </span><span class=nt>k2</span><span class=p>:</span><span class=w> </span>!<span class=l>py hex(255)</span><span class=w>
-</span><span class=w>        </span><span class=nt>k3</span><span class=p>:</span><span class=w> </span>!<span class=l>sic a string with {literal} curly braces</span><span class=w>
-</span><span class=w>        </span><span class=nt>k4</span><span class=p>:</span><span class=w> </span><span class=s1>&#39;{replace_me}&#39;</span><span class=w>
-</span><span class=w>        </span><span class=nt>k5</span><span class=p>:</span><span class=w> </span><span class=kc>False</span><span class=w>
-</span><span class=w>    
-</span><span class=w></span>- <span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>pypyr.steps.echo</span><span class=w>
-</span><span class=w>  </span><span class=nt>comment</span><span class=p>:</span><span class=w> </span><span class=l>arb_payload contains a string with json curly braces</span><span class=w>
-</span><span class=w>           </span><span class=l>since pypyr recurses single token expressions by default,</span><span class=w>
-</span><span class=w>           </span><span class=l>use Flat Format (ff).</span><span class=w>
-</span><span class=w>  </span><span class=nt>in</span><span class=p>:</span><span class=w>
-</span><span class=w>    </span><span class=nt>echoMe</span><span class=p>:</span><span class=w> </span><span class=s1>&#39;{arb_payload:ff}&#39;</span><span class=w>
-</span></code></pre></div>
+<h2 id=installed-packages>installed packages <a href=#installed-packages class=headline-anchor aria-label=anchor><svg class="permalink"><title>permalink</title><use href="https://pypyr.io/icons/external-link.054f8ebb57944b2bc52ea4f0ecd16197.svg#external-link"/></svg></a></h2><p>You can reference any packages you&rsquo;ve installed in your current python
+environment.</p>
+<p>You normally install a package in python with <code>$ pip install mypackage</code>.</p>
+<p>You reference modules inside packages by their absolute name:</p>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-yaml data-lang=yaml><span class=nt>steps</span><span class=p>:</span><span class=w>
+</span><span class=w>  </span>- <span class=l>mypackage.mystep</span><span class=w>
+</span><span class=w>  </span>- <span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>mypackage.sub.mystep</span><span class=w>
+</span><span class=w>    </span><span class=nt>comment</span><span class=p>:</span><span class=w> </span><span class=l>loop over a custom step in a package</span><span class=w>
+</span><span class=w>    </span><span class=nt>foreach</span><span class=p>:</span><span class=w> </span><span class=p>[</span><span class=l>one, two]</span><span class=w>
+</span></code></pre></div><p>If you want to install your own custom code as package, here is the <a href=https://setuptools.pypa.io/en/latest/userguide/quickstart.html>official
+quick-start</a> for
+how to do so with PyPa&rsquo;s <code>setuptools</code>.</p>
 </article>
 <section class="see-also elevation-02">
 <h2>see also</h2>
 <ul>
-<li><a href=/docs/steps/jsonparse/>pypyr.steps.jsonparse</a></li>
-<li><a href=/docs/plugins/aws/steps/s3fetchjson/>pypyraws.steps.s3fetchjson</a></li>
-<li><a href=/docs/context-parsers/jsonfile/>pypyr.parser.jsonfile</a></li>
-<li><a href=/docs/context-parsers/json/>pypyr.parser.json</a></li>
-<li><a href=/docs/steps/filewritejson/>pypyr.steps.filewritejson</a></li>
+<li><a href=/docs/api/retry-backoff/>custom retry backoff</a></li>
+<li><a href=/docs/api/>api</a></li>
+<li><a href=/docs/api/context-parser/>custom context parser</a></li>
+<li><a href=/docs/api/pipeline-loader/>custom pype loader</a></li>
+<li><a href=/docs/api/step/>custom step</a></li>
 </ul>
 </section>
 </main>
@@ -659,20 +741,20 @@ expressions:</p>
 <section class=page-taxonomy aria-label="related topics">
 <h6>topics</h6>
 <ul id=topics class=small-list>
-<li><a href=https://pypyr.io/topics/json/ class=muted-with-hover>json</a></li>
+<li><a href=https://pypyr.io/topics/custom-code/ class=muted-with-hover>custom code</a></li>
 </ul>
 </section>
 </aside>
 <aside class="grid-improve elevation-02" aria-labelledby=feedback>
 <h6 id=feedback>feedback</h6>
 <ul class=small-list>
-<li><a href=https://github.com/pypyr/docs/edit/main/content/docs/substitutions/jsonify.md class=muted-with-hover>edit me</a></li>
-<li><a href="https://github.com/pypyr/docs/issues/new?title=docs%20issue:jsonify&body=File:%20[jsonify]%28https://pypyr.io/docs/substitutions/jsonify/%29" class=muted-with-hover>report typo</a></li>
-<li><a href="https://github.com/pypyr/pypyr/issues/new?title=Re:%20jsonify&labels=bug" class=muted-with-hover>report bug!</a></li>
+<li><a href=https://github.com/pypyr/docs/edit/main/content/docs/api/custom-module-search-path.md class=muted-with-hover>edit me</a></li>
+<li><a href="https://github.com/pypyr/docs/issues/new?title=docs%20issue:custom%20module%20name%20resolution&body=File:%20[custom%20module%20name%20resolution]%28https://pypyr.io/docs/api/custom-module-search-path/%29" class=muted-with-hover>report typo</a></li>
+<li><a href="https://github.com/pypyr/pypyr/issues/new?title=Re:%20custom%20module%20name%20resolution&labels=bug" class=muted-with-hover>report bug!</a></li>
 </ul>
 </aside>
 <div class="page-git-info elevation-02">
-<small class=small-block>last updated on <time datetime=2021-10-05T14:41:15+01:00>2021-10-05 14:41</time>.</small>
+<small class=small-block>last updated on <time datetime=2021-11-20T15:55:39Z>2021-11-20 15:55</time>.</small>
 </div>
 </div>
 <footer class="footer elevation-01">

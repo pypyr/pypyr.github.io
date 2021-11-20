@@ -23,7 +23,7 @@
 <meta property="og:url" content="https://pypyr.io/docs/api/context-parser/">
 <meta name=twitter:card content="summary_large_image">
 <meta name=twitter:site content="@pypyrpipes">
-<script type=application/ld+json>{"@context":"https://schema.org","@graph":[{"@id":"https://pypyr.io/#organization","@type":"Organization","name":"pypyr","url":"https://pypyr.io/","description":"The pypyr project is a free open-source task-runner cli \u0026 python api for automation pipelines.","logo":{"@type":"ImageObject","url":"https://pypyr.io/images/pypyr-taskrunner-logo-square.63875e43ff40d8ae40e93a6043b4328b962f54f52974aaa27cedec52220de665.svg","height":112,"width":112},"sameAs":["https://github.com/pypyr/","https://twitter.com/pypyrpipes/","https://pypi.org/user/pypyr/","https://hub.docker.com/u/pypyr/","https://en.gravatar.com/pypyr/"]},{"@type":"TechArticle","author":{"@type":"Person","name":"pypyr contributor"},"articleSection":"api","dateModified":"2021-11-09T14:29:55Z","datePublished":"2020-08-13T00:00:00Z","headline":"Parse custom cli arguments for a task-runner pipeline.","image":[{"@type":"ImageObject","url":"https://pypyr.io/images/1x1/pypyr-taskrunner-yaml-pipeline-automation-1200x1200.52764d3c6f40232b3cdc33f5b8fbaeadad56cc310c8dd5588d30828296b5290d.png","height":1200,"width":1200},{"@type":"ImageObject","url":"https://pypyr.io/images/4x3/pypyr-taskrunner-yaml-pipeline-automation-1200x900.e8e70443377aeb11c190835e8d2ed0c844d31a82a0c2e8a744a9999cd03e0de9.png","height":900,"width":1200},{"@type":"ImageObject","url":"https://pypyr.io/images/16x9/pypyr-taskrunner-yaml-pipeline-automation-1920x1080.cc9ae11626c8312e087058adb13bfff702162ce39c355065170c1b87850f3034.png","height":1080,"width":1920}],"inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https://pypyr.io/docs/api/context-parser/"},"publisher":{"@id":"https://pypyr.io/#organization"},"url":"https://pypyr.io/docs/api/context-parser/","wordCount":313}]}</script>
+<script type=application/ld+json>{"@context":"https://schema.org","@graph":[{"@id":"https://pypyr.io/#organization","@type":"Organization","name":"pypyr","url":"https://pypyr.io/","description":"The pypyr project is a free open-source task-runner cli \u0026 python api for automation pipelines.","logo":{"@type":"ImageObject","url":"https://pypyr.io/images/pypyr-taskrunner-logo-square.63875e43ff40d8ae40e93a6043b4328b962f54f52974aaa27cedec52220de665.svg","height":112,"width":112},"sameAs":["https://github.com/pypyr/","https://twitter.com/pypyrpipes/","https://pypi.org/user/pypyr/","https://hub.docker.com/u/pypyr/","https://en.gravatar.com/pypyr/"]},{"@type":"TechArticle","author":{"@type":"Person","name":"pypyr contributor"},"articleSection":"api","dateModified":"2021-11-20T15:55:39Z","datePublished":"2020-08-13T00:00:00Z","headline":"Parse custom cli arguments for a task-runner pipeline.","image":[{"@type":"ImageObject","url":"https://pypyr.io/images/1x1/pypyr-taskrunner-yaml-pipeline-automation-1200x1200.52764d3c6f40232b3cdc33f5b8fbaeadad56cc310c8dd5588d30828296b5290d.png","height":1200,"width":1200},{"@type":"ImageObject","url":"https://pypyr.io/images/4x3/pypyr-taskrunner-yaml-pipeline-automation-1200x900.e8e70443377aeb11c190835e8d2ed0c844d31a82a0c2e8a744a9999cd03e0de9.png","height":900,"width":1200},{"@type":"ImageObject","url":"https://pypyr.io/images/16x9/pypyr-taskrunner-yaml-pipeline-automation-1920x1080.cc9ae11626c8312e087058adb13bfff702162ce39c355065170c1b87850f3034.png","height":1080,"width":1920}],"inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https://pypyr.io/docs/api/context-parser/"},"publisher":{"@id":"https://pypyr.io/#organization"},"url":"https://pypyr.io/docs/api/context-parser/","wordCount":352}]}</script>
 <link rel=apple-touch-icon sizes=180x180 href=/favicons/apple-touch-icon.925deabb48d91a80924b5d04ff56d2b8f42ba1d1e1438cb7d8948cce1138208c.png>
 <link rel=icon type=image/png sizes=32x32 href=/favicons/favicon-32x32.b869433d27c4679a5fbce03a8489268a539cbc781259bff14618ae2f018334e6.png>
 <link rel=icon type=image/png sizes=16x16 href=/favicons/favicon-16x16.8bcd9f870e0a86445e0505ce6e816b76a40b08a06e2dcd1ec1f90c395ecbeaf6.png>
@@ -454,6 +454,9 @@
 <li>
 <a href=/docs/api/>overview</a>
 </li>
+<li>
+<a href=/docs/api/custom-module-search-path/>custom module search path</a>
+</li>
 <li class=currentpage>
 <a href=/docs/api/context-parser/>context parser</a>
 </li>
@@ -553,15 +556,18 @@ the pipeline run.</p>
 <div class=admonition-content>For real-life inspiration, see the actual code for pypyr&rsquo;s built-in
 <a href=https://github.com/pypyr/pypyr/tree/main/pypyr/parser>context parsers</a>.</div>
 </div>
-<h2 id=parser-function-signature--example>parser function signature & example <a href=#parser-function-signature--example class=headline-anchor aria-label=anchor><svg class="permalink"><title>permalink</title><use href="https://pypyr.io/icons/external-link.054f8ebb57944b2bc52ea4f0ecd16197.svg#external-link"/></svg></a></h2><div class=highlight><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=kn>import</span> <span class=nn>logging</span>
-
+<h2 id=parser-function-signature--example>parser function signature & example <a href=#parser-function-signature--example class=headline-anchor aria-label=anchor><svg class="permalink"><title>permalink</title><use href="https://pypyr.io/icons/external-link.054f8ebb57944b2bc52ea4f0ecd16197.svg#external-link"/></svg></a></h2><p>A custom parser is any Python module containing a function with this signature:</p>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=n>get_parsed_context</span><span class=p>(</span><span class=n>args</span><span class=p>:</span> <span class=nb>list</span><span class=p>[</span><span class=nb>str</span><span class=p>]</span> <span class=o>|</span> <span class=kc>None</span><span class=p>)</span> <span class=o>-&gt;</span> <span class=n>Mapping</span> <span class=o>|</span> <span class=kc>None</span>
+</code></pre></div><p>Here is a more fleshed out example that you can copy & paste to get started:</p>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=kn>from</span> <span class=nn>collections.abc</span> <span class=kn>import</span> <span class=n>Mapping</span>
+<span class=kn>import</span> <span class=nn>logging</span>
 
 <span class=c1># getLogger will grab the parent logger context, so your loglevel and</span>
 <span class=c1># formatting will inherit correctly automatically from the pypyr core.</span>
 <span class=n>logger</span> <span class=o>=</span> <span class=n>logging</span><span class=o>.</span><span class=n>getLogger</span><span class=p>(</span><span class=vm>__name__</span><span class=p>)</span>
 
 
-<span class=k>def</span> <span class=nf>get_parsed_context</span><span class=p>(</span><span class=n>args</span><span class=p>):</span>
+<span class=k>def</span> <span class=nf>get_parsed_context</span><span class=p>(</span><span class=n>args</span><span class=p>:</span> <span class=nb>list</span><span class=p>[</span><span class=nb>str</span><span class=p>]</span> <span class=o>|</span> <span class=kc>None</span><span class=p>)</span> <span class=o>-&gt;</span> <span class=n>Mapping</span> <span class=o>|</span> <span class=kc>None</span><span class=p>:</span>
     <span class=s2>&#34;&#34;&#34;This is the signature for a context parser.
 </span><span class=s2>
 </span><span class=s2>    Args:
@@ -572,7 +578,7 @@ the pipeline run.</p>
 </span><span class=s2>    Returns:
 </span><span class=s2>      dict. This dict will initialize the context for the pipeline run.
 </span><span class=s2>    &#34;&#34;&#34;</span>
-    <span class=k>assert</span> <span class=n>args</span><span class=p>,</span> <span class=p>(</span><span class=s2>&#34;pipeline must be invoked with context arg set.&#34;</span><span class=p>)</span>
+    <span class=k>assert</span> <span class=n>args</span><span class=p>,</span> <span class=p>(</span><span class=s2>&#34;you must invoke pipeline with context arg set.&#34;</span><span class=p>)</span>
     <span class=n>logger</span><span class=o>.</span><span class=n>debug</span><span class=p>(</span><span class=s2>&#34;starting&#34;</span><span class=p>)</span>
 
     <span class=c1># your clever code here. Chances are pretty good you&#39;ll be doing things</span>
@@ -581,14 +587,16 @@ the pipeline run.</p>
     <span class=c1># function signature returns a dictionary</span>
     <span class=k>return</span> <span class=p>{</span><span class=s1>&#39;key1&#39;</span><span class=p>:</span> <span class=s1>&#39;value1&#39;</span><span class=p>,</span> <span class=s1>&#39;key2&#39;</span><span class=p>:</span><span class=s1>&#39;value2&#39;</span><span class=p>}</span>
 </code></pre></div>
-<h2 id=use-custom-parser-in-a-pipeline>use custom parser in a pipeline <a href=#use-custom-parser-in-a-pipeline class=headline-anchor aria-label=anchor><svg class="permalink"><title>permalink</title><use href="https://pypyr.io/icons/external-link.054f8ebb57944b2bc52ea4f0ecd16197.svg#external-link"/></svg></a></h2><p>The usual python import module resolution rules apply. pypyr will resolve
-modules from the
-<a href=https://pypyr.io/docs/pipelines/lookup-order/#the-working-directory>working directory</a>
-first, which you can change by using the <code>--dir</code> flag.</p>
-<p>Assuming you saved your python with the <code>def get_parsed_context(args)</code> in a
-file like this <code>./dir/myparser.py</code>, you can use use it in your pipeline like
-this:</p>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-yaml data-lang=yaml><span class=nt>context_parser</span><span class=p>:</span><span class=w> </span><span class=l>dir.myparser</span><span class=w>
+<h2 id=use-custom-parser-in-a-pipeline>use custom parser in a pipeline <a href=#use-custom-parser-in-a-pipeline class=headline-anchor aria-label=anchor><svg class="permalink"><title>permalink</title><use href="https://pypyr.io/icons/external-link.054f8ebb57944b2bc52ea4f0ecd16197.svg#external-link"/></svg></a></h2><p>The usual <a href=https://pypyr.io/docs/api/custom-module-search-path/>custom module import resolution rules</a> apply.</p>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text>|- myproj
+  |- mypipeline.yaml
+  |- mydir/
+    |- myparser.py
+</code></pre></div><p>Assuming you saved your python with the <code>def get_parsed_context(args)</code> in a file
+like this
+<code>{pipeline dir}/mydir/myparser.py</code>, you can use use it in your pipeline
+like this:</p>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-yaml data-lang=yaml><span class=nt>context_parser</span><span class=p>:</span><span class=w> </span><span class=l>mydir.myparser</span><span class=w>
 </span><span class=w></span><span class=nt>steps</span><span class=p>:</span><span class=w>
 </span><span class=w>    </span>- <span class=l>step1</span><span class=w>
 </span><span class=w>    </span>- <span class=l>step2</span><span class=w>
@@ -603,11 +611,11 @@ environment, you can of course use the usual python package name instead:</p>
 <section class="see-also elevation-02">
 <h2>see also</h2>
 <ul>
+<li><a href=/docs/api/custom-module-search-path/>custom module name resolution</a></li>
 <li><a href=/docs/steps/add/>pypyr.steps.add</a></li>
 <li><a href=/docs/steps/append/>pypyr.steps.append</a></li>
 <li><a href=/docs/getting-started/variables/>variables</a></li>
 <li><a href=/docs/api/retry-backoff/>custom retry backoff</a></li>
-<li><a href=/docs/steps/set/>pypyr.steps.set</a></li>
 </ul>
 </section>
 </main>
@@ -629,7 +637,7 @@ environment, you can of course use the usual python package name instead:</p>
 </ul>
 </aside>
 <div class="page-git-info elevation-02">
-<small class=small-block>last updated on <time datetime=2021-11-09T14:29:55Z>2021-11-09 14:29</time>.</small>
+<small class=small-block>last updated on <time datetime=2021-11-20T15:55:39Z>2021-11-20 15:55</time>.</small>
 </div>
 </div>
 <footer class="footer elevation-01">

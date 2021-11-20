@@ -23,7 +23,7 @@
 <meta property="og:url" content="https://pypyr.io/docs/api/step/">
 <meta name=twitter:card content="summary_large_image">
 <meta name=twitter:site content="@pypyrpipes">
-<script type=application/ld+json>{"@context":"https://schema.org","@graph":[{"@id":"https://pypyr.io/#organization","@type":"Organization","name":"pypyr","url":"https://pypyr.io/","description":"The pypyr project is a free open-source task-runner cli \u0026 python api for automation pipelines.","logo":{"@type":"ImageObject","url":"https://pypyr.io/images/pypyr-taskrunner-logo-square.63875e43ff40d8ae40e93a6043b4328b962f54f52974aaa27cedec52220de665.svg","height":112,"width":112},"sameAs":["https://github.com/pypyr/","https://twitter.com/pypyrpipes/","https://pypi.org/user/pypyr/","https://hub.docker.com/u/pypyr/","https://en.gravatar.com/pypyr/"]},{"@type":"TechArticle","author":{"@type":"Person","name":"pypyr contributor"},"articleSection":"api","dateModified":"2020-08-17T19:17:06+01:00","datePublished":"2020-08-13T00:00:00Z","headline":"Easily code custom pipeline steps.","image":[{"@type":"ImageObject","url":"https://pypyr.io/images/1x1/pypyr-taskrunner-yaml-pipeline-automation-1200x1200.52764d3c6f40232b3cdc33f5b8fbaeadad56cc310c8dd5588d30828296b5290d.png","height":1200,"width":1200},{"@type":"ImageObject","url":"https://pypyr.io/images/4x3/pypyr-taskrunner-yaml-pipeline-automation-1200x900.e8e70443377aeb11c190835e8d2ed0c844d31a82a0c2e8a744a9999cd03e0de9.png","height":900,"width":1200},{"@type":"ImageObject","url":"https://pypyr.io/images/16x9/pypyr-taskrunner-yaml-pipeline-automation-1920x1080.cc9ae11626c8312e087058adb13bfff702162ce39c355065170c1b87850f3034.png","height":1080,"width":1920}],"inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https://pypyr.io/docs/api/step/"},"publisher":{"@id":"https://pypyr.io/#organization"},"url":"https://pypyr.io/docs/api/step/","wordCount":585}]}</script>
+<script type=application/ld+json>{"@context":"https://schema.org","@graph":[{"@id":"https://pypyr.io/#organization","@type":"Organization","name":"pypyr","url":"https://pypyr.io/","description":"The pypyr project is a free open-source task-runner cli \u0026 python api for automation pipelines.","logo":{"@type":"ImageObject","url":"https://pypyr.io/images/pypyr-taskrunner-logo-square.63875e43ff40d8ae40e93a6043b4328b962f54f52974aaa27cedec52220de665.svg","height":112,"width":112},"sameAs":["https://github.com/pypyr/","https://twitter.com/pypyrpipes/","https://pypi.org/user/pypyr/","https://hub.docker.com/u/pypyr/","https://en.gravatar.com/pypyr/"]},{"@type":"TechArticle","author":{"@type":"Person","name":"pypyr contributor"},"articleSection":"api","dateModified":"2021-11-20T15:55:39Z","datePublished":"2020-08-13T00:00:00Z","headline":"Easily code custom pipeline steps.","image":[{"@type":"ImageObject","url":"https://pypyr.io/images/1x1/pypyr-taskrunner-yaml-pipeline-automation-1200x1200.52764d3c6f40232b3cdc33f5b8fbaeadad56cc310c8dd5588d30828296b5290d.png","height":1200,"width":1200},{"@type":"ImageObject","url":"https://pypyr.io/images/4x3/pypyr-taskrunner-yaml-pipeline-automation-1200x900.e8e70443377aeb11c190835e8d2ed0c844d31a82a0c2e8a744a9999cd03e0de9.png","height":900,"width":1200},{"@type":"ImageObject","url":"https://pypyr.io/images/16x9/pypyr-taskrunner-yaml-pipeline-automation-1920x1080.cc9ae11626c8312e087058adb13bfff702162ce39c355065170c1b87850f3034.png","height":1080,"width":1920}],"inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https://pypyr.io/docs/api/step/"},"publisher":{"@id":"https://pypyr.io/#organization"},"url":"https://pypyr.io/docs/api/step/","wordCount":669}]}</script>
 <link rel=apple-touch-icon sizes=180x180 href=/favicons/apple-touch-icon.925deabb48d91a80924b5d04ff56d2b8f42ba1d1e1438cb7d8948cce1138208c.png>
 <link rel=icon type=image/png sizes=32x32 href=/favicons/favicon-32x32.b869433d27c4679a5fbce03a8489268a539cbc781259bff14618ae2f018334e6.png>
 <link rel=icon type=image/png sizes=16x16 href=/favicons/favicon-16x16.8bcd9f870e0a86445e0505ce6e816b76a40b08a06e2dcd1ec1f90c395ecbeaf6.png>
@@ -455,6 +455,9 @@
 <a href=/docs/api/>overview</a>
 </li>
 <li>
+<a href=/docs/api/custom-module-search-path/>custom module search path</a>
+</li>
+<li>
 <a href=/docs/api/context-parser/>context parser</a>
 </li>
 <li>
@@ -532,7 +535,7 @@
 <nav id=TableOfContents>
 <ol>
 <li><a href=#step-function-signature>step function signature</a></li>
-<li><a href=#use-custom-step-in-a-pipeline>use custom step in a pipeline</a>
+<li><a href=#use-custom-step-in-pipeline>use custom step in pipeline</a>
 <ol>
 <li><a href=#module-path-resolution>module path resolution</a></li>
 <li><a href=#passing-context--decorators>passing context & decorators</a></li>
@@ -559,15 +562,19 @@ a better place.</p>
 new step that would make your life better, feel very free to
 <a href="https://github.com/pypyr/pypyr/issues/new?title=step%20suggestion:&labels=feature,type:%20step">get in touch</a>
 with a feature request.</p>
-<h2 id=step-function-signature>step function signature <a href=#step-function-signature class=headline-anchor aria-label=anchor><svg class="permalink"><title>permalink</title><use href="https://pypyr.io/icons/external-link.054f8ebb57944b2bc52ea4f0ecd16197.svg#external-link"/></svg></a></h2><div class=highlight><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=kn>import</span> <span class=nn>logging</span>
+<h2 id=step-function-signature>step function signature <a href=#step-function-signature class=headline-anchor aria-label=anchor><svg class="permalink"><title>permalink</title><use href="https://pypyr.io/icons/external-link.054f8ebb57944b2bc52ea4f0ecd16197.svg#external-link"/></svg></a></h2><p>A custom step is any Python module that contains a function with this signature:</p>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=n>run_step</span><span class=p>(</span><span class=n>context</span><span class=p>:</span> <span class=n>pypyr</span><span class=o>.</span><span class=n>context</span><span class=o>.</span><span class=n>Context</span><span class=p>)</span> <span class=o>-&gt;</span> <span class=kc>None</span>
+</code></pre></div><p>Here is a fuller example that you can copy & paste to get started:</p>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=kn>import</span> <span class=nn>logging</span>
 
+<span class=kn>from</span> <span class=nn>pypyr.context</span> <span class=kn>import</span> <span class=n>Context</span>
 
 <span class=c1># getLogger will grab the parent logger context, so your loglevel and</span>
 <span class=c1># formatting automatically will inherit correctly from the pypyr core.</span>
 <span class=n>logger</span> <span class=o>=</span> <span class=n>logging</span><span class=o>.</span><span class=n>getLogger</span><span class=p>(</span><span class=vm>__name__</span><span class=p>)</span>
 
 
-<span class=k>def</span> <span class=nf>run_step</span><span class=p>(</span><span class=n>context</span><span class=p>):</span>
+<span class=k>def</span> <span class=nf>run_step</span><span class=p>(</span><span class=n>context</span><span class=p>:</span> <span class=n>Context</span><span class=p>)</span> <span class=o>-&gt;</span> <span class=kc>None</span><span class=p>:</span>
     <span class=s2>&#34;&#34;&#34;Put your code in here. This shows you how to code a custom pipeline step.
 </span><span class=s2>
 </span><span class=s2>    Args:
@@ -607,31 +614,37 @@ with a feature request.</p>
 
     <span class=n>logger</span><span class=o>.</span><span class=n>debug</span><span class=p>(</span><span class=s2>&#34;done&#34;</span><span class=p>)</span>
 </code></pre></div>
-<h2 id=use-custom-step-in-a-pipeline>use custom step in a pipeline <a href=#use-custom-step-in-a-pipeline class=headline-anchor aria-label=anchor><svg class="permalink"><title>permalink</title><use href="https://pypyr.io/icons/external-link.054f8ebb57944b2bc52ea4f0ecd16197.svg#external-link"/></svg></a></h2>
-<h3 id=module-path-resolution>module path resolution <a href=#module-path-resolution class=headline-anchor aria-label=anchor><svg class="permalink"><title>permalink</title><use href="https://pypyr.io/icons/external-link.054f8ebb57944b2bc52ea4f0ecd16197.svg#external-link"/></svg></a></h3><p>The usual python import module resolution rules apply. pypyr will resolve
-modules from the
-<a href=https://pypyr.io/docs/pipelines/lookup-order/#the-working-directory>working directory</a>
-first, which you can change by using the <code>--dir</code> flag.</p>
+<h2 id=use-custom-step-in-pipeline>use custom step in pipeline <a href=#use-custom-step-in-pipeline class=headline-anchor aria-label=anchor><svg class="permalink"><title>permalink</title><use href="https://pypyr.io/icons/external-link.054f8ebb57944b2bc52ea4f0ecd16197.svg#external-link"/></svg></a></h2>
+<h3 id=module-path-resolution>module path resolution <a href=#module-path-resolution class=headline-anchor aria-label=anchor><svg class="permalink"><title>permalink</title><use href="https://pypyr.io/icons/external-link.054f8ebb57944b2bc52ea4f0ecd16197.svg#external-link"/></svg></a></h3><p>The usual <a href=https://pypyr.io/docs/api/custom-module-search-path/>custom module import resolution rules</a> apply.</p>
 <p>Assuming you saved your python with the <code>def run_step(context)</code> function in a
-file like this <code>./dir/mystep.py</code>, you can use use it in your pipeline like
-this:</p>
+file like this <code>{pipeline dir}/mydir/mystep.py</code>:</p>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text>|- mypipelinedir/
+  |- mypipe.yaml
+  |- mydir/
+    |- mystep.py
+  |- step1.py
+</code></pre></div><p>You can use use it in your <code>mypipe</code> pipeline like this:</p>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-yaml data-lang=yaml><span class=c># {pipeline dir}/mypipe.yaml</span><span class=w>
+</span><span class=w></span><span class=nt>steps</span><span class=p>:</span><span class=w>
+</span><span class=w>    </span>- <span class=l>step1</span><span class=w> </span><span class=c># run {pipeline dir}/step1.py</span><span class=w>
+</span><span class=w>    </span>- <span class=l>mydir.mystep</span><span class=w> </span><span class=c># run {pipeline dir}/mydir/mystep.py</span><span class=w>
+</span></code></pre></div><p>Because you reference the custom modules relative to the pipeline directory,
+you can run this pipeline from anywhere and it&rsquo;ll work:</p>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>$ pypyr mypipelinedir/mypipe
+</code></pre></div><p>If you package your code and you install the package into the active python
+environment (i.e <code>$ pip install mypackage</code>), you can of course use the usual
+python absolute package name instead:</p>
 <div class=highlight><pre tabindex=0 class=chroma><code class=language-yaml data-lang=yaml><span class=nt>steps</span><span class=p>:</span><span class=w>
-</span><span class=w>    </span>- <span class=l>step1</span><span class=w> </span><span class=c># runs ./step1.py</span><span class=w>
-</span><span class=w>    </span>- <span class=l>dir.mystep</span><span class=w> </span><span class=c># runs ./dir/mystep.py</span><span class=w>
-</span></code></pre></div><p>If you package your parser and you install the package into the active python
-environment, you can of course use the usual python absolute package name
-instead:</p>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-yaml data-lang=yaml><span class=nt>steps</span><span class=p>:</span><span class=w>
-</span><span class=w>    </span>- <span class=l>step1</span><span class=w>
-</span><span class=w>    </span>- <span class=l>mypackage.mystep</span><span class=w>
-</span></code></pre></div>
+</span><span class=w>    </span>- <span class=l>step1</span><span class=w> </span><span class=c># run {pipeline dir}/step1.py</span><span class=w>
+</span><span class=w>    </span>- <span class=l>mypackage.mystep</span><span class=w> </span><span class=c># run mypackage.mystep</span><span class=w>
+</span></code></pre></div><p>You can mix both packaged code and ad hoc modules in the same pipeline.</p>
 <h3 id=passing-context--decorators>passing context & decorators <a href=#passing-context--decorators class=headline-anchor aria-label=anchor><svg class="permalink"><title>permalink</title><use href="https://pypyr.io/icons/external-link.054f8ebb57944b2bc52ea4f0ecd16197.svg#external-link"/></svg></a></h3><p>All of the usual step decorators are available to your custom step. This makes
 it easy to use retry, looping and conditional logic on your custom step code
 without having to write any additional code.</p>
 <div class=highlight><pre tabindex=0 class=chroma><code class=language-yaml data-lang=yaml><span class=nt>steps</span><span class=p>:</span><span class=w>
 </span><span class=w>  </span>- <span class=l>step1</span><span class=w>
 </span><span class=w>  </span>- <span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>mystep</span><span class=w>
-</span><span class=w>    </span><span class=nt>comment</span><span class=p>:</span><span class=w> </span><span class=l>run ./mystep.py</span><span class=w>
+</span><span class=w>    </span><span class=nt>comment</span><span class=p>:</span><span class=w> </span><span class=l>run {pipeline dir}/mystep.py</span><span class=w>
 </span><span class=w>             </span><span class=l>pass input context values to the step.</span><span class=w>
 </span><span class=w>             </span><span class=l>run step 3 times in total for &#34;first&#34;, &#34;second&#34;, &#34;third&#34;</span><span class=w>
 </span><span class=w>             </span><span class=l>retry twice if the step fails.</span><span class=w>
@@ -649,11 +662,11 @@ without having to write any additional code.</p>
 <section class="see-also elevation-02">
 <h2>see also</h2>
 <ul>
+<li><a href=/docs/api/custom-module-search-path/>custom module name resolution</a></li>
 <li><a href=/docs/api/retry-backoff/>custom retry backoff</a></li>
 <li><a href=/docs/api/>api</a></li>
 <li><a href=/docs/api/context-parser/>custom context parser</a></li>
 <li><a href=/docs/api/pipeline-loader/>custom pype loader</a></li>
-<li><a href=/docs/contributing/developers-guide/>developer's guide for pypyr</a></li>
 </ul>
 </section>
 </main>
@@ -680,7 +693,7 @@ without having to write any additional code.</p>
 </ul>
 </aside>
 <div class="page-git-info elevation-02">
-<small class=small-block>last updated on <time datetime=2020-08-17T19:17:06+01:00>2020-08-17 19:17</time>.</small>
+<small class=small-block>last updated on <time datetime=2021-11-20T15:55:39Z>2021-11-20 15:55</time>.</small>
 </div>
 </div>
 <footer class="footer elevation-01">

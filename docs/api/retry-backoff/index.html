@@ -23,7 +23,7 @@
 <meta property="og:url" content="https://pypyr.io/docs/api/retry-backoff/">
 <meta name=twitter:card content="summary_large_image">
 <meta name=twitter:site content="@pypyrpipes">
-<script type=application/ld+json>{"@context":"https://schema.org","@graph":[{"@id":"https://pypyr.io/#organization","@type":"Organization","name":"pypyr","url":"https://pypyr.io/","description":"The pypyr project is a free open-source task-runner cli \u0026 python api for automation pipelines.","logo":{"@type":"ImageObject","url":"https://pypyr.io/images/pypyr-taskrunner-logo-square.63875e43ff40d8ae40e93a6043b4328b962f54f52974aaa27cedec52220de665.svg","height":112,"width":112},"sameAs":["https://github.com/pypyr/","https://twitter.com/pypyrpipes/","https://pypi.org/user/pypyr/","https://hub.docker.com/u/pypyr/","https://en.gravatar.com/pypyr/"]},{"@type":"TechArticle","author":{"@type":"Person","name":"pypyr contributor"},"articleSection":"api","dateModified":"2021-11-09T14:29:55Z","datePublished":"2021-01-18T00:00:00Z","headline":"Create a custom retry backoff strategy for an automation pipeline.","image":[{"@type":"ImageObject","url":"https://pypyr.io/images/1x1/pypyr-taskrunner-yaml-pipeline-automation-1200x1200.52764d3c6f40232b3cdc33f5b8fbaeadad56cc310c8dd5588d30828296b5290d.png","height":1200,"width":1200},{"@type":"ImageObject","url":"https://pypyr.io/images/4x3/pypyr-taskrunner-yaml-pipeline-automation-1200x900.e8e70443377aeb11c190835e8d2ed0c844d31a82a0c2e8a744a9999cd03e0de9.png","height":900,"width":1200},{"@type":"ImageObject","url":"https://pypyr.io/images/16x9/pypyr-taskrunner-yaml-pipeline-automation-1920x1080.cc9ae11626c8312e087058adb13bfff702162ce39c355065170c1b87850f3034.png","height":1080,"width":1920}],"inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https://pypyr.io/docs/api/retry-backoff/"},"publisher":{"@id":"https://pypyr.io/#organization"},"url":"https://pypyr.io/docs/api/retry-backoff/","wordCount":491}]}</script>
+<script type=application/ld+json>{"@context":"https://schema.org","@graph":[{"@id":"https://pypyr.io/#organization","@type":"Organization","name":"pypyr","url":"https://pypyr.io/","description":"The pypyr project is a free open-source task-runner cli \u0026 python api for automation pipelines.","logo":{"@type":"ImageObject","url":"https://pypyr.io/images/pypyr-taskrunner-logo-square.63875e43ff40d8ae40e93a6043b4328b962f54f52974aaa27cedec52220de665.svg","height":112,"width":112},"sameAs":["https://github.com/pypyr/","https://twitter.com/pypyrpipes/","https://pypi.org/user/pypyr/","https://hub.docker.com/u/pypyr/","https://en.gravatar.com/pypyr/"]},{"@type":"TechArticle","author":{"@type":"Person","name":"pypyr contributor"},"articleSection":"api","dateModified":"2021-11-20T15:55:39Z","datePublished":"2021-01-18T00:00:00Z","headline":"Create a custom retry backoff strategy for an automation pipeline.","image":[{"@type":"ImageObject","url":"https://pypyr.io/images/1x1/pypyr-taskrunner-yaml-pipeline-automation-1200x1200.52764d3c6f40232b3cdc33f5b8fbaeadad56cc310c8dd5588d30828296b5290d.png","height":1200,"width":1200},{"@type":"ImageObject","url":"https://pypyr.io/images/4x3/pypyr-taskrunner-yaml-pipeline-automation-1200x900.e8e70443377aeb11c190835e8d2ed0c844d31a82a0c2e8a744a9999cd03e0de9.png","height":900,"width":1200},{"@type":"ImageObject","url":"https://pypyr.io/images/16x9/pypyr-taskrunner-yaml-pipeline-automation-1920x1080.cc9ae11626c8312e087058adb13bfff702162ce39c355065170c1b87850f3034.png","height":1080,"width":1920}],"inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https://pypyr.io/docs/api/retry-backoff/"},"publisher":{"@id":"https://pypyr.io/#organization"},"url":"https://pypyr.io/docs/api/retry-backoff/","wordCount":473}]}</script>
 <link rel=apple-touch-icon sizes=180x180 href=/favicons/apple-touch-icon.925deabb48d91a80924b5d04ff56d2b8f42ba1d1e1438cb7d8948cce1138208c.png>
 <link rel=icon type=image/png sizes=32x32 href=/favicons/favicon-32x32.b869433d27c4679a5fbce03a8489268a539cbc781259bff14618ae2f018334e6.png>
 <link rel=icon type=image/png sizes=16x16 href=/favicons/favicon-16x16.8bcd9f870e0a86445e0505ce6e816b76a40b08a06e2dcd1ec1f90c395ecbeaf6.png>
@@ -455,6 +455,9 @@
 <a href=/docs/api/>overview</a>
 </li>
 <li>
+<a href=/docs/api/custom-module-search-path/>custom module search path</a>
+</li>
+<li>
 <a href=/docs/api/context-parser/>context parser</a>
 </li>
 <li>
@@ -621,15 +624,13 @@ on the step&rsquo;s <a href=https://pypyr.io/docs/decorators/retry/>retry decora
 name followed by the class name.</p>
 <p>To load a custom callable, the name should be in format
 <code>package.module.ClassName</code> or <code>module.ClassName</code>.</p>
-<p>The usual python import module resolution rules apply. pypyr will resolve
-modules from the
-<a href=https://pypyr.io/docs/pipelines/lookup-order/#the-working-directory>working directory</a>
-first, which you can change by using the <code>--dir</code> flag.</p>
+<p>The usual <a href=https://pypyr.io/docs/api/custom-module-search-path/>custom module import resolution rules</a> apply.</p>
 <p>Assuming your callable class <code>MyBackoff</code> exists in a file like this
-<code>./dir/mybackoffs.py</code>, you can use use it in your pipeline like this:</p>
+<code>{pipelinedir}/mydir/mybackoffs.py</code>, you can use use it in your pipeline like
+this:</p>
 <div class=highlight><pre tabindex=0 class=chroma><code class=language-yaml data-lang=yaml>- <span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>pypyr.steps.cmd</span><span class=w>
 </span><span class=w>  </span><span class=nt>retry</span><span class=p>:</span><span class=w>
-</span><span class=w>    </span><span class=nt>backoff</span><span class=p>:</span><span class=w> </span><span class=l>dir.mybackoffs.MyBackoff</span><span class=w>
+</span><span class=w>    </span><span class=nt>backoff</span><span class=p>:</span><span class=w> </span><span class=l>mydir.mybackoffs.MyBackoff</span><span class=w>
 </span><span class=w>    </span><span class=nt>max</span><span class=p>:</span><span class=w> </span><span class=m>123</span><span class=w>
 </span><span class=w>    </span><span class=nt>sleep</span><span class=p>:</span><span class=w> </span><span class=m>456</span><span class=w>
 </span><span class=w>    </span><span class=nt>backoffArgs</span><span class=p>:</span><span class=w>
@@ -653,11 +654,11 @@ followed by the class name:</p>
 <section class="see-also elevation-02">
 <h2>see also</h2>
 <ul>
+<li><a href=/docs/api/custom-module-search-path/>custom module name resolution</a></li>
 <li><a href=/docs/api/>api</a></li>
 <li><a href=/docs/api/context-parser/>custom context parser</a></li>
 <li><a href=/docs/api/pipeline-loader/>custom pype loader</a></li>
 <li><a href=/docs/api/step/>custom step</a></li>
-<li><a href=/docs/contributing/developers-guide/>developer's guide for pypyr</a></li>
 </ul>
 </section>
 </main>
@@ -678,7 +679,7 @@ followed by the class name:</p>
 </ul>
 </aside>
 <div class="page-git-info elevation-02">
-<small class=small-block>last updated on <time datetime=2021-11-09T14:29:55Z>2021-11-09 14:29</time>.</small>
+<small class=small-block>last updated on <time datetime=2021-11-20T15:55:39Z>2021-11-20 15:55</time>.</small>
 </div>
 </div>
 <footer class="footer elevation-01">

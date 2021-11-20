@@ -23,7 +23,7 @@
 <meta property="og:url" content="https://pypyr.io/docs/cli/run-a-pipeline/">
 <meta name=twitter:card content="summary_large_image">
 <meta name=twitter:site content="@pypyrpipes">
-<script type=application/ld+json>{"@context":"https://schema.org","@graph":[{"@id":"https://pypyr.io/#organization","@type":"Organization","name":"pypyr","url":"https://pypyr.io/","description":"The pypyr project is a free open-source task-runner cli \u0026 python api for automation pipelines.","logo":{"@type":"ImageObject","url":"https://pypyr.io/images/pypyr-taskrunner-logo-square.63875e43ff40d8ae40e93a6043b4328b962f54f52974aaa27cedec52220de665.svg","height":112,"width":112},"sameAs":["https://github.com/pypyr/","https://twitter.com/pypyrpipes/","https://pypi.org/user/pypyr/","https://hub.docker.com/u/pypyr/","https://en.gravatar.com/pypyr/"]},{"@type":"TechArticle","author":{"@type":"Person","name":"pypyr contributor"},"articleSection":"cli","dateModified":"2020-08-17T19:17:06+01:00","datePublished":"2020-08-13T00:00:00Z","headline":"How to run a task-runner automation pipeline from the cli.","image":[{"@type":"ImageObject","url":"https://pypyr.io/images/1x1/pypyr-taskrunner-yaml-pipeline-automation-1200x1200.52764d3c6f40232b3cdc33f5b8fbaeadad56cc310c8dd5588d30828296b5290d.png","height":1200,"width":1200},{"@type":"ImageObject","url":"https://pypyr.io/images/4x3/pypyr-taskrunner-yaml-pipeline-automation-1200x900.e8e70443377aeb11c190835e8d2ed0c844d31a82a0c2e8a744a9999cd03e0de9.png","height":900,"width":1200},{"@type":"ImageObject","url":"https://pypyr.io/images/16x9/pypyr-taskrunner-yaml-pipeline-automation-1920x1080.cc9ae11626c8312e087058adb13bfff702162ce39c355065170c1b87850f3034.png","height":1080,"width":1920}],"inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https://pypyr.io/docs/cli/run-a-pipeline/"},"publisher":{"@id":"https://pypyr.io/#organization"},"url":"https://pypyr.io/docs/cli/run-a-pipeline/","wordCount":267}]}</script>
+<script type=application/ld+json>{"@context":"https://schema.org","@graph":[{"@id":"https://pypyr.io/#organization","@type":"Organization","name":"pypyr","url":"https://pypyr.io/","description":"The pypyr project is a free open-source task-runner cli \u0026 python api for automation pipelines.","logo":{"@type":"ImageObject","url":"https://pypyr.io/images/pypyr-taskrunner-logo-square.63875e43ff40d8ae40e93a6043b4328b962f54f52974aaa27cedec52220de665.svg","height":112,"width":112},"sameAs":["https://github.com/pypyr/","https://twitter.com/pypyrpipes/","https://pypi.org/user/pypyr/","https://hub.docker.com/u/pypyr/","https://en.gravatar.com/pypyr/"]},{"@type":"TechArticle","author":{"@type":"Person","name":"pypyr contributor"},"articleSection":"cli","dateModified":"2021-11-20T15:55:39Z","datePublished":"2020-08-13T00:00:00Z","headline":"How to run a task-runner automation pipeline from the cli.","image":[{"@type":"ImageObject","url":"https://pypyr.io/images/1x1/pypyr-taskrunner-yaml-pipeline-automation-1200x1200.52764d3c6f40232b3cdc33f5b8fbaeadad56cc310c8dd5588d30828296b5290d.png","height":1200,"width":1200},{"@type":"ImageObject","url":"https://pypyr.io/images/4x3/pypyr-taskrunner-yaml-pipeline-automation-1200x900.e8e70443377aeb11c190835e8d2ed0c844d31a82a0c2e8a744a9999cd03e0de9.png","height":900,"width":1200},{"@type":"ImageObject","url":"https://pypyr.io/images/16x9/pypyr-taskrunner-yaml-pipeline-automation-1920x1080.cc9ae11626c8312e087058adb13bfff702162ce39c355065170c1b87850f3034.png","height":1080,"width":1920}],"inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https://pypyr.io/docs/cli/run-a-pipeline/"},"publisher":{"@id":"https://pypyr.io/#organization"},"url":"https://pypyr.io/docs/cli/run-a-pipeline/","wordCount":467}]}</script>
 <link rel=apple-touch-icon sizes=180x180 href=/favicons/apple-touch-icon.925deabb48d91a80924b5d04ff56d2b8f42ba1d1e1438cb7d8948cce1138208c.png>
 <link rel=icon type=image/png sizes=32x32 href=/favicons/favicon-32x32.b869433d27c4679a5fbce03a8489268a539cbc781259bff14618ae2f018334e6.png>
 <link rel=icon type=image/png sizes=16x16 href=/favicons/favicon-16x16.8bcd9f870e0a86445e0505ce6e816b76a40b08a06e2dcd1ec1f90c395ecbeaf6.png>
@@ -455,6 +455,9 @@
 <a href=/docs/api/>overview</a>
 </li>
 <li>
+<a href=/docs/api/custom-module-search-path/>custom module search path</a>
+</li>
+<li>
 <a href=/docs/api/context-parser/>context parser</a>
 </li>
 <li>
@@ -547,33 +550,86 @@
 <p>You can use your usual directory separators if you&rsquo;re <a href=https://pypyr.io/docs/pipelines/lookup-order/#pipelines-in-sub-directories>running a pipeline in a
 sub-directory</a>,
 like <code>$ pypyr subdir/subsubdir/pipeline</code></p>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=c1># run ./mypipelinename.yaml with DEBUG logging level</span>
-$ pypyr mypipelinename --loglevel <span class=m>10</span>
+<div class=app-window>
+<div class=app-window-top-bar>
+<span class=app-window-buttons>
+<span class="circle red"></span><span class="circle yellow"></span><span class="circle green"></span>
+</span>
+<span class=app-window-title>term</span>
+</div>
+<div class=app-window-content>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text># run ./mypipelinename.yaml with DEBUG logging level
+$ pypyr mypipelinename --loglevel 10
 
-<span class=c1># run ./mypipelinename.yaml with INFO logging level.</span>
-<span class=c1># log is an alias for loglevel, so less typing, wooohoo!</span>
-$ pypyr mypipelinename --log <span class=m>20</span>
+# run ./mypipelinename.yaml with INFO logging level.
+# log is an alias for loglevel, so less typing, wooohoo!
+$ pypyr mypipelinename --log 20
 
-<span class=c1># If you don&#39;t specify --loglevel it defaults to 25 - NOTIFY.</span>
+# If you don&#39;t specify --loglevel it defaults to 25 - NOTIFY.
 $ pypyr mypipelinename
 
-<span class=c1># run ./mydir/mypipelinename.yaml</span>
-<span class=c1># The 2nd argument is any arbitrary sequence of strings, known</span>
-<span class=c1># as the input context arguments.</span>
-<span class=c1># For this input argument to be available to your pipeline</span>
-<span class=c1># you need to specify a context parser in your pipeline yaml.</span>
+# run ./mydir/mypipelinename.yaml
+# The 2nd argument is any arbitrary sequence of strings, known
+# as the input context arguments.
+# For this input argument to be available to your pipeline
+# you need to specify a context parser in your pipeline yaml.
 $ pypyr mydir/mypipelinename arbitrary string here
 
-<span class=c1># run ./mypipelinename.yaml with an input context in key-value</span>
-<span class=c1># pair format. For this input to be available to your pipeline</span>
-<span class=c1># you need to specify a context_parser like</span>
-<span class=c1># pypyr.parser.keyvaluepairs in your pipeline yaml.</span>
-$ pypyr mypipelinename <span class=nv>mykey</span><span class=o>=</span>value <span class=nv>anotherkey</span><span class=o>=</span>anothervalue
-</code></pre></div>
-<h2 id=pypyr-command-line-switches>pypyr command line switches <a href=#pypyr-command-line-switches class=headline-anchor aria-label=anchor><svg class="permalink"><title>permalink</title><use href="https://pypyr.io/icons/external-link.054f8ebb57944b2bc52ea4f0ecd16197.svg#external-link"/></svg></a></h2><div class=highlight><pre tabindex=0 class=chroma><code class=language-fish data-lang=fish><span class=nf>pypyr</span> <span class=o>[-</span>h<span class=o>]</span> <span class=o>[</span>--groups <span class=o>[</span>GROUPS <span class=o>[</span>GROUPS <span class=o>..</span>.<span class=o>]]]</span> <span class=o>[--</span>success SUCCESS_GROUP<span class=o>]</span>
-             <span class=o>[--</span>failure FAILURE_GROUP<span class=o>]</span> <span class=o>[--</span>dir WORKING_DIR<span class=o>]</span> <span class=o>[--</span>log LOG_LEVEL<span class=o>]</span>
-             <span class=o>[--</span>logpath LOG_PATH<span class=o>]</span> <span class=o>[--</span>version<span class=o>]</span>
-             <span class=nf>pipeline_name</span> <span class=o>[</span>context_args <span class=o>[</span>context_args <span class=o>..</span>.<span class=o>]]</span>
+# run ./mypipelinename.yaml with an input context in key-value
+# pair format. For this input to be available to your pipeline
+# you need to specify a context_parser like
+# pypyr.parser.keyvaluepairs in your pipeline yaml.
+$ pypyr mypipelinename mykey=value anotherkey=anothervalue
+
+# you can also use absolute paths. /mydir/mypipelinename.yaml 
+$ pypyr /mydir/mypipelinename
+
+# you can also use absolute paths. /Users/myusername/mydir/mypipelinename.yaml 
+$ pypyr ~/mydir/mypipelinename</code></pre></div>
+</div>
+</div>
+<h2 id=pypyr-command-line-switches>pypyr command line switches <a href=#pypyr-command-line-switches class=headline-anchor aria-label=anchor><svg class="permalink"><title>permalink</title><use href="https://pypyr.io/icons/external-link.054f8ebb57944b2bc52ea4f0ecd16197.svg#external-link"/></svg></a></h2><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text>usage: pypyr [-h] [--groups [GROUPS ...]] [--success SUCCESS_GROUP]
+             [--failure FAILURE_GROUP] [--dir PY_DIR] [--log LOG_LEVEL]
+             [--logpath LOG_PATH] [--version]
+             pipeline_name [context_args ...]
+
+pypyr pipeline runner
+
+positional arguments:
+  pipeline_name         Name of pipeline to run. Don`t add the .yaml at the end.
+  context_args          Initialize context with this. Parsed by the pipeline&#39;s context_parser
+                        function.
+                        Separate multiple args with spaces.
+
+options:
+  -h, --help            show this help message and exit
+  --groups [GROUPS ...]
+                        Step-Groups to run. defaults to &#34;steps&#34;.
+                        You probably want to order --groups AFTER the pipeline name and
+                        context positional args. e.g
+                        pypyr pipename context --groups group1 group2
+                        If you prefer putting them before, use a -- to separate groups from
+                        the pipeline name, e.g
+                        pypyr --groups group1 group2 -- pipename context
+  --success SUCCESS_GROUP
+                        Step-Group to run on successful completion of pipeline.
+                        Defaults to &#34;on_success&#34;
+  --failure FAILURE_GROUP
+                        Step-Group to run on error completion of pipeline.
+                        Defaults to &#34;on_failure&#34;
+  --dir PY_DIR          Load custom python modules from this directory.
+                        Defaults to cwd (the current dir).
+  --log LOG_LEVEL, --loglevel LOG_LEVEL
+                        Integer log level. Defaults to 25 (NOTIFY).
+                        10=DEBUG
+                        20=INFO
+                        25=NOTIFY
+                        30=WARNING
+                        40=ERROR
+                        50=CRITICAL
+                        Log Level &lt; 10 gives full traceback on errors.
+  --logpath LOG_PATH    Log-file path. Append log output to this path.
+  --version             Echo version number.
 </code></pre></div>
 <h2 id=get-cli-help>get cli help <a href=#get-cli-help class=headline-anchor aria-label=anchor><svg class="permalink"><title>permalink</title><use href="https://pypyr.io/icons/external-link.054f8ebb57944b2bc52ea4f0ecd16197.svg#external-link"/></svg></a></h2><p>pypyr has a couple of arguments and switches you might find useful. See
 them all here:</p>
@@ -598,7 +654,7 @@ them all here:</p>
 </ul>
 </aside>
 <div class="page-git-info elevation-02">
-<small class=small-block>last updated on <time datetime=2020-08-17T19:17:06+01:00>2020-08-17 19:17</time>.</small>
+<small class=small-block>last updated on <time datetime=2021-11-20T15:55:39Z>2021-11-20 15:55</time>.</small>
 </div>
 </div>
 <footer class="footer elevation-01">
