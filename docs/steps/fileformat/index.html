@@ -23,7 +23,7 @@
 <meta property="og:url" content="https://pypyr.io/docs/steps/fileformat/">
 <meta name=twitter:card content="summary_large_image">
 <meta name=twitter:site content="@pypyrpipes">
-<script type=application/ld+json>{"@context":"https://schema.org","@graph":[{"@id":"https://pypyr.io/#organization","@type":"Organization","name":"pypyr","url":"https://pypyr.io/","description":"The pypyr project is a free open-source task-runner cli \u0026 python api for automation pipelines.","logo":{"@type":"ImageObject","url":"https://pypyr.io/images/pypyr-taskrunner-logo-square.63875e43ff40d8ae40e93a6043b4328b962f54f52974aaa27cedec52220de665.svg","height":112,"width":112},"sameAs":["https://github.com/pypyr/","https://twitter.com/pypyrpipes/","https://pypi.org/user/pypyr/","https://hub.docker.com/u/pypyr/","https://en.gravatar.com/pypyr/"]},{"@type":"TechArticle","author":{"@type":"Person","name":"pypyr contributor"},"articleSection":"steps","dateModified":"2021-11-09T14:29:55Z","datePublished":"2020-07-01T20:17:37+01:00","headline":"Format, find \u0026 replace text file content.","image":[{"@type":"ImageObject","url":"https://pypyr.io/images/1x1/pypyr-taskrunner-yaml-pipeline-automation-1200x1200.52764d3c6f40232b3cdc33f5b8fbaeadad56cc310c8dd5588d30828296b5290d.png","height":1200,"width":1200},{"@type":"ImageObject","url":"https://pypyr.io/images/4x3/pypyr-taskrunner-yaml-pipeline-automation-1200x900.e8e70443377aeb11c190835e8d2ed0c844d31a82a0c2e8a744a9999cd03e0de9.png","height":900,"width":1200},{"@type":"ImageObject","url":"https://pypyr.io/images/16x9/pypyr-taskrunner-yaml-pipeline-automation-1920x1080.cc9ae11626c8312e087058adb13bfff702162ce39c355065170c1b87850f3034.png","height":1080,"width":1920}],"inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https://pypyr.io/docs/steps/fileformat/"},"publisher":{"@id":"https://pypyr.io/#organization"},"url":"https://pypyr.io/docs/steps/fileformat/","wordCount":466}]}</script>
+<script type=application/ld+json>{"@context":"https://schema.org","@graph":[{"@id":"https://pypyr.io/#organization","@type":"Organization","name":"pypyr","url":"https://pypyr.io/","description":"The pypyr project is a free open-source task-runner cli \u0026 python api for automation pipelines.","logo":{"@type":"ImageObject","url":"https://pypyr.io/images/pypyr-taskrunner-logo-square.63875e43ff40d8ae40e93a6043b4328b962f54f52974aaa27cedec52220de665.svg","height":112,"width":112},"sameAs":["https://github.com/pypyr/","https://twitter.com/pypyrpipes/","https://pypi.org/user/pypyr/","https://hub.docker.com/u/pypyr/","https://en.gravatar.com/pypyr/"]},{"@type":"TechArticle","author":{"@type":"Person","name":"pypyr contributor"},"articleSection":"steps","dateModified":"2021-12-11T19:06:11Z","datePublished":"2020-07-01T20:17:37+01:00","headline":"Format, find \u0026 replace text file content.","image":[{"@type":"ImageObject","url":"https://pypyr.io/images/1x1/pypyr-taskrunner-yaml-pipeline-automation-1200x1200.52764d3c6f40232b3cdc33f5b8fbaeadad56cc310c8dd5588d30828296b5290d.png","height":1200,"width":1200},{"@type":"ImageObject","url":"https://pypyr.io/images/4x3/pypyr-taskrunner-yaml-pipeline-automation-1200x900.e8e70443377aeb11c190835e8d2ed0c844d31a82a0c2e8a744a9999cd03e0de9.png","height":900,"width":1200},{"@type":"ImageObject","url":"https://pypyr.io/images/16x9/pypyr-taskrunner-yaml-pipeline-automation-1920x1080.cc9ae11626c8312e087058adb13bfff702162ce39c355065170c1b87850f3034.png","height":1080,"width":1920}],"inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https://pypyr.io/docs/steps/fileformat/"},"publisher":{"@id":"https://pypyr.io/#organization"},"url":"https://pypyr.io/docs/steps/fileformat/","wordCount":553}]}</script>
 <link rel=apple-touch-icon sizes=180x180 href=/favicons/apple-touch-icon.925deabb48d91a80924b5d04ff56d2b8f42ba1d1e1438cb7d8948cce1138208c.png>
 <link rel=icon type=image/png sizes=32x32 href=/favicons/favicon-32x32.b869433d27c4679a5fbce03a8489268a539cbc781259bff14618ae2f018334e6.png>
 <link rel=icon type=image/png sizes=16x16 href=/favicons/favicon-16x16.8bcd9f870e0a86445e0505ce6e816b76a40b08a06e2dcd1ec1f90c395ecbeaf6.png>
@@ -152,6 +152,9 @@
 <a href=/docs/context-parsers/string/>string</a>
 </li>
 <li>
+<a href=/docs/context-parsers/tomlfile/>tomlfile</a>
+</li>
+<li>
 <a href=/docs/context-parsers/yamlfile/>yamlfile</a>
 </li>
 </ul>
@@ -257,6 +260,9 @@
 <a href=/docs/steps/fetchjson/>fetchjson</a>
 </li>
 <li>
+<a href=/docs/steps/fetchtoml/>fetchtoml</a>
+</li>
+<li>
 <a href=/docs/steps/fetchyaml/>fetchyaml</a>
 </li>
 <li class=currentpage>
@@ -266,13 +272,25 @@
 <a href=/docs/steps/fileformatjson/>fileformatjson</a>
 </li>
 <li>
+<a href=/docs/steps/fileformattoml/>fileformattoml</a>
+</li>
+<li>
 <a href=/docs/steps/fileformatyaml/>fileformatyaml</a>
+</li>
+<li>
+<a href=/docs/steps/fileread/>fileread</a>
 </li>
 <li>
 <a href=/docs/steps/filereplace/>filereplace</a>
 </li>
 <li>
+<a href=/docs/steps/filewrite/>filewrite</a>
+</li>
+<li>
 <a href=/docs/steps/filewritejson/>filewritejson</a>
+</li>
+<li>
+<a href=/docs/steps/filewritetoml/>filewritetoml</a>
 </li>
 <li>
 <a href=/docs/steps/filewriteyaml/>filewriteyaml</a>
@@ -541,6 +559,7 @@
 <li><a href=#set-input--output-files>set input & output files</a></li>
 <li><a href=#multiple-files--globs>multiple files & globs</a></li>
 <li><a href=#in-place-edit>in-place edit</a></li>
+<li><a href=#substitutions-on-paths>substitutions on paths</a></li>
 </ol>
 </li>
 </ol>
@@ -559,25 +578,31 @@ from the pypyr context and writes the result to an output file.</p>
 </span><span class=w>      </span><span class=nt>fileFormat</span><span class=p>:</span><span class=w>
 </span><span class=w>        </span><span class=nt>in</span><span class=p>:</span><span class=w> </span><span class=l>./in/arb.txt</span><span class=w> </span><span class=c># required</span><span class=w>
 </span><span class=w>        </span><span class=nt>out</span><span class=p>:</span><span class=w> </span><span class=l>./out/arb.txt</span><span class=w> </span><span class=c># optional</span><span class=w>
-</span></code></pre></div><p>So if you had a text file like this:</p>
+</span></code></pre></div><p>So if you had a text file <code>in/arb.txt</code> like this:</p>
 <div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text>{k1} sit thee down and write
 In a book that all may {k2}
 </code></pre></div><p>And your pypyr context were:</p>
 <div class=highlight><pre tabindex=0 class=chroma><code class=language-yaml data-lang=yaml><span class=nt>k1</span><span class=p>:</span><span class=w> </span><span class=l>pypyr</span><span class=w>
 </span><span class=w></span><span class=nt>k2</span><span class=p>:</span><span class=w> </span><span class=l>read</span><span class=w>
-</span></code></pre></div><p>You would end up with an output file like this:</p>
+</span></code></pre></div><p>You would end up with an output file <code>out/arb.txt</code> like this:</p>
 <div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text>pypyr sit thee down and write
 In a book that all may read
 </code></pre></div><p>The file <code>in</code> and <code>out</code> paths support <a href=https://pypyr.io/docs/substitutions/>substitutions</a>.</p>
 <p>See a worked <a href=https://github.com/pypyr/pypyr-example/blob/main/pipelines/fileformat.yaml>example of fileformat</a>.</p>
 <h2 id=escape-characters>escape characters <a href=#escape-characters class=headline-anchor aria-label=anchor><svg class="permalink"><title>permalink</title><use href="https://pypyr.io/icons/external-link.054f8ebb57944b2bc52ea4f0ecd16197.svg#external-link"/></svg></a></h2><p>If your file contains {curly braces} that pypyr should NOT try to substitute,
-you probably should use <a href=https://pypyr.io/docs/steps/filereplace/>filereplace</a> instead. For
-json and yaml, use <a href=https://pypyr.io/docs/steps/fileformatjson/>fileformatjson</a> and
-<a href=https://pypyr.io/docs/steps/fileformatyaml/>fileformatyaml</a> respectively.</p>
+you can escape these by {{doubling}}. A doubled curly brace will output as a
+single brace in the output file.</p>
+<p>If doubling the braces gets annoying, you could use <a href=https://pypyr.io/docs/steps/filereplace/>filereplace</a> instead and pick your own replacement token indicators that
+work better for your file.</p>
+<p>For json, yaml and toml, where {curly braces} have structural meaning, you can
+use <a href=https://pypyr.io/docs/steps/fileformatjson/>fileformatjson</a>, <a href=https://pypyr.io/docs/steps/fileformatyaml/>fileformatyaml</a> and <a href=https://pypyr.io/docs/steps/fileformattoml/>fileformattoml</a>.</p>
 <h2 id=file-format-settings>file format settings <a href=#file-format-settings class=headline-anchor aria-label=anchor><svg class="permalink"><title>permalink</title><use href="https://pypyr.io/icons/external-link.054f8ebb57944b2bc52ea4f0ecd16197.svg#external-link"/></svg></a></h2><p><code>in</code> and <code>out</code> behave in the same way for all the format style steps. Therefore
 this section&rsquo;s description of <code>in</code> and <code>out</code> settings applies not only to
 <code>fileformat</code>, but also
-<a href=https://pypyr.io/docs/steps/fileformatjson/>fileformatjson</a>, <a href=https://pypyr.io/docs/steps/fileformatyaml/>fileformatyaml</a> and <a href=https://pypyr.io/docs/steps/filereplace/>filereplace</a>.</p>
+<a href=https://pypyr.io/docs/steps/fileformatjson/>fileformatjson</a>,
+<a href=https://pypyr.io/docs/steps/fileformatyaml/>fileformatyaml</a>,
+<a href=https://pypyr.io/docs/steps/fileformattoml/>fileformattoml</a> and
+<a href=https://pypyr.io/docs/steps/filereplace/>filereplace</a>.</p>
 <h3 id=set-input--output-files>set input & output files <a href=#set-input--output-files class=headline-anchor aria-label=anchor><svg class="permalink"><title>permalink</title><use href="https://pypyr.io/icons/external-link.054f8ebb57944b2bc52ea4f0ecd16197.svg#external-link"/></svg></a></h3><p><code>fileformat</code> expects the following context keys:</p>
 <ul>
 <li><code>fileFormat</code>
@@ -601,8 +626,8 @@ out path can only be a directory - it doesn&rsquo;t make sense to
 write >1 file to the same single file output (this is not
 an appender.)</li>
 <li>To ensure out path means a directory and not a file,
-be sure to have the os' path separator (<code>/</code> on a sane
-filesystem) at the end.</li>
+be sure to have the os' path separator at the end (<code>/</code> on a sensible
+filesystem)</li>
 <li>If you specify an <code>out</code> directory without a file-name, out files will
 have the same name they had in <code>in</code>.</li>
 </ul>
@@ -640,15 +665,32 @@ files you specify in <code>in</code>.</p>
 </span><span class=w>  </span><span class=c># a mixed list of paths and/or globs.</span><span class=w>
 </span><span class=w>  </span><span class=nt>in</span><span class=p>:</span><span class=w> </span><span class=l>./infile.txt</span><span class=w>
 </span></code></pre></div>
+<h3 id=substitutions-on-paths>substitutions on paths <a href=#substitutions-on-paths class=headline-anchor aria-label=anchor><svg class="permalink"><title>permalink</title><use href="https://pypyr.io/icons/external-link.054f8ebb57944b2bc52ea4f0ecd16197.svg#external-link"/></svg></a></h3><p>The file in and out paths support
+<a href=https://pypyr.io/docs/substitutions/>substitutions</a>, which allows you to specify
+paths dynamically.</p>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-yaml data-lang=yaml>- <span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>pypyr.steps.set</span><span class=w>
+</span><span class=w>  </span><span class=nt>comment</span><span class=p>:</span><span class=w> </span><span class=l>set some arb values in context</span><span class=w>
+</span><span class=w>  </span><span class=nt>in</span><span class=p>:</span><span class=w>
+</span><span class=w>    </span><span class=nt>set</span><span class=p>:</span><span class=w>
+</span><span class=w>      </span><span class=nt>myfilename</span><span class=p>:</span><span class=w> </span><span class=l>input-file</span><span class=w>
+</span><span class=w>      </span><span class=nt>myoutputfile</span><span class=p>:</span><span class=w> </span><span class=l>out/output.txt</span><span class=w>
+</span><span class=w>
+</span><span class=w></span>- <span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>pypyr.steps.fileformat</span><span class=w>
+</span><span class=w>  </span><span class=nt>comment</span><span class=p>:</span><span class=w> </span><span class=l>you can set in &amp; out entirely or partially with formatting expressions</span><span class=w>
+</span><span class=w>  </span><span class=nt>in</span><span class=p>:</span><span class=w>
+</span><span class=w>    </span><span class=nt>fileFormat</span><span class=p>:</span><span class=w>
+</span><span class=w>        </span><span class=nt>in</span><span class=p>:</span><span class=w> </span><span class=l>testfiles/{myfilename}.ext</span><span class=w>
+</span><span class=w>        </span><span class=nt>out</span><span class=p>:</span><span class=w> </span><span class=s1>&#39;{myoutputfile}&#39;</span><span class=w>
+</span></code></pre></div>
 </article>
 <section class="see-also elevation-02">
 <h2>see also</h2>
 <ul>
-<li><a href=/docs/steps/pathcheck/>pypyr.steps.pathcheck</a></li>
-<li><a href=/docs/steps/glob/>pypyr.steps.glob</a></li>
-<li><a href=/docs/steps/filewriteyaml/>pypyr.steps.filewriteyaml</a></li>
-<li><a href=/docs/steps/filewritejson/>pypyr.steps.filewritejson</a></li>
-<li><a href=/docs/steps/filereplace/>pypyr.steps.filereplace</a></li>
+<li><a href=/docs/steps/fileread/>pypyr.steps.fileread</a></li>
+<li><a href=/docs/steps/filewrite/>pypyr.steps.filewrite</a></li>
+<li><a href=/docs/steps/filewritetoml/>pypyr.steps.filewritetoml</a></li>
+<li><a href=/docs/steps/fetchtoml/>pypyr.steps.fetchtoml</a></li>
+<li><a href=/docs/steps/fileformattoml/>pypyr.steps.fileformattoml</a></li>
 </ul>
 </section>
 </main>
@@ -675,7 +717,7 @@ files you specify in <code>in</code>.</p>
 </ul>
 </aside>
 <div class="page-git-info elevation-02">
-<small class=small-block>last updated on <time datetime=2021-11-09T14:29:55Z>2021-11-09 14:29</time>.</small>
+<small class=small-block>last updated on <time datetime=2021-12-11T19:06:11Z>2021-12-11 19:06</time>.</small>
 </div>
 </div>
 <footer class="footer elevation-01">

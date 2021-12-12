@@ -23,7 +23,7 @@
 <meta property="og:url" content="https://pypyr.io/docs/steps/filewritejson/">
 <meta name=twitter:card content="summary_large_image">
 <meta name=twitter:site content="@pypyrpipes">
-<script type=application/ld+json>{"@context":"https://schema.org","@graph":[{"@id":"https://pypyr.io/#organization","@type":"Organization","name":"pypyr","url":"https://pypyr.io/","description":"The pypyr project is a free open-source task-runner cli \u0026 python api for automation pipelines.","logo":{"@type":"ImageObject","url":"https://pypyr.io/images/pypyr-taskrunner-logo-square.63875e43ff40d8ae40e93a6043b4328b962f54f52974aaa27cedec52220de665.svg","height":112,"width":112},"sameAs":["https://github.com/pypyr/","https://twitter.com/pypyrpipes/","https://pypi.org/user/pypyr/","https://hub.docker.com/u/pypyr/","https://en.gravatar.com/pypyr/"]},{"@type":"TechArticle","author":{"@type":"Person","name":"pypyr contributor"},"articleSection":"steps","dateModified":"2021-11-09T14:29:55Z","datePublished":"2020-07-06T11:38:51+01:00","headline":"Write dynamic payload to json output file.","image":[{"@type":"ImageObject","url":"https://pypyr.io/images/1x1/pypyr-taskrunner-yaml-pipeline-automation-1200x1200.52764d3c6f40232b3cdc33f5b8fbaeadad56cc310c8dd5588d30828296b5290d.png","height":1200,"width":1200},{"@type":"ImageObject","url":"https://pypyr.io/images/4x3/pypyr-taskrunner-yaml-pipeline-automation-1200x900.e8e70443377aeb11c190835e8d2ed0c844d31a82a0c2e8a744a9999cd03e0de9.png","height":900,"width":1200},{"@type":"ImageObject","url":"https://pypyr.io/images/16x9/pypyr-taskrunner-yaml-pipeline-automation-1920x1080.cc9ae11626c8312e087058adb13bfff702162ce39c355065170c1b87850f3034.png","height":1080,"width":1920}],"inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https://pypyr.io/docs/steps/filewritejson/"},"publisher":{"@id":"https://pypyr.io/#organization"},"url":"https://pypyr.io/docs/steps/filewritejson/","wordCount":231}]}</script>
+<script type=application/ld+json>{"@context":"https://schema.org","@graph":[{"@id":"https://pypyr.io/#organization","@type":"Organization","name":"pypyr","url":"https://pypyr.io/","description":"The pypyr project is a free open-source task-runner cli \u0026 python api for automation pipelines.","logo":{"@type":"ImageObject","url":"https://pypyr.io/images/pypyr-taskrunner-logo-square.63875e43ff40d8ae40e93a6043b4328b962f54f52974aaa27cedec52220de665.svg","height":112,"width":112},"sameAs":["https://github.com/pypyr/","https://twitter.com/pypyrpipes/","https://pypi.org/user/pypyr/","https://hub.docker.com/u/pypyr/","https://en.gravatar.com/pypyr/"]},{"@type":"TechArticle","author":{"@type":"Person","name":"pypyr contributor"},"articleSection":"steps","dateModified":"2021-12-11T19:06:11Z","datePublished":"2020-07-06T11:38:51+01:00","headline":"Write dynamic payload to json output file.","image":[{"@type":"ImageObject","url":"https://pypyr.io/images/1x1/pypyr-taskrunner-yaml-pipeline-automation-1200x1200.52764d3c6f40232b3cdc33f5b8fbaeadad56cc310c8dd5588d30828296b5290d.png","height":1200,"width":1200},{"@type":"ImageObject","url":"https://pypyr.io/images/4x3/pypyr-taskrunner-yaml-pipeline-automation-1200x900.e8e70443377aeb11c190835e8d2ed0c844d31a82a0c2e8a744a9999cd03e0de9.png","height":900,"width":1200},{"@type":"ImageObject","url":"https://pypyr.io/images/16x9/pypyr-taskrunner-yaml-pipeline-automation-1920x1080.cc9ae11626c8312e087058adb13bfff702162ce39c355065170c1b87850f3034.png","height":1080,"width":1920}],"inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https://pypyr.io/docs/steps/filewritejson/"},"publisher":{"@id":"https://pypyr.io/#organization"},"url":"https://pypyr.io/docs/steps/filewritejson/","wordCount":280}]}</script>
 <link rel=apple-touch-icon sizes=180x180 href=/favicons/apple-touch-icon.925deabb48d91a80924b5d04ff56d2b8f42ba1d1e1438cb7d8948cce1138208c.png>
 <link rel=icon type=image/png sizes=32x32 href=/favicons/favicon-32x32.b869433d27c4679a5fbce03a8489268a539cbc781259bff14618ae2f018334e6.png>
 <link rel=icon type=image/png sizes=16x16 href=/favicons/favicon-16x16.8bcd9f870e0a86445e0505ce6e816b76a40b08a06e2dcd1ec1f90c395ecbeaf6.png>
@@ -152,6 +152,9 @@
 <a href=/docs/context-parsers/string/>string</a>
 </li>
 <li>
+<a href=/docs/context-parsers/tomlfile/>tomlfile</a>
+</li>
+<li>
 <a href=/docs/context-parsers/yamlfile/>yamlfile</a>
 </li>
 </ul>
@@ -257,6 +260,9 @@
 <a href=/docs/steps/fetchjson/>fetchjson</a>
 </li>
 <li>
+<a href=/docs/steps/fetchtoml/>fetchtoml</a>
+</li>
+<li>
 <a href=/docs/steps/fetchyaml/>fetchyaml</a>
 </li>
 <li>
@@ -266,13 +272,25 @@
 <a href=/docs/steps/fileformatjson/>fileformatjson</a>
 </li>
 <li>
+<a href=/docs/steps/fileformattoml/>fileformattoml</a>
+</li>
+<li>
 <a href=/docs/steps/fileformatyaml/>fileformatyaml</a>
+</li>
+<li>
+<a href=/docs/steps/fileread/>fileread</a>
 </li>
 <li>
 <a href=/docs/steps/filereplace/>filereplace</a>
 </li>
+<li>
+<a href=/docs/steps/filewrite/>filewrite</a>
+</li>
 <li class=currentpage>
 <a href=/docs/steps/filewritejson/>filewritejson</a>
+</li>
+<li>
+<a href=/docs/steps/filewritetoml/>filewritetoml</a>
 </li>
 <li>
 <a href=/docs/steps/filewriteyaml/>filewriteyaml</a>
@@ -569,8 +587,7 @@ More complicated hierarchical nested structures will also just work.</p>
 the output file in json format. Be careful if you have sensitive values
 like passwords or private keys!</p>
 <h2 id=format-json-with-token-replacements>format json with token replacements <a href=#format-json-with-token-replacements class=headline-anchor aria-label=anchor><svg class="permalink"><title>permalink</title><use href="https://pypyr.io/icons/external-link.054f8ebb57944b2bc52ea4f0ecd16197.svg#external-link"/></svg></a></h2><p>All inputs support <a href=https://pypyr.io/docs/substitutions/>substitutions</a>. This means
-that you can specify another context item to be the path and/or the payload, for
-example:</p>
+that you can construct the path or payload from other context variables:</p>
 <div class=highlight><pre tabindex=0 class=chroma><code class=language-yaml data-lang=yaml><span class=nt>arbkey</span><span class=p>:</span><span class=w> </span><span class=l>arbvalue</span><span class=w>
 </span><span class=w></span><span class=nt>writehere</span><span class=p>:</span><span class=w> </span><span class=l>/path/to/output.json</span><span class=w>
 </span><span class=w></span><span class=nt>writeme</span><span class=p>:</span><span class=w>
@@ -588,6 +605,32 @@ the <code>{arbkey}</code> expression in the last line will substitute like this:
     <span class=nt>&#34;will&#34;</span><span class=p>:</span> <span class=s2>&#34;be written to&#34;</span><span class=p>,</span>
     <span class=nt>&#34;thepath&#34;</span><span class=p>:</span> <span class=s2>&#34;with substitutions like this arbvalue.&#34;</span>
 <span class=p>}</span>
+</code></pre></div><p>As always in pypyr, you can construct a value by embedding & combining
+substitution expressions in other strings:</p>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-yaml data-lang=yaml>- <span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>pypyr.steps.set</span><span class=w>
+</span><span class=w>  </span><span class=nt>comment</span><span class=p>:</span><span class=w> </span><span class=l>set some arb values in context</span><span class=w>
+</span><span class=w>  </span><span class=nt>in</span><span class=p>:</span><span class=w>
+</span><span class=w>    </span><span class=nt>set</span><span class=p>:</span><span class=w>
+</span><span class=w>      </span><span class=nt>arbkey</span><span class=p>:</span><span class=w> </span><span class=m>123</span><span class=w>
+</span><span class=w>      </span><span class=nt>arbstr</span><span class=p>:</span><span class=w> </span><span class=l>in the middle</span><span class=w>
+</span><span class=w>      </span><span class=nt>filename</span><span class=p>:</span><span class=w> </span><span class=l>my-file</span><span class=w>
+</span><span class=w>
+</span><span class=w></span>- <span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>pypyr.steps.filewritejson</span><span class=w>
+</span><span class=w>  </span><span class=nt>comment</span><span class=p>:</span><span class=w> </span><span class=l>write toml file from substitution expressions</span><span class=w>
+</span><span class=w>  </span><span class=nt>in</span><span class=p>:</span><span class=w>
+</span><span class=w>    </span><span class=nt>fileWriteJson</span><span class=p>:</span><span class=w>
+</span><span class=w>      </span><span class=nt>path</span><span class=p>:</span><span class=w> </span><span class=l>out/{filename}.json</span><span class=w>
+</span><span class=w>      </span><span class=nt>payload</span><span class=p>:</span><span class=w>
+</span><span class=w>        </span><span class=nt>my_table</span><span class=p>:</span><span class=w>
+</span><span class=w>          </span><span class=nt>my_number</span><span class=p>:</span><span class=w> </span><span class=s1>&#39;{arbkey}&#39;</span><span class=w>
+</span><span class=w>          </span><span class=nt>my_string</span><span class=p>:</span><span class=w> </span><span class=l>begin {arbstr} end</span><span class=w>
+</span></code></pre></div><p>This will to output file <code>./out/my-file.json</code>:</p>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-json data-lang=json><span class=p>{</span>
+  <span class=nt>&#34;my_table&#34;</span><span class=p>:</span> <span class=p>{</span>
+    <span class=nt>&#34;my_number&#34;</span><span class=p>:</span> <span class=mi>123</span><span class=p>,</span>
+    <span class=nt>&#34;my_string&#34;</span><span class=p>:</span> <span class=s2>&#34;begin in the middle end&#34;</span>
+  <span class=p>}</span>
+<span class=p>}</span>
 </code></pre></div><p>See a worked <a href=https://github.com/pypyr/pypyr-example/tree/main/pipelines/filewritejson.yaml>filewritejson example</a>.</p>
 </article>
 <section class="see-also elevation-02">
@@ -596,8 +639,8 @@ the <code>{arbkey}</code> expression in the last line will substitute like this:
 <li><a href=/docs/steps/fileformatjson/>pypyr.steps.fileformatjson</a></li>
 <li><a href=/docs/steps/fetchjson/>pypyr.steps.fetchjson</a></li>
 <li><a href=/docs/context-parsers/jsonfile/>pypyr.parser.jsonfile</a></li>
-<li><a href=/docs/steps/jsonparse/>pypyr.steps.jsonparse</a></li>
-<li><a href=/docs/plugins/aws/steps/s3fetchjson/>pypyraws.steps.s3fetchjson</a></li>
+<li><a href=/docs/steps/fileread/>pypyr.steps.fileread</a></li>
+<li><a href=/docs/steps/filewrite/>pypyr.steps.filewrite</a></li>
 </ul>
 </section>
 </main>
@@ -625,7 +668,7 @@ the <code>{arbkey}</code> expression in the last line will substitute like this:
 </ul>
 </aside>
 <div class="page-git-info elevation-02">
-<small class=small-block>last updated on <time datetime=2021-11-09T14:29:55Z>2021-11-09 14:29</time>.</small>
+<small class=small-block>last updated on <time datetime=2021-12-11T19:06:11Z>2021-12-11 19:06</time>.</small>
 </div>
 </div>
 <footer class="footer elevation-01">
