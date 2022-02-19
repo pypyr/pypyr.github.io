@@ -23,7 +23,7 @@
 <meta property="og:url" content="https://pypyr.io/docs/steps/fileformatjson/">
 <meta name=twitter:card content="summary_large_image">
 <meta name=twitter:site content="@pypyrpipes">
-<script type=application/ld+json>{"@context":"https://schema.org","@graph":[{"@id":"https://pypyr.io/#organization","@type":"Organization","name":"pypyr","url":"https://pypyr.io/","description":"The pypyr project is a free open-source task-runner cli \u0026 python api for automation pipelines.","logo":{"@type":"ImageObject","url":"https://pypyr.io/images/pypyr-taskrunner-logo-square.63875e43ff40d8ae40e93a6043b4328b962f54f52974aaa27cedec52220de665.svg","height":112,"width":112},"sameAs":["https://github.com/pypyr/","https://twitter.com/pypyrpipes/","https://pypi.org/user/pypyr/","https://hub.docker.com/u/pypyr/","https://en.gravatar.com/pypyr/"]},{"@type":"TechArticle","author":{"@type":"Person","name":"pypyr contributor"},"articleSection":"steps","dateModified":"2021-12-11T19:06:11Z","datePublished":"2020-07-02T17:23:30+01:00","headline":"Format, find \u0026 replace tokens in json file.","image":[{"@type":"ImageObject","url":"https://pypyr.io/images/1x1/pypyr-taskrunner-yaml-pipeline-automation-1200x1200.52764d3c6f40232b3cdc33f5b8fbaeadad56cc310c8dd5588d30828296b5290d.png","height":1200,"width":1200},{"@type":"ImageObject","url":"https://pypyr.io/images/4x3/pypyr-taskrunner-yaml-pipeline-automation-1200x900.e8e70443377aeb11c190835e8d2ed0c844d31a82a0c2e8a744a9999cd03e0de9.png","height":900,"width":1200},{"@type":"ImageObject","url":"https://pypyr.io/images/16x9/pypyr-taskrunner-yaml-pipeline-automation-1920x1080.cc9ae11626c8312e087058adb13bfff702162ce39c355065170c1b87850f3034.png","height":1080,"width":1920}],"inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https://pypyr.io/docs/steps/fileformatjson/"},"publisher":{"@id":"https://pypyr.io/#organization"},"url":"https://pypyr.io/docs/steps/fileformatjson/","wordCount":508}]}</script>
+<script type=application/ld+json>{"@context":"https://schema.org","@graph":[{"@id":"https://pypyr.io/#organization","@type":"Organization","name":"pypyr","url":"https://pypyr.io/","description":"The pypyr project is a free open-source task-runner cli \u0026 python api for automation pipelines.","logo":{"@type":"ImageObject","url":"https://pypyr.io/images/pypyr-taskrunner-logo-square.63875e43ff40d8ae40e93a6043b4328b962f54f52974aaa27cedec52220de665.svg","height":112,"width":112},"sameAs":["https://github.com/pypyr/","https://twitter.com/pypyrpipes/","https://pypi.org/user/pypyr/","https://hub.docker.com/u/pypyr/","https://en.gravatar.com/pypyr/"]},{"@type":"TechArticle","author":{"@type":"Person","name":"pypyr contributor"},"articleSection":"steps","dateModified":"2022-02-19T15:34:49Z","datePublished":"2020-07-02T17:23:30+01:00","headline":"Format, find \u0026 replace tokens in json file.","image":[{"@type":"ImageObject","url":"https://pypyr.io/images/1x1/pypyr-taskrunner-yaml-pipeline-automation-1200x1200.52764d3c6f40232b3cdc33f5b8fbaeadad56cc310c8dd5588d30828296b5290d.png","height":1200,"width":1200},{"@type":"ImageObject","url":"https://pypyr.io/images/4x3/pypyr-taskrunner-yaml-pipeline-automation-1200x900.e8e70443377aeb11c190835e8d2ed0c844d31a82a0c2e8a744a9999cd03e0de9.png","height":900,"width":1200},{"@type":"ImageObject","url":"https://pypyr.io/images/16x9/pypyr-taskrunner-yaml-pipeline-automation-1920x1080.cc9ae11626c8312e087058adb13bfff702162ce39c355065170c1b87850f3034.png","height":1080,"width":1920}],"inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https://pypyr.io/docs/steps/fileformatjson/"},"publisher":{"@id":"https://pypyr.io/#organization"},"url":"https://pypyr.io/docs/steps/fileformatjson/","wordCount":625}]}</script>
 <link rel=apple-touch-icon sizes=180x180 href=/favicons/apple-touch-icon.925deabb48d91a80924b5d04ff56d2b8f42ba1d1e1438cb7d8948cce1138208c.png>
 <link rel=icon type=image/png sizes=32x32 href=/favicons/favicon-32x32.b869433d27c4679a5fbce03a8489268a539cbc781259bff14618ae2f018334e6.png>
 <link rel=icon type=image/png sizes=16x16 href=/favicons/favicon-16x16.8bcd9f870e0a86445e0505ce6e816b76a40b08a06e2dcd1ec1f90c395ecbeaf6.png>
@@ -78,6 +78,9 @@
 </li>
 <li>
 <a href=/docs/getting-started/error-handling/>error handling</a>
+</li>
+<li>
+<a href=/docs/getting-started/config/>config</a>
 </li>
 </ul>
 </li>
@@ -227,6 +230,9 @@
 <a href=/docs/steps/cmd/>cmd</a>
 </li>
 <li>
+<a href=/docs/steps/configvars/>configvars</a>
+</li>
+<li>
 <a href=/docs/steps/contextclear/>contextclear</a>
 </li>
 <li>
@@ -324,6 +330,9 @@
 </li>
 <li>
 <a href=/docs/steps/pypyrversion/>pypyrversion</a>
+</li>
+<li>
+<a href=/docs/steps/python/>python</a>
 </li>
 <li>
 <a href=/docs/steps/safeshell/>safeshell</a>
@@ -556,6 +565,7 @@
 <li><a href=#type-safe-token-replacement>type-safe token replacement</a></li>
 <li><a href=#multiple-files--globs>multiple files & globs</a></li>
 <li><a href=#substitutions-on-paths>substitutions on paths</a></li>
+<li><a href=#encoding>encoding</a></li>
 </ol>
 </nav>
 </aside>
@@ -679,6 +689,31 @@ paths dynamically.</p>
 </span><span class=w>        </span><span class=nt>in</span><span class=p>:</span><span class=w> </span><span class=l>testfiles/{myfilename}.json</span><span class=w>
 </span><span class=w>        </span><span class=nt>out</span><span class=p>:</span><span class=w> </span><span class=s1>&#39;{myoutputfile}&#39;</span><span class=w>
 </span></code></pre></div>
+<h2 id=encoding>encoding <a href=#encoding class=headline-anchor aria-label=anchor><svg class="permalink"><title>permalink</title><use href="https://pypyr.io/icons/external-link.054f8ebb57944b2bc52ea4f0ecd16197.svg#external-link"/></svg></a></h2><p>By default <code>in</code> will read and <code>out</code> will write in the platform&rsquo;s default
+encoding. This is <code>utf-8</code> for most systems, but be aware on Windows it&rsquo;s still
+<code>cp1252</code>.</p>
+<p>You can use the <code>encoding</code> input explicitly to set the encoding:</p>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-yaml data-lang=yaml>- <span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>pypyr.steps.fileformatjson</span><span class=w>
+</span><span class=w>  </span><span class=nt>comment</span><span class=p>:</span><span class=w> </span><span class=l>set encoding</span><span class=w>
+</span><span class=w>  </span><span class=nt>in</span><span class=p>:</span><span class=w>
+</span><span class=w>    </span><span class=nt>fileFormatJson</span><span class=p>:</span><span class=w>
+</span><span class=w>      </span><span class=nt>in</span><span class=p>:</span><span class=w> </span><span class=l>testfiles/infile.json</span><span class=w>
+</span><span class=w>      </span><span class=nt>out</span><span class=p>:</span><span class=w> </span><span class=l>testfiles/outfile.json</span><span class=w>
+</span><span class=w>      </span><span class=nt>encoding</span><span class=p>:</span><span class=w> </span><span class=l>utf-8</span><span class=w>
+</span></code></pre></div><p>You can also individually set the encoding for <code>in</code> and <code>out</code>. This allows you
+to convert a file from one encoding to another:</p>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-yaml data-lang=yaml>- <span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>pypyr.steps.fileformatjson</span><span class=w>
+</span><span class=w>  </span><span class=nt>comment</span><span class=p>:</span><span class=w> </span><span class=l>set encoding</span><span class=w>
+</span><span class=w>  </span><span class=nt>in</span><span class=p>:</span><span class=w>
+</span><span class=w>    </span><span class=nt>fileFormatJson</span><span class=p>:</span><span class=w>
+</span><span class=w>      </span><span class=nt>in</span><span class=p>:</span><span class=w> </span><span class=l>testfiles/infile.json</span><span class=w>
+</span><span class=w>      </span><span class=nt>out</span><span class=p>:</span><span class=w> </span><span class=l>testfiles/outfile.json</span><span class=w>
+</span><span class=w>      </span><span class=nt>encodingIn</span><span class=p>:</span><span class=w> </span><span class=l>ascii</span><span class=w>
+</span><span class=w>      </span><span class=nt>encodingOut</span><span class=p>:</span><span class=w> </span><span class=l>utf-16</span><span class=w>
+</span></code></pre></div><p>All of these are optional - if you do not explicitly over-ride the encoding for
+either <code>in</code> or <code>out</code>, pypyr will just use the system default.</p>
+<p>See here for more details on handling <a href=https://pypyr.io/topics/filesystem/#encoding>text encoding in pypyr</a> and changing the defaults.</p>
+<p>See here for a <a href=https://docs.python.org/3/library/codecs.html#standard-encodings>list of available encoding codecs</a>.</p>
 </article>
 <section class="see-also elevation-02">
 <h2>see also</h2>
@@ -715,7 +750,7 @@ paths dynamically.</p>
 </ul>
 </aside>
 <div class="page-git-info elevation-02">
-<small class=small-block>last updated on <time datetime=2021-12-11T19:06:11Z>2021-12-11 19:06</time>.</small>
+<small class=small-block>last updated on <time datetime=2022-02-19T15:34:49Z>2022-02-19 15:34</time>.</small>
 </div>
 </div>
 <footer class="footer elevation-01">

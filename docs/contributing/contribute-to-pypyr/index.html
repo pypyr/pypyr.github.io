@@ -23,7 +23,7 @@
 <meta property="og:url" content="https://pypyr.io/docs/contributing/contribute-to-pypyr/">
 <meta name=twitter:card content="summary_large_image">
 <meta name=twitter:site content="@pypyrpipes">
-<script type=application/ld+json>{"@context":"https://schema.org","@graph":[{"@id":"https://pypyr.io/#organization","@type":"Organization","name":"pypyr","url":"https://pypyr.io/","description":"The pypyr project is a free open-source task-runner cli \u0026 python api for automation pipelines.","logo":{"@type":"ImageObject","url":"https://pypyr.io/images/pypyr-taskrunner-logo-square.63875e43ff40d8ae40e93a6043b4328b962f54f52974aaa27cedec52220de665.svg","height":112,"width":112},"sameAs":["https://github.com/pypyr/","https://twitter.com/pypyrpipes/","https://pypi.org/user/pypyr/","https://hub.docker.com/u/pypyr/","https://en.gravatar.com/pypyr/"]},{"@type":"TechArticle","author":{"@type":"Person","name":"pypyr contributor"},"articleSection":"contributing","dateModified":"2020-12-26T19:34:19Z","datePublished":"2020-08-13T00:00:00Z","headline":"How to contribute to pypyr open source software.","image":[{"@type":"ImageObject","url":"https://pypyr.io/images/1x1/pypyr-taskrunner-yaml-pipeline-automation-1200x1200.52764d3c6f40232b3cdc33f5b8fbaeadad56cc310c8dd5588d30828296b5290d.png","height":1200,"width":1200},{"@type":"ImageObject","url":"https://pypyr.io/images/4x3/pypyr-taskrunner-yaml-pipeline-automation-1200x900.e8e70443377aeb11c190835e8d2ed0c844d31a82a0c2e8a744a9999cd03e0de9.png","height":900,"width":1200},{"@type":"ImageObject","url":"https://pypyr.io/images/16x9/pypyr-taskrunner-yaml-pipeline-automation-1920x1080.cc9ae11626c8312e087058adb13bfff702162ce39c355065170c1b87850f3034.png","height":1080,"width":1920}],"inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https://pypyr.io/docs/contributing/contribute-to-pypyr/"},"publisher":{"@id":"https://pypyr.io/#organization"},"url":"https://pypyr.io/docs/contributing/contribute-to-pypyr/","wordCount":319}]}</script>
+<script type=application/ld+json>{"@context":"https://schema.org","@graph":[{"@id":"https://pypyr.io/#organization","@type":"Organization","name":"pypyr","url":"https://pypyr.io/","description":"The pypyr project is a free open-source task-runner cli \u0026 python api for automation pipelines.","logo":{"@type":"ImageObject","url":"https://pypyr.io/images/pypyr-taskrunner-logo-square.63875e43ff40d8ae40e93a6043b4328b962f54f52974aaa27cedec52220de665.svg","height":112,"width":112},"sameAs":["https://github.com/pypyr/","https://twitter.com/pypyrpipes/","https://pypi.org/user/pypyr/","https://hub.docker.com/u/pypyr/","https://en.gravatar.com/pypyr/"]},{"@type":"TechArticle","author":{"@type":"Person","name":"pypyr contributor"},"articleSection":"contributing","dateModified":"2022-02-12T13:28:41Z","datePublished":"2020-08-13T00:00:00Z","headline":"How to contribute to pypyr open source software.","image":[{"@type":"ImageObject","url":"https://pypyr.io/images/1x1/pypyr-taskrunner-yaml-pipeline-automation-1200x1200.52764d3c6f40232b3cdc33f5b8fbaeadad56cc310c8dd5588d30828296b5290d.png","height":1200,"width":1200},{"@type":"ImageObject","url":"https://pypyr.io/images/4x3/pypyr-taskrunner-yaml-pipeline-automation-1200x900.e8e70443377aeb11c190835e8d2ed0c844d31a82a0c2e8a744a9999cd03e0de9.png","height":900,"width":1200},{"@type":"ImageObject","url":"https://pypyr.io/images/16x9/pypyr-taskrunner-yaml-pipeline-automation-1920x1080.cc9ae11626c8312e087058adb13bfff702162ce39c355065170c1b87850f3034.png","height":1080,"width":1920}],"inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https://pypyr.io/docs/contributing/contribute-to-pypyr/"},"publisher":{"@id":"https://pypyr.io/#organization"},"url":"https://pypyr.io/docs/contributing/contribute-to-pypyr/","wordCount":425}]}</script>
 <link rel=apple-touch-icon sizes=180x180 href=/favicons/apple-touch-icon.925deabb48d91a80924b5d04ff56d2b8f42ba1d1e1438cb7d8948cce1138208c.png>
 <link rel=icon type=image/png sizes=32x32 href=/favicons/favicon-32x32.b869433d27c4679a5fbce03a8489268a539cbc781259bff14618ae2f018334e6.png>
 <link rel=icon type=image/png sizes=16x16 href=/favicons/favicon-16x16.8bcd9f870e0a86445e0505ce6e816b76a40b08a06e2dcd1ec1f90c395ecbeaf6.png>
@@ -78,6 +78,9 @@
 </li>
 <li>
 <a href=/docs/getting-started/error-handling/>error handling</a>
+</li>
+<li>
+<a href=/docs/getting-started/config/>config</a>
 </li>
 </ul>
 </li>
@@ -227,6 +230,9 @@
 <a href=/docs/steps/cmd/>cmd</a>
 </li>
 <li>
+<a href=/docs/steps/configvars/>configvars</a>
+</li>
+<li>
 <a href=/docs/steps/contextclear/>contextclear</a>
 </li>
 <li>
@@ -324,6 +330,9 @@
 </li>
 <li>
 <a href=/docs/steps/pypyrversion/>pypyrversion</a>
+</li>
+<li>
+<a href=/docs/steps/python/>python</a>
 </li>
 <li>
 <a href=/docs/steps/safeshell/>safeshell</a>
@@ -553,6 +562,7 @@
 <nav id=TableOfContents>
 <ol>
 <li><a href=#bugs>bugs</a></li>
+<li><a href=#documentation>documentation</a></li>
 <li><a href=#contribute-to-the-core-cli>contribute to the core cli</a></li>
 <li><a href=#roll-your-own-plug-in>roll your own plug-in</a></li>
 </ol>
@@ -565,6 +575,16 @@
 <a href=https://github.com/pypyr/pypyr/discussions>pypyr community discussion forum</a>.</p>
 <h2 id=bugs>bugs <a href=#bugs class=headline-anchor aria-label=anchor><svg class="permalink"><title>permalink</title><use href="https://pypyr.io/icons/external-link.054f8ebb57944b2bc52ea4f0ecd16197.svg#external-link"/></svg></a></h2><p>Well, you know. No one&rsquo;s perfect. Feel free to <a href=https://github.com/pypyr/pypyr/issues/new>create an
 issue</a>.</p>
+<h2 id=documentation>documentation <a href=#documentation class=headline-anchor aria-label=anchor><svg class="permalink"><title>permalink</title><use href="https://pypyr.io/icons/external-link.054f8ebb57944b2bc52ea4f0ecd16197.svg#external-link"/></svg></a></h2><p>You don&rsquo;t have to code to contribute to open source software. Improving &
+expanding documentation is a very important part of the process!</p>
+<p>All content lives in markdown (.md) files, so you don&rsquo;t have to be particularly
+code orientated to interact with the copy editing.</p>
+<p><a href=https://pypyr.io/docs/thank-you/built-with-hugo/>hugo</a> generates the pypyr
+documentation website you&rsquo;re reading right now from the <a href=https://github.com/pypyr/docs>pypyr/docs
+repo</a>.</p>
+<p>An easy way to find the source for content you want to edit is to browse the
+website at <code>pypyr.io</code> and clicking the <code>edit me</code> link under <code>feedback</code> on the
+right of the page - this will hyperlink you into the exact .md page to edit.</p>
 <h2 id=contribute-to-the-core-cli>contribute to the core cli <a href=#contribute-to-the-core-cli class=headline-anchor aria-label=anchor><svg class="permalink"><title>permalink</title><use href="https://pypyr.io/icons/external-link.054f8ebb57944b2bc52ea4f0ecd16197.svg#external-link"/></svg></a></h2><p>The usual jazz - create an issue, fork, code, test, PR. It might be an idea to
 discuss your idea on the discussion forum or via the Issues list first before
 you go off and write a huge amount of code - you never know, something might
@@ -601,7 +621,7 @@ touch on twitter anyway, would love to hear from you!</p>
 </ul>
 </aside>
 <div class="page-git-info elevation-02">
-<small class=small-block>last updated on <time datetime=2020-12-26T19:34:19Z>2020-12-26 19:34</time>.</small>
+<small class=small-block>last updated on <time datetime=2022-02-12T13:28:41Z>2022-02-12 13:28</time>.</small>
 </div>
 </div>
 <footer class="footer elevation-01">

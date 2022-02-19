@@ -23,7 +23,7 @@
 <meta property="og:url" content="https://pypyr.io/docs/steps/shell/">
 <meta name=twitter:card content="summary_large_image">
 <meta name=twitter:site content="@pypyrpipes">
-<script type=application/ld+json>{"@context":"https://schema.org","@graph":[{"@id":"https://pypyr.io/#organization","@type":"Organization","name":"pypyr","url":"https://pypyr.io/","description":"The pypyr project is a free open-source task-runner cli \u0026 python api for automation pipelines.","logo":{"@type":"ImageObject","url":"https://pypyr.io/images/pypyr-taskrunner-logo-square.63875e43ff40d8ae40e93a6043b4328b962f54f52974aaa27cedec52220de665.svg","height":112,"width":112},"sameAs":["https://github.com/pypyr/","https://twitter.com/pypyrpipes/","https://pypi.org/user/pypyr/","https://hub.docker.com/u/pypyr/","https://en.gravatar.com/pypyr/"]},{"@type":"TechArticle","author":{"@type":"Person","name":"pypyr contributor"},"articleSection":"steps","dateModified":"2021-11-09T14:29:55Z","datePublished":"2020-07-07T11:53:28+01:00","headline":"Execute shell commands as a task in a pipeline step.","image":[{"@type":"ImageObject","url":"https://pypyr.io/images/1x1/pypyr-taskrunner-yaml-pipeline-automation-1200x1200.52764d3c6f40232b3cdc33f5b8fbaeadad56cc310c8dd5588d30828296b5290d.png","height":1200,"width":1200},{"@type":"ImageObject","url":"https://pypyr.io/images/4x3/pypyr-taskrunner-yaml-pipeline-automation-1200x900.e8e70443377aeb11c190835e8d2ed0c844d31a82a0c2e8a744a9999cd03e0de9.png","height":900,"width":1200},{"@type":"ImageObject","url":"https://pypyr.io/images/16x9/pypyr-taskrunner-yaml-pipeline-automation-1920x1080.cc9ae11626c8312e087058adb13bfff702162ce39c355065170c1b87850f3034.png","height":1080,"width":1920}],"inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https://pypyr.io/docs/steps/shell/"},"publisher":{"@id":"https://pypyr.io/#organization"},"url":"https://pypyr.io/docs/steps/shell/","wordCount":629}]}</script>
+<script type=application/ld+json>{"@context":"https://schema.org","@graph":[{"@id":"https://pypyr.io/#organization","@type":"Organization","name":"pypyr","url":"https://pypyr.io/","description":"The pypyr project is a free open-source task-runner cli \u0026 python api for automation pipelines.","logo":{"@type":"ImageObject","url":"https://pypyr.io/images/pypyr-taskrunner-logo-square.63875e43ff40d8ae40e93a6043b4328b962f54f52974aaa27cedec52220de665.svg","height":112,"width":112},"sameAs":["https://github.com/pypyr/","https://twitter.com/pypyrpipes/","https://pypi.org/user/pypyr/","https://hub.docker.com/u/pypyr/","https://en.gravatar.com/pypyr/"]},{"@type":"TechArticle","author":{"@type":"Person","name":"pypyr contributor"},"articleSection":"steps","dateModified":"2022-02-19T17:54:43Z","datePublished":"2020-07-07T11:53:28+01:00","headline":"Execute shell commands as a task in a pipeline step.","image":[{"@type":"ImageObject","url":"https://pypyr.io/images/1x1/pypyr-taskrunner-yaml-pipeline-automation-1200x1200.52764d3c6f40232b3cdc33f5b8fbaeadad56cc310c8dd5588d30828296b5290d.png","height":1200,"width":1200},{"@type":"ImageObject","url":"https://pypyr.io/images/4x3/pypyr-taskrunner-yaml-pipeline-automation-1200x900.e8e70443377aeb11c190835e8d2ed0c844d31a82a0c2e8a744a9999cd03e0de9.png","height":900,"width":1200},{"@type":"ImageObject","url":"https://pypyr.io/images/16x9/pypyr-taskrunner-yaml-pipeline-automation-1920x1080.cc9ae11626c8312e087058adb13bfff702162ce39c355065170c1b87850f3034.png","height":1080,"width":1920}],"inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https://pypyr.io/docs/steps/shell/"},"publisher":{"@id":"https://pypyr.io/#organization"},"url":"https://pypyr.io/docs/steps/shell/","wordCount":918}]}</script>
 <link rel=apple-touch-icon sizes=180x180 href=/favicons/apple-touch-icon.925deabb48d91a80924b5d04ff56d2b8f42ba1d1e1438cb7d8948cce1138208c.png>
 <link rel=icon type=image/png sizes=32x32 href=/favicons/favicon-32x32.b869433d27c4679a5fbce03a8489268a539cbc781259bff14618ae2f018334e6.png>
 <link rel=icon type=image/png sizes=16x16 href=/favicons/favicon-16x16.8bcd9f870e0a86445e0505ce6e816b76a40b08a06e2dcd1ec1f90c395ecbeaf6.png>
@@ -78,6 +78,9 @@
 </li>
 <li>
 <a href=/docs/getting-started/error-handling/>error handling</a>
+</li>
+<li>
+<a href=/docs/getting-started/config/>config</a>
 </li>
 </ul>
 </li>
@@ -227,6 +230,9 @@
 <a href=/docs/steps/cmd/>cmd</a>
 </li>
 <li>
+<a href=/docs/steps/configvars/>configvars</a>
+</li>
+<li>
 <a href=/docs/steps/contextclear/>contextclear</a>
 </li>
 <li>
@@ -324,6 +330,9 @@
 </li>
 <li>
 <a href=/docs/steps/pypyrversion/>pypyrversion</a>
+</li>
+<li>
+<a href=/docs/steps/python/>python</a>
 </li>
 <li>
 <a href=/docs/steps/safeshell/>safeshell</a>
@@ -559,8 +568,10 @@
 <li><a href=#capture-shell-output>capture shell output</a></li>
 </ol>
 </li>
+<li><a href=#spaces-in-paths--args>spaces in paths & args</a></li>
 <li><a href=#examples>examples</a></li>
 <li><a href=#multiple-inline-shell-statements>multiple inline shell statements</a></li>
+<li><a href=#invoking-python>invoking python</a></li>
 </ol>
 </nav>
 </aside>
@@ -624,6 +635,27 @@ by signal N (POSIX only).</p>
 </span><span class=w>    </span><span class=nt>echoMe</span><span class=p>:</span><span class=w> </span><span class=s2>&#34;you&#39;ll only see me if cmd ran successfully with return code 0.
 </span><span class=s2>            the command output was: {cmdOut[stdout]}&#34;</span><span class=w>
 </span></code></pre></div>
+<h2 id=spaces-in-paths--args>spaces in paths & args <a href=#spaces-in-paths--args class=headline-anchor aria-label=anchor><svg class="permalink"><title>permalink</title><use href="https://pypyr.io/icons/external-link.054f8ebb57944b2bc52ea4f0ecd16197.svg#external-link"/></svg></a></h2><p>Depending on your O/S, shell and file-system, it&rsquo;s up to you to deal with
+special characters in the path of the command or program you want to run.</p>
+<p>Generally you can put either just the path-segment with a space into quotes,
+or you can escape the entire path by putting quotes around the whole thing.</p>
+<p>If a single argument contains a space, surround if with double-quotes.</p>
+<p>To illustrate some of the options:</p>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-yaml data-lang=yaml>- <span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>pypyr.steps.shell</span><span class=w>
+</span><span class=w>  </span><span class=nt>in</span><span class=p>:</span><span class=w>
+</span><span class=w>    </span><span class=nt>cmd</span><span class=p>:</span><span class=w> </span><span class=s1>&#39;&#34;dir with space/file with space&#34; arg1 &#34;arg2 with space&#34;&#39;</span><span class=w>
+</span><span class=w>
+</span><span class=w></span>- <span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>pypyr.steps.shell</span><span class=w>
+</span><span class=w>  </span><span class=nt>in</span><span class=p>:</span><span class=w>
+</span><span class=w>    </span><span class=nt>cmd</span><span class=p>:</span><span class=w> </span><span class=s1>&#39;&#34;dir with space&#34;/&#34;file with space&#34;&#39;</span><span class=w>
+</span><span class=w>
+</span><span class=w></span>- <span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>pypyr.steps.shell</span><span class=w>
+</span><span class=w>  </span><span class=nt>in</span><span class=p>:</span><span class=w>
+</span><span class=w>    </span><span class=nt>cmd</span><span class=p>:</span><span class=w> </span><span class=l>./&#34;dir with space&#34;/&#34;file with space&#34;</span><span class=w>
+</span></code></pre></div><p>Note the &ldquo;extra&rdquo; pair of single-quotes (') is there when the string begins and
+ends with double-quotes so that the YAML parser reads the double quotes (")
+literally instead of interpreting these double quotes as structural YAML markers
+meaning string.</p>
 <h2 id=examples>examples <a href=#examples class=headline-anchor aria-label=anchor><svg class="permalink"><title>permalink</title><use href="https://pypyr.io/icons/external-link.054f8ebb57944b2bc52ea4f0ecd16197.svg#external-link"/></svg></a></h2><p>Example pipeline yaml using a pipe:</p>
 <div class=highlight><pre tabindex=0 class=chroma><code class=language-yaml data-lang=yaml><span class=nt>steps</span><span class=p>:</span><span class=w>
 </span><span class=w>  </span>- <span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>pypyr.steps.shell</span><span class=w>
@@ -661,10 +693,30 @@ commands.</p>
 </span><span class=w>  </span><span class=nt>in</span><span class=p>:</span><span class=w>
 </span><span class=w>    </span><span class=nt>cmd</span><span class=p>:</span><span class=w> </span>!<span class=l>sic echo ${PWD}</span><span class=w>
 </span></code></pre></div>
+<h2 id=invoking-python>invoking python <a href=#invoking-python class=headline-anchor aria-label=anchor><svg class="permalink"><title>permalink</title><use href="https://pypyr.io/icons/external-link.054f8ebb57944b2bc52ea4f0ecd16197.svg#external-link"/></svg></a></h2><div class=highlight><pre tabindex=0 class=chroma><code class=language-yaml data-lang=yaml><span class=nt>steps</span><span class=p>:</span><span class=w>
+</span><span class=w>  </span><span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>pypyr.steps.shell</span><span class=w>
+</span><span class=w>  </span><span class=nt>in</span><span class=p>:</span><span class=w>
+</span><span class=w>    </span><span class=nt>cmd</span><span class=p>:</span><span class=w> </span><span class=l>python -m stuff.do</span><span class=w>
+</span></code></pre></div><p>Note that this is a bit of a silly example - since we&rsquo;re not using any
+shell functions we might as well have used <a href=https://pypyr.io/docs/steps/cmd/>pypyr.steps.cmd</a>
+instead.</p>
+<p>If you want to invoke Python as a sub-process from pypyr, you might want to
+specify the full path to the Python interpreter to avoid problems with
+accidentally ending up running an unexpected interpreter on your system. This
+is especially relevant if you&rsquo;re using virtual environments.</p>
+<p>See <a href=https://pypyr.io/docs/steps/python/>pypyr.steps.python</a> for details.</p>
+<p>Remember you can also invoke your Python code directly by using
+<a href=https://pypyr.io/docs/steps/py/>pypyr.steps.py</a>, which will automatically be in the
+current Python environment.</p>
+<p>Alternatively, if you do have an external Python file you want to run, you can
+just add a <code>def run_step(context)</code> function to your file and run it natively as
+a pypyr step. This is described in <a href=https://pypyr.io/docs/api/step/>how to make a custom step</a>. This will also automatically execute in the current
+Python environment.</p>
 </article>
 <section class="see-also elevation-02">
 <h2>see also</h2>
 <ul>
+<li><a href=/docs/steps/python/>pypyr.steps.python</a></li>
 <li><a href=/docs/steps/cmd/>pypyr.steps.cmd</a></li>
 </ul>
 </section>
@@ -692,7 +744,7 @@ commands.</p>
 </ul>
 </aside>
 <div class="page-git-info elevation-02">
-<small class=small-block>last updated on <time datetime=2021-11-09T14:29:55Z>2021-11-09 14:29</time>.</small>
+<small class=small-block>last updated on <time datetime=2022-02-19T17:54:43Z>2022-02-19 17:54</time>.</small>
 </div>
 </div>
 <footer class="footer elevation-01">

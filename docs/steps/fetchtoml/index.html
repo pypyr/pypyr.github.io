@@ -23,7 +23,7 @@
 <meta property="og:url" content="https://pypyr.io/docs/steps/fetchtoml/">
 <meta name=twitter:card content="summary_large_image">
 <meta name=twitter:site content="@pypyrpipes">
-<script type=application/ld+json>{"@context":"https://schema.org","@graph":[{"@id":"https://pypyr.io/#organization","@type":"Organization","name":"pypyr","url":"https://pypyr.io/","description":"The pypyr project is a free open-source task-runner cli \u0026 python api for automation pipelines.","logo":{"@type":"ImageObject","url":"https://pypyr.io/images/pypyr-taskrunner-logo-square.63875e43ff40d8ae40e93a6043b4328b962f54f52974aaa27cedec52220de665.svg","height":112,"width":112},"sameAs":["https://github.com/pypyr/","https://twitter.com/pypyrpipes/","https://pypi.org/user/pypyr/","https://hub.docker.com/u/pypyr/","https://en.gravatar.com/pypyr/"]},{"@type":"TechArticle","author":{"@type":"Person","name":"pypyr contributor"},"articleSection":"steps","dateModified":"2021-12-11T19:06:11Z","datePublished":"2021-12-09T19:02:21+01:00","headline":"Load toml into task-runner pipeline context at run-time.","image":[{"@type":"ImageObject","url":"https://pypyr.io/images/1x1/pypyr-taskrunner-yaml-pipeline-automation-1200x1200.52764d3c6f40232b3cdc33f5b8fbaeadad56cc310c8dd5588d30828296b5290d.png","height":1200,"width":1200},{"@type":"ImageObject","url":"https://pypyr.io/images/4x3/pypyr-taskrunner-yaml-pipeline-automation-1200x900.e8e70443377aeb11c190835e8d2ed0c844d31a82a0c2e8a744a9999cd03e0de9.png","height":900,"width":1200},{"@type":"ImageObject","url":"https://pypyr.io/images/16x9/pypyr-taskrunner-yaml-pipeline-automation-1920x1080.cc9ae11626c8312e087058adb13bfff702162ce39c355065170c1b87850f3034.png","height":1080,"width":1920}],"inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https://pypyr.io/docs/steps/fetchtoml/"},"publisher":{"@id":"https://pypyr.io/#organization"},"url":"https://pypyr.io/docs/steps/fetchtoml/","wordCount":430}]}</script>
+<script type=application/ld+json>{"@context":"https://schema.org","@graph":[{"@id":"https://pypyr.io/#organization","@type":"Organization","name":"pypyr","url":"https://pypyr.io/","description":"The pypyr project is a free open-source task-runner cli \u0026 python api for automation pipelines.","logo":{"@type":"ImageObject","url":"https://pypyr.io/images/pypyr-taskrunner-logo-square.63875e43ff40d8ae40e93a6043b4328b962f54f52974aaa27cedec52220de665.svg","height":112,"width":112},"sameAs":["https://github.com/pypyr/","https://twitter.com/pypyrpipes/","https://pypi.org/user/pypyr/","https://hub.docker.com/u/pypyr/","https://en.gravatar.com/pypyr/"]},{"@type":"TechArticle","author":{"@type":"Person","name":"pypyr contributor"},"articleSection":"steps","dateModified":"2022-02-19T15:34:49Z","datePublished":"2021-12-09T19:02:21+01:00","headline":"Load toml into task-runner pipeline context at run-time.","image":[{"@type":"ImageObject","url":"https://pypyr.io/images/1x1/pypyr-taskrunner-yaml-pipeline-automation-1200x1200.52764d3c6f40232b3cdc33f5b8fbaeadad56cc310c8dd5588d30828296b5290d.png","height":1200,"width":1200},{"@type":"ImageObject","url":"https://pypyr.io/images/4x3/pypyr-taskrunner-yaml-pipeline-automation-1200x900.e8e70443377aeb11c190835e8d2ed0c844d31a82a0c2e8a744a9999cd03e0de9.png","height":900,"width":1200},{"@type":"ImageObject","url":"https://pypyr.io/images/16x9/pypyr-taskrunner-yaml-pipeline-automation-1920x1080.cc9ae11626c8312e087058adb13bfff702162ce39c355065170c1b87850f3034.png","height":1080,"width":1920}],"inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https://pypyr.io/docs/steps/fetchtoml/"},"publisher":{"@id":"https://pypyr.io/#organization"},"url":"https://pypyr.io/docs/steps/fetchtoml/","wordCount":443}]}</script>
 <link rel=apple-touch-icon sizes=180x180 href=/favicons/apple-touch-icon.925deabb48d91a80924b5d04ff56d2b8f42ba1d1e1438cb7d8948cce1138208c.png>
 <link rel=icon type=image/png sizes=32x32 href=/favicons/favicon-32x32.b869433d27c4679a5fbce03a8489268a539cbc781259bff14618ae2f018334e6.png>
 <link rel=icon type=image/png sizes=16x16 href=/favicons/favicon-16x16.8bcd9f870e0a86445e0505ce6e816b76a40b08a06e2dcd1ec1f90c395ecbeaf6.png>
@@ -78,6 +78,9 @@
 </li>
 <li>
 <a href=/docs/getting-started/error-handling/>error handling</a>
+</li>
+<li>
+<a href=/docs/getting-started/config/>config</a>
 </li>
 </ul>
 </li>
@@ -227,6 +230,9 @@
 <a href=/docs/steps/cmd/>cmd</a>
 </li>
 <li>
+<a href=/docs/steps/configvars/>configvars</a>
+</li>
+<li>
 <a href=/docs/steps/contextclear/>contextclear</a>
 </li>
 <li>
@@ -324,6 +330,9 @@
 </li>
 <li>
 <a href=/docs/steps/pypyrversion/>pypyrversion</a>
+</li>
+<li>
+<a href=/docs/steps/python/>python</a>
 </li>
 <li>
 <a href=/docs/steps/safeshell/>safeshell</a>
@@ -556,6 +565,7 @@
 <li><a href=#example>example</a></li>
 <li><a href=#substitutions>substitutions</a></li>
 <li><a href=#toml-structure-merging>toml structure merging</a></li>
+<li><a href=#encoding>encoding</a></li>
 </ol>
 </nav>
 </aside>
@@ -684,6 +694,8 @@ will overwrite existing values if the same keys already exist in context.</p>
   <span class=nt>&#34;eggs&#34;</span><span class=p>:</span> <span class=s2>&#34;raw&#34;</span>
 <span class=p>}</span>
 </code></pre></div><p>After <code>fetchtoml</code> the value of key &lsquo;eggs&rsquo; will be &lsquo;boiled&rsquo;.</p>
+<h2 id=encoding>encoding <a href=#encoding class=headline-anchor aria-label=anchor><svg class="permalink"><title>permalink</title><use href="https://pypyr.io/icons/external-link.054f8ebb57944b2bc52ea4f0ecd16197.svg#external-link"/></svg></a></h2><p>A TOML file must always be in <code>utf-8</code>, per the <a href=https://toml.io/en/latest#spec>TOML
+Spec</a>.</p>
 </article>
 <section class="see-also elevation-02">
 <h2>see also</h2>
@@ -720,7 +732,7 @@ will overwrite existing values if the same keys already exist in context.</p>
 </ul>
 </aside>
 <div class="page-git-info elevation-02">
-<small class=small-block>last updated on <time datetime=2021-12-11T19:06:11Z>2021-12-11 19:06</time>.</small>
+<small class=small-block>last updated on <time datetime=2022-02-19T15:34:49Z>2022-02-19 15:34</time>.</small>
 </div>
 </div>
 <footer class="footer elevation-01">
