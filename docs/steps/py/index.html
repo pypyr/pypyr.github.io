@@ -23,7 +23,7 @@
 <meta property="og:url" content="https://pypyr.io/docs/steps/py/">
 <meta name=twitter:card content="summary_large_image">
 <meta name=twitter:site content="@pypyrpipes">
-<script type=application/ld+json>{"@context":"https://schema.org","@graph":[{"@id":"https://pypyr.io/#organization","@type":"Organization","name":"pypyr","url":"https://pypyr.io/","description":"The pypyr project is a free open-source task-runner cli \u0026 python api for automation pipelines.","logo":{"@type":"ImageObject","url":"https://pypyr.io/images/pypyr-taskrunner-logo-square.63875e43ff40d8ae40e93a6043b4328b962f54f52974aaa27cedec52220de665.svg","height":112,"width":112},"sameAs":["https://github.com/pypyr/","https://twitter.com/pypyrpipes/","https://pypi.org/user/pypyr/","https://hub.docker.com/u/pypyr/","https://en.gravatar.com/pypyr/"]},{"@type":"TechArticle","author":{"@type":"Person","name":"pypyr contributor"},"articleSection":"steps","dateModified":"2021-11-09T14:29:55Z","datePublished":"2020-07-06T13:17:22+01:00","headline":"Execute inline python in pipeline.","image":[{"@type":"ImageObject","url":"https://pypyr.io/images/1x1/pypyr-taskrunner-yaml-pipeline-automation-1200x1200.52764d3c6f40232b3cdc33f5b8fbaeadad56cc310c8dd5588d30828296b5290d.png","height":1200,"width":1200},{"@type":"ImageObject","url":"https://pypyr.io/images/4x3/pypyr-taskrunner-yaml-pipeline-automation-1200x900.e8e70443377aeb11c190835e8d2ed0c844d31a82a0c2e8a744a9999cd03e0de9.png","height":900,"width":1200},{"@type":"ImageObject","url":"https://pypyr.io/images/16x9/pypyr-taskrunner-yaml-pipeline-automation-1920x1080.cc9ae11626c8312e087058adb13bfff702162ce39c355065170c1b87850f3034.png","height":1080,"width":1920}],"inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https://pypyr.io/docs/steps/py/"},"publisher":{"@id":"https://pypyr.io/#organization"},"url":"https://pypyr.io/docs/steps/py/","wordCount":1556}]}</script>
+<script type=application/ld+json>{"@context":"https://schema.org","@graph":[{"@id":"https://pypyr.io/#organization","@type":"Organization","name":"pypyr","url":"https://pypyr.io/","description":"The pypyr project is a free open-source task-runner cli \u0026 python api for automation pipelines.","logo":{"@type":"ImageObject","url":"https://pypyr.io/images/pypyr-taskrunner-logo-square.63875e43ff40d8ae40e93a6043b4328b962f54f52974aaa27cedec52220de665.svg","height":112,"width":112},"sameAs":["https://github.com/pypyr/","https://twitter.com/pypyrpipes/","https://pypi.org/user/pypyr/","https://hub.docker.com/u/pypyr/","https://en.gravatar.com/pypyr/"]},{"@type":"TechArticle","author":{"@type":"Person","name":"pypyr contributor"},"articleSection":"steps","dateModified":"2022-02-21T12:02:12Z","datePublished":"2020-07-06T13:17:22+01:00","headline":"Execute inline python in pipeline.","image":[{"@type":"ImageObject","url":"https://pypyr.io/images/1x1/pypyr-taskrunner-yaml-pipeline-automation-1200x1200.52764d3c6f40232b3cdc33f5b8fbaeadad56cc310c8dd5588d30828296b5290d.png","height":1200,"width":1200},{"@type":"ImageObject","url":"https://pypyr.io/images/4x3/pypyr-taskrunner-yaml-pipeline-automation-1200x900.e8e70443377aeb11c190835e8d2ed0c844d31a82a0c2e8a744a9999cd03e0de9.png","height":900,"width":1200},{"@type":"ImageObject","url":"https://pypyr.io/images/16x9/pypyr-taskrunner-yaml-pipeline-automation-1920x1080.cc9ae11626c8312e087058adb13bfff702162ce39c355065170c1b87850f3034.png","height":1080,"width":1920}],"inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https://pypyr.io/docs/steps/py/"},"publisher":{"@id":"https://pypyr.io/#organization"},"url":"https://pypyr.io/docs/steps/py/","wordCount":1597}]}</script>
 <link rel=apple-touch-icon sizes=180x180 href=/favicons/apple-touch-icon.925deabb48d91a80924b5d04ff56d2b8f42ba1d1e1438cb7d8948cce1138208c.png>
 <link rel=icon type=image/png sizes=32x32 href=/favicons/favicon-32x32.b869433d27c4679a5fbce03a8489268a539cbc781259bff14618ae2f018334e6.png>
 <link rel=icon type=image/png sizes=16x16 href=/favicons/favicon-16x16.8bcd9f870e0a86445e0505ce6e816b76a40b08a06e2dcd1ec1f90c395ecbeaf6.png>
@@ -571,7 +571,7 @@
 </ol>
 </li>
 <li><a href=#using-built-ins-and-imports>using built-ins and imports</a></li>
-<li><a href=#import-your-own-modules>import your own modules</a></li>
+<li><a href=#import-custom-modules>import custom modules</a></li>
 <li><a href=#create-reusable-functions--classes>create reusable functions & classes</a></li>
 <li><a href=#the-context-object-itself>the context object itself</a></li>
 <li><a href=#example>example</a></li>
@@ -620,9 +620,12 @@ indicators work best for you. For example, <code>|-</code> will strip newlines a
 <div class=admonition-tip-icon></div>
 <div class=admonition-content><p>Do remember that if your inline code block gets unwieldy, you can very easily
 run your own Python .py file from pypyr by using it as a
-<a href=https://pypyr.io/docs/api/step/>custom step</a> in itself.</p>
-<p>You don&rsquo;t even have to package your python code - pypyr will resolve the path
-relative to the working directory for you.</p>
+<a href=https://pypyr.io/docs/api/step/>custom step</a>.</p>
+<p>All you have to do is add a <code>def run_step(context)</code> function to your <code>.py</code>
+file.</p>
+<p>You don&rsquo;t even have to package your python code - pypyr will automatically
+resolve modules relative to the pipeline directory without you having to do
+anything extra.</p>
 </div>
 </div>
 <h2 id=working-with-context>working with context <a href=#working-with-context class=headline-anchor aria-label=anchor><svg class="permalink"><title>permalink</title><use href="https://pypyr.io/icons/external-link.054f8ebb57944b2bc52ea4f0ecd16197.svg#external-link"/></svg></a></h2><p>When you are in a <code>py</code> step, context keys exist as variables of the same name.</p>
@@ -773,23 +776,24 @@ import like you usually do in Python.</p>
 </span><span class=sd>      # use builtin functions like len()
 </span><span class=sd>      print(len(host))</span><span class=w>      
 </span></code></pre></div>
-<h2 id=import-your-own-modules>import your own modules <a href=#import-your-own-modules class=headline-anchor aria-label=anchor><svg class="permalink"><title>permalink</title><use href="https://pypyr.io/icons/external-link.054f8ebb57944b2bc52ea4f0ecd16197.svg#external-link"/></svg></a></h2><p>You can also import your own custom modules and objects, as long as they resolve
-in the current Python environment. To help with this, pypyr also looks in the
-current working directory for your own custom modules, so you can import &
-re-use modules in your current path without having to package & publish the code
-to the current environment first.</p>
-<p>Assume you have a python file in your working directory, saved in a <code>mydir</code>
-subdirectory like this:</p>
+<h2 id=import-custom-modules>import custom modules <a href=#import-custom-modules class=headline-anchor aria-label=anchor><svg class="permalink"><title>permalink</title><use href="https://pypyr.io/icons/external-link.054f8ebb57944b2bc52ea4f0ecd16197.svg#external-link"/></svg></a></h2><p>You can also import your own custom modules and objects, as long as they resolve
+in the current Python environment.</p>
+<p>To help with this, pypyr also looks in the current pipeline&rsquo;s directory for your
+<code>.py</code> files. This means you can use ad hoc modules saved next to your pipeline
+without having to package & publish the code to the current environment first.</p>
+<p>See here for a full details of <a href=https://pypyr.io/docs/api/custom-module-search-path/>pypyr custom module import resolution rules</a>.</p>
+<p>Assume you have a python file saved in a <code>mydir</code> sub-directory like this:</p>
 <div class=highlight><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=c1># ./mydir/mymodule.py</span>
 
 <span class=k>def</span> <span class=nf>arb_function</span><span class=p>(</span><span class=n>arb_arg</span><span class=p>):</span>
     <span class=k>return</span> <span class=sa>f</span><span class=s1>&#39;arb_function says: </span><span class=si>{</span><span class=n>arb_arg</span><span class=si>}</span><span class=s1>&#39;</span>
-</code></pre></div><p>Because pypyr will also look in your working directory for modules,
-<code>mydir.mymodule</code> will resolve on <code>import</code> without you have to do anything
-special.</p>
-<p>So you can use this from your pipeline like this:</p>
+</code></pre></div><p>Because pypyr will also look in the current pipeline&rsquo;s directory for modules,
+<code>mydir.mymodule</code> will resolve on <code>import</code> without you having to do anything
+special and without you having to package & install the code first.</p>
+<p>So you can just use this file <code>./mydir/mymodule.py</code> from your pipeline like
+this:</p>
 <div class=highlight><pre tabindex=0 class=chroma><code class=language-yaml data-lang=yaml>- <span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>pypyr.steps.py</span><span class=w>
-</span><span class=w>  </span><span class=nt>comment</span><span class=p>:</span><span class=w> </span><span class=l>import custom modules relative to your working dir</span><span class=w>
+</span><span class=w>  </span><span class=nt>comment</span><span class=p>:</span><span class=w> </span><span class=l>import custom modules relative to pipeline dir</span><span class=w>
 </span><span class=w>  </span><span class=nt>in</span><span class=p>:</span><span class=w>
 </span><span class=w>    </span><span class=nt>py</span><span class=p>:</span><span class=w> </span><span class=p>|</span><span class=sd>
 </span><span class=sd>      from mydir.mymodule import arb_function
@@ -948,7 +952,7 @@ style</a>.</p>
 </ul>
 </aside>
 <div class="page-git-info elevation-02">
-<small class=small-block>last updated on <time datetime=2021-11-09T14:29:55Z>2021-11-09 14:29</time>.</small>
+<small class=small-block>last updated on <time datetime=2022-02-21T12:02:12Z>2022-02-21 12:02</time>.</small>
 </div>
 </div>
 <footer class="footer elevation-01">

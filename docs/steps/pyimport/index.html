@@ -23,7 +23,7 @@
 <meta property="og:url" content="https://pypyr.io/docs/steps/pyimport/">
 <meta name=twitter:card content="summary_large_image">
 <meta name=twitter:site content="@pypyrpipes">
-<script type=application/ld+json>{"@context":"https://schema.org","@graph":[{"@id":"https://pypyr.io/#organization","@type":"Organization","name":"pypyr","url":"https://pypyr.io/","description":"The pypyr project is a free open-source task-runner cli \u0026 python api for automation pipelines.","logo":{"@type":"ImageObject","url":"https://pypyr.io/images/pypyr-taskrunner-logo-square.63875e43ff40d8ae40e93a6043b4328b962f54f52974aaa27cedec52220de665.svg","height":112,"width":112},"sameAs":["https://github.com/pypyr/","https://twitter.com/pypyrpipes/","https://pypi.org/user/pypyr/","https://hub.docker.com/u/pypyr/","https://en.gravatar.com/pypyr/"]},{"@type":"TechArticle","author":{"@type":"Person","name":"pypyr contributor"},"articleSection":"steps","dateModified":"2021-10-05T14:41:15+01:00","datePublished":"2020-11-25T18:20:22Z","headline":"Import standard or external libraries in your pipeline.","image":[{"@type":"ImageObject","url":"https://pypyr.io/images/1x1/pypyr-taskrunner-yaml-pipeline-automation-1200x1200.52764d3c6f40232b3cdc33f5b8fbaeadad56cc310c8dd5588d30828296b5290d.png","height":1200,"width":1200},{"@type":"ImageObject","url":"https://pypyr.io/images/4x3/pypyr-taskrunner-yaml-pipeline-automation-1200x900.e8e70443377aeb11c190835e8d2ed0c844d31a82a0c2e8a744a9999cd03e0de9.png","height":900,"width":1200},{"@type":"ImageObject","url":"https://pypyr.io/images/16x9/pypyr-taskrunner-yaml-pipeline-automation-1920x1080.cc9ae11626c8312e087058adb13bfff702162ce39c355065170c1b87850f3034.png","height":1080,"width":1920}],"inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https://pypyr.io/docs/steps/pyimport/"},"publisher":{"@id":"https://pypyr.io/#organization"},"url":"https://pypyr.io/docs/steps/pyimport/","wordCount":464}]}</script>
+<script type=application/ld+json>{"@context":"https://schema.org","@graph":[{"@id":"https://pypyr.io/#organization","@type":"Organization","name":"pypyr","url":"https://pypyr.io/","description":"The pypyr project is a free open-source task-runner cli \u0026 python api for automation pipelines.","logo":{"@type":"ImageObject","url":"https://pypyr.io/images/pypyr-taskrunner-logo-square.63875e43ff40d8ae40e93a6043b4328b962f54f52974aaa27cedec52220de665.svg","height":112,"width":112},"sameAs":["https://github.com/pypyr/","https://twitter.com/pypyrpipes/","https://pypi.org/user/pypyr/","https://hub.docker.com/u/pypyr/","https://en.gravatar.com/pypyr/"]},{"@type":"TechArticle","author":{"@type":"Person","name":"pypyr contributor"},"articleSection":"steps","dateModified":"2022-02-21T12:02:12Z","datePublished":"2020-11-25T18:20:22Z","headline":"Import standard or external libraries in your pipeline.","image":[{"@type":"ImageObject","url":"https://pypyr.io/images/1x1/pypyr-taskrunner-yaml-pipeline-automation-1200x1200.52764d3c6f40232b3cdc33f5b8fbaeadad56cc310c8dd5588d30828296b5290d.png","height":1200,"width":1200},{"@type":"ImageObject","url":"https://pypyr.io/images/4x3/pypyr-taskrunner-yaml-pipeline-automation-1200x900.e8e70443377aeb11c190835e8d2ed0c844d31a82a0c2e8a744a9999cd03e0de9.png","height":900,"width":1200},{"@type":"ImageObject","url":"https://pypyr.io/images/16x9/pypyr-taskrunner-yaml-pipeline-automation-1920x1080.cc9ae11626c8312e087058adb13bfff702162ce39c355065170c1b87850f3034.png","height":1080,"width":1920}],"inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https://pypyr.io/docs/steps/pyimport/"},"publisher":{"@id":"https://pypyr.io/#organization"},"url":"https://pypyr.io/docs/steps/pyimport/","wordCount":517}]}</script>
 <link rel=apple-touch-icon sizes=180x180 href=/favicons/apple-touch-icon.925deabb48d91a80924b5d04ff56d2b8f42ba1d1e1438cb7d8948cce1138208c.png>
 <link rel=icon type=image/png sizes=32x32 href=/favicons/favicon-32x32.b869433d27c4679a5fbce03a8489268a539cbc781259bff14618ae2f018334e6.png>
 <link rel=icon type=image/png sizes=16x16 href=/favicons/favicon-16x16.8bcd9f870e0a86445e0505ce6e816b76a40b08a06e2dcd1ec1f90c395ecbeaf6.png>
@@ -628,28 +628,31 @@ imports.</p>
 <span class=kn>from</span> <span class=nn>x</span> <span class=kn>import</span> <span class=n>y</span><span class=p>,</span> <span class=n>z</span>
 <span class=kn>from</span> <span class=nn>a.b</span> <span class=kn>import</span> <span class=n>c</span> <span class=k>as</span> <span class=n>d</span><span class=p>,</span> <span class=n>e</span> <span class=k>as</span> <span class=n>f</span>
 </code></pre></div>
-<h2 id=import-search-path>import search path <a href=#import-search-path class=headline-anchor aria-label=anchor><svg class="permalink"><title>permalink</title><use href="https://pypyr.io/icons/external-link.054f8ebb57944b2bc52ea4f0ecd16197.svg#external-link"/></svg></a></h2><p>Imports resolve in your current python environment. pypyr also looks in the
-current working directory, so you can import & re-use modules in your current
-path without having to package & publish the code to the current environment
-first.</p>
-<p>Assume you have a python file in your working directory, saved in a <code>mydir</code>
-subdirectory like this:</p>
+<h2 id=import-search-path>import search path <a href=#import-search-path class=headline-anchor aria-label=anchor><svg class="permalink"><title>permalink</title><use href="https://pypyr.io/icons/external-link.054f8ebb57944b2bc52ea4f0ecd16197.svg#external-link"/></svg></a></h2><p>Imports resolve in your current python environment. This means you can use any
+installed packages (usually installed via <code>$ pip install</code>).</p>
+<p>You can also import your own custom modules and objects.</p>
+<p>To help with this, pypyr also looks in the current pipeline&rsquo;s directory for your
+<code>.py</code> files. This means you can use ad hoc modules saved next to your pipeline
+without having to package & publish the code to the current environment first.</p>
+<p>See here for a full details of <a href=https://pypyr.io/docs/api/custom-module-search-path/>pypyr custom module import resolution rules</a>.</p>
+<p>Assume you have a python file saved in a <code>mydir</code> sub-directory like this:</p>
 <div class=highlight><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=c1># ./mydir/mymodule.py</span>
 
 <span class=k>def</span> <span class=nf>arb_function</span><span class=p>(</span><span class=n>arb_arg</span><span class=p>):</span>
     <span class=k>return</span> <span class=sa>f</span><span class=s1>&#39;arb_function says: </span><span class=si>{</span><span class=n>arb_arg</span><span class=si>}</span><span class=s1>&#39;</span>
-</code></pre></div><p>Because pypyr will also look in your working directory for modules,
-<code>mydir.mymodule</code> will resolve on <code>import</code> without you have to do anything
-special.</p>
-<p>So you can use this <code>./mydir/mymodule.py</code> file from your pipeline like this:</p>
+</code></pre></div><p>Because pypyr will also look in the current pipeline&rsquo;s directory for modules,
+<code>mydir.mymodule</code> will resolve on <code>pypyr.steps.pyimport</code> without you having to do
+anything special and without you having to package & install the code first.</p>
+<p>So you can just use this <code>./mydir/mymodule.py</code> file from your pipeline like
+this:</p>
 <div class=highlight><pre tabindex=0 class=chroma><code class=language-yaml data-lang=yaml>- <span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>pypyr.steps.pyimport</span><span class=w>
-</span><span class=w>  </span><span class=nt>comment</span><span class=p>:</span><span class=w> </span><span class=l>import custom modules relative to your working dir</span><span class=w>
-</span><span class=w>            </span><span class=l>this will look for arb_function in ./mydir/mymodule.py</span><span class=w>
+</span><span class=w>  </span><span class=nt>comment</span><span class=p>:</span><span class=w> </span><span class=l>import custom modules relative to pipeline dir.</span><span class=w>
+</span><span class=w>           </span><span class=l>look for arb_function in {pipeline dir}/mydir/mymodule.py</span><span class=w>
 </span><span class=w>  </span><span class=nt>in</span><span class=p>:</span><span class=w>
 </span><span class=w>    </span><span class=nt>pyImport</span><span class=p>:</span><span class=w> </span><span class=l>from mydir.mymodule import arb_function</span><span class=w>
 </span><span class=w>
 </span><span class=w></span>- <span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>pypyr.steps.echo</span><span class=w>
-</span><span class=w>  </span><span class=nt>comment</span><span class=p>:</span><span class=w> </span><span class=l>you can use arb_function anywhere you can use a formatting expression</span><span class=w>
+</span><span class=w>  </span><span class=nt>comment</span><span class=p>:</span><span class=w> </span><span class=l>you can now use arb_function anywhere you use a formatting expression</span><span class=w>
 </span><span class=w>  </span><span class=nt>in</span><span class=p>:</span><span class=w>
 </span><span class=w>    </span><span class=nt>echoMe</span><span class=p>:</span><span class=w> </span>!<span class=l>py arb_function(&#39;input from pipeline here&#39;)</span><span class=w>
 </span></code></pre></div>
@@ -662,9 +665,9 @@ available until the pipeline ends, unless you do any of the following:</p>
 <li>run another pipeline with a fresh new context using
 <a href=https://pypyr.io/docs/steps/pype/>pypyr.steps.pype</a>.
 <ul>
-<li>The child pipeline will not have the parent&rsquo;s imports available if
-<code>useParentContext</code> is <code>False</code>.</li>
-<li>The imports remain valid in the parent pipeline after the child completes.</li>
+<li>To do this set <code>useParentContext</code> to <code>False</code>.</li>
+<li>The child pipeline will not have the parent&rsquo;s imports available.</li>
+<li>The imports remain valid in the parent pipeline.</li>
 </ul>
 </li>
 <li>Explicitly clear the context with <a href=https://pypyr.io/docs/steps/contextclearall/>contextclearall</a>.
@@ -705,7 +708,7 @@ available until the pipeline ends, unless you do any of the following:</p>
 </ul>
 </aside>
 <div class="page-git-info elevation-02">
-<small class=small-block>last updated on <time datetime=2021-10-05T14:41:15+01:00>2021-10-05 14:41</time>.</small>
+<small class=small-block>last updated on <time datetime=2022-02-21T12:02:12Z>2022-02-21 12:02</time>.</small>
 </div>
 </div>
 <footer class="footer elevation-01">
