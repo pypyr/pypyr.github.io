@@ -4,7 +4,7 @@
 <meta name=viewport content="width=device-width,initial-scale=1">
 <title>run your first pipeline | pypyr</title>
 <meta name=description content="An introduction to how to write & run your first pipeline with the pypyr task-runner to automate your own tasks.">
-<link rel=stylesheet href=https://pypyr.io/css/styles.min.99e596997d7f6f9df9ec7bb05cdd3e8c62dd9d484bbe6858e05e90aebf2c1ec2.css integrity="sha256-meWWmX1/b5357HuwXN0+jGLdnUhLvmhY4F6Qrr8sHsI=">
+<link rel=stylesheet href=https://pypyr.io/css/styles.min.ad50c9856a15c2caa608f0b1b8a46d3ff692bb9355af1f7009b1b3938d26a886.css integrity="sha256-rVDJhWoVwsqmCPCxuKRtP/aSu5NVrx9wCbGzk40mqIY=">
 <link rel=stylesheet href=https://pypyr.io/css/code-highlight.min.78f63f1d4f45beaf423efd3dc8e6914c2abdca1b5391cd91368a32efecd9d7e3.css integrity="sha256-ePY/HU9Fvq9CPv09yOaRTCq9yhtTkc2RNooy7+zZ1+M=">
 <script defer src=https://pypyr.io/js/script.min.45064b9f444bbb1631eeef9f9ef2be6985c45b5f06bddb6644ce049732706a06.js integrity="sha256-RQZLn0RLuxYx7u+fnvK+aYXEW18GvdtmRM4ElzJwagY="></script>
 <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700%7cRoboto+Mono:400,400i&display=swap" rel=stylesheet>
@@ -23,7 +23,7 @@
 <meta property="og:url" content="https://pypyr.io/docs/getting-started/run-your-first-pipeline/">
 <meta name=twitter:card content="summary_large_image">
 <meta name=twitter:site content="@pypyrpipes">
-<script type=application/ld+json>{"@context":"https://schema.org","@graph":[{"@id":"https://pypyr.io/#organization","@type":"Organization","name":"pypyr","url":"https://pypyr.io/","description":"The pypyr project is a free open-source task-runner cli \u0026 python api for automation pipelines.","logo":{"@type":"ImageObject","url":"https://pypyr.io/images/pypyr-taskrunner-logo-square.63875e43ff40d8ae40e93a6043b4328b962f54f52974aaa27cedec52220de665.svg","height":112,"width":112},"sameAs":["https://github.com/pypyr/","https://twitter.com/pypyrpipes/","https://pypi.org/user/pypyr/","https://hub.docker.com/u/pypyr/","https://en.gravatar.com/pypyr/"]},{"@type":"TechArticle","author":{"@type":"Person","name":"pypyr contributor"},"articleSection":"getting started","dateModified":"2021-10-07T15:02:20+01:00","datePublished":"2020-08-13T00:00:00Z","headline":"Tutorial showing you how to run your first task-runner pipeline.","image":[{"@type":"ImageObject","url":"https://pypyr.io/images/1x1/pypyr-taskrunner-yaml-pipeline-automation-1200x1200.52764d3c6f40232b3cdc33f5b8fbaeadad56cc310c8dd5588d30828296b5290d.png","height":1200,"width":1200},{"@type":"ImageObject","url":"https://pypyr.io/images/4x3/pypyr-taskrunner-yaml-pipeline-automation-1200x900.e8e70443377aeb11c190835e8d2ed0c844d31a82a0c2e8a744a9999cd03e0de9.png","height":900,"width":1200},{"@type":"ImageObject","url":"https://pypyr.io/images/16x9/pypyr-taskrunner-yaml-pipeline-automation-1920x1080.cc9ae11626c8312e087058adb13bfff702162ce39c355065170c1b87850f3034.png","height":1080,"width":1920}],"inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https://pypyr.io/docs/getting-started/run-your-first-pipeline/"},"publisher":{"@id":"https://pypyr.io/#organization"},"url":"https://pypyr.io/docs/getting-started/run-your-first-pipeline/","wordCount":777}]}</script>
+<script type=application/ld+json>{"@context":"https://schema.org","@graph":[{"@id":"https://pypyr.io/#organization","@type":"Organization","name":"pypyr","url":"https://pypyr.io/","description":"The pypyr project is a free open-source task-runner cli \u0026 python api for automation pipelines.","logo":{"@type":"ImageObject","url":"https://pypyr.io/images/pypyr-taskrunner-logo-square.63875e43ff40d8ae40e93a6043b4328b962f54f52974aaa27cedec52220de665.svg","height":112,"width":112},"sameAs":["https://github.com/pypyr/","https://twitter.com/pypyrpipes/","https://pypi.org/user/pypyr/","https://hub.docker.com/u/pypyr/","https://en.gravatar.com/pypyr/"]},{"@type":"TechArticle","author":{"@type":"Person","name":"pypyr contributor"},"articleSection":"getting started","dateModified":"2022-02-26T11:44:59Z","datePublished":"2020-08-13T00:00:00Z","headline":"Tutorial showing you how to run your first task-runner pipeline.","image":[{"@type":"ImageObject","url":"https://pypyr.io/images/1x1/pypyr-taskrunner-yaml-pipeline-automation-1200x1200.52764d3c6f40232b3cdc33f5b8fbaeadad56cc310c8dd5588d30828296b5290d.png","height":1200,"width":1200},{"@type":"ImageObject","url":"https://pypyr.io/images/4x3/pypyr-taskrunner-yaml-pipeline-automation-1200x900.e8e70443377aeb11c190835e8d2ed0c844d31a82a0c2e8a744a9999cd03e0de9.png","height":900,"width":1200},{"@type":"ImageObject","url":"https://pypyr.io/images/16x9/pypyr-taskrunner-yaml-pipeline-automation-1920x1080.cc9ae11626c8312e087058adb13bfff702162ce39c355065170c1b87850f3034.png","height":1080,"width":1920}],"inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https://pypyr.io/docs/getting-started/run-your-first-pipeline/"},"publisher":{"@id":"https://pypyr.io/#organization"},"url":"https://pypyr.io/docs/getting-started/run-your-first-pipeline/","wordCount":1597}]}</script>
 <link rel=apple-touch-icon sizes=180x180 href=/favicons/apple-touch-icon.925deabb48d91a80924b5d04ff56d2b8f42ba1d1e1438cb7d8948cce1138208c.png>
 <link rel=icon type=image/png sizes=32x32 href=/favicons/favicon-32x32.b869433d27c4679a5fbce03a8489268a539cbc781259bff14618ae2f018334e6.png>
 <link rel=icon type=image/png sizes=16x16 href=/favicons/favicon-16x16.8bcd9f870e0a86445e0505ce6e816b76a40b08a06e2dcd1ec1f90c395ecbeaf6.png>
@@ -562,10 +562,16 @@
 <nav id=TableOfContents>
 <ol>
 <li><a href=#run-a-built-in-pipeline>run a built-in pipeline</a></li>
-<li><a href=#write-your-first-pipeline>write your first pipeline</a></li>
-<li><a href=#passing-arguments-to-your-pipeline>passing arguments to your pipeline</a></li>
-<li><a href=#looping-over-commands>looping over commands</a>
+<li><a href=#write-your-first-pipeline>write your first pipeline</a>
 <ol>
+<li><a href=#cross-platform-compatibility>cross-platform compatibility</a></li>
+</ol>
+</li>
+<li><a href=#passing-arguments-to-your-pipeline>passing arguments to your pipeline</a></li>
+<li><a href=#branching-loops-retries>branching, loops, retries</a>
+<ol>
+<li><a href=#conditional-execution>conditional execution</a></li>
+<li><a href=#automatic-retry>automatic retry</a></li>
 <li><a href=#static-loop>static loop</a></li>
 <li><a href=#dynamic-loop-cli-input-args>dynamic loop cli input args</a></li>
 </ol>
@@ -590,11 +596,19 @@ the input string back to console output using the built-in
 </span><span class=w>  </span>- <span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>pypyr.steps.echo</span><span class=w>
 </span><span class=w>    </span><span class=nt>in</span><span class=p>:</span><span class=w>
 </span><span class=w>      </span><span class=nt>echoMe</span><span class=p>:</span><span class=w> </span><span class=s1>&#39;{argString}&#39;</span><span class=w>
-</span></code></pre></div><p>You can achieve the same thing by running a pipeline where you set the context
-in the pipeline yaml rather than passing it in from the cli as the 2nd
-positional argument:</p>
+</span></code></pre></div><p>This a silly pipeline with only one step. It doesn&rsquo;t do much other than show
+you a basic example as an introduction of what a basic pipeline looks like.</p>
+<p>The <a href=https://pypyr.io/docs/context-parsers/string/>pypyr.parser.string</a>
+context_parser tells pypyr to concatenate all the input args you specify from
+the CLI and make the result available to the pipeline as a variable named
+<code>argString</code>. <code>pypyr.steps.echo</code> then uses a <a href=https://pypyr.io/docs/substitutions/format-string/>substitution expression</a> to get the value of <code>argString</code> and
+print it out to the console.</p>
+<p>You can achieve the same end-result by hard-coding the string you want to echo
+into the pipeline yaml rather than passing it in from the cli as a positional
+argument:</p>
 <div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>$ pypyr magritte
-</code></pre></div><div class=highlight><pre tabindex=0 class=chroma><code class=language-yaml data-lang=yaml><span class=c># To execute this pipeline, shell something like:</span><span class=w>
+</code></pre></div><div class=highlight><pre tabindex=0 class=chroma><code class=language-yaml data-lang=yaml><span class=c># ./magritte.yaml</span><span class=w>
+</span><span class=w></span><span class=c># To execute this pipeline, shell something like:</span><span class=w>
 </span><span class=w></span><span class=c># pypyr magritte</span><span class=w>
 </span><span class=w></span><span class=nt>steps</span><span class=p>:</span><span class=w>
 </span><span class=w>  </span>- <span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>pypyr.steps.echo</span><span class=w>
@@ -606,6 +620,13 @@ positional argument:</p>
 <p>The simplest pipeline just needs a <code>steps</code> list. This is the default entry
 point. <code>steps</code> is a list that has a bunch of individual steps in it that will
 run sequentially one after the other.</p>
+<p>The following examples will only have one or two steps in them, for the sake of
+an easy introduction, but you can mix and match as many steps as you need in
+your pipelines.</p>
+<div class=tabs>
+<input type=radio id=first-pipe-radio-posix name=first-pipe-selector class=tab-radio tabindex=0 checked>
+<label for=first-pipe-radio-posix class=tab-label>posix</label>
+<div class=tab>
 <div class=highlight><pre tabindex=0 class=chroma><code class=language-yaml data-lang=yaml><span class=c># ./my-first-pipeline.yaml</span><span class=w>
 </span><span class=w></span><span class=c># To execute this pipeline, shell something like:</span><span class=w>
 </span><span class=w></span><span class=c># pypyr my-first-pipeline</span><span class=w>
@@ -619,10 +640,36 @@ run sequentially one after the other.</p>
 </span><span class=w>    </span><span class=nt>comment</span><span class=p>:</span><span class=w> </span><span class=l>actually invokes any program on your system.</span><span class=w>
 </span><span class=w>             </span><span class=l>the program must be available in current path.</span><span class=w>
 </span><span class=w>             </span><span class=l>run any program you fancy.</span><span class=w>
-</span><span class=w>             </span><span class=l>we&#39;re just running echo here for an easy demo.</span><span class=w>
+</span><span class=w>             </span><span class=l>we&#39;re just running /bin/echo here for an easy demo.</span><span class=w>
 </span><span class=w>    </span><span class=nt>in</span><span class=p>:</span><span class=w>
 </span><span class=w>      </span><span class=nt>cmd</span><span class=p>:</span><span class=w> </span><span class=l>echo this is step 2</span><span class=w>
-</span></code></pre></div><p>Save this file as <code>./my-first-pipeline.yaml</code>.</p>
+</span></code></pre></div>
+</div>
+<input type=radio id=first-pipe-radio-windows name=first-pipe-selector class=tab-radio tabindex=0>
+<label for=first-pipe-radio-windows class=tab-label>windows</label>
+<div class=tab>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-yaml data-lang=yaml><span class=c># ./my-first-pipeline.yaml</span><span class=w>
+</span><span class=w></span><span class=c># To execute this pipeline, shell something like:</span><span class=w>
+</span><span class=w></span><span class=c># pypyr my-first-pipeline</span><span class=w>
+</span><span class=w></span><span class=nt>steps</span><span class=p>:</span><span class=w>
+</span><span class=w>  </span>- <span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>pypyr.steps.echo</span><span class=w>
+</span><span class=w>    </span><span class=nt>comment</span><span class=p>:</span><span class=w> </span><span class=l>output echoMe</span><span class=w>
+</span><span class=w>    </span><span class=nt>in</span><span class=p>:</span><span class=w>
+</span><span class=w>      </span><span class=nt>echoMe</span><span class=p>:</span><span class=w> </span><span class=l>this is step 1</span><span class=w>
+</span><span class=w>
+</span><span class=w>  </span>- <span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>pypyr.steps.cmd</span><span class=w>
+</span><span class=w>    </span><span class=nt>comment</span><span class=p>:</span><span class=w> </span><span class=l>Actually invokes any executable program on your system.</span><span class=w>
+</span><span class=w>             </span><span class=l>The program must be available in current path.</span><span class=w>
+</span><span class=w>             </span><span class=l>Run any program you fancy.</span><span class=w>
+</span><span class=w>             </span><span class=l>Here we&#39;re running the powershell executable.</span><span class=w>
+</span><span class=w>             </span><span class=l>We&#39;re just using powershell&#39;s echo for an easy demo,</span><span class=w>
+</span><span class=w>             </span><span class=l>but you can invoke any powershell command you like instead.</span><span class=w>
+</span><span class=w>    </span><span class=nt>in</span><span class=p>:</span><span class=w>
+</span><span class=w>      </span><span class=nt>cmd</span><span class=p>:</span><span class=w> </span><span class=l>powershell.exe -NoProfile -Command &#34;echo &#39;this is step 2&#39;&#34;</span><span class=w>
+</span></code></pre></div>
+</div>
+</div>
+<p>Save this file as <code>./my-first-pipeline.yaml</code>.</p>
 <p>Now you can run your pipeline like this:</p>
 <div class=app-window>
 <div class=app-window-top-bar>
@@ -640,34 +687,80 @@ $</code></pre></div>
 </div>
 </div>
 <p>The second step here is the <a href=https://pypyr.io/docs/steps/cmd/>cmd step</a> - this
-built-in step allows you to execute any command available on your system. For
-the sake of hello-world simplicity, we&rsquo;re just using good old <code>echo</code>, but you
-can substitute this with something more useful.</p>
-<p>pypyr has a whole bunch of ready-made <a href=https://pypyr.io/docs/steps/>built-in steps</a> that you can use for various tasks such as working with files, variables,
+built-in step allows you to run any executable available on your system. For the
+sake of hello-world simplicity, we&rsquo;re just running good old <code>echo</code>, but you
+can substitute this with any executable program available in your <code>$PATH</code>.</p>
+<p>If you don&rsquo;t want to rely on <code>$PATH</code> to resolve your program location, you can
+specify the full absolute path instead. You can also specify a relative path to
+the current working directory.</p>
+<p>We&rsquo;re starting with <code>pypyr.steps.cmd</code> because you&rsquo;re likely to use it a lot. But
+pypyr also has a whole bunch of other ready-made <a href=https://pypyr.io/docs/steps/>built-in steps</a> that you can use for various tasks such as working with files, variables,
 merging configuring, paths & custom inline code. You can also make your own
 <a href=https://pypyr.io/docs/api/step/>custom step</a> without fuss.</p>
+<h3 id=cross-platform-compatibility>cross-platform compatibility <a href=#cross-platform-compatibility class=headline-anchor aria-label=anchor><svg class="permalink"><title>permalink</title><use href="https://pypyr.io/icons/external-link.054f8ebb57944b2bc52ea4f0ecd16197.svg#external-link"/></svg></a></h3><p>Linux & MacOS can run the <code>posix</code> sample yaml as is.</p>
+<p>On Windows, if you&rsquo;re running pypyr via
+<a href=https://docs.microsoft.com/en-us/windows/wsl/>WSL</a> you can also use the
+<code>posix</code> samples as is, but if you&rsquo;re running pypyr natively on Windows use the
+<code>windows</code> sample yaml instead. The reason for this is that posix-compliant
+systems have <code>/bin/echo</code> available as a discrete program, whereas on Windows
+<code>echo</code> is baked into the shell instead.</p>
+<p>Just for the purposes of an introductory demonstration of running an .exe on
+Windows via <code>pypyr.steps.cmd</code>, we&rsquo;re invoking <code>powershell.exe</code> and running the
+<code>echo</code> command inside it. In real world scenarios, if you did really want to run
+a shell command, you could just use <a href=https://pypyr.io/docs/steps/shell/>pypyr.steps.shell</a> instead.</p>
+<p>In general, pypyr pipelines can absolutely be cross-platform. In fact, this is
+one of the reasons you might be using pypyr. For example, generally you can
+specify all filesystem paths with <code>/</code> as you would for POSIX, and this will
+automatically resolve correctly to the Windows <code>\</code>.</p>
 <h2 id=passing-arguments-to-your-pipeline>passing arguments to your pipeline <a href=#passing-arguments-to-your-pipeline class=headline-anchor aria-label=anchor><svg class="permalink"><title>permalink</title><use href="https://pypyr.io/icons/external-link.054f8ebb57944b2bc52ea4f0ecd16197.svg#external-link"/></svg></a></h2><p>You can pass arguments from the cli to your pipeline easy peasy.</p>
-<p>All you need to do is add a <a href=https://pypyr.io/docs/context-parsers/>context_parser</a></p>
-<p>In this example we&rsquo;ll be using a key-value pair parser, which will let you specify
-your own key-value pairs so you can access the values you need by key. There
-are other types of context parser that can parse the cmd input differently for
-you.</p>
+<p>All you need to do is add a <a href=https://pypyr.io/docs/context-parsers/>context_parser</a>.</p>
+<p>In this example we&rsquo;ll be using a key-value pair parser, which will let you
+specify your own key-value pairs so you can access the values you need by key.
+There are other types of built-in context parser that can parse the cmd input
+differently for you.</p>
 <p>The context parser will add these values into the pypyr context for you. Your
 pipeline steps can then use these values as they please with
 <a href=https://pypyr.io/docs/substitutions/>{formatting expressions}</a>.</p>
+<p>This time round, instead of running <code>/bin/echo</code>, we&rsquo;re going to execute the
+<code>ping</code> program:</p>
+<div class=tabs>
+<input type=radio id=ping-example-radio-posix name=ping-example-selector class=tab-radio tabindex=0 checked>
+<label for=ping-example-radio-posix class=tab-label>posix</label>
+<div class=tab>
 <div class=highlight><pre tabindex=0 class=chroma><code class=language-yaml data-lang=yaml><span class=c># ./pipe-with-args.yaml</span><span class=w>
 </span><span class=w></span><span class=c># To execute this pipeline, shell something like:</span><span class=w>
-</span><span class=w></span><span class=c># pypyr pipe-with-args akey=avalue anotherkey=&#34;another arbitrary value&#34;</span><span class=w>
+</span><span class=w></span><span class=c># pypyr pipe-with-args akey=avalue anotherkey=&#34;another arbitrary value&#34; count=1 ip=127.0.0.1</span><span class=w>
 </span><span class=w></span><span class=nt>context_parser</span><span class=p>:</span><span class=w> </span><span class=l>pypyr.parser.keyvaluepairs</span><span class=w>
 </span><span class=w></span><span class=nt>steps</span><span class=p>:</span><span class=w>
 </span><span class=w>  </span>- <span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>pypyr.steps.echo</span><span class=w>
 </span><span class=w>    </span><span class=nt>in</span><span class=p>:</span><span class=w>
-</span><span class=w>      </span><span class=nt>echoMe</span><span class=p>:</span><span class=w> </span><span class=l>this is akey&#39;s value {akey}. It came from the cli args.</span><span class=w>
+</span><span class=w>      </span><span class=nt>echoMe</span><span class=p>:</span><span class=w> </span><span class=l>this is akey&#39;s value - {akey}. It came from the cli args. {anotherkey}.</span><span class=w>
 </span><span class=w>
 </span><span class=w>  </span>- <span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>pypyr.steps.cmd</span><span class=w>
 </span><span class=w>    </span><span class=nt>in</span><span class=p>:</span><span class=w>
-</span><span class=w>      </span><span class=nt>cmd</span><span class=p>:</span><span class=w> </span><span class=l>echo we can inject {anotherkey} into your cmd</span><span class=w>
-</span></code></pre></div><p>Save this file as <code>./pipe-with-args.yaml</code>.</p>
+</span><span class=w>      </span><span class=nt>cmd</span><span class=p>:</span><span class=w> </span><span class=l>ping -c {count} {ip}</span><span class=w>
+</span></code></pre></div>
+</div>
+<input type=radio id=ping-example-radio-windows name=ping-example-selector class=tab-radio tabindex=0>
+<label for=ping-example-radio-windows class=tab-label>windows</label>
+<div class=tab>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-yaml data-lang=yaml><span class=c># ./pipe-with-args.yaml</span><span class=w>
+</span><span class=w></span><span class=c># To execute this pipeline, shell something like:</span><span class=w>
+</span><span class=w></span><span class=c># pypyr pipe-with-args akey=avalue anotherkey=&#34;another arbitrary value&#34; count=1 ip=127.0.0.1</span><span class=w>
+</span><span class=w></span><span class=nt>context_parser</span><span class=p>:</span><span class=w> </span><span class=l>pypyr.parser.keyvaluepairs</span><span class=w>
+</span><span class=w></span><span class=nt>steps</span><span class=p>:</span><span class=w>
+</span><span class=w>  </span>- <span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>pypyr.steps.echo</span><span class=w>
+</span><span class=w>    </span><span class=nt>in</span><span class=p>:</span><span class=w>
+</span><span class=w>      </span><span class=nt>echoMe</span><span class=p>:</span><span class=w> </span><span class=l>this is akey&#39;s value - {akey}. It came from the cli args. {anotherkey}.</span><span class=w>
+</span><span class=w>
+</span><span class=w>  </span>- <span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>pypyr.steps.cmd</span><span class=w>
+</span><span class=w>    </span><span class=nt>comment</span><span class=p>:</span><span class=w> </span><span class=l>runs C:\Windows\System32\PING.EXE</span><span class=w>
+</span><span class=w>    </span><span class=nt>in</span><span class=p>:</span><span class=w>
+</span><span class=w>      </span><span class=nt>cmd</span><span class=p>:</span><span class=w> </span><span class=l>ping /n {count} {ip}</span><span class=w>
+</span></code></pre></div>
+</div>
+</div>
+<p>Save this file as <code>./pipe-with-args.yaml</code>.</p>
 <p>Now you can run this pipeline like this:</p>
 <div class=app-window>
 <div class=app-window-top-bar>
@@ -677,20 +770,100 @@ pipeline steps can then use these values as they please with
 <span class=app-window-title>term</span>
 </div>
 <div class=app-window-content>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text>$ pypyr pipe-with-args akey=avalue anotherkey=&#34;another value&#34;
-this is akey&#39;s value avalue. It came from the cli args.
-we can inject another value into your cmd
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text>$ pypyr pipe-with-args akey=avalue anotherkey=&#34;another arbitrary value&#34; count=1 ip=127.0.0.1
+this is akey&#39;s value - avalue. It came from the cli args. another arbitrary value.
+PING 127.0.0.1 (127.0.0.1): 56 data bytes
+64 bytes from 127.0.0.1: icmp_seq=0 ttl=64 time=0.063 ms
+
+--- 127.0.0.1 ping statistics ---
+1 packets transmitted, 1 packets received, 0.0% packet loss
+round-trip min/avg/max/stddev = 0.063/0.063/0.063/0.000 ms
 
 $</code></pre></div>
 </div>
 </div>
-<h2 id=looping-over-commands>looping over commands <a href=#looping-over-commands class=headline-anchor aria-label=anchor><svg class="permalink"><title>permalink</title><use href="https://pypyr.io/icons/external-link.054f8ebb57944b2bc52ea4f0ecd16197.svg#external-link"/></svg></a></h2><p>You can add extra functionality to <em>any</em> step in pypyr by decorating the step
+<h2 id=branching-loops-retries>branching, loops, retries <a href=#branching-loops-retries class=headline-anchor aria-label=anchor><svg class="permalink"><title>permalink</title><use href="https://pypyr.io/icons/external-link.054f8ebb57944b2bc52ea4f0ecd16197.svg#external-link"/></svg></a></h2><p>You can add extra functionality to <em>any</em> step in pypyr by decorating the step
 with a <a href=https://pypyr.io/docs/decorators/>decorator</a>. pypyr gives you built-in
-decorators to loop, retry a failure condition automatically and selectively
-run a step only if a certain condition is true - all of this without you having
-to code it yourself.</p>
+decorators to <a href=https://pypyr.io/docs/getting-started/loops/>loop</a>, <a href=https://pypyr.io/docs/getting-started/error-handling/#retry-on-error>retry a failure condition
+automatically</a> and <a href=https://pypyr.io/docs/getting-started/conditional-logic/>selectively run
+a step only if a certain condition is true</a> -
+all of this without you having to code it yourself.</p>
+<h3 id=conditional-execution>conditional execution <a href=#conditional-execution class=headline-anchor aria-label=anchor><svg class="permalink"><title>permalink</title><use href="https://pypyr.io/icons/external-link.054f8ebb57944b2bc52ea4f0ecd16197.svg#external-link"/></svg></a></h3><p>You can dynamically <a href=https://pypyr.io/docs/decorators/run/>run</a> or <a href=https://pypyr.io/docs/decorators/skip/>skip</a> any step you want:</p>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-yaml data-lang=yaml><span class=c># ./conditional-logic.yaml</span><span class=w>
+</span><span class=w></span><span class=nt>context_parser</span><span class=p>:</span><span class=w> </span><span class=l>pypyr.parser.keys</span><span class=w>
+</span><span class=w></span><span class=nt>steps</span><span class=p>:</span><span class=w>
+</span><span class=w>  </span>- <span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>pypyr.steps.default</span><span class=w>
+</span><span class=w>    </span><span class=nt>comment</span><span class=p>:</span><span class=w> </span><span class=l>set default values for optional cli inputs</span><span class=w>
+</span><span class=w>    </span><span class=nt>in</span><span class=p>:</span><span class=w>
+</span><span class=w>      </span><span class=nt>defaults</span><span class=p>:</span><span class=w>
+</span><span class=w>        </span><span class=nt>A</span><span class=p>:</span><span class=w> </span><span class=kc>False</span><span class=w>
+</span><span class=w>        </span><span class=nt>B</span><span class=p>:</span><span class=w> </span><span class=kc>False</span><span class=w>
+</span><span class=w>
+</span><span class=w>  </span>- <span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>pypyr.steps.echo</span><span class=w>
+</span><span class=w>    </span><span class=nt>in</span><span class=p>:</span><span class=w>
+</span><span class=w>      </span><span class=nt>echoMe</span><span class=p>:</span><span class=w> </span><span class=l>begin</span><span class=w>
+</span><span class=w>
+</span><span class=w>  </span>- <span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>pypyr.steps.echo</span><span class=w>
+</span><span class=w>    </span><span class=nt>run</span><span class=p>:</span><span class=w> </span><span class=s1>&#39;{A}&#39;</span><span class=w>
+</span><span class=w>    </span><span class=nt>in</span><span class=p>:</span><span class=w>
+</span><span class=w>      </span><span class=nt>echoMe</span><span class=p>:</span><span class=w> </span><span class=l>A</span><span class=w>
+</span><span class=w>
+</span><span class=w>  </span>- <span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>pypyr.steps.echo</span><span class=w>
+</span><span class=w>    </span><span class=nt>run</span><span class=p>:</span><span class=w> </span><span class=s1>&#39;{B}&#39;</span><span class=w>
+</span><span class=w>    </span><span class=nt>in</span><span class=p>:</span><span class=w>
+</span><span class=w>      </span><span class=nt>echoMe</span><span class=p>:</span><span class=w> </span><span class=l>B</span><span class=w>
+</span><span class=w>
+</span><span class=w>  </span>- <span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>pypyr.steps.echo</span><span class=w>
+</span><span class=w>    </span><span class=nt>in</span><span class=p>:</span><span class=w>
+</span><span class=w>      </span><span class=nt>echoMe</span><span class=p>:</span><span class=w> </span><span class=l>end</span><span class=w>
+</span></code></pre></div><p>The <a href=https://pypyr.io/docs/context-parsers/keys/>pypyr.parser.keys</a> context parser
+creates a boolean variable set to <code>True</code> for every key you pass in via the cli.</p>
+<p>The <code>run</code> condition on the A and B steps uses a <a href=https://pypyr.io/docs/substitutions/format-string/>{formatting expression}</a> to check whether the boolean value
+of <code>A</code> or <code>B</code> is <code>True</code>.</p>
+<p>You can now selectively control which steps you want to run by changing
+the cli input arguments:</p>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text>$ pypyr conditional-logic
+begin
+end
+
+$ pypyr conditional-logic A
+begin
+A
+end
+
+$ pypyr conditional-logic B
+begin
+B
+end
+
+$ pypyr conditional-logic A B
+begin
+A
+B
+end
+</code></pre></div><p>Notice that we&rsquo;re just using the <code>pypyr.steps.echo</code> step here to demonstrate the
+principle - you can apply the conditional <a href=https://pypyr.io/docs/decorators/run/>run</a> decorator to any given step, including your own custom commands.</p>
+<h3 id=automatic-retry>automatic retry <a href=#automatic-retry class=headline-anchor aria-label=anchor><svg class="permalink"><title>permalink</title><use href="https://pypyr.io/icons/external-link.054f8ebb57944b2bc52ea4f0ecd16197.svg#external-link"/></svg></a></h3><p>You can automatically <a href=https://pypyr.io/docs/decorators/retry/>retry</a> any given
+step if it fails, without having to write any code.</p>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-yaml data-lang=yaml><span class=nt>steps</span><span class=p>:</span><span class=w>
+</span><span class=w>  </span>- <span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>pypyr.steps.cmd</span><span class=w>
+</span><span class=w>    </span><span class=nt>retry</span><span class=p>:</span><span class=w>
+</span><span class=w>      </span><span class=nt>max</span><span class=p>:</span><span class=w> </span><span class=m>4</span><span class=w>
+</span><span class=w>    </span><span class=nt>in</span><span class=p>:</span><span class=w>
+</span><span class=w>      </span><span class=nt>cmd</span><span class=p>:</span><span class=w> </span><span class=l>curl https://arb-unreliable-url-example-xyz/</span><span class=w>
+</span></code></pre></div><p>This is calling the <a href=https://curl.se>curl</a> program - we&rsquo;re just using this
+because it&rsquo;s widely available on different operating systems, but you could use
+<a href=https://www.gnu.org/software/wget/>wget</a> or whatever takes your fancy instead.
+If <code>curl</code> returns an error, pypyr will retry the command automatically up to 4
+times.</p>
+<p>If the 4th retry still fails, pypyr will not go to the next step. pypyr will
+raise the error & report failure instead.</p>
 <h3 id=static-loop>static loop <a href=#static-loop class=headline-anchor aria-label=anchor><svg class="permalink"><title>permalink</title><use href="https://pypyr.io/icons/external-link.054f8ebb57944b2bc52ea4f0ecd16197.svg#external-link"/></svg></a></h3><p>Let&rsquo;s add a simple loop to a command using the
-<a href=https://pypyr.io/docs/decorators/foreach/>foreach decorator</a>:</p>
+<a href=https://pypyr.io/docs/decorators/foreach/>foreach decorator</a>:
+<div class=tabs>
+<input type=radio id=static-loop-radio-posix name=static-loop-selector class=tab-radio tabindex=0 checked>
+<label for=static-loop-radio-posix class=tab-label>posix</label>
+<div class=tab>
 <div class=highlight><pre tabindex=0 class=chroma><code class=language-yaml data-lang=yaml><span class=c># ./fruit-loop.yaml</span><span class=w>
 </span><span class=w></span><span class=nt>steps</span><span class=p>:</span><span class=w>
 </span><span class=w>  </span>- <span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>pypyr.steps.echo</span><span class=w>
@@ -705,8 +878,37 @@ to code it yourself.</p>
 </span><span class=w>  </span>- <span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>pypyr.steps.echo</span><span class=w>
 </span><span class=w>    </span><span class=nt>in</span><span class=p>:</span><span class=w>
 </span><span class=w>      </span><span class=nt>echoMe</span><span class=p>:</span><span class=w> </span><span class=l>end</span><span class=w>
-</span></code></pre></div><p>Notice that for the <code>cmd</code> step we&rsquo;re just using <code>echo</code> for the sake of example,
-you can instead use whatever command available on your system.</p>
+</span></code></pre></div>
+</div>
+<input type=radio id=static-loop-radio-windows name=static-loop-selector class=tab-radio tabindex=0>
+<label for=static-loop-radio-windows class=tab-label>windows</label>
+<div class=tab>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-yaml data-lang=yaml><span class=c># ./fruit-loop.yaml</span><span class=w>
+</span><span class=w></span><span class=nt>steps</span><span class=p>:</span><span class=w>
+</span><span class=w>  </span>- <span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>pypyr.steps.echo</span><span class=w>
+</span><span class=w>    </span><span class=nt>in</span><span class=p>:</span><span class=w>
+</span><span class=w>      </span><span class=nt>echoMe</span><span class=p>:</span><span class=w> </span><span class=l>begin</span><span class=w>
+</span><span class=w>
+</span><span class=w>  </span>- <span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>pypyr.steps.cmd</span><span class=w>
+</span><span class=w>    </span><span class=nt>foreach</span><span class=p>:</span><span class=w> </span><span class=p>[</span><span class=l>apple, pear, banana]</span><span class=w>
+</span><span class=w>    </span><span class=nt>in</span><span class=p>:</span><span class=w>
+</span><span class=w>      </span><span class=nt>cmd</span><span class=p>:</span><span class=w> </span><span class=l>powershell.exe -NoProfile -Command &#34;echo &#39;arb-command --arg {i}&#39;&#34;</span><span class=w>
+</span><span class=w>
+</span><span class=w>  </span>- <span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>pypyr.steps.echo</span><span class=w>
+</span><span class=w>    </span><span class=nt>in</span><span class=p>:</span><span class=w>
+</span><span class=w>      </span><span class=nt>echoMe</span><span class=p>:</span><span class=w> </span><span class=l>end</span><span class=w>
+</span></code></pre></div>
+</div>
+</div></p>
+<p>Notice that for the <code>cmd</code> step we&rsquo;re just using <code>echo</code> for the sake of example,
+you can instead use whatever executable is available on your system with
+whatever input args & switches you want.</p>
+<div class="admonition tip" role=figure>
+<div class=admonition-tip-icon></div>
+<div class=admonition-content>Just putting <code>echo</code> in front of a command is a handy way of troubleshooting
+more complex command sequences - you print out exactly the final formatted
+value pypyr passes to the underlying operating system.</div>
+</div>
 <p><code>{i}</code> is a context variable that contains the current item of the iterator.</p>
 <p>Running this pipeline looks like this:
 <div class=app-window>
@@ -733,6 +935,10 @@ inject the values from the cli. As always, use a context parser to access
 cli arguments: in this case,
 <a href=https://pypyr.io/docs/context-parsers/list/>pypyr.parser.list</a> will parse all
 the input arguments into a list named <code>{argList}</code> for you.</p>
+<div class=tabs>
+<input type=radio id=dynamic-loop-radio-posix name=dynamic-loop-selector class=tab-radio tabindex=0 checked>
+<label for=dynamic-loop-radio-posix class=tab-label>posix</label>
+<div class=tab>
 <div class=highlight><pre tabindex=0 class=chroma><code class=language-yaml data-lang=yaml><span class=c># ./fruit-loop</span><span class=w>
 </span><span class=w></span><span class=nt>context_parser</span><span class=p>:</span><span class=w> </span><span class=l>pypyr.parser.list</span><span class=w>
 </span><span class=w></span><span class=nt>steps</span><span class=p>:</span><span class=w>
@@ -748,7 +954,34 @@ the input arguments into a list named <code>{argList}</code> for you.</p>
 </span><span class=w>  </span>- <span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>pypyr.steps.echo</span><span class=w>
 </span><span class=w>    </span><span class=nt>in</span><span class=p>:</span><span class=w>
 </span><span class=w>      </span><span class=nt>echoMe</span><span class=p>:</span><span class=w> </span><span class=l>end</span><span class=w>
-</span></code></pre></div><p>Now you can control dynamically how many to times to run your command from the
+</span></code></pre></div>
+</div>
+<input type=radio id=dynamic-loop-radio-windows name=dynamic-loop-selector class=tab-radio tabindex=0>
+<label for=dynamic-loop-radio-windows class=tab-label>windows</label>
+<div class=tab>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-yaml data-lang=yaml><span class=c># ./fruit-loop</span><span class=w>
+</span><span class=w></span><span class=nt>context_parser</span><span class=p>:</span><span class=w> </span><span class=l>pypyr.parser.list</span><span class=w>
+</span><span class=w></span><span class=nt>steps</span><span class=p>:</span><span class=w>
+</span><span class=w>  </span>- <span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>pypyr.steps.echo</span><span class=w>
+</span><span class=w>    </span><span class=nt>in</span><span class=p>:</span><span class=w>
+</span><span class=w>      </span><span class=nt>echoMe</span><span class=p>:</span><span class=w> </span><span class=l>begin</span><span class=w>
+</span><span class=w>
+</span><span class=w>  </span>- <span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>pypyr.steps.cmd</span><span class=w>
+</span><span class=w>    </span><span class=nt>foreach</span><span class=p>:</span><span class=w> </span><span class=s1>&#39;{argList}&#39;</span><span class=w>
+</span><span class=w>    </span><span class=nt>in</span><span class=p>:</span><span class=w>
+</span><span class=w>      </span><span class=nt>cmd</span><span class=p>:</span><span class=w> </span><span class=l>powershell.exe -NoProfile -Command &#34;echo &#39;arb-command --arg {i}&#39;&#34;</span><span class=w>
+</span><span class=w>
+</span><span class=w>  </span>- <span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>pypyr.steps.echo</span><span class=w>
+</span><span class=w>    </span><span class=nt>in</span><span class=p>:</span><span class=w>
+</span><span class=w>      </span><span class=nt>echoMe</span><span class=p>:</span><span class=w> </span><span class=l>end</span><span class=w>
+</span></code></pre></div>
+</div>
+</div>
+<p>Notice that the <code>foreach</code> input now uses a
+<a href=https://pypyr.io/docs/substitutions/format-string/>{formatting expression}</a> to get
+the value of the <code>argList</code> variable set by the cli args input context parser,
+instead of a hard-coded list.</p>
+<p>Now you can control dynamically how many to times to run your command from the
 cli like this:</p>
 <div class=app-window>
 <div class=app-window-top-bar>
@@ -769,12 +1002,13 @@ arb-command --arg pear
 end</code></pre></div>
 </div>
 </div>
-<p>The first run, without any arguments, just prints <code>begin</code> and <code>end</code>: since the
+<p>The first run, without any arguments, just prints <code>begin</code> and <code>end</code> - since the
 input list is empty there is nothing over which to loop.</p>
 <h2 id=what-next>what next? <a href=#what-next class=headline-anchor aria-label=anchor><svg class="permalink"><title>permalink</title><use href="https://pypyr.io/icons/external-link.054f8ebb57944b2bc52ea4f0ecd16197.svg#external-link"/></svg></a></h2><p>You probably should check out:</p>
 <ul>
 <li>understanding <a href=https://pypyr.io/docs/getting-started/basic-concepts/>basic pipeline structure</a></li>
 <li>How to <a href=https://pypyr.io/docs/getting-started/variables/>declare & use variables</a></li>
+<li>How to do <a href=https://pypyr.io/docs/getting-started/conditional-logic/>branching with conditional logic</a></li>
 <li>How to use <a href=https://pypyr.io/docs/getting-started/loops/>loops</a></li>
 <li>Deal with <a href=https://pypyr.io/docs/getting-started/error-handling/>errors</a></li>
 </ul>
@@ -789,7 +1023,7 @@ input list is empty there is nothing over which to loop.</p>
 </ul>
 </aside>
 <div class="page-git-info elevation-02">
-<small class=small-block>last updated on <time datetime=2021-10-07T15:02:20+01:00>2021-10-07 15:02</time>.</small>
+<small class=small-block>last updated on <time datetime=2022-02-26T11:44:59Z>2022-02-26 11:44</time>.</small>
 </div>
 </div>
 <footer class="footer elevation-01">

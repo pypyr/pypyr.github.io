@@ -4,7 +4,7 @@
 <meta name=viewport content="width=device-width,initial-scale=1">
 <title>pypyr.steps.cmd | pypyr</title>
 <meta name=description content="Execute any external program, command or script as a task in a task-runner pipeline step.">
-<link rel=stylesheet href=https://pypyr.io/css/styles.min.99e596997d7f6f9df9ec7bb05cdd3e8c62dd9d484bbe6858e05e90aebf2c1ec2.css integrity="sha256-meWWmX1/b5357HuwXN0+jGLdnUhLvmhY4F6Qrr8sHsI=">
+<link rel=stylesheet href=https://pypyr.io/css/styles.min.ad50c9856a15c2caa608f0b1b8a46d3ff692bb9355af1f7009b1b3938d26a886.css integrity="sha256-rVDJhWoVwsqmCPCxuKRtP/aSu5NVrx9wCbGzk40mqIY=">
 <link rel=stylesheet href=https://pypyr.io/css/code-highlight.min.78f63f1d4f45beaf423efd3dc8e6914c2abdca1b5391cd91368a32efecd9d7e3.css integrity="sha256-ePY/HU9Fvq9CPv09yOaRTCq9yhtTkc2RNooy7+zZ1+M=">
 <script defer src=https://pypyr.io/js/script.min.45064b9f444bbb1631eeef9f9ef2be6985c45b5f06bddb6644ce049732706a06.js integrity="sha256-RQZLn0RLuxYx7u+fnvK+aYXEW18GvdtmRM4ElzJwagY="></script>
 <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700%7cRoboto+Mono:400,400i&display=swap" rel=stylesheet>
@@ -23,7 +23,7 @@
 <meta property="og:url" content="https://pypyr.io/docs/steps/cmd/">
 <meta name=twitter:card content="summary_large_image">
 <meta name=twitter:site content="@pypyrpipes">
-<script type=application/ld+json>{"@context":"https://schema.org","@graph":[{"@id":"https://pypyr.io/#organization","@type":"Organization","name":"pypyr","url":"https://pypyr.io/","description":"The pypyr project is a free open-source task-runner cli \u0026 python api for automation pipelines.","logo":{"@type":"ImageObject","url":"https://pypyr.io/images/pypyr-taskrunner-logo-square.63875e43ff40d8ae40e93a6043b4328b962f54f52974aaa27cedec52220de665.svg","height":112,"width":112},"sameAs":["https://github.com/pypyr/","https://twitter.com/pypyrpipes/","https://pypi.org/user/pypyr/","https://hub.docker.com/u/pypyr/","https://en.gravatar.com/pypyr/"]},{"@type":"TechArticle","author":{"@type":"Person","name":"pypyr contributor"},"articleSection":"steps","dateModified":"2022-02-19T17:54:43Z","datePublished":"2020-06-13T21:38:57+01:00","headline":"Execute any external program, command or script as a task in a pipeline step.","image":[{"@type":"ImageObject","url":"https://pypyr.io/images/1x1/pypyr-taskrunner-yaml-pipeline-automation-1200x1200.52764d3c6f40232b3cdc33f5b8fbaeadad56cc310c8dd5588d30828296b5290d.png","height":1200,"width":1200},{"@type":"ImageObject","url":"https://pypyr.io/images/4x3/pypyr-taskrunner-yaml-pipeline-automation-1200x900.e8e70443377aeb11c190835e8d2ed0c844d31a82a0c2e8a744a9999cd03e0de9.png","height":900,"width":1200},{"@type":"ImageObject","url":"https://pypyr.io/images/16x9/pypyr-taskrunner-yaml-pipeline-automation-1920x1080.cc9ae11626c8312e087058adb13bfff702162ce39c355065170c1b87850f3034.png","height":1080,"width":1920}],"inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https://pypyr.io/docs/steps/cmd/"},"publisher":{"@id":"https://pypyr.io/#organization"},"url":"https://pypyr.io/docs/steps/cmd/","wordCount":909}]}</script>
+<script type=application/ld+json>{"@context":"https://schema.org","@graph":[{"@id":"https://pypyr.io/#organization","@type":"Organization","name":"pypyr","url":"https://pypyr.io/","description":"The pypyr project is a free open-source task-runner cli \u0026 python api for automation pipelines.","logo":{"@type":"ImageObject","url":"https://pypyr.io/images/pypyr-taskrunner-logo-square.63875e43ff40d8ae40e93a6043b4328b962f54f52974aaa27cedec52220de665.svg","height":112,"width":112},"sameAs":["https://github.com/pypyr/","https://twitter.com/pypyrpipes/","https://pypi.org/user/pypyr/","https://hub.docker.com/u/pypyr/","https://en.gravatar.com/pypyr/"]},{"@type":"TechArticle","author":{"@type":"Person","name":"pypyr contributor"},"articleSection":"steps","dateModified":"2022-02-26T11:44:59Z","datePublished":"2020-06-13T21:38:57+01:00","headline":"Execute any external program, command or script as a task in a pipeline step.","image":[{"@type":"ImageObject","url":"https://pypyr.io/images/1x1/pypyr-taskrunner-yaml-pipeline-automation-1200x1200.52764d3c6f40232b3cdc33f5b8fbaeadad56cc310c8dd5588d30828296b5290d.png","height":1200,"width":1200},{"@type":"ImageObject","url":"https://pypyr.io/images/4x3/pypyr-taskrunner-yaml-pipeline-automation-1200x900.e8e70443377aeb11c190835e8d2ed0c844d31a82a0c2e8a744a9999cd03e0de9.png","height":900,"width":1200},{"@type":"ImageObject","url":"https://pypyr.io/images/16x9/pypyr-taskrunner-yaml-pipeline-automation-1920x1080.cc9ae11626c8312e087058adb13bfff702162ce39c355065170c1b87850f3034.png","height":1080,"width":1920}],"inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https://pypyr.io/docs/steps/cmd/"},"publisher":{"@id":"https://pypyr.io/#organization"},"url":"https://pypyr.io/docs/steps/cmd/","wordCount":911}]}</script>
 <link rel=apple-touch-icon sizes=180x180 href=/favicons/apple-touch-icon.925deabb48d91a80924b5d04ff56d2b8f42ba1d1e1438cb7d8948cce1138208c.png>
 <link rel=icon type=image/png sizes=32x32 href=/favicons/favicon-32x32.b869433d27c4679a5fbce03a8489268a539cbc781259bff14618ae2f018334e6.png>
 <link rel=icon type=image/png sizes=16x16 href=/favicons/favicon-16x16.8bcd9f870e0a86445e0505ce6e816b76a40b08a06e2dcd1ec1f90c395ecbeaf6.png>
@@ -601,8 +601,8 @@ this instead. <code>cmd</code> runs a command, it does not invoke the shell.</p>
 </span><span class=w>      </span><span class=nt>save</span><span class=p>:</span><span class=w> </span><span class=kc>False</span><span class=w> </span><span class=c># optional. Set True to save cmd output to context.</span><span class=w>
 </span><span class=w>      </span><span class=nt>cwd</span><span class=p>:</span><span class=w> </span><span class=l>./path/dir/here</span><span class=w> </span><span class=c># optional. Defaults to current execution dir.</span><span class=w>
 </span></code></pre></div><p>You can specify the full absolute path to the command, or use a relative path.
-If you are using a relative path, the cmd will resolve relative the current
-working directory before searching <code>$PATH</code>.</p>
+If you are using a relative path, the cmd will try to resolve relative the
+current working directory before searching <code>$PATH</code>.</p>
 <p>Supports string <a href=https://pypyr.io/docs/substitutions/>substitutions</a> for all inputs.</p>
 <h3 id=changing-the-working-directory>changing the working directory <a href=#changing-the-working-directory class=headline-anchor aria-label=anchor><svg class="permalink"><title>permalink</title><use href="https://pypyr.io/icons/external-link.054f8ebb57944b2bc52ea4f0ecd16197.svg#external-link"/></svg></a></h3><p>If you specify <code>cwd</code>, pypyr will change the current working directory to
 <code>cwd</code> to execute this command. The directory change is only for the
@@ -734,7 +734,7 @@ Python environment.</p>
 </ul>
 </aside>
 <div class="page-git-info elevation-02">
-<small class=small-block>last updated on <time datetime=2022-02-19T17:54:43Z>2022-02-19 17:54</time>.</small>
+<small class=small-block>last updated on <time datetime=2022-02-26T11:44:59Z>2022-02-26 11:44</time>.</small>
 </div>
 </div>
 <footer class="footer elevation-01">
