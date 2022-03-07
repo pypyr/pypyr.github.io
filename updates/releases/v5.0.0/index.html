@@ -2,15 +2,14 @@
 <head>
 <meta charset=utf-8>
 <meta name=viewport content="width=device-width,initial-scale=1">
-<title>pypyr release v5.0.0 | pypyr</title>
-<meta name=description content="Relative pipelines + API breaking changes.">
+<title>pypyr release v5.0.0 | pypyr</title><meta name=description content="Relative pipelines + API breaking changes.">
 <link rel=stylesheet href=https://pypyr.io/css/styles.min.ad50c9856a15c2caa608f0b1b8a46d3ff692bb9355af1f7009b1b3938d26a886.css integrity="sha256-rVDJhWoVwsqmCPCxuKRtP/aSu5NVrx9wCbGzk40mqIY=">
 <link rel=stylesheet href=https://pypyr.io/css/code-highlight.min.78f63f1d4f45beaf423efd3dc8e6914c2abdca1b5391cd91368a32efecd9d7e3.css integrity="sha256-ePY/HU9Fvq9CPv09yOaRTCq9yhtTkc2RNooy7+zZ1+M=">
-<script defer src=https://pypyr.io/js/script.min.45064b9f444bbb1631eeef9f9ef2be6985c45b5f06bddb6644ce049732706a06.js integrity="sha256-RQZLn0RLuxYx7u+fnvK+aYXEW18GvdtmRM4ElzJwagY="></script>
+<script defer src=https://pypyr.io/js/script.min.8c51c28efa613c3bc853b2418e260b33482af182f6ca8ebeeb825b5b8e094423.js integrity="sha256-jFHCjvphPDvIU7JBjiYLM0gq8YL2yo6+64JbW44JRCM="></script>
 <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700%7cRoboto+Mono:400,400i&display=swap" rel=stylesheet>
 <link rel=canonical href=https://pypyr.io/updates/releases/v5.0.0/>
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-147150909-1"></script>
-<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','UA-147150909-1')</script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","UA-147150909-1")</script>
 <meta property="og:description" content="Relative pipelines + API breaking changes.">
 <meta property="og:image" content="https://pypyr.io/images/1.91x1/pypyr-taskrunner-yaml-pipeline-automation-1200x628.5aa6465b3b9d2ca8d0d5a9f794ba7f379c522a8ba503129f2a35d2479ea2452d.png">
 <meta property="og:image:alt" content="pypyr is an open-source task-runner for automation pipelines defined in simple human-readable yaml.">
@@ -32,365 +31,211 @@
 <meta name=msapplication-TileColor content="#00aba9">
 <meta name=msapplication-config content="/favicons/browserconfig.bbdaec7f39b7bd1f2d6bc484afdd0c7246e3af9c5b45d91198d8a3b42e024e1f.xml">
 <meta name=theme-color content="#121212">
-</head>
-<body class=header-content-footer-grid>
+</head><body class=header-content-footer-grid>
 <header class="header elevation-01">
 <a href=/ class=top-nav-logo aria-label=home>
 <img class=top-nav-logo-img src=https://pypyr.io/images/pypyr-logotype.2c9aa98c472f0ea8d436597c26ef1b0f042624ee19cdf69bcb89ac0025d146c4.svg alt="pypyr logo">
 </a>
 <nav class=top-nav-links aria-label="top navigation">
-<ul><li><a href=/docs/>docs</a></li><li><a href=/updates/ class=top-active>updates</a></li><li><a href=/topics/>topics</a></li><li><a href=https://twitter.com/pypyrpipes/><span class=top-nav-links-pre><svg viewBox="0 0 250 203.18"><title>twitter link</title><use xlink:href="https://pypyr.io/images/twitter-logo.4bee83a61c7b1a567b9a00ea1ac9388de3b16ffbffac9e228f998a5411894c59.svg#twitter-logo"/></svg></span></a></li><li><a href=https://github.com/pypyr/pypyr/><span class=top-nav-links-pre><svg viewBox="0 0 477 97.41"><title>github repo</title><use xlink:href="https://pypyr.io/images/github-mark-and-logo.5df312655c6a99a4953b544d02b13a948fa4d66bda21e772206f0ed96663f05b.svg#github-mark-and-logo"/></svg></span></a></li></ul>
-</nav>
-</header>
-<div class=body-content>
+<ul><li><a href=/docs/>docs</a></li><li><a href=/updates/ class=top-active>updates</a></li><li><a href=/topics/>topics</a></li><li><a href=https://twitter.com/pypyrpipes/><span class=top-nav-links-pre><svg viewBox="0 0 250 203.18"><title>twitter link</title><use xlink:href="https://pypyr.io/images/twitter-logo.4bee83a61c7b1a567b9a00ea1ac9388de3b16ffbffac9e228f998a5411894c59.svg#twitter-logo"/></svg></span></a></li><li><a href=https://github.com/pypyr/pypyr/><span class=top-nav-links-pre><svg viewBox="0 0 477 97.41"><title>github repo</title><use xlink:href="https://pypyr.io/images/github-mark-and-logo.5df312655c6a99a4953b544d02b13a948fa4d66bda21e772206f0ed96663f05b.svg#github-mark-and-logo"/></svg></span></a></li></ul></nav></header><div class=body-content>
 <div class=content-grid-centered>
 <ol class=breadcrumb vocab="http://schema.org/" typeof="BreadcrumbList">
 <li property="itemListElement" typeof="ListItem">
 <a property="item" typeof="WebPage" href=https://pypyr.io/><span property="name">pypyr</span></a>
 <meta property="position" content="1">
-</li>
-<li property="itemListElement" typeof="ListItem">
+</li><li property="itemListElement" typeof="ListItem">
 <a property="item" typeof="WebPage" href=https://pypyr.io/updates/><span property="name">updates</span></a>
 <meta property="position" content="2">
-</li>
-<li property="itemListElement" typeof="ListItem">
+</li><li property="itemListElement" typeof="ListItem">
 <a property="item" typeof="WebPage" href=https://pypyr.io/updates/releases/><span property="name">releases</span></a>
 <meta property="position" content="3">
-</li>
-<li property="itemListElement" typeof="ListItem">
+</li><li property="itemListElement" typeof="ListItem">
 <span property="name">pypyr release v5.0.0</span>
 <meta property="position" content="4">
-</li></ol>
-<aside class="grid-toc elevation-02">
-<h6 id=table-of-contents>on this page</h6>
-<nav id=TableOfContents>
+</li></ol><aside class="grid-toc elevation-02">
+<h6 id=table-of-contents>on this page</h6><nav id=TableOfContents>
 <ol>
-<li><a href=#breaking-changes>breaking changes</a></li>
-<li><a href=#non-breaking-changes>non-breaking changes</a></li>
-<li><a href=#upgrade-guide>upgrade guide</a>
+<li><a href=#breaking-changes>breaking changes</a></li><li><a href=#non-breaking-changes>non-breaking changes</a></li><li><a href=#upgrade-guide>upgrade guide</a>
 <ol>
-<li><a href=#pipeline-authors>pipeline authors</a></li>
-<li><a href=#cli>cli</a></li>
-<li><a href=#api-entrypoint>api entrypoint</a>
+<li><a href=#pipeline-authors>pipeline authors</a></li><li><a href=#cli>cli</a></li><li><a href=#api-entrypoint>api entrypoint</a>
 <ol>
-<li><a href=#py_dir-replaces-working_dir>py_dir replaces working_dir</a></li>
-</ol>
-</li>
-<li><a href=#custom-pype-loader>custom pype loader</a></li>
-</ol>
-</li>
-<li><a href=#detailed-technical-breakdown>detailed technical breakdown</a></li>
-<li><a href=#whats-changed>what&rsquo;s changed</a></li>
-<li><a href=#how-to-install-upgrade>how to install upgrade</a></li>
-<li><a href=#source>source</a></li>
-</ol>
-</nav>
-</aside>
-<main class=grid-main>
+<li><a href=#py_dir-replaces-working_dir>py_dir replaces working_dir</a></li></ol></li><li><a href=#custom-pype-loader>custom pype loader</a></li></ol></li><li><a href=#detailed-technical-breakdown>detailed technical breakdown</a></li><li><a href=#whats-changed>what&rsquo;s changed</a></li><li><a href=#how-to-install-upgrade>how to install upgrade</a></li><li><a href=#source>source</a></li></ol></nav></aside><main class=grid-main>
 <nav class=tab-bar-container aria-label=sub-sections>
 <ul class=tab-bar>
-<li class=tab-bar-li><a href=/updates/ class=tab-bar-link>all updates</a></li>
-<li class=tab-bar-li><a href=/updates/news/ class=tab-bar-link>news</a></li>
-<li class=tab-bar-li><a href=/updates/releases/ class="tab-bar-link tab-bar-current">releases</a></li>
-</ul>
-</nav>
-<article class=width-min-line-length>
-<h1 id=pypyr-release-v500>pypyr release v5.0.0 <a href=#pypyr-release-v500 class=headline-anchor aria-label=anchor><svg class="permalink"><title>permalink</title><use href="https://pypyr.io/icons/external-link.054f8ebb57944b2bc52ea4f0ecd16197.svg#external-link"/></svg></a></h1><p>Release Date: 2021-11-20T13:17:39Z</p>
-<p>Implement <a href=https://github.com/pypyr/pypyr/blob/main/docs/adr/0002-relative-pipelines-api-changes.md>adr2 relative pipelines + api changes</a>.</p>
-<p>In brief, this release lets pipelines reference custom modules & child pipelines relative to the pipeline itself, rather than the current directory. This lets you create portable, re-usable & composable pipeline libraries.</p>
-<h2 id=breaking-changes>breaking changes <a href=#breaking-changes class=headline-anchor aria-label=anchor><svg class="permalink"><title>permalink</title><use href="https://pypyr.io/icons/external-link.054f8ebb57944b2bc52ea4f0ecd16197.svg#external-link"/></svg></a></h2><p>This is a major version increment because it comes with BREAKING CHANGES:</p>
-<ol>
-<li>API: <code>pipelinerunner.run()</code> replaces both <code>pipelinerunner.main()</code> and <code>pipelinerunner.main_with_context()</code></li>
-<li>API: <code>def get_pipeline_definition(pipeline_name, working_directory)</code> signature for custom pype loaders changes to <code>def get_pipeline_definition(pipeline_name, parent)</code></li>
-<li>CLI: the <code>—dir</code> flag now only sets the directory for ad hoc custom Python modules, it does NOT also set the directory for pipelines anymore</li>
-<li>Final removal of deprecated <code>get_formatted_iterable</code>, <code>get_formatted_string</code> #195 & <code>pypyr.steps.contextset</code> #184. Where previously these would just give deprecation warnings, they are now completely removed.</li>
-<li><code>pypyr.pypeloaders.fileloader</code> renamed <code>pypyr.loaders.file</code></li>
-</ol>
-<h2 id=non-breaking-changes>non-breaking changes <a href=#non-breaking-changes class=headline-anchor aria-label=anchor><svg class="permalink"><title>permalink</title><use href="https://pypyr.io/icons/external-link.054f8ebb57944b2bc52ea4f0ecd16197.svg#external-link"/></svg></a></h2><ul>
-<li>You can now access the current pipeline’s metadata & loader information from within a pipeline with <code>context.current_pipeline</code></li>
-<li>Improve handling of absolute paths in file loader only to search path once, rather than unnecessarily go through the same relative path lookup sequence with the same path.</li>
-<li>Typing support added for the pypyr API entrypoint.</li>
-</ul>
-<h2 id=upgrade-guide>upgrade guide <a href=#upgrade-guide class=headline-anchor aria-label=anchor><svg class="permalink"><title>permalink</title><use href="https://pypyr.io/icons/external-link.054f8ebb57944b2bc52ea4f0ecd16197.svg#external-link"/></svg></a></h2>
-<h3 id=pipeline-authors>pipeline authors <a href=#pipeline-authors class=headline-anchor aria-label=anchor><svg class="permalink"><title>permalink</title><use href="https://pypyr.io/icons/external-link.054f8ebb57944b2bc52ea4f0ecd16197.svg#external-link"/></svg></a></h3><p>Your pipelines can now references custom modules (e.g custom steps) and child
+<li class=tab-bar-li><a href=/updates/ class=tab-bar-link>all updates</a></li><li class=tab-bar-li><a href=/updates/news/ class=tab-bar-link>news</a></li><li class=tab-bar-li><a href=/updates/releases/ class="tab-bar-link tab-bar-current">releases</a></li></ul></nav><article class=width-min-line-length>
+<h1 id=pypyr-release-v500>pypyr release v5.0.0 <a href=#pypyr-release-v500 class=headline-anchor aria-label=anchor><svg class="permalink"><title>permalink</title><use href="https://pypyr.io/icons/external-link.054f8ebb57944b2bc52ea4f0ecd16197.svg#external-link"/></svg></a></h1><p>Release Date: 2021-11-20T13:17:39Z</p><p>Implement <a href=https://github.com/pypyr/pypyr/blob/main/docs/adr/0002-relative-pipelines-api-changes.md>adr2 relative pipelines + api changes</a>.</p><p>In brief, this release lets pipelines reference custom modules & child pipelines relative to the pipeline itself, rather than the current directory. This lets you create portable, re-usable & composable pipeline libraries.</p><h2 id=breaking-changes>breaking changes <a href=#breaking-changes class=headline-anchor aria-label=anchor><svg class="permalink"><title>permalink</title><use href="https://pypyr.io/icons/external-link.054f8ebb57944b2bc52ea4f0ecd16197.svg#external-link"/></svg></a></h2><p>This is a major version increment because it comes with BREAKING CHANGES:</p><ol>
+<li>API: <code>pipelinerunner.run()</code> replaces both <code>pipelinerunner.main()</code> and <code>pipelinerunner.main_with_context()</code></li><li>API: <code>def get_pipeline_definition(pipeline_name, working_directory)</code> signature for custom pype loaders changes to <code>def get_pipeline_definition(pipeline_name, parent)</code></li><li>CLI: the <code>—dir</code> flag now only sets the directory for ad hoc custom Python modules, it does NOT also set the directory for pipelines anymore</li><li>Final removal of deprecated <code>get_formatted_iterable</code>, <code>get_formatted_string</code> #195 & <code>pypyr.steps.contextset</code> #184. Where previously these would just give deprecation warnings, they are now completely removed.</li><li><code>pypyr.pypeloaders.fileloader</code> renamed <code>pypyr.loaders.file</code></li></ol><h2 id=non-breaking-changes>non-breaking changes <a href=#non-breaking-changes class=headline-anchor aria-label=anchor><svg class="permalink"><title>permalink</title><use href="https://pypyr.io/icons/external-link.054f8ebb57944b2bc52ea4f0ecd16197.svg#external-link"/></svg></a></h2><ul>
+<li>You can now access the current pipeline’s metadata & loader information from within a pipeline with <code>context.current_pipeline</code></li><li>Improve handling of absolute paths in file loader only to search path once, rather than unnecessarily go through the same relative path lookup sequence with the same path.</li><li>Typing support added for the pypyr API entrypoint.</li></ul><h2 id=upgrade-guide>upgrade guide <a href=#upgrade-guide class=headline-anchor aria-label=anchor><svg class="permalink"><title>permalink</title><use href="https://pypyr.io/icons/external-link.054f8ebb57944b2bc52ea4f0ecd16197.svg#external-link"/></svg></a></h2><h3 id=pipeline-authors>pipeline authors <a href=#pipeline-authors class=headline-anchor aria-label=anchor><svg class="permalink"><title>permalink</title><use href="https://pypyr.io/icons/external-link.054f8ebb57944b2bc52ea4f0ecd16197.svg#external-link"/></svg></a></h3><p>Your pipelines can now references custom modules (e.g custom steps) and child
 pipelines you call with <a href=https://pypyr.io/docs/steps/pype/>pypyr.steps.pype</a>
-relative to the pipeline itself.</p>
-<p>Assume a file structure like this:</p>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text>/Users
-    |- captainhook/
-        |- my-pipelines/
-            |- subdir/
-                |- my-pipe.yaml
-                |- mystep.py
-                |- sub-pipe.yaml
-</code></pre></div><p>That you used in a pipeline like this</p>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-yaml data-lang=yaml><span class=c># ~/my-pipelines/subdir/my-pipe.yaml</span><span class=w>
-</span><span class=w></span><span class=nt>steps</span><span class=p>:</span><span class=w>
-</span><span class=w>    </span>- <span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>pypyr.steps.pype</span><span class=w>
-</span><span class=w>      </span><span class=nt>comment</span><span class=p>:</span><span class=w> </span><span class=l>old way. reference child relative to working dir.</span><span class=w>
-</span><span class=w>      </span><span class=nt>in</span><span class=p>:</span><span class=w>
-</span><span class=w>        </span><span class=nt>pype</span><span class=p>:</span><span class=w>
-</span><span class=w>            </span><span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>subdir/sub-pipe</span><span class=w> </span><span class=c># Looks for subdir/sub-pipe relative to $PWD</span><span class=w>
-</span><span class=w>    </span>- <span class=l>subdir.mystep</span><span class=w> </span><span class=c># looks for subdir/mystep.py relative to $PWD</span><span class=w>
-</span></code></pre></div><p>This old way of doing things meant that you could ONLY run this pipeline from
+relative to the pipeline itself.</p><p>Assume a file structure like this:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>/Users
+</span></span><span class=line><span class=cl>    |- captainhook/
+</span></span><span class=line><span class=cl>        |- my-pipelines/
+</span></span><span class=line><span class=cl>            |- subdir/
+</span></span><span class=line><span class=cl>                |- my-pipe.yaml
+</span></span><span class=line><span class=cl>                |- mystep.py
+</span></span><span class=line><span class=cl>                |- sub-pipe.yaml
+</span></span></code></pre></div><p>That you used in a pipeline like this</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-yaml data-lang=yaml><span class=line><span class=cl><span class=c># ~/my-pipelines/subdir/my-pipe.yaml</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=nt>steps</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span>- <span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>pypyr.steps.pype</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>      </span><span class=nt>comment</span><span class=p>:</span><span class=w> </span><span class=l>old way. reference child relative to working dir.</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>      </span><span class=nt>in</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=nt>pype</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>            </span><span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>subdir/sub-pipe</span><span class=w> </span><span class=c># Looks for subdir/sub-pipe relative to $PWD</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span>- <span class=l>subdir.mystep</span><span class=w> </span><span class=c># looks for subdir/mystep.py relative to $PWD</span><span class=w>
+</span></span></span></code></pre></div><p>This old way of doing things meant that you could ONLY run this pipeline from
 the <code>~/my-pipelines</code> directory, because all the references in the pipeline are
-relative to the working directory.</p>
+relative to the working directory.</p><div class=app-window>
+<div class=app-window-top-bar>
+<span class=app-window-buttons>
+<span class="circle red"></span><span class="circle yellow"></span><span class="circle green"></span>
+</span>
+<span class=app-window-title>term</span>
+</div><div class=app-window-content>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>$ cd ~/my-pipelines
+</span></span><span class=line><span class=cl>$ pypyr my-pipe # this will work
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>$ cd ~
+</span></span><span class=line><span class=cl>$ pypyr my-pipelines/my-pipe # this will not work
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl># you would&#39;ve had to set --dir to get this to work
+</span></span><span class=line><span class=cl>$ pypyr my-pipe --dir my-pipelines # this will work
+</span></span></code></pre></div></div></div><p>So forget about all that nonsense. As of now you can put your references
+relative to the pipeline itself, like this:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-yaml data-lang=yaml><span class=line><span class=cl><span class=c># ~/shared-pipelines/subdir/my-pipe.yaml</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=nt>steps</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span>- <span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>pypyr.steps.pype</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>      </span><span class=nt>comment</span><span class=p>:</span><span class=w> </span><span class=l>new better way. resolves relative to current pipeline dir.</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>      </span><span class=nt>in</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=nt>pype</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>            </span><span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>sub-pipe</span><span class=w> </span><span class=c># sub-pipe.yaml in same dir as current pipeline</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span>- <span class=l>mystep</span><span class=w> </span><span class=c># looks for mystep.py relative to current pipeline</span><span class=w>
+</span></span></span></code></pre></div><p>You can now run your pipeline from anywhere:
 <div class=app-window>
 <div class=app-window-top-bar>
 <span class=app-window-buttons>
 <span class="circle red"></span><span class="circle yellow"></span><span class="circle green"></span>
 </span>
 <span class=app-window-title>term</span>
-</div>
-<div class=app-window-content>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text>$ cd ~/my-pipelines
-$ pypyr my-pipe # this will work
-
-$ cd ~
-$ pypyr my-pipelines/my-pipe # this will not work
-
-# you would&#39;ve had to set --dir to get this to work
-$ pypyr my-pipe --dir my-pipelines # this will work
-</code></pre></div>
-</div>
-</div>
-<p>So forget about all that nonsense. As of now you can put your references
-relative to the pipeline itself, like this:</p>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-yaml data-lang=yaml><span class=c># ~/shared-pipelines/subdir/my-pipe.yaml</span><span class=w>
-</span><span class=w></span><span class=nt>steps</span><span class=p>:</span><span class=w>
-</span><span class=w>    </span>- <span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>pypyr.steps.pype</span><span class=w>
-</span><span class=w>      </span><span class=nt>comment</span><span class=p>:</span><span class=w> </span><span class=l>new better way. resolves relative to current pipeline dir.</span><span class=w>
-</span><span class=w>      </span><span class=nt>in</span><span class=p>:</span><span class=w>
-</span><span class=w>        </span><span class=nt>pype</span><span class=p>:</span><span class=w>
-</span><span class=w>            </span><span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>sub-pipe</span><span class=w> </span><span class=c># sub-pipe.yaml in same dir as current pipeline</span><span class=w>
-</span><span class=w>    </span>- <span class=l>mystep</span><span class=w> </span><span class=c># looks for mystep.py relative to current pipeline</span><span class=w>
-</span></code></pre></div><p>You can now run your pipeline from anywhere:
-<div class=app-window>
-<div class=app-window-top-bar>
-<span class=app-window-buttons>
-<span class="circle red"></span><span class="circle yellow"></span><span class="circle green"></span>
-</span>
-<span class=app-window-title>term</span>
-</div>
-<div class=app-window-content>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text>$ cd ~/my-pipelines
-$ pypyr my-pipe # this will work
-
-$ cd ~
-$ pypyr my-pipelines/my-pipe # this will also work
-</code></pre></div>
-</div>
-</div>
-</p>
-<p>Woohoo! 🎉 This means you can now make re-usable, composable shared pipeline
-libraries that you can call from anywhere on your system!</p>
-<p>See here for more details on the
-<a href=https://pypyr.io/docs/pipelines/lookup-order/>pipeline name resolution look-up order</a>.</p>
-<h3 id=cli>cli <a href=#cli class=headline-anchor aria-label=anchor><svg class="permalink"><title>permalink</title><use href="https://pypyr.io/icons/external-link.054f8ebb57944b2bc52ea4f0ecd16197.svg#external-link"/></svg></a></h3><p>If you were using the <code>--dir</code> flag, now you only need to set <code>--dir</code> if your
+</div><div class=app-window-content>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>$ cd ~/my-pipelines
+</span></span><span class=line><span class=cl>$ pypyr my-pipe # this will work
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>$ cd ~
+</span></span><span class=line><span class=cl>$ pypyr my-pipelines/my-pipe # this will also work
+</span></span></code></pre></div></div></div></p><p>Woohoo! 🎉 This means you can now make re-usable, composable shared pipeline
+libraries that you can call from anywhere on your system!</p><p>See here for more details on the
+<a href=https://pypyr.io/docs/pipelines/lookup-order/>pipeline name resolution look-up order</a>.</p><h3 id=cli>cli <a href=#cli class=headline-anchor aria-label=anchor><svg class="permalink"><title>permalink</title><use href="https://pypyr.io/icons/external-link.054f8ebb57944b2bc52ea4f0ecd16197.svg#external-link"/></svg></a></h3><p>If you were using the <code>--dir</code> flag, now you only need to set <code>--dir</code> if your
 pipeline references custom modules or child pipelines that are NOT in the
-pipeline&rsquo;s direct parent directory and NOT in the current working directory.</p>
-<div class=app-window>
+pipeline&rsquo;s direct parent directory and NOT in the current working directory.</p><div class=app-window>
 <div class=app-window-top-bar>
 <span class=app-window-buttons>
 <span class="circle red"></span><span class="circle yellow"></span><span class="circle green"></span>
 </span>
 <span class=app-window-title>term</span>
-</div>
-<div class=app-window-content>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text># to run pipeline mydir/mypipe.yaml
-# custom modules &amp; child pipelines in mydir/
-# the old way
-$ pypyr --dir mydir mypipe
-
-# the new way
-$ pypyr mydir/mypipe
-
-# to run pipeline mydir/subdir/mypipe.yaml
-# custom modules &amp; child pipelines in mydir/
-# the old way
-$ pypyr --dir mydir subdir/mypipe
-
-# the new way
-$ pypyr mydir/subdir/mypipe --dir mydir
-</code></pre></div>
-</div>
-</div>
-<p>In short, you very probably shouldn&rsquo;t be using the <code>--dir</code> flag anymore.
+</div><div class=app-window-content>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl># to run pipeline mydir/mypipe.yaml
+</span></span><span class=line><span class=cl># custom modules &amp; child pipelines in mydir/
+</span></span><span class=line><span class=cl># the old way
+</span></span><span class=line><span class=cl>$ pypyr --dir mydir mypipe
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl># the new way
+</span></span><span class=line><span class=cl>$ pypyr mydir/mypipe
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl># to run pipeline mydir/subdir/mypipe.yaml
+</span></span><span class=line><span class=cl># custom modules &amp; child pipelines in mydir/
+</span></span><span class=line><span class=cl># the old way
+</span></span><span class=line><span class=cl>$ pypyr --dir mydir subdir/mypipe
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl># the new way
+</span></span><span class=line><span class=cl>$ pypyr mydir/subdir/mypipe --dir mydir
+</span></span></code></pre></div></div></div><p>In short, you very probably shouldn&rsquo;t be using the <code>--dir</code> flag anymore.
 Instead, change your pipelines to resolve child pipelines & custom modules
 relative to itself as described in the <a href=#pipeline-authors>previous section for pipeline
 authors</a>. The only likely reason to be using <code>--dir</code> is if
 your custom modules live in a completely separate different filesystem location
-than the pipelines.</p>
-<h3 id=api-entrypoint>api entrypoint <a href=#api-entrypoint class=headline-anchor aria-label=anchor><svg class="permalink"><title>permalink</title><use href="https://pypyr.io/icons/external-link.054f8ebb57944b2bc52ea4f0ecd16197.svg#external-link"/></svg></a></h3><p>A single <code>run()</code> function replaces both <code>main()</code> and <code>main_with_context()</code>.</p>
-<p>The old:</p>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=n>pipelinerunner</span><span class=o>.</span><span class=n>main</span><span class=p>(</span><span class=n>pipeline_name</span><span class=o>=</span><span class=s1>&#39;pipeline-dir/my-pipe&#39;</span><span class=p>,</span>
-                    <span class=n>pipeline_context_input</span><span class=o>=</span><span class=p>[</span><span class=s1>&#39;arbkey=pipe&#39;</span><span class=p>,</span> <span class=s1>&#39;anotherkey=song&#39;</span><span class=p>])</span>
-</code></pre></div><p>becomes:</p>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=n>pipelinerunner</span><span class=o>.</span><span class=n>run</span><span class=p>(</span><span class=n>pipeline_name</span><span class=o>=</span><span class=s1>&#39;pipeline-dir/my-pipe&#39;</span><span class=p>,</span>
-                   <span class=n>args_in</span><span class=o>=</span><span class=p>[</span><span class=s1>&#39;arbkey=pipe&#39;</span><span class=p>,</span> <span class=s1>&#39;anotherkey=song&#39;</span><span class=p>])</span>
-</code></pre></div><p>The old:</p>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=n>context_out</span> <span class=o>=</span> <span class=n>pipelinerunner</span><span class=o>.</span><span class=n>main_with_context</span><span class=p>(</span>
-    <span class=n>pipeline_name</span><span class=o>=</span><span class=s1>&#39;pipeline-dir/my-pipe&#39;</span><span class=p>,</span>
-    <span class=n>dict_in</span><span class=o>=</span><span class=p>{</span><span class=s1>&#39;arbkey&#39;</span><span class=p>:</span> <span class=s1>&#39;pipe&#39;</span><span class=p>,</span>
-             <span class=s1>&#39;anotherkey&#39;</span><span class=p>:</span> <span class=s1>&#39;song&#39;</span><span class=p>})</span>
-</code></pre></div><p>becomes:</p>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=n>context_out</span> <span class=o>=</span> <span class=n>pipelinerunner</span><span class=o>.</span><span class=n>run</span><span class=p>(</span><span class=n>pipeline_name</span><span class=o>=</span><span class=s1>&#39;pipeline-dir/my-pipe&#39;</span><span class=p>,</span>
-                                 <span class=n>dict_in</span><span class=o>=</span><span class=p>{</span><span class=s1>&#39;arbkey&#39;</span><span class=p>:</span> <span class=s1>&#39;pipe&#39;</span><span class=p>,</span>
-                                          <span class=s1>&#39;anotherkey&#39;</span><span class=p>:</span> <span class=s1>&#39;song&#39;</span><span class=p>})</span>
-</code></pre></div><p>See here for full details on
-<a href=https://pypyr.io/docs/api/run-pipeline/>how to use the new pipeline runner api</a>.</p>
-<h4 id=py_dir-replaces-working_dir>py_dir replaces working_dir <a href=#py_dir-replaces-working_dir class=headline-anchor aria-label=anchor><svg class="permalink"><title>permalink</title><use href="https://pypyr.io/icons/external-link.054f8ebb57944b2bc52ea4f0ecd16197.svg#external-link"/></svg></a></h4><p>Be aware that the <code>working_dir</code> input doesn&rsquo;t exist anymore. The new <code>py_dir</code>
+than the pipelines.</p><h3 id=api-entrypoint>api entrypoint <a href=#api-entrypoint class=headline-anchor aria-label=anchor><svg class="permalink"><title>permalink</title><use href="https://pypyr.io/icons/external-link.054f8ebb57944b2bc52ea4f0ecd16197.svg#external-link"/></svg></a></h3><p>A single <code>run()</code> function replaces both <code>main()</code> and <code>main_with_context()</code>.</p><p>The old:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=n>pipelinerunner</span><span class=o>.</span><span class=n>main</span><span class=p>(</span><span class=n>pipeline_name</span><span class=o>=</span><span class=s1>&#39;pipeline-dir/my-pipe&#39;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>                    <span class=n>pipeline_context_input</span><span class=o>=</span><span class=p>[</span><span class=s1>&#39;arbkey=pipe&#39;</span><span class=p>,</span> <span class=s1>&#39;anotherkey=song&#39;</span><span class=p>])</span>
+</span></span></code></pre></div><p>becomes:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=n>pipelinerunner</span><span class=o>.</span><span class=n>run</span><span class=p>(</span><span class=n>pipeline_name</span><span class=o>=</span><span class=s1>&#39;pipeline-dir/my-pipe&#39;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>                   <span class=n>args_in</span><span class=o>=</span><span class=p>[</span><span class=s1>&#39;arbkey=pipe&#39;</span><span class=p>,</span> <span class=s1>&#39;anotherkey=song&#39;</span><span class=p>])</span>
+</span></span></code></pre></div><p>The old:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=n>context_out</span> <span class=o>=</span> <span class=n>pipelinerunner</span><span class=o>.</span><span class=n>main_with_context</span><span class=p>(</span>
+</span></span><span class=line><span class=cl>    <span class=n>pipeline_name</span><span class=o>=</span><span class=s1>&#39;pipeline-dir/my-pipe&#39;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>    <span class=n>dict_in</span><span class=o>=</span><span class=p>{</span><span class=s1>&#39;arbkey&#39;</span><span class=p>:</span> <span class=s1>&#39;pipe&#39;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>             <span class=s1>&#39;anotherkey&#39;</span><span class=p>:</span> <span class=s1>&#39;song&#39;</span><span class=p>})</span>
+</span></span></code></pre></div><p>becomes:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=n>context_out</span> <span class=o>=</span> <span class=n>pipelinerunner</span><span class=o>.</span><span class=n>run</span><span class=p>(</span><span class=n>pipeline_name</span><span class=o>=</span><span class=s1>&#39;pipeline-dir/my-pipe&#39;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>                                 <span class=n>dict_in</span><span class=o>=</span><span class=p>{</span><span class=s1>&#39;arbkey&#39;</span><span class=p>:</span> <span class=s1>&#39;pipe&#39;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>                                          <span class=s1>&#39;anotherkey&#39;</span><span class=p>:</span> <span class=s1>&#39;song&#39;</span><span class=p>})</span>
+</span></span></code></pre></div><p>See here for full details on
+<a href=https://pypyr.io/docs/api/run-pipeline/>how to use the new pipeline runner api</a>.</p><h4 id=py_dir-replaces-working_dir>py_dir replaces working_dir <a href=#py_dir-replaces-working_dir class=headline-anchor aria-label=anchor><svg class="permalink"><title>permalink</title><use href="https://pypyr.io/icons/external-link.054f8ebb57944b2bc52ea4f0ecd16197.svg#external-link"/></svg></a></h4><p>Be aware that the <code>working_dir</code> input doesn&rsquo;t exist anymore. The new <code>py_dir</code>
 input ONLY refers to the directory from which to load custom Python modules. The
 pipeline name does NOT resolve relative to <code>py_dir</code> as it used to for
-<code>working_dir</code>:</p>
-<p>The old:</p>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=n>context_out</span> <span class=o>=</span> <span class=n>pipelinerunner</span><span class=o>.</span><span class=n>run</span><span class=p>(</span><span class=n>pipeline_name</span><span class=o>=</span><span class=s1>&#39;pipeline-dir/my-pipe&#39;</span><span class=p>,</span>
-                                 <span class=n>dict_in</span><span class=o>=</span><span class=p>{</span><span class=s1>&#39;arbkey&#39;</span><span class=p>:</span> <span class=s1>&#39;pipe&#39;</span><span class=p>,</span>
-                                          <span class=s1>&#39;anotherkey&#39;</span><span class=p>:</span> <span class=s1>&#39;song&#39;</span><span class=p>},</span>
-                                 <span class=n>working_dir</span><span class=o>=</span><span class=n>Path</span><span class=o>.</span><span class=n>cwd</span><span class=p>())</span>
-</code></pre></div><p>becomes:</p>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=n>context_out</span> <span class=o>=</span> <span class=n>pipelinerunner</span><span class=o>.</span><span class=n>run</span><span class=p>(</span><span class=n>pipeline_name</span><span class=o>=</span><span class=s1>&#39;pipeline-dir/my-pipe&#39;</span><span class=p>,</span>
-                                 <span class=n>dict_in</span><span class=o>=</span><span class=p>{</span><span class=s1>&#39;arbkey&#39;</span><span class=p>:</span> <span class=s1>&#39;pipe&#39;</span><span class=p>,</span>
-                                          <span class=s1>&#39;anotherkey&#39;</span><span class=p>:</span> <span class=s1>&#39;song&#39;</span><span class=p>},</span>
-                                 <span class=n>py_dir</span><span class=o>=</span><span class=n>Path</span><span class=o>.</span><span class=n>cwd</span><span class=p>())</span>
-</code></pre></div><p>You do NOT need to set <code>py_dir</code> if your pipeline only references custom modules
-that are in the pipeline&rsquo;s directory itself.</p>
-<p>You do NOT need to set <code>py_dir</code> if you are not using any custom modules, or if
-your custom modules are installed in the current python environment.</p>
-<p>Only use <code>py_dir</code> if your custom modules are NOT installed in the current python
-environment and they are NOT relative to the pipeline&rsquo;s directory.</p>
-<p>See here for a full description of the
-<a href=https://pypyr.io/docs/api/custom-module-search-path/>pypyr custom module resolution order</a>.</p>
-<h3 id=custom-pype-loader>custom pype loader <a href=#custom-pype-loader class=headline-anchor aria-label=anchor><svg class="permalink"><title>permalink</title><use href="https://pypyr.io/icons/external-link.054f8ebb57944b2bc52ea4f0ecd16197.svg#external-link"/></svg></a></h3><p>If you have a custom pype loader with a signature like:</p>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=k>def</span> <span class=nf>get_pipeline_definition</span><span class=p>(</span><span class=n>pipeline_name</span><span class=p>,</span> <span class=n>working_dir</span><span class=p>):</span>
-</code></pre></div><p>Replace it with the function signature:</p>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=k>def</span> <span class=nf>get_pipeline_definition</span><span class=p>(</span><span class=n>pipeline_name</span><span class=p>,</span> <span class=n>parent</span><span class=p>):</span>
-</code></pre></div><p>Just this change should be sufficient for most cases. Be aware that unlike the
+<code>working_dir</code>:</p><p>The old:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=n>context_out</span> <span class=o>=</span> <span class=n>pipelinerunner</span><span class=o>.</span><span class=n>run</span><span class=p>(</span><span class=n>pipeline_name</span><span class=o>=</span><span class=s1>&#39;pipeline-dir/my-pipe&#39;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>                                 <span class=n>dict_in</span><span class=o>=</span><span class=p>{</span><span class=s1>&#39;arbkey&#39;</span><span class=p>:</span> <span class=s1>&#39;pipe&#39;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>                                          <span class=s1>&#39;anotherkey&#39;</span><span class=p>:</span> <span class=s1>&#39;song&#39;</span><span class=p>},</span>
+</span></span><span class=line><span class=cl>                                 <span class=n>working_dir</span><span class=o>=</span><span class=n>Path</span><span class=o>.</span><span class=n>cwd</span><span class=p>())</span>
+</span></span></code></pre></div><p>becomes:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=n>context_out</span> <span class=o>=</span> <span class=n>pipelinerunner</span><span class=o>.</span><span class=n>run</span><span class=p>(</span><span class=n>pipeline_name</span><span class=o>=</span><span class=s1>&#39;pipeline-dir/my-pipe&#39;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>                                 <span class=n>dict_in</span><span class=o>=</span><span class=p>{</span><span class=s1>&#39;arbkey&#39;</span><span class=p>:</span> <span class=s1>&#39;pipe&#39;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>                                          <span class=s1>&#39;anotherkey&#39;</span><span class=p>:</span> <span class=s1>&#39;song&#39;</span><span class=p>},</span>
+</span></span><span class=line><span class=cl>                                 <span class=n>py_dir</span><span class=o>=</span><span class=n>Path</span><span class=o>.</span><span class=n>cwd</span><span class=p>())</span>
+</span></span></code></pre></div><p>You do NOT need to set <code>py_dir</code> if your pipeline only references custom modules
+that are in the pipeline&rsquo;s directory itself.</p><p>You do NOT need to set <code>py_dir</code> if you are not using any custom modules, or if
+your custom modules are installed in the current python environment.</p><p>Only use <code>py_dir</code> if your custom modules are NOT installed in the current python
+environment and they are NOT relative to the pipeline&rsquo;s directory.</p><p>See here for a full description of the
+<a href=https://pypyr.io/docs/api/custom-module-search-path/>pypyr custom module resolution order</a>.</p><h3 id=custom-pype-loader>custom pype loader <a href=#custom-pype-loader class=headline-anchor aria-label=anchor><svg class="permalink"><title>permalink</title><use href="https://pypyr.io/icons/external-link.054f8ebb57944b2bc52ea4f0ecd16197.svg#external-link"/></svg></a></h3><p>If you have a custom pype loader with a signature like:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=k>def</span> <span class=nf>get_pipeline_definition</span><span class=p>(</span><span class=n>pipeline_name</span><span class=p>,</span> <span class=n>working_dir</span><span class=p>):</span>
+</span></span></code></pre></div><p>Replace it with the function signature:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=k>def</span> <span class=nf>get_pipeline_definition</span><span class=p>(</span><span class=n>pipeline_name</span><span class=p>,</span> <span class=n>parent</span><span class=p>):</span>
+</span></span></code></pre></div><p>Just this change should be sufficient for most cases. Be aware that unlike the
 old <code>working_dir</code>, <code>parent</code> will always be <code>None</code> for the 1st/root pipeline in a
-call-chain.</p>
-<p>The full new function signature is:</p>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=n>get_pipeline_definition</span><span class=p>(</span><span class=n>name</span><span class=p>:</span> <span class=nb>str</span><span class=p>,</span> <span class=n>parent</span><span class=p>:</span> <span class=n>Any</span><span class=p>)</span> <span class=o>-&gt;</span> <span class=n>pypyr</span><span class=o>.</span><span class=n>pipedef</span><span class=o>.</span><span class=n>PipelineDefinition</span> <span class=o>|</span> <span class=n>Mapping</span>
-</code></pre></div><p>If you wanted to, you can now add extra metadata properties from your custom
+call-chain.</p><p>The full new function signature is:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=n>get_pipeline_definition</span><span class=p>(</span><span class=n>name</span><span class=p>:</span> <span class=nb>str</span><span class=p>,</span> <span class=n>parent</span><span class=p>:</span> <span class=n>Any</span><span class=p>)</span> <span class=o>-&gt;</span> <span class=n>pypyr</span><span class=o>.</span><span class=n>pipedef</span><span class=o>.</span><span class=n>PipelineDefinition</span> <span class=o>|</span> <span class=n>Mapping</span>
+</span></span></code></pre></div><p>If you wanted to, you can now add extra metadata properties from your custom
 loader by setting a <code>pypyr.pipedef.PipelineInfo</code> object and returning it in
 a <code>pypyr.pipedef.PipelineDefinition</code> from your custom <code>get_pipeline_definition</code>
 function. This is entirely optional - if you want to keep on returning just the
-bare yaml dict-like payload, feel free to keep on doing so.</p>
-<p>See here for full details on <a href=https://pypyr.io/docs/api/pipeline-loader/>how to use the new custom pipeline loader</a></p>
-<p>Oh, and BONUS! If you are using a custom pype loader, your pipeline authors do
+bare yaml dict-like payload, feel free to keep on doing so.</p><p>See here for full details on <a href=https://pypyr.io/docs/api/pipeline-loader/>how to use the new custom pipeline loader</a></p><p>Oh, and BONUS! If you are using a custom pype loader, your pipeline authors do
 NOT explicitly need to set the custom loader on every child pipeline anymore on
 <a href=https://pypyr.io/docs/steps/pype/#loader>pypyr.steps.pype</a> - the parent&rsquo;s loader
-will automatically cascade to the child!</p>
-<h2 id=detailed-technical-breakdown>detailed technical breakdown <a href=#detailed-technical-breakdown class=headline-anchor aria-label=anchor><svg class="permalink"><title>permalink</title><use href="https://pypyr.io/icons/external-link.054f8ebb57944b2bc52ea4f0ecd16197.svg#external-link"/></svg></a></h2><ul>
+will automatically cascade to the child!</p><h2 id=detailed-technical-breakdown>detailed technical breakdown <a href=#detailed-technical-breakdown class=headline-anchor aria-label=anchor><svg class="permalink"><title>permalink</title><use href="https://pypyr.io/icons/external-link.054f8ebb57944b2bc52ea4f0ecd16197.svg#external-link"/></svg></a></h2><ul>
 <li>Introduce new classes to model pipeline payload, rather than just using the bare dict-like yaml directly.
 <ul>
-<li><code>PipelineInfo</code> - pipeline metadata set by loader. This maintains a pipeline’s parent/path info so that child pipelines can load relative to the parent.</li>
-<li><code>PipelineDefinition</code> - this wraps the pipeline payload and its metadata (<code>PipelineInfo</code>) to allow pypyr to cache it all with one reference</li>
-</ul>
-</li>
-<li>Add new <code>Pipeline</code> class for the run-time properties of a single run.
+<li><code>PipelineInfo</code> - pipeline metadata set by loader. This maintains a pipeline’s parent/path info so that child pipelines can load relative to the parent.</li><li><code>PipelineDefinition</code> - this wraps the pipeline payload and its metadata (<code>PipelineInfo</code>) to allow pypyr to cache it all with one reference</li></ul></li><li>Add new <code>Pipeline</code> class for the run-time properties of a single run.
 <ul>
-<li>The <code>Pipeline</code> references the shared cached <code>PipelineDefinition</code>.</li>
-<li>Move run + load_and_run logic from pypyr.pipelinerunner to the new <code>Pipeline</code> class. This massively streamlines the pipeline invocation process, since run/load_and_run can just operate on the shared <code>Pipeline</code> state rather than sling a bunch of args between different functions as before.</li>
-</ul>
-</li>
-<li>Add a call-stack of running <code>Pipeline</code> instances on <code>Context</code>. i.e Parent -> child1 -> child2 where the root pipeline calls child pipelines via <code>pype</code>
+<li>The <code>Pipeline</code> references the shared cached <code>PipelineDefinition</code>.</li><li>Move run + load_and_run logic from pypyr.pipelinerunner to the new <code>Pipeline</code> class. This massively streamlines the pipeline invocation process, since run/load_and_run can just operate on the shared <code>Pipeline</code> state rather than sling a bunch of args between different functions as before.</li></ul></li><li>Add a call-stack of running <code>Pipeline</code> instances on <code>Context</code>. i.e Parent -> child1 -> child2 where the root pipeline calls child pipelines via <code>pype</code>
 <ul>
 <li>Add <code>current_pipeline</code> attribute to <code>Context</code>, controlled with a context manager to scope itself to an individual pipeline run’s lifespan.
 <ul>
-<li>This means that steps can access current pipeline’s properties.</li>
-<li>This allows <code>pypyr.steps.pype</code> to find the current (i.e parent) pipeline’s metadata such as path, to load child pipeline relative to the calling pipeline’s location.</li>
-<li>When a child pipeline completes, the calling pipeline (i.e the previous <code>Pipeline</code> in the call-stack) becomes the current pipeline</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>Amend <code>pypyr.steps.pype</code> to instantiate <code>Pipeline</code> object to <code>load_and_run()</code> child.
+<li>This means that steps can access current pipeline’s properties.</li><li>This allows <code>pypyr.steps.pype</code> to find the current (i.e parent) pipeline’s metadata such as path, to load child pipeline relative to the calling pipeline’s location.</li><li>When a child pipeline completes, the calling pipeline (i.e the previous <code>Pipeline</code> in the call-stack) becomes the current pipeline</li></ul></li></ul></li><li>Amend <code>pypyr.steps.pype</code> to instantiate <code>Pipeline</code> object to <code>load_and_run()</code> child.
 <ul>
-<li><code>pype</code> now deals the <code>context.current_pipeline.pipeline_definition.info</code> metadata to work out whether to cascade parent path down to child, so child can load relative to the parent.</li>
-<li>Notably, the parent loader now cascades to the child, so pipeline authors don’t need explicitly to set the same custom loader repeatedly for each child.</li>
-<li>Given the context manager controlling current pipeline scope in <code>Pipeline.load_and_run_pipeline</code> remove the clumsy side-shuffle for pipeline_name, working_dir to swap out these values as child pipe runs and swap these back when it completes/errors.</li>
-</ul>
-</li>
-<li>Remove global PipelineCache. Replace with distinct pipeline cache per loader.
+<li><code>pype</code> now deals the <code>context.current_pipeline.pipeline_definition.info</code> metadata to work out whether to cascade parent path down to child, so child can load relative to the parent.</li><li>Notably, the parent loader now cascades to the child, so pipeline authors don’t need explicitly to set the same custom loader repeatedly for each child.</li><li>Given the context manager controlling current pipeline scope in <code>Pipeline.load_and_run_pipeline</code> remove the clumsy side-shuffle for pipeline_name, working_dir to swap out these values as child pipe runs and swap these back when it completes/errors.</li></ul></li><li>Remove global PipelineCache. Replace with distinct pipeline cache per loader.
 <ul>
-<li>This resolves a long standing limitation where pypyr assumed unique pipeline names across all loaders.</li>
-<li>The per-loader pipeline cache stores <code>PipelineDefinition</code> objects.</li>
-<li>Introduce <code>Loader</code> class, which wraps loader & its pipeline cache. <code>Loader</code> is what the <code>LoaderCache</code> caches.</li>
-<li>Thus <code>LoaderCache</code> -> <code>Loader</code> -> <code>_pipelineCache</code> -> <code>PipelineDefinition</code></li>
-</ul>
-</li>
-<li>File loader has a private file cache keyed on absolute path of file
+<li>This resolves a long standing limitation where pypyr assumed unique pipeline names across all loaders.</li><li>The per-loader pipeline cache stores <code>PipelineDefinition</code> objects.</li><li>Introduce <code>Loader</code> class, which wraps loader & its pipeline cache. <code>Loader</code> is what the <code>LoaderCache</code> caches.</li><li>Thus <code>LoaderCache</code> -> <code>Loader</code> -> <code>_pipelineCache</code> -> <code>PipelineDefinition</code></li></ul></li><li>File loader has a private file cache keyed on absolute path of file
 <ul>
 <li>This is to prevent >1 load+parse where the same underlying pipeline.yaml file has different names in the loader’s pipeline cache
 <ul>
-<li>e.g <code>(name=‘dir/mypipe’, parent=None)</code> and <code>(name=‘mypipe’, parent=‘dir’)</code> both resolve to <code>dir/mypipe.yaml</code></li>
-</ul>
-</li>
-<li>Caching a reference to the <code>PipelineDefinition</code> object, so not duplicating memory</li>
-</ul>
-</li>
-<li>Improve handling of absolute paths in file loader only to search path X1, rather than unecessarilly go through the same relative path lookup sequence with the same path.</li>
-<li>File loader <code>get_pipeline_definition</code> now returns a <code>PipelineDefinition</code> with <code>PipelineFileInfo</code> to store file-system specific metadata for the loader pipeline</li>
-<li>Remove <code>working_dir</code> global. The <code>py_dir</code> input on <code>run()</code> now refers ONLY to module paths, NOT pipeline locations.
+<li>e.g <code>(name=‘dir/mypipe’, parent=None)</code> and <code>(name=‘mypipe’, parent=‘dir’)</code> both resolve to <code>dir/mypipe.yaml</code></li></ul></li><li>Caching a reference to the <code>PipelineDefinition</code> object, so not duplicating memory</li></ul></li><li>Improve handling of absolute paths in file loader only to search path X1, rather than unecessarilly go through the same relative path lookup sequence with the same path.</li><li>File loader <code>get_pipeline_definition</code> now returns a <code>PipelineDefinition</code> with <code>PipelineFileInfo</code> to store file-system specific metadata for the loader pipeline</li><li>Remove <code>working_dir</code> global. The <code>py_dir</code> input on <code>run()</code> now refers ONLY to module paths, NOT pipeline locations.
 <ul>
-<li>The CLI <code>—dir</code> flag, or <code>py_dir</code> input on <code>run()</code> basically adds the specified directory to <code>sys.path</code>.</li>
-</ul>
-</li>
-<li>Add current pipeline’s parent directory to <code>sys.path</code> on load. This allows child pipelines to resolve custom modules relative to itself.</li>
-<li><code>pypyr.dsl.Step</code> does not need <code>StepsRunner</code> anymore, because it can get it from the <code>context.current_pipeline</code> instead.</li>
-<li>Recode (some) integration tests to take advantage of list <code>pypyr.steps.append</code> step and checking that for output on return context rather than intercepting logger.NOTIFY.</li>
-<li>Rename master branch to main in CI/CD GitHub actions</li>
-<li>Add typing annotations to the public <code>run()</code> function and the <code>Pipeline</code> class public accessors. The idea is NOT to type pypyr exhaustively, just to provide annotations for the sensible/likely entrypoint to enhance API user experience. Include <code>py.typed</code> in <code>pypyr</code> package.</li>
-<li>Remedy packaging snafu where <code>tests.common</code> was deploying alongside pypyr because exclude condition in <code>find_packages</code> didn&rsquo;t include wildcard for sub packages.</li>
-</ul>
-<h2 id=whats-changed>what&rsquo;s changed <a href=#whats-changed class=headline-anchor aria-label=anchor><svg class="permalink"><title>permalink</title><use href="https://pypyr.io/icons/external-link.054f8ebb57944b2bc52ea4f0ecd16197.svg#external-link"/></svg></a></h2><ul>
-<li>Relative pipelines & API run() replaces main/main_with_context by @yaythomas in <a href=https://github.com/pypyr/pypyr/pull/243>https://github.com/pypyr/pypyr/pull/243</a></li>
-</ul>
-<p><strong>Full Changelog</strong>: <a href=https://github.com/pypyr/pypyr/compare/v4.6.0...v5.0.0>https://github.com/pypyr/pypyr/compare/v4.6.0...v5.0.0</a></p>
-<h2 id=how-to-install-upgrade>how to install upgrade <a href=#how-to-install-upgrade class=headline-anchor aria-label=anchor><svg class="permalink"><title>permalink</title><use href="https://pypyr.io/icons/external-link.054f8ebb57944b2bc52ea4f0ecd16197.svg#external-link"/></svg></a></h2><p>If you want to upgrade (and you totally should!):</p>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text>$ pip install --upgrade pypyr
-</code></pre></div>
-<h2 id=source>source <a href=#source class=headline-anchor aria-label=anchor><svg class="permalink"><title>permalink</title><use href="https://pypyr.io/icons/external-link.054f8ebb57944b2bc52ea4f0ecd16197.svg#external-link"/></svg></a></h2><p>You can find <a href=https://github.com/pypyr/pypyr/releases/tag/v5.0.0>pypyr release v5.0.0 on github</a>, where you can
-click through to associated Issues, Pull Requests and Users.</p>
-<p>Released by <a href=https://github.com/yaythomas>yaythomas</a>.</p>
-</article>
-</main>
-<aside class="grid-improve elevation-02" aria-labelledby=feedback>
-<h6 id=feedback>feedback</h6>
-<ul class=small-list>
-<li><a href=https://github.com/pypyr/docs/edit/main/content/updates/releases/v5.0.0.md class=muted-with-hover>edit me</a></li>
-<li><a href="https://github.com/pypyr/docs/issues/new?title=docs%20issue:pypyr%20release%20v5.0.0&body=File:%20[pypyr%20release%20v5.0.0]%28https://pypyr.io/updates/releases/v5.0.0/%29" class=muted-with-hover>report typo</a></li>
-<li><a href="https://github.com/pypyr/pypyr/issues/new?title=Re:%20pypyr%20release%20v5.0.0&labels=bug" class=muted-with-hover>report bug!</a></li>
-</ul>
-</aside>
-<div class="page-git-info elevation-02">
+<li>The CLI <code>—dir</code> flag, or <code>py_dir</code> input on <code>run()</code> basically adds the specified directory to <code>sys.path</code>.</li></ul></li><li>Add current pipeline’s parent directory to <code>sys.path</code> on load. This allows child pipelines to resolve custom modules relative to itself.</li><li><code>pypyr.dsl.Step</code> does not need <code>StepsRunner</code> anymore, because it can get it from the <code>context.current_pipeline</code> instead.</li><li>Recode (some) integration tests to take advantage of list <code>pypyr.steps.append</code> step and checking that for output on return context rather than intercepting logger.NOTIFY.</li><li>Rename master branch to main in CI/CD GitHub actions</li><li>Add typing annotations to the public <code>run()</code> function and the <code>Pipeline</code> class public accessors. The idea is NOT to type pypyr exhaustively, just to provide annotations for the sensible/likely entrypoint to enhance API user experience. Include <code>py.typed</code> in <code>pypyr</code> package.</li><li>Remedy packaging snafu where <code>tests.common</code> was deploying alongside pypyr because exclude condition in <code>find_packages</code> didn&rsquo;t include wildcard for sub packages.</li></ul><h2 id=whats-changed>what&rsquo;s changed <a href=#whats-changed class=headline-anchor aria-label=anchor><svg class="permalink"><title>permalink</title><use href="https://pypyr.io/icons/external-link.054f8ebb57944b2bc52ea4f0ecd16197.svg#external-link"/></svg></a></h2><ul>
+<li>Relative pipelines & API run() replaces main/main_with_context by @yaythomas in <a href=https://github.com/pypyr/pypyr/pull/243>https://github.com/pypyr/pypyr/pull/243</a></li></ul><p><strong>Full Changelog</strong>: <a href=https://github.com/pypyr/pypyr/compare/v4.6.0...v5.0.0>https://github.com/pypyr/pypyr/compare/v4.6.0...v5.0.0</a></p><h2 id=how-to-install-upgrade>how to install upgrade <a href=#how-to-install-upgrade class=headline-anchor aria-label=anchor><svg class="permalink"><title>permalink</title><use href="https://pypyr.io/icons/external-link.054f8ebb57944b2bc52ea4f0ecd16197.svg#external-link"/></svg></a></h2><p>If you want to upgrade (and you totally should!):</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>$ pip install --upgrade pypyr
+</span></span></code></pre></div><h2 id=source>source <a href=#source class=headline-anchor aria-label=anchor><svg class="permalink"><title>permalink</title><use href="https://pypyr.io/icons/external-link.054f8ebb57944b2bc52ea4f0ecd16197.svg#external-link"/></svg></a></h2><p>You can find <a href=https://github.com/pypyr/pypyr/releases/tag/v5.0.0>pypyr release v5.0.0 on github</a>, where you can
+click through to associated Issues, Pull Requests and Users.</p><p>Released by <a href=https://github.com/yaythomas>yaythomas</a>.</p></article></main><aside class="grid-improve elevation-02" aria-labelledby=feedback>
+<h6 id=feedback>feedback</h6><ul class=small-list>
+<li><a href=https://github.com/pypyr/docs/edit/main/content/updates/releases/v5.0.0.md class=muted-with-hover>edit me</a></li><li><a href="https://github.com/pypyr/docs/issues/new?title=docs%20issue:pypyr%20release%20v5.0.0&body=File:%20[pypyr%20release%20v5.0.0]%28https://pypyr.io/updates/releases/v5.0.0/%29" class=muted-with-hover>report typo</a></li><li><a href="https://github.com/pypyr/pypyr/issues/new?title=Re:%20pypyr%20release%20v5.0.0&labels=bug" class=muted-with-hover>report bug!</a></li></ul></aside><div class="page-git-info elevation-02">
 <small class=small-block>last updated on <time datetime=2021-11-20T15:55:39Z>2021-11-20 15:55</time>.</small>
-</div>
-</div>
-</div>
-<footer class="footer elevation-01">
+</div></div></div><footer class="footer elevation-01">
 <a href=/ class=top-nav-logo aria-label=home>
 <img class=top-nav-logo-img src=https://pypyr.io/images/pypyr-logotype.2c9aa98c472f0ea8d436597c26ef1b0f042624ee19cdf69bcb89ac0025d146c4.svg alt="pypyr logo">
 </a>
 <div class=col-1fr-centered>
 <ul class=footer-social-links aria-label="social media links"><li>
 <a href=https://twitter.com/pypyrpipes/ class=footer-social-link>
-<div class=footer-social-links-pre><svg viewBox="0 0 400 400"><title>twitter link</title><use xlink:href="https://pypyr.io/icons/twitter-social-icon-circle-white.d715a98bf8d7170b3d2603d836ca675616731d85583c13d23ec468905e77c59a.svg#twitter-icon"/></svg></div>
-<small>twitter</small>
+<div class=footer-social-links-pre><svg viewBox="0 0 400 400"><title>twitter link</title><use xlink:href="https://pypyr.io/icons/twitter-social-icon-circle-white.d715a98bf8d7170b3d2603d836ca675616731d85583c13d23ec468905e77c59a.svg#twitter-icon"/></svg></div><small>twitter</small>
 </a>
 </li><li>
 <a href=https://github.com/pypyr/pypyr/ class=footer-social-link>
-<div class=footer-social-links-pre><svg viewBox="0 0 32.58 31.77"><title>github link</title><use xlink:href="https://pypyr.io/icons/github-icon.778bc8065fb7e8d1e7109b270cfbd86e15e05bb16ebff30d261935e4bc1560bd.svg#github-icon"/></svg></div>
-<small>github</small>
+<div class=footer-social-links-pre><svg viewBox="0 0 32.58 31.77"><title>github link</title><use xlink:href="https://pypyr.io/icons/github-icon.778bc8065fb7e8d1e7109b270cfbd86e15e05bb16ebff30d261935e4bc1560bd.svg#github-icon"/></svg></div><small>github</small>
 </a>
 </li><li>
 <a href=https://github.com/pypyr/pypyr/discussions class=footer-social-link>
 <div class=footer-social-links-pre><svg viewBox="0 0 16 16"><title>discussion forum link</title><use xlink:href="https://pypyr.io/icons/discussions.a9f14951d81276183aaea73b6d616db95326f8f16350b221d9d6d48ee5a0b16e.svg#discussions-icon"/></svg>
-</div>
-<small>forum</small>
+</div><small>forum</small>
 </a>
-</li></ul>
-<ul class=footer-notices-links aria-label="legal notices"><li>
+</li></ul><ul class=footer-notices-links aria-label="legal notices"><li>
 <a href=/legal/privacy-notice class=muted-with-hover>
 <small>privacy</small>
 </a>
@@ -402,8 +247,4 @@ click through to associated Issues, Pull Requests and Users.</p>
 <a href=/press-kit class=muted-with-hover>
 <small>press</small>
 </a>
-</li></ul>
-</div>
-</footer>
-</body>
-</html>
+</li></ul></div></footer></body></html>

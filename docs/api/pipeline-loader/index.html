@@ -2,15 +2,14 @@
 <head>
 <meta charset=utf-8>
 <meta name=viewport content="width=device-width,initial-scale=1">
-<title>custom pype loader | pypyr</title>
-<meta name=description content="Create a custom pipeline loader to get pipelines from s3, consul or your own pipeline storage system.">
+<title>custom pype loader | pypyr</title><meta name=description content="Create a custom pipeline loader to get pipelines from s3, consul or your own pipeline storage system.">
 <link rel=stylesheet href=https://pypyr.io/css/styles.min.ad50c9856a15c2caa608f0b1b8a46d3ff692bb9355af1f7009b1b3938d26a886.css integrity="sha256-rVDJhWoVwsqmCPCxuKRtP/aSu5NVrx9wCbGzk40mqIY=">
 <link rel=stylesheet href=https://pypyr.io/css/code-highlight.min.78f63f1d4f45beaf423efd3dc8e6914c2abdca1b5391cd91368a32efecd9d7e3.css integrity="sha256-ePY/HU9Fvq9CPv09yOaRTCq9yhtTkc2RNooy7+zZ1+M=">
-<script defer src=https://pypyr.io/js/script.min.45064b9f444bbb1631eeef9f9ef2be6985c45b5f06bddb6644ce049732706a06.js integrity="sha256-RQZLn0RLuxYx7u+fnvK+aYXEW18GvdtmRM4ElzJwagY="></script>
+<script defer src=https://pypyr.io/js/script.min.8c51c28efa613c3bc853b2418e260b33482af182f6ca8ebeeb825b5b8e094423.js integrity="sha256-jFHCjvphPDvIU7JBjiYLM0gq8YL2yo6+64JbW44JRCM="></script>
 <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700%7cRoboto+Mono:400,400i&display=swap" rel=stylesheet>
 <link rel=canonical href=https://pypyr.io/docs/api/pipeline-loader/>
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-147150909-1"></script>
-<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','UA-147150909-1')</script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","UA-147150909-1")</script>
 <meta property="og:description" content="Create a custom pipeline loader to get pipelines from s3, consul or your own pipeline storage system.">
 <meta property="og:image" content="https://pypyr.io/images/1.91x1/pypyr-taskrunner-yaml-pipeline-automation-1200x628.5aa6465b3b9d2ca8d0d5a9f794ba7f379c522a8ba503129f2a35d2479ea2452d.png">
 <meta property="og:image:alt" content="pypyr is an open-source task-runner for automation pipelines defined in simple human-readable yaml.">
@@ -32,17 +31,13 @@
 <meta name=msapplication-TileColor content="#00aba9">
 <meta name=msapplication-config content="/favicons/browserconfig.bbdaec7f39b7bd1f2d6bc484afdd0c7246e3af9c5b45d91198d8a3b42e024e1f.xml">
 <meta name=theme-color content="#121212">
-</head>
-<body class=docs-grid>
+</head><body class=docs-grid>
 <header class="header elevation-01">
 <a href=/ class=top-nav-logo aria-label=home>
 <img class=top-nav-logo-img src=https://pypyr.io/images/pypyr-logotype.2c9aa98c472f0ea8d436597c26ef1b0f042624ee19cdf69bcb89ac0025d146c4.svg alt="pypyr logo">
 </a>
 <nav class=top-nav-links aria-label="top navigation">
-<ul><li><a href=/docs/ class=top-active>docs</a></li><li><a href=/updates/>updates</a></li><li><a href=/topics/>topics</a></li><li><a href=https://twitter.com/pypyrpipes/><span class=top-nav-links-pre><svg viewBox="0 0 250 203.18"><title>twitter link</title><use xlink:href="https://pypyr.io/images/twitter-logo.4bee83a61c7b1a567b9a00ea1ac9388de3b16ffbffac9e228f998a5411894c59.svg#twitter-logo"/></svg></span></a></li><li><a href=https://github.com/pypyr/pypyr/><span class=top-nav-links-pre><svg viewBox="0 0 477 97.41"><title>github repo</title><use xlink:href="https://pypyr.io/images/github-mark-and-logo.5df312655c6a99a4953b544d02b13a948fa4d66bda21e772206f0ed96663f05b.svg#github-mark-and-logo"/></svg></span></a></li></ul>
-</nav>
-</header>
-<button id=show-leftnav class="neutral-button icon-button primary-button"><svg class="show-leftnav-chevron"><title>open main navigation menu</title><use href="https://pypyr.io/icons/chevron-right.e586e5df0f820697b2ce08d042d0110568a2faeb11c7f0bab5a33df79dd3d6db.svg#chevron-right"/></svg>
+<ul><li><a href=/docs/ class=top-active>docs</a></li><li><a href=/updates/>updates</a></li><li><a href=/topics/>topics</a></li><li><a href=https://twitter.com/pypyrpipes/><span class=top-nav-links-pre><svg viewBox="0 0 250 203.18"><title>twitter link</title><use xlink:href="https://pypyr.io/images/twitter-logo.4bee83a61c7b1a567b9a00ea1ac9388de3b16ffbffac9e228f998a5411894c59.svg#twitter-logo"/></svg></span></a></li><li><a href=https://github.com/pypyr/pypyr/><span class=top-nav-links-pre><svg viewBox="0 0 477 97.41"><title>github repo</title><use xlink:href="https://pypyr.io/images/github-mark-and-logo.5df312655c6a99a4953b544d02b13a948fa4d66bda21e772206f0ed96663f05b.svg#github-mark-and-logo"/></svg></span></a></li></ul></nav></header><button id=show-leftnav class="neutral-button icon-button primary-button"><svg class="show-leftnav-chevron"><title>open main navigation menu</title><use href="https://pypyr.io/icons/chevron-right.e586e5df0f820697b2ce08d042d0110568a2faeb11c7f0bab5a33df79dd3d6db.svg#chevron-right"/></svg>
 </button>
 <nav id=leftnavmenu class="leftnavmenu elevation-03" aria-label="Primary Navigation">
 <button id=hide-leftnav class="neutral-button icon-button"><svg class="hide-leftnav-chevron"><title>close navigation menu</title><use href="https://pypyr.io/icons/chevron-right.e586e5df0f820697b2ce08d042d0110568a2faeb11c7f0bab5a33df79dd3d6db.svg#chevron-right"/></svg>
@@ -57,34 +52,23 @@
 <ul class=nested>
 <li>
 <a href=/docs/getting-started/>overview</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/getting-started/installation/>install pypyr</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/getting-started/run-your-first-pipeline/>run your first pipeline</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/getting-started/basic-concepts/>basic concepts</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/getting-started/variables/>variables</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/getting-started/conditional-logic/>conditional logic</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/getting-started/loops/>loops</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/getting-started/error-handling/>error handling</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/getting-started/config/>config</a>
-</li>
-</ul>
-</li>
-<li>
+</li></ul></li><li>
 <button class="nav-section-chevron-title neutral-button">
 <span class=nav-section-pointer>
 <svg class="nav-chevron"><title>open or close sub-menu</title><use href="https://pypyr.io/icons/chevron-right.e586e5df0f820697b2ce08d042d0110568a2faeb11c7f0bab5a33df79dd3d6db.svg#chevron-right"/></svg><span>cli</span>
@@ -93,16 +77,11 @@
 <ul class=nested>
 <li>
 <a href=/docs/cli/>overview</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/cli/run-a-pipeline/>run a pipeline</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/cli/custom-args/>custom args</a>
-</li>
-</ul>
-</li>
-<li>
+</li></ul></li><li>
 <button class="nav-section-chevron-title neutral-button">
 <span class=nav-section-pointer>
 <svg class="nav-chevron"><title>open or close sub-menu</title><use href="https://pypyr.io/icons/chevron-right.e586e5df0f820697b2ce08d042d0110568a2faeb11c7f0bab5a33df79dd3d6db.svg#chevron-right"/></svg><span>pipelines</span>
@@ -111,19 +90,13 @@
 <ul class=nested>
 <li>
 <a href=/docs/pipelines/>overview</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/pipelines/pipeline-structure/>pipeline structure</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/pipelines/lookup-order/>lookup order</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/pipelines/builtin-pipelines/>built-in pipelines</a>
-</li>
-</ul>
-</li>
-<li>
+</li></ul></li><li>
 <button class="nav-section-chevron-title neutral-button">
 <span class=nav-section-pointer>
 <svg class="nav-chevron"><title>open or close sub-menu</title><use href="https://pypyr.io/icons/chevron-right.e586e5df0f820697b2ce08d042d0110568a2faeb11c7f0bab5a33df79dd3d6db.svg#chevron-right"/></svg><span>context parsers</span>
@@ -132,37 +105,25 @@
 <ul class=nested>
 <li>
 <a href=/docs/context-parsers/>overview</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/context-parsers/dict/>dict</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/context-parsers/json/>json</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/context-parsers/jsonfile/>jsonfile</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/context-parsers/keys/>keys</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/context-parsers/keyvaluepairs/>keyvaluepairs</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/context-parsers/list/>list</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/context-parsers/string/>string</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/context-parsers/tomlfile/>tomlfile</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/context-parsers/yamlfile/>yamlfile</a>
-</li>
-</ul>
-</li>
-<li>
+</li></ul></li><li>
 <button class="nav-section-chevron-title neutral-button">
 <span class=nav-section-pointer>
 <svg class="nav-chevron"><title>open or close sub-menu</title><use href="https://pypyr.io/icons/chevron-right.e586e5df0f820697b2ce08d042d0110568a2faeb11c7f0bab5a33df79dd3d6db.svg#chevron-right"/></svg><span>decorators</span>
@@ -171,40 +132,27 @@
 <ul class=nested>
 <li>
 <a href=/docs/decorators/>overview</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/decorators/comment/>comment</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/decorators/description/>description</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/decorators/foreach/>foreach</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/decorators/in/>in</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/decorators/onerror/>onError</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/decorators/retry/>retry</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/decorators/run/>run</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/decorators/skip/>skip</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/decorators/swallow/>swallow</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/decorators/while/>while</a>
-</li>
-</ul>
-</li>
-<li>
+</li></ul></li><li>
 <button class="nav-section-chevron-title neutral-button">
 <span class=nav-section-pointer>
 <svg class="nav-chevron"><title>open or close sub-menu</title><use href="https://pypyr.io/icons/chevron-right.e586e5df0f820697b2ce08d042d0110568a2faeb11c7f0bab5a33df79dd3d6db.svg#chevron-right"/></svg><span>steps</span>
@@ -213,151 +161,101 @@
 <ul class=nested>
 <li>
 <a href=/docs/steps/>overview</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/steps/add/>add</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/steps/append/>append</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/steps/assert/>assert</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/steps/call/>call</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/steps/cmd/>cmd</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/steps/configvars/>configvars</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/steps/contextclear/>contextclear</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/steps/contextclearall/>contextclearall</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/steps/contextcopy/>contextcopy</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/steps/contextmerge/>contextmerge</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/steps/contextsetf/>contextsetf</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/steps/debug/>debug</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/steps/default/>default</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/steps/echo/>echo</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/steps/env/>env</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/steps/envget/>envget</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/steps/fetchjson/>fetchjson</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/steps/fetchtoml/>fetchtoml</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/steps/fetchyaml/>fetchyaml</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/steps/fileformat/>fileformat</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/steps/fileformatjson/>fileformatjson</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/steps/fileformattoml/>fileformattoml</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/steps/fileformatyaml/>fileformatyaml</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/steps/fileread/>fileread</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/steps/filereplace/>filereplace</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/steps/filewrite/>filewrite</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/steps/filewritejson/>filewritejson</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/steps/filewritetoml/>filewritetoml</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/steps/filewriteyaml/>filewriteyaml</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/steps/glob/>glob</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/steps/jsonparse/>jsonparse</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/steps/jump/>jump</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/steps/now/>now</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/steps/nowutc/>nowutc</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/steps/pathcheck/>pathcheck</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/steps/py/>py</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/steps/pyimport/>pyimport</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/steps/pype/>pype</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/steps/pypyrversion/>pypyrversion</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/steps/python/>python</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/steps/safeshell/>safeshell</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/steps/set/>set</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/steps/shell/>shell</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/steps/stop/>stop</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/steps/stoppipeline/>stoppipeline</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/steps/stopstepgroup/>stopstepgroup</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/steps/tar/>tar</a>
-</li>
-</ul>
-</li>
-<li>
+</li></ul></li><li>
 <button class="nav-section-chevron-title neutral-button">
 <span class=nav-section-pointer>
 <svg class="nav-chevron"><title>open or close sub-menu</title><use href="https://pypyr.io/icons/chevron-right.e586e5df0f820697b2ce08d042d0110568a2faeb11c7f0bab5a33df79dd3d6db.svg#chevron-right"/></svg><span>substitutions</span>
@@ -366,22 +264,15 @@
 <ul class=nested>
 <li>
 <a href=/docs/substitutions/>overview</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/substitutions/format-string/>format string</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/substitutions/jsonify/>jsonify</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/substitutions/py-strings/>py string</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/substitutions/sic-strings/>sic string</a>
-</li>
-</ul>
-</li>
-<li>
+</li></ul></li><li>
 <button class="nav-section-chevron-title neutral-button">
 <span class=nav-section-pointer>
 <svg class="nav-chevron"><title>open or close sub-menu</title><use href="https://pypyr.io/icons/chevron-right.e586e5df0f820697b2ce08d042d0110568a2faeb11c7f0bab5a33df79dd3d6db.svg#chevron-right"/></svg><span>plugins</span>
@@ -390,8 +281,7 @@
 <ul class=nested>
 <li>
 <a href=/docs/plugins/>overview</a>
-</li>
-<li>
+</li><li>
 <button class="nav-section-chevron-title neutral-button">
 <span class=nav-section-pointer>
 <svg class="nav-chevron"><title>open or close sub-menu</title><use href="https://pypyr.io/icons/chevron-right.e586e5df0f820697b2ce08d042d0110568a2faeb11c7f0bab5a33df79dd3d6db.svg#chevron-right"/></svg><span>aws</span>
@@ -400,14 +290,11 @@
 <ul class=nested>
 <li>
 <a href=/docs/plugins/aws/>overview</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/plugins/aws/authentication/>authentication</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/plugins/aws/substitutions/>substitutions</a>
-</li>
-<li>
+</li><li>
 <button class="nav-section-chevron-title neutral-button">
 <span class=nav-section-pointer>
 <svg class="nav-chevron"><title>open or close sub-menu</title><use href="https://pypyr.io/icons/chevron-right.e586e5df0f820697b2ce08d042d0110568a2faeb11c7f0bab5a33df79dd3d6db.svg#chevron-right"/></svg><span>steps</span>
@@ -416,30 +303,19 @@
 <ul class=nested>
 <li>
 <a href=/docs/plugins/aws/steps/>overview</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/plugins/aws/steps/client/>client</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/plugins/aws/steps/ecswaitprep/>ecswaitprep</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/plugins/aws/steps/s3fetchjson/>s3fetchjson</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/plugins/aws/steps/s3fetchyaml/>s3fetchyaml</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/plugins/aws/steps/wait/>wait</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/plugins/aws/steps/waitfor/>waitfor</a>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>
+</li></ul></li></ul></li><li>
 <button class="nav-section-chevron-title neutral-button">
 <span class=nav-section-pointer>
 <svg class="nav-chevron"><title>open or close sub-menu</title><use href="https://pypyr.io/icons/chevron-right.e586e5df0f820697b2ce08d042d0110568a2faeb11c7f0bab5a33df79dd3d6db.svg#chevron-right"/></svg><span>slack</span>
@@ -448,11 +324,9 @@
 <ul class=nested>
 <li>
 <a href=/docs/plugins/slack/>overview</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/plugins/slack/authentication/>authentication</a>
-</li>
-<li>
+</li><li>
 <button class="nav-section-chevron-title neutral-button">
 <span class=nav-section-pointer>
 <svg class="nav-chevron"><title>open or close sub-menu</title><use href="https://pypyr.io/icons/chevron-right.e586e5df0f820697b2ce08d042d0110568a2faeb11c7f0bab5a33df79dd3d6db.svg#chevron-right"/></svg><span>steps</span>
@@ -461,17 +335,9 @@
 <ul class=nested>
 <li>
 <a href=/docs/plugins/slack/steps/>overview</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/plugins/slack/steps/send/>send</a>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>
+</li></ul></li></ul></li></ul></li><li>
 <button class="nav-section-chevron-title neutral-button">
 <span class=nav-section-pointer>
 <svg class="nav-chevron nav-chevron-down"><title>open or close sub-menu</title><use href="https://pypyr.io/icons/chevron-right.e586e5df0f820697b2ce08d042d0110568a2faeb11c7f0bab5a33df79dd3d6db.svg#chevron-right"/></svg><span>api</span>
@@ -480,28 +346,19 @@
 <ul class="nested expand">
 <li>
 <a href=/docs/api/>overview</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/api/custom-module-search-path/>custom module search path</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/api/context-parser/>context parser</a>
-</li>
-<li class=currentpage>
+</li><li class=currentpage>
 <a href=/docs/api/pipeline-loader/>pipeline loader</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/api/retry-backoff/>retry backoff</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/api/run-pipeline/>run pipeline</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/api/step/>step</a>
-</li>
-</ul>
-</li>
-<li>
+</li></ul></li><li>
 <button class="nav-section-chevron-title neutral-button">
 <span class=nav-section-pointer>
 <svg class="nav-chevron"><title>open or close sub-menu</title><use href="https://pypyr.io/icons/chevron-right.e586e5df0f820697b2ce08d042d0110568a2faeb11c7f0bab5a33df79dd3d6db.svg#chevron-right"/></svg><span>contributing</span>
@@ -510,16 +367,11 @@
 <ul class=nested>
 <li>
 <a href=/docs/contributing/>overview</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/contributing/contribute-to-pypyr/>contribute to pypyr</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/contributing/developers-guide/>developer's guide for pypyr</a>
-</li>
-</ul>
-</li>
-<li>
+</li></ul></li><li>
 <button class="nav-section-chevron-title neutral-button">
 <span class=nav-section-pointer>
 <svg class="nav-chevron"><title>open or close sub-menu</title><use href="https://pypyr.io/icons/chevron-right.e586e5df0f820697b2ce08d042d0110568a2faeb11c7f0bab5a33df79dd3d6db.svg#chevron-right"/></svg><span>thank you</span>
@@ -528,456 +380,367 @@
 <ul class=nested>
 <li>
 <a href=/docs/thank-you/>overview</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/thank-you/built-with-hugo/>built with hugo</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/thank-you/dependencies/>dependencies</a>
-</li>
-</ul>
-</li>
-</ul>
-</nav>
-<div class="docs-content content-grid">
+</li></ul></li></ul></nav><div class="docs-content content-grid">
 <ol class=breadcrumb vocab="http://schema.org/" typeof="BreadcrumbList">
 <li property="itemListElement" typeof="ListItem">
 <a property="item" typeof="WebPage" href=https://pypyr.io/><span property="name">pypyr</span></a>
 <meta property="position" content="1">
-</li>
-<li property="itemListElement" typeof="ListItem">
+</li><li property="itemListElement" typeof="ListItem">
 <a property="item" typeof="WebPage" href=https://pypyr.io/docs/><span property="name">docs</span></a>
 <meta property="position" content="2">
-</li>
-<li property="itemListElement" typeof="ListItem">
+</li><li property="itemListElement" typeof="ListItem">
 <a property="item" typeof="WebPage" href=https://pypyr.io/docs/api/><span property="name">api</span></a>
 <meta property="position" content="3">
-</li>
-<li property="itemListElement" typeof="ListItem">
+</li><li property="itemListElement" typeof="ListItem">
 <span property="name">custom pype loader</span>
 <meta property="position" content="4">
-</li></ol>
-<aside class="grid-toc elevation-02">
-<h6 id=table-of-contents>on this page</h6>
-<nav id=TableOfContents>
+</li></ol><aside class="grid-toc elevation-02">
+<h6 id=table-of-contents>on this page</h6><nav id=TableOfContents>
 <ol>
-<li><a href=#load-pipeline-not-on-the-local-filesystem>load pipeline not on the local filesystem</a></li>
-<li><a href=#custom-loader-function-signature>custom loader function signature</a></li>
-<li><a href=#example>example</a></li>
-<li><a href=#use-custom-loader-from-the-api>use custom loader from the API</a></li>
-<li><a href=#use-custom-loader-with-pype>use custom loader with pype</a></li>
-<li><a href=#custom-pipeline-metadata>custom pipeline metadata</a>
+<li><a href=#load-pipeline-not-on-the-local-filesystem>load pipeline not on the local filesystem</a></li><li><a href=#custom-loader-function-signature>custom loader function signature</a></li><li><a href=#example>example</a></li><li><a href=#use-custom-loader-from-the-api>use custom loader from the API</a></li><li><a href=#use-custom-loader-with-pype>use custom loader with pype</a></li><li><a href=#custom-pipeline-metadata>custom pipeline metadata</a>
 <ol>
-<li><a href=#example-1>example</a></li>
-<li><a href=#non-cascading-loader>non-cascading loader</a></li>
-</ol>
-</li>
-<li><a href=#load-child-pipeline-relative-to-parent>load child pipeline relative to parent</a>
+<li><a href=#example-1>example</a></li><li><a href=#non-cascading-loader>non-cascading loader</a></li></ol></li><li><a href=#load-child-pipeline-relative-to-parent>load child pipeline relative to parent</a>
 <ol>
-<li><a href=#multi-address-pipelines>multi-address pipelines</a></li>
-</ol>
-</li>
-</ol>
-</nav>
-</aside>
-<main class=grid-main>
+<li><a href=#multi-address-pipelines>multi-address pipelines</a></li></ol></li></ol></nav></aside><main class=grid-main>
 <article>
-<h1 id=create-a-custom-pipeline-loader>create a custom pipeline loader <a href=#create-a-custom-pipeline-loader class=headline-anchor aria-label=anchor><svg class="permalink"><title>permalink</title><use href="https://pypyr.io/icons/external-link.054f8ebb57944b2bc52ea4f0ecd16197.svg#external-link"/></svg></a></h1>
-<h2 id=load-pipeline-not-on-the-local-filesystem>load pipeline not on the local filesystem <a href=#load-pipeline-not-on-the-local-filesystem class=headline-anchor aria-label=anchor><svg class="permalink"><title>permalink</title><use href="https://pypyr.io/icons/external-link.054f8ebb57944b2bc52ea4f0ecd16197.svg#external-link"/></svg></a></h2><p>A pype loader is responsible for loading a pipeline.</p>
-<p>The default pype loader is <a href=https://github.com/pypyr/pypyr/blob/main/pypyr/loaders/file.py>pypyr.loaders.file</a>.
-You can change this default in <a href=https://pypyr.io/docs/getting-started/config/#default_loader>config for default_loader</a>.</p>
-<p>This default loader loads pipelines from the local file-system, following the
-usual <a href=https://pypyr.io/docs/pipelines/lookup-order/>pypyr pipeline look-up sequence</a>.</p>
-<p>If you want to load pipelines from somewhere else, like maybe a shared pipeline
+<h1 id=create-a-custom-pipeline-loader>create a custom pipeline loader <a href=#create-a-custom-pipeline-loader class=headline-anchor aria-label=anchor><svg class="permalink"><title>permalink</title><use href="https://pypyr.io/icons/external-link.054f8ebb57944b2bc52ea4f0ecd16197.svg#external-link"/></svg></a></h1><h2 id=load-pipeline-not-on-the-local-filesystem>load pipeline not on the local filesystem <a href=#load-pipeline-not-on-the-local-filesystem class=headline-anchor aria-label=anchor><svg class="permalink"><title>permalink</title><use href="https://pypyr.io/icons/external-link.054f8ebb57944b2bc52ea4f0ecd16197.svg#external-link"/></svg></a></h2><p>A pype loader is responsible for loading a pipeline.</p><p>The default pype loader is <a href=https://github.com/pypyr/pypyr/blob/main/pypyr/loaders/file.py>pypyr.loaders.file</a>.
+You can change this default in <a href=https://pypyr.io/docs/getting-started/config/#default_loader>config for default_loader</a>.</p><p>This default loader loads pipelines from the local file-system, following the
+usual <a href=https://pypyr.io/docs/pipelines/lookup-order/>pypyr pipeline look-up sequence</a>.</p><p>If you want to load pipelines from somewhere else, like maybe a shared pipeline
 library, or implement your own caching, or maybe if you want to load a pipeline
-from something like s3 or consul, you can roll your own pype loader.</p>
-<div class="admonition tip" role=figure>
-<div class=admonition-tip-icon></div>
-<div class=admonition-content><p>pypyr internally automatically caches a pipeline by name for each loader on 1st
+from something like s3 or consul, you can roll your own pype loader.</p><div class="admonition tip" role=figure>
+<div class=admonition-tip-icon></div><div class=admonition-content><p>pypyr internally automatically caches a pipeline by name for each loader on 1st
 load, so that subsequent calls in the same session to run that pipeline will
-use the cached pipeline rather than invoke the loader each time.</p>
-<p>This is the case both when you invoke pipelines from the api/cli, and when you
+use the cached pipeline rather than invoke the loader each time.</p><p>This is the case both when you invoke pipelines from the api/cli, and when you
 are calling a pipeline from within a pipeline with
-<a href=https://pypyr.io/docs/steps/pype/>pypyr.steps.pype</a>.</p>
-</div>
-</div>
-<h2 id=custom-loader-function-signature>custom loader function signature <a href=#custom-loader-function-signature class=headline-anchor aria-label=anchor><svg class="permalink"><title>permalink</title><use href="https://pypyr.io/icons/external-link.054f8ebb57944b2bc52ea4f0ecd16197.svg#external-link"/></svg></a></h2><p>A loader is any Python module with a function like this:</p>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=n>get_pipeline_definition</span><span class=p>(</span><span class=n>name</span><span class=p>:</span> <span class=nb>str</span><span class=p>,</span> <span class=n>parent</span><span class=p>:</span> <span class=n>Any</span><span class=p>)</span> <span class=o>-&gt;</span> <span class=n>pypyr</span><span class=o>.</span><span class=n>pipedef</span><span class=o>.</span><span class=n>PipelineDefinition</span> <span class=o>|</span> <span class=n>Mapping</span>
-</code></pre></div><p>Here it is in more detail - all you have to do is replace
+<a href=https://pypyr.io/docs/steps/pype/>pypyr.steps.pype</a>.</p></div></div><h2 id=custom-loader-function-signature>custom loader function signature <a href=#custom-loader-function-signature class=headline-anchor aria-label=anchor><svg class="permalink"><title>permalink</title><use href="https://pypyr.io/icons/external-link.054f8ebb57944b2bc52ea4f0ecd16197.svg#external-link"/></svg></a></h2><p>A loader is any Python module with a function like this:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=n>get_pipeline_definition</span><span class=p>(</span><span class=n>name</span><span class=p>:</span> <span class=nb>str</span><span class=p>,</span> <span class=n>parent</span><span class=p>:</span> <span class=n>Any</span><span class=p>)</span> <span class=o>-&gt;</span> <span class=n>pypyr</span><span class=o>.</span><span class=n>pipedef</span><span class=o>.</span><span class=n>PipelineDefinition</span> <span class=o>|</span> <span class=n>Mapping</span>
+</span></span></code></pre></div><p>Here it is in more detail - all you have to do is replace
 <code>get_filelike_obj_from_somewhere</code> with your own code that, well, gets a
-file-like object from somewhere:</p>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=kn>import</span> <span class=nn>logging</span>
-<span class=kn>from</span> <span class=nn>pypyr.errors</span> <span class=kn>import</span> <span class=n>PipelineNotFoundError</span>
-<span class=kn>import</span> <span class=nn>pypyr.yaml</span>
-
-<span class=n>logger</span> <span class=o>=</span> <span class=n>logging</span><span class=o>.</span><span class=n>getLogger</span><span class=p>(</span><span class=vm>__name__</span><span class=p>)</span>
-
-<span class=k>def</span> <span class=nf>get_pipeline_definition</span><span class=p>(</span><span class=n>pipeline_name</span><span class=p>,</span> <span class=n>parent</span><span class=p>):</span>
-    <span class=s2>&#34;&#34;&#34;Open and parse the pipeline yaml.
-</span><span class=s2>
-</span><span class=s2>    Parse the pipeline yaml and return dictionary representing the pipeline.
-</span><span class=s2>
-</span><span class=s2>    pipeline_name is whatever is passed in from the shell like:
-</span><span class=s2>    $ pypyr pipelinename args
-</span><span class=s2>
-</span><span class=s2>    Args:
-</span><span class=s2>        pipeline_name (str): Name of pipeline. Passed in from the 1st 
-</span><span class=s2>                             positional cmd argument, or the pipeline_name
-</span><span class=s2>                             run() api arg.
-</span><span class=s2>        parent (any): Set by the parent&#39;s loader when this call is to get the
-</span><span class=s2>                      definition for a child pipeline called by that parent
-</span><span class=s2>                      pipeline with pype.
-</span><span class=s2>        
-</span><span class=s2>    Returns:
-</span><span class=s2>        pypyr.pipedef.PipelineDefinition, or Dict-like object describing the 
-</span><span class=s2>        pipeline&#39;s yaml, parsed from the pipeline file/stream.
-</span><span class=s2>
-</span><span class=s2>    Raises:
-</span><span class=s2>        PipelineNotFoundError: pipeline_name not found.
-</span><span class=s2>
-</span><span class=s2>    &#34;&#34;&#34;</span>
-    <span class=n>logger</span><span class=o>.</span><span class=n>debug</span><span class=p>(</span><span class=s2>&#34;starting&#34;</span><span class=p>)</span>
-
-    <span class=c1># it&#39;s good form only to use .info and higher log levels when you must.</span>
-    <span class=c1># For .debug() being verbose is very much encouraged.</span>
-    <span class=n>logger</span><span class=o>.</span><span class=n>info</span><span class=p>(</span><span class=s2>&#34;Your clever code goes here. . . &#34;</span><span class=p>)</span>
-
-    <span class=c1># if something goes wrong you might want to raise PipelineNotFoundError</span>
-    <span class=k>with</span> <span class=n>get_filelike_obj_from_somewhere</span><span class=p>(</span><span class=n>pipeline_name</span><span class=p>)</span> <span class=k>as</span> <span class=n>yaml_file</span><span class=p>:</span>
-    <span class=c1># pass the file-like object here to have pypyr parse the yaml for you</span>
-    <span class=c1># yaml_file has to be open and ready to read at this point.</span>
-    <span class=c1># if you prefer to use your own yaml parser, do that here instead of </span>
-    <span class=c1># calling get_pipeline_yaml.</span>
-        <span class=n>pipeline_yaml</span> <span class=o>=</span> <span class=n>pypyr</span><span class=o>.</span><span class=n>yaml</span><span class=o>.</span><span class=n>get_pipeline_yaml</span><span class=p>(</span><span class=n>yaml_file</span><span class=p>)</span>
-
-    <span class=c1># remember to close yaml_file here if necessary if not using &#34;with&#34;</span>
-
-    <span class=c1># some arbitrary log output</span>
-    <span class=n>logger</span><span class=o>.</span><span class=n>debug</span><span class=p>(</span><span class=sa>f</span><span class=s2>&#34;found </span><span class=si>{</span><span class=nb>len</span><span class=p>(</span><span class=n>pipeline_yaml</span><span class=p>)</span><span class=si>}</span><span class=s2> stages in pipeline.&#34;</span><span class=p>)</span>
-
-    <span class=n>logger</span><span class=o>.</span><span class=n>debug</span><span class=p>(</span><span class=s2>&#34;done&#34;</span><span class=p>)</span>
-    <span class=k>return</span> <span class=n>pipeline_yaml</span>
-</code></pre></div><div class="admonition tip" role=figure>
-<div class=admonition-tip-icon></div>
-<div class=admonition-content>The <code>parent</code> argument only has a value when loading a child pipeline via a
-<code>pypyr.steps.pype</code> step.</div>
-</div>
-<h2 id=example>example <a href=#example class=headline-anchor aria-label=anchor><svg class="permalink"><title>permalink</title><use href="https://pypyr.io/icons/external-link.054f8ebb57944b2bc52ea4f0ecd16197.svg#external-link"/></svg></a></h2><p>Here is a minimalist custom loader that just loads a pipeline from the current
-working directory without doing anything special.</p>
-<p>Create a file <code>./mydir/myloader.py</code> as follows (the file-name is not important,
+file-like object from somewhere:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=kn>import</span> <span class=nn>logging</span>
+</span></span><span class=line><span class=cl><span class=kn>from</span> <span class=nn>pypyr.errors</span> <span class=kn>import</span> <span class=n>PipelineNotFoundError</span>
+</span></span><span class=line><span class=cl><span class=kn>import</span> <span class=nn>pypyr.yaml</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=n>logger</span> <span class=o>=</span> <span class=n>logging</span><span class=o>.</span><span class=n>getLogger</span><span class=p>(</span><span class=vm>__name__</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>def</span> <span class=nf>get_pipeline_definition</span><span class=p>(</span><span class=n>pipeline_name</span><span class=p>,</span> <span class=n>parent</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>    <span class=s2>&#34;&#34;&#34;Open and parse the pipeline yaml.
+</span></span></span><span class=line><span class=cl><span class=s2>
+</span></span></span><span class=line><span class=cl><span class=s2>    Parse the pipeline yaml and return dictionary representing the pipeline.
+</span></span></span><span class=line><span class=cl><span class=s2>
+</span></span></span><span class=line><span class=cl><span class=s2>    pipeline_name is whatever is passed in from the shell like:
+</span></span></span><span class=line><span class=cl><span class=s2>    $ pypyr pipelinename args
+</span></span></span><span class=line><span class=cl><span class=s2>
+</span></span></span><span class=line><span class=cl><span class=s2>    Args:
+</span></span></span><span class=line><span class=cl><span class=s2>        pipeline_name (str): Name of pipeline. Passed in from the 1st 
+</span></span></span><span class=line><span class=cl><span class=s2>                             positional cmd argument, or the pipeline_name
+</span></span></span><span class=line><span class=cl><span class=s2>                             run() api arg.
+</span></span></span><span class=line><span class=cl><span class=s2>        parent (any): Set by the parent&#39;s loader when this call is to get the
+</span></span></span><span class=line><span class=cl><span class=s2>                      definition for a child pipeline called by that parent
+</span></span></span><span class=line><span class=cl><span class=s2>                      pipeline with pype.
+</span></span></span><span class=line><span class=cl><span class=s2>        
+</span></span></span><span class=line><span class=cl><span class=s2>    Returns:
+</span></span></span><span class=line><span class=cl><span class=s2>        pypyr.pipedef.PipelineDefinition, or Dict-like object describing the 
+</span></span></span><span class=line><span class=cl><span class=s2>        pipeline&#39;s yaml, parsed from the pipeline file/stream.
+</span></span></span><span class=line><span class=cl><span class=s2>
+</span></span></span><span class=line><span class=cl><span class=s2>    Raises:
+</span></span></span><span class=line><span class=cl><span class=s2>        PipelineNotFoundError: pipeline_name not found.
+</span></span></span><span class=line><span class=cl><span class=s2>
+</span></span></span><span class=line><span class=cl><span class=s2>    &#34;&#34;&#34;</span>
+</span></span><span class=line><span class=cl>    <span class=n>logger</span><span class=o>.</span><span class=n>debug</span><span class=p>(</span><span class=s2>&#34;starting&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=c1># it&#39;s good form only to use .info and higher log levels when you must.</span>
+</span></span><span class=line><span class=cl>    <span class=c1># For .debug() being verbose is very much encouraged.</span>
+</span></span><span class=line><span class=cl>    <span class=n>logger</span><span class=o>.</span><span class=n>info</span><span class=p>(</span><span class=s2>&#34;Your clever code goes here. . . &#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=c1># if something goes wrong you might want to raise PipelineNotFoundError</span>
+</span></span><span class=line><span class=cl>    <span class=k>with</span> <span class=n>get_filelike_obj_from_somewhere</span><span class=p>(</span><span class=n>pipeline_name</span><span class=p>)</span> <span class=k>as</span> <span class=n>yaml_file</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>    <span class=c1># pass the file-like object here to have pypyr parse the yaml for you</span>
+</span></span><span class=line><span class=cl>    <span class=c1># yaml_file has to be open and ready to read at this point.</span>
+</span></span><span class=line><span class=cl>    <span class=c1># if you prefer to use your own yaml parser, do that here instead of </span>
+</span></span><span class=line><span class=cl>    <span class=c1># calling get_pipeline_yaml.</span>
+</span></span><span class=line><span class=cl>        <span class=n>pipeline_yaml</span> <span class=o>=</span> <span class=n>pypyr</span><span class=o>.</span><span class=n>yaml</span><span class=o>.</span><span class=n>get_pipeline_yaml</span><span class=p>(</span><span class=n>yaml_file</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=c1># remember to close yaml_file here if necessary if not using &#34;with&#34;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=c1># some arbitrary log output</span>
+</span></span><span class=line><span class=cl>    <span class=n>logger</span><span class=o>.</span><span class=n>debug</span><span class=p>(</span><span class=sa>f</span><span class=s2>&#34;found </span><span class=si>{</span><span class=nb>len</span><span class=p>(</span><span class=n>pipeline_yaml</span><span class=p>)</span><span class=si>}</span><span class=s2> stages in pipeline.&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=n>logger</span><span class=o>.</span><span class=n>debug</span><span class=p>(</span><span class=s2>&#34;done&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>    <span class=k>return</span> <span class=n>pipeline_yaml</span>
+</span></span></code></pre></div><div class="admonition tip" role=figure>
+<div class=admonition-tip-icon></div><div class=admonition-content>The <code>parent</code> argument only has a value when loading a child pipeline via a
+<code>pypyr.steps.pype</code> step.</div></div><h2 id=example>example <a href=#example class=headline-anchor aria-label=anchor><svg class="permalink"><title>permalink</title><use href="https://pypyr.io/icons/external-link.054f8ebb57944b2bc52ea4f0ecd16197.svg#external-link"/></svg></a></h2><p>Here is a minimalist custom loader that just loads a pipeline from the current
+working directory without doing anything special.</p><p>Create a file <code>./mydir/myloader.py</code> as follows (the file-name is not important,
 what is important is that the .py file has a <code>def get_pipeline_definition</code> in
-it):</p>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=s2>&#34;&#34;&#34;Naive custom loader without any error handling.&#34;&#34;&#34;</span>
-<span class=kn>from</span> <span class=nn>pathlib</span> <span class=kn>import</span> <span class=n>Path</span>
-<span class=kn>import</span> <span class=nn>pypyr.yaml</span>
-
-<span class=n>CWD</span> <span class=o>=</span> <span class=n>Path</span><span class=o>.</span><span class=n>cwd</span><span class=p>()</span>
-
-<span class=k>def</span> <span class=nf>get_pipeline_definition</span><span class=p>(</span><span class=n>pipeline_name</span><span class=p>,</span> <span class=n>parent</span><span class=p>):</span>
-    <span class=s2>&#34;&#34;&#34;Simplified loader that gets pipeline_name.yaml in working dir.&#34;&#34;&#34;</span>
-    <span class=k>with</span> <span class=nb>open</span><span class=p>(</span><span class=n>CWD</span><span class=o>.</span><span class=n>joinpath</span><span class=p>(</span><span class=sa>f</span><span class=s1>&#39;</span><span class=si>{</span><span class=n>pipeline_name</span><span class=si>}</span><span class=s1>.yaml&#39;</span><span class=p>))</span> <span class=k>as</span> <span class=n>yaml_file</span><span class=p>:</span>
-        <span class=k>return</span> <span class=n>pypyr</span><span class=o>.</span><span class=n>yaml</span><span class=o>.</span><span class=n>get_pipeline_yaml</span><span class=p>(</span><span class=n>yaml_file</span><span class=p>)</span>
-</code></pre></div><div class="admonition tip" role=figure>
-<div class=admonition-tip-icon></div>
-<div class=admonition-content>pypyr will automatically cache the return value of the
+it):</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=s2>&#34;&#34;&#34;Naive custom loader without any error handling.&#34;&#34;&#34;</span>
+</span></span><span class=line><span class=cl><span class=kn>from</span> <span class=nn>pathlib</span> <span class=kn>import</span> <span class=n>Path</span>
+</span></span><span class=line><span class=cl><span class=kn>import</span> <span class=nn>pypyr.yaml</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=n>CWD</span> <span class=o>=</span> <span class=n>Path</span><span class=o>.</span><span class=n>cwd</span><span class=p>()</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>def</span> <span class=nf>get_pipeline_definition</span><span class=p>(</span><span class=n>pipeline_name</span><span class=p>,</span> <span class=n>parent</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>    <span class=s2>&#34;&#34;&#34;Simplified loader that gets pipeline_name.yaml in working dir.&#34;&#34;&#34;</span>
+</span></span><span class=line><span class=cl>    <span class=k>with</span> <span class=nb>open</span><span class=p>(</span><span class=n>CWD</span><span class=o>.</span><span class=n>joinpath</span><span class=p>(</span><span class=sa>f</span><span class=s1>&#39;</span><span class=si>{</span><span class=n>pipeline_name</span><span class=si>}</span><span class=s1>.yaml&#39;</span><span class=p>))</span> <span class=k>as</span> <span class=n>yaml_file</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>        <span class=k>return</span> <span class=n>pypyr</span><span class=o>.</span><span class=n>yaml</span><span class=o>.</span><span class=n>get_pipeline_yaml</span><span class=p>(</span><span class=n>yaml_file</span><span class=p>)</span>
+</span></span></code></pre></div><div class="admonition tip" role=figure>
+<div class=admonition-tip-icon></div><div class=admonition-content>pypyr will automatically cache the return value of the
 <code>get_pipeline_definition</code> function of your custom loader for you, you do not
-have to do anything special.</div>
-</div>
-<h2 id=use-custom-loader-from-the-api>use custom loader from the API <a href=#use-custom-loader-from-the-api class=headline-anchor aria-label=anchor><svg class="permalink"><title>permalink</title><use href="https://pypyr.io/icons/external-link.054f8ebb57944b2bc52ea4f0ecd16197.svg#external-link"/></svg></a></h2><p>The usual <a href=https://pypyr.io/docs/api/custom-module-search-path/>custom module import resolution rules</a> apply. If your loader path is not in
+have to do anything special.</div></div><h2 id=use-custom-loader-from-the-api>use custom loader from the API <a href=#use-custom-loader-from-the-api class=headline-anchor aria-label=anchor><svg class="permalink"><title>permalink</title><use href="https://pypyr.io/icons/external-link.054f8ebb57944b2bc52ea4f0ecd16197.svg#external-link"/></svg></a></h2><p>The usual <a href=https://pypyr.io/docs/api/custom-module-search-path/>custom module import resolution rules</a> apply. If your loader path is not in
 <code>sys.path</code> already, pypyr can only look for ad hoc loader modules relative to
 the <code>py_dir</code> directory or in packages installed in the current Python
-environment.</p>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=kn>from</span> <span class=nn>pathlib</span> <span class=kn>import</span> <span class=n>Path</span>
-<span class=kn>import</span> <span class=nn>pypyr.pipelinerunner</span>
-
-<span class=n>CWD</span> <span class=o>=</span> <span class=n>Path</span><span class=o>.</span><span class=n>cwd</span><span class=p>()</span>
-
-<span class=c1># load pipeline with get_pipeline_definition() in ./mydir/myloader.py</span>
-<span class=n>pypyr</span><span class=o>.</span><span class=n>pipelinerunner</span><span class=o>.</span><span class=n>run</span><span class=p>(</span>
-            <span class=n>pipeline_name</span><span class=o>=</span><span class=s1>&#39;pipeline-name&#39;</span><span class=p>,</span>
-            <span class=n>args_in</span><span class=o>=</span><span class=p>[</span><span class=s1>&#39;arb&#39;</span><span class=p>,</span> <span class=s1>&#39;context&#39;</span><span class=p>,</span> <span class=s1>&#39;input&#39;</span><span class=p>],</span>
-            <span class=n>loader</span><span class=o>=</span><span class=s1>&#39;mydir.myloader&#39;</span><span class=p>,</span>
-            <span class=n>py_dir</span><span class=o>=</span><span class=n>CWD</span>
-        <span class=p>)</span>
-</code></pre></div><p>If you set your <a href=https://pypyr.io/docs/getting-started/config/#default_loader>default_loader</a> in config, then you do not
+environment.</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=kn>from</span> <span class=nn>pathlib</span> <span class=kn>import</span> <span class=n>Path</span>
+</span></span><span class=line><span class=cl><span class=kn>import</span> <span class=nn>pypyr.pipelinerunner</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=n>CWD</span> <span class=o>=</span> <span class=n>Path</span><span class=o>.</span><span class=n>cwd</span><span class=p>()</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># load pipeline with get_pipeline_definition() in ./mydir/myloader.py</span>
+</span></span><span class=line><span class=cl><span class=n>pypyr</span><span class=o>.</span><span class=n>pipelinerunner</span><span class=o>.</span><span class=n>run</span><span class=p>(</span>
+</span></span><span class=line><span class=cl>            <span class=n>pipeline_name</span><span class=o>=</span><span class=s1>&#39;pipeline-name&#39;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>            <span class=n>args_in</span><span class=o>=</span><span class=p>[</span><span class=s1>&#39;arb&#39;</span><span class=p>,</span> <span class=s1>&#39;context&#39;</span><span class=p>,</span> <span class=s1>&#39;input&#39;</span><span class=p>],</span>
+</span></span><span class=line><span class=cl>            <span class=n>loader</span><span class=o>=</span><span class=s1>&#39;mydir.myloader&#39;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>            <span class=n>py_dir</span><span class=o>=</span><span class=n>CWD</span>
+</span></span><span class=line><span class=cl>        <span class=p>)</span>
+</span></span></code></pre></div><p>If you set your <a href=https://pypyr.io/docs/getting-started/config/#default_loader>default_loader</a> in config, then you do not
 explicitly need to pass your custom value to the API or to <code>pype</code>, but you will
 still need to tell pypyr from which directory location to resolve it with
-<code>py_dir</code> if you&rsquo;ve not installed it as a package into your environment.</p>
-<p>If you package your loader and you install the package into the active python
+<code>py_dir</code> if you&rsquo;ve not installed it as a package into your environment.</p><p>If you package your loader and you install the package into the active python
 environment (i.e you did a <code>$ pip install mypackage</code>), you can of course use the
-usual python package name instead:</p>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=kn>import</span> <span class=nn>pypyr.pipelinerunner</span>
-
-<span class=c1># mypackage.myloader is installed in the current Python env</span>
-<span class=n>pypyr</span><span class=o>.</span><span class=n>pipelinerunner</span><span class=o>.</span><span class=n>run</span><span class=p>(</span>
-            <span class=n>pipeline_name</span><span class=o>=</span><span class=s1>&#39;pipeline-name&#39;</span><span class=p>,</span>
-            <span class=n>args_in</span><span class=o>=</span><span class=p>[</span><span class=s1>&#39;arb&#39;</span><span class=p>,</span> <span class=s1>&#39;context&#39;</span><span class=p>,</span> <span class=s1>&#39;input&#39;</span><span class=p>],</span>
-            <span class=n>loader</span><span class=o>=</span><span class=s1>&#39;mypackage.myloader&#39;</span>
-        <span class=p>)</span>
-</code></pre></div><p>Since in this case the loader exists in the Python environment, you do NOT need
-to pass <code>py_dir</code> to <code>run()</code>.</p>
-<p>See here for full details on
-<a href=https://pypyr.io/docs/api/run-pipeline/>how to run a pipeline from code</a>.</p>
-<h2 id=use-custom-loader-with-pype>use custom loader with pype <a href=#use-custom-loader-with-pype class=headline-anchor aria-label=anchor><svg class="permalink"><title>permalink</title><use href="https://pypyr.io/icons/external-link.054f8ebb57944b2bc52ea4f0ecd16197.svg#external-link"/></svg></a></h2><p>When you call a child pipeline from a parent pipeline with
+usual python package name instead:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=kn>import</span> <span class=nn>pypyr.pipelinerunner</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># mypackage.myloader is installed in the current Python env</span>
+</span></span><span class=line><span class=cl><span class=n>pypyr</span><span class=o>.</span><span class=n>pipelinerunner</span><span class=o>.</span><span class=n>run</span><span class=p>(</span>
+</span></span><span class=line><span class=cl>            <span class=n>pipeline_name</span><span class=o>=</span><span class=s1>&#39;pipeline-name&#39;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>            <span class=n>args_in</span><span class=o>=</span><span class=p>[</span><span class=s1>&#39;arb&#39;</span><span class=p>,</span> <span class=s1>&#39;context&#39;</span><span class=p>,</span> <span class=s1>&#39;input&#39;</span><span class=p>],</span>
+</span></span><span class=line><span class=cl>            <span class=n>loader</span><span class=o>=</span><span class=s1>&#39;mypackage.myloader&#39;</span>
+</span></span><span class=line><span class=cl>        <span class=p>)</span>
+</span></span></code></pre></div><p>Since in this case the loader exists in the Python environment, you do NOT need
+to pass <code>py_dir</code> to <code>run()</code>.</p><p>See here for full details on
+<a href=https://pypyr.io/docs/api/run-pipeline/>how to run a pipeline from code</a>.</p><h2 id=use-custom-loader-with-pype>use custom loader with pype <a href=#use-custom-loader-with-pype class=headline-anchor aria-label=anchor><svg class="permalink"><title>permalink</title><use href="https://pypyr.io/icons/external-link.054f8ebb57944b2bc52ea4f0ecd16197.svg#external-link"/></svg></a></h2><p>When you call a child pipeline from a parent pipeline with
 <a href=https://pypyr.io/docs/steps/pype/>pypyr.steps.pype</a> you can explicitly set the
-loader when you invoke the child:</p>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-yaml data-lang=yaml><span class=nt>steps</span><span class=p>:</span><span class=w>
-</span><span class=w>  </span>- <span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>pypyr.steps.pype</span><span class=w>
-</span><span class=w>    </span><span class=nt>comment</span><span class=p>:</span><span class=w> </span><span class=l>loader ./mydir/myloader.py will load pipeline subdir/child-pipeline</span><span class=w>
-</span><span class=w>    </span><span class=nt>in</span><span class=p>:</span><span class=w>
-</span><span class=w>      </span><span class=nt>pype</span><span class=p>:</span><span class=w>
-</span><span class=w>        </span><span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>subdir/child-pipeline</span><span class=w>
-</span><span class=w>        </span><span class=nt>loader</span><span class=p>:</span><span class=w> </span><span class=l>mydir.myloader</span><span class=w>
-</span></code></pre></div><div class="admonition tip" role=figure>
-<div class=admonition-tip-icon></div>
-<div class=admonition-content><p>By default, pypyr will try to load a child pipeline with the same loader that
+loader when you invoke the child:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-yaml data-lang=yaml><span class=line><span class=cl><span class=nt>steps</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span>- <span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>pypyr.steps.pype</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nt>comment</span><span class=p>:</span><span class=w> </span><span class=l>loader ./mydir/myloader.py will load pipeline subdir/child-pipeline</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nt>in</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>      </span><span class=nt>pype</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>subdir/child-pipeline</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=nt>loader</span><span class=p>:</span><span class=w> </span><span class=l>mydir.myloader</span><span class=w>
+</span></span></span></code></pre></div><div class="admonition tip" role=figure>
+<div class=admonition-tip-icon></div><div class=admonition-content><p>By default, pypyr will try to load a child pipeline with the same loader that
 handled the parent, so you do NOT explicitly need to set <code>loader</code> on the <code>pype</code>
-step if you just want the child to use the same loader.</p>
-<p>If you do NOT want the child to inherit the parent&rsquo;s loader setting by default
+step if you just want the child to use the same loader.</p><p>If you do NOT want the child to inherit the parent&rsquo;s loader setting by default
 for your custom loader, see the next section for how to set
-<code>is_loader_cascading</code> on the <code>PipelineInfo</code> object.</p>
-</div>
-</div>
-<h2 id=custom-pipeline-metadata>custom pipeline metadata <a href=#custom-pipeline-metadata class=headline-anchor aria-label=anchor><svg class="permalink"><title>permalink</title><use href="https://pypyr.io/icons/external-link.054f8ebb57944b2bc52ea4f0ecd16197.svg#external-link"/></svg></a></h2><p>Your custom <code>get_pipeline_definition</code> function can return either just the bare
+<code>is_loader_cascading</code> on the <code>PipelineInfo</code> object.</p></div></div><h2 id=custom-pipeline-metadata>custom pipeline metadata <a href=#custom-pipeline-metadata class=headline-anchor aria-label=anchor><svg class="permalink"><title>permalink</title><use href="https://pypyr.io/icons/external-link.054f8ebb57944b2bc52ea4f0ecd16197.svg#external-link"/></svg></a></h2><p>Your custom <code>get_pipeline_definition</code> function can return either just the bare
 dict-like yaml payload of the pipeline itself, or a
 <code>pypyr.pipedef.PipelineDefinition</code> object. Internally, the pypyr core will
 wrap the pipeline body in a default <code>PipelineDefinition</code> instance if you did
-not do so yourself.</p>
-<p>If you want to add custom metadata from your loader to your pipeline you can do
+not do so yourself.</p><p>If you want to add custom metadata from your loader to your pipeline you can do
 so by setting a <code>pypyr.pipedef.PipelineInfo</code> object on your
-<code>PipelineDefinition</code>.</p>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=c1># namespace: pypyr.pipedef</span>
-
-<span class=k>class</span> <span class=nc>PipelineDefinition</span><span class=p>():</span>
-    <span class=n>pipeline</span><span class=p>:</span> <span class=n>Mapping</span> <span class=c1># the dict-like pipeline body</span>
-    <span class=n>info</span><span class=p>:</span> <span class=n>PipelineInfo</span> <span class=c1># pipeline metadata</span>
-
-<span class=k>class</span> <span class=nc>PipelineInfo</span><span class=p>():</span>
-    <span class=n>pipeline_name</span><span class=p>:</span> <span class=nb>str</span> <span class=c1># name of pipeline</span>
-    <span class=n>loader</span><span class=p>:</span> <span class=nb>str</span> <span class=c1># absolute module name of loader (string)</span>
-    <span class=n>parent</span><span class=p>:</span> <span class=n>Any</span> <span class=o>=</span> <span class=kc>None</span> <span class=c1># relative path hint for child pipelines</span>
-    <span class=n>is_parent_cascading</span><span class=p>:</span> <span class=nb>bool</span> <span class=o>=</span> <span class=kc>True</span>
-    <span class=n>is_loader_cascading</span><span class=p>:</span> <span class=nb>bool</span> <span class=o>=</span> <span class=kc>True</span>
-</code></pre></div><p>If you want to add extra custom metadata properties to your pipeline, derive
-your own class from <code>PipelineInfo</code> and add such properties as you want.</p>
-<p>This is entirely optional - you don&rsquo;t get any particular advantages by
+<code>PipelineDefinition</code>.</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=c1># namespace: pypyr.pipedef</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>class</span> <span class=nc>PipelineDefinition</span><span class=p>():</span>
+</span></span><span class=line><span class=cl>    <span class=n>pipeline</span><span class=p>:</span> <span class=n>Mapping</span> <span class=c1># the dict-like pipeline body</span>
+</span></span><span class=line><span class=cl>    <span class=n>info</span><span class=p>:</span> <span class=n>PipelineInfo</span> <span class=c1># pipeline metadata</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>class</span> <span class=nc>PipelineInfo</span><span class=p>():</span>
+</span></span><span class=line><span class=cl>    <span class=n>pipeline_name</span><span class=p>:</span> <span class=nb>str</span> <span class=c1># name of pipeline</span>
+</span></span><span class=line><span class=cl>    <span class=n>loader</span><span class=p>:</span> <span class=nb>str</span> <span class=c1># absolute module name of loader (string)</span>
+</span></span><span class=line><span class=cl>    <span class=n>parent</span><span class=p>:</span> <span class=n>Any</span> <span class=o>=</span> <span class=kc>None</span> <span class=c1># relative path hint for child pipelines</span>
+</span></span><span class=line><span class=cl>    <span class=n>is_parent_cascading</span><span class=p>:</span> <span class=nb>bool</span> <span class=o>=</span> <span class=kc>True</span>
+</span></span><span class=line><span class=cl>    <span class=n>is_loader_cascading</span><span class=p>:</span> <span class=nb>bool</span> <span class=o>=</span> <span class=kc>True</span>
+</span></span></code></pre></div><p>If you want to add extra custom metadata properties to your pipeline, derive
+your own class from <code>PipelineInfo</code> and add such properties as you want.</p><p>This is entirely optional - you don&rsquo;t get any particular advantages by
 explicitly setting & returning a <code>PipelineDefinition</code> from your custom
 <code>get_pipeline_definition</code> function, since the pypyr core wraps the return value
 from <code>get_pipeline_definition</code> in a <code>PipelineDefinition</code> for you if you did not
-do so yourself.</p>
-<p>You can control whether pipelines loaded by your custom loader will cascade
+do so yourself.</p><p>You can control whether pipelines loaded by your custom loader will cascade
 their <code>parent</code> and <code>loader</code> properties down to child pipelines when using
 <code>pype</code> by setting the <code>is_parent_cascading</code> and <code>is_loader_cascading</code> boolean
-flags.</p>
-<h3 id=example-1>example <a href=#example-1 class=headline-anchor aria-label=anchor><svg class="permalink"><title>permalink</title><use href="https://pypyr.io/icons/external-link.054f8ebb57944b2bc52ea4f0ecd16197.svg#external-link"/></svg></a></h3><p>Here is a silly example where we expand on the naive loader from earlier with
+flags.</p><h3 id=example-1>example <a href=#example-1 class=headline-anchor aria-label=anchor><svg class="permalink"><title>permalink</title><use href="https://pypyr.io/icons/external-link.054f8ebb57944b2bc52ea4f0ecd16197.svg#external-link"/></svg></a></h3><p>Here is a silly example where we expand on the naive loader from earlier with
 an extra meta-data property called <code>arb_property</code>, by creating a custom
-metadata class <code>ArbPipeInfo</code> for this loader.</p>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=kn>from</span> <span class=nn>pathlib</span> <span class=kn>import</span> <span class=n>Path</span>
-
-<span class=kn>from</span> <span class=nn>pypyr.pipedef</span> <span class=kn>import</span> <span class=n>PipelineDefinition</span><span class=p>,</span> <span class=n>PipelineInfo</span>
-<span class=kn>import</span> <span class=nn>pypyr.yaml</span>
-
-<span class=n>CWD</span> <span class=o>=</span> <span class=n>Path</span><span class=o>.</span><span class=n>cwd</span><span class=p>()</span>
-
-<span class=k>class</span> <span class=nc>ArbPipeInfo</span><span class=p>(</span><span class=n>PipelineInfo</span><span class=p>):</span>
-    <span class=s2>&#34;&#34;&#34;Custom pipeline meta-data.&#34;&#34;&#34;</span>
-    <span class=c1># you don&#39;t HAVE to use slots, but it&#39;s a tiny bit more efficient</span>
-    <span class=vm>__slots__</span> <span class=o>=</span> <span class=p>[</span><span class=s1>&#39;arb_property&#39;</span><span class=p>]</span>
-
-    <span class=k>def</span> <span class=fm>__init__</span><span class=p>(</span><span class=bp>self</span><span class=p>,</span> <span class=n>pipeline_name</span><span class=p>,</span> <span class=n>loader</span><span class=p>,</span> <span class=n>parent</span><span class=p>,</span> <span class=n>arb</span><span class=p>):</span>
-        <span class=c1># is_parent_cascading &amp; is_loader_cascading default True if not specified</span>
-        <span class=nb>super</span><span class=p>()</span><span class=o>.</span><span class=fm>__init__</span><span class=p>(</span><span class=n>pipeline_name</span><span class=o>=</span><span class=n>pipeline_name</span><span class=p>,</span>
-                         <span class=n>loader</span><span class=o>=</span><span class=n>loader</span><span class=p>,</span>
-                         <span class=n>parent</span><span class=o>=</span><span class=n>parent</span><span class=p>)</span>
-        <span class=bp>self</span><span class=o>.</span><span class=n>arb_property</span> <span class=o>=</span> <span class=n>arb</span>
-
-
-<span class=k>def</span> <span class=nf>get_pipeline_definition</span><span class=p>(</span><span class=n>pipeline_name</span><span class=p>,</span> <span class=n>parent</span><span class=p>):</span>
-    <span class=s2>&#34;&#34;&#34;Simple loader gets pipeline_name.yaml in working dir + custom metadata.&#34;&#34;&#34;</span>
-    <span class=c1># get &amp; parse the pipeline yaml payload</span>
-    <span class=k>with</span> <span class=nb>open</span><span class=p>(</span><span class=n>CWD</span><span class=o>.</span><span class=n>joinpath</span><span class=p>(</span><span class=sa>f</span><span class=s1>&#39;</span><span class=si>{</span><span class=n>pipeline_name</span><span class=si>}</span><span class=s1>.yaml&#39;</span><span class=p>))</span> <span class=k>as</span> <span class=n>yaml_file</span><span class=p>:</span>
-        <span class=n>pipeline_yaml</span> <span class=o>=</span> <span class=n>pypyr</span><span class=o>.</span><span class=n>yaml</span><span class=o>.</span><span class=n>get_pipeline_yaml</span><span class=p>(</span><span class=n>yaml_file</span><span class=p>)</span>
-    
-    <span class=c1># custom meta-data to associate with pipeline</span>
-    <span class=n>info</span> <span class=o>=</span> <span class=n>ArbPipeInfo</span><span class=p>(</span><span class=n>pipeline_name</span><span class=o>=</span><span class=n>pipeline_name</span><span class=p>,</span>
-                       <span class=n>parent</span><span class=o>=</span><span class=n>parent</span><span class=p>,</span>
-                       <span class=n>loader</span><span class=o>=</span><span class=vm>__name__</span><span class=p>,</span>
-                       <span class=n>arb_property</span><span class=o>=</span><span class=s1>&#39;some useful value&#39;</span><span class=p>)</span>
-
-    <span class=c1># wrap pipeline body in a PipelineDefinition alongside its metadata</span>
-    <span class=k>return</span> <span class=n>PipelineDefinition</span><span class=p>(</span><span class=n>pipeline</span><span class=o>=</span><span class=n>pipeline_yaml</span><span class=p>,</span> <span class=n>info</span><span class=o>=</span><span class=n>info</span><span class=p>)</span>
-</code></pre></div><p>If you want to access your custom property from the pipeline at run-time, you
-can get it from the <code>current_pipeline</code> on the <code>Context</code> object:</p>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-yaml data-lang=yaml><span class=nt>steps</span><span class=p>:</span><span class=w>
-</span><span class=w>  </span>- <span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>pypyr.steps.py</span><span class=w>
-</span><span class=w>    </span><span class=nt>comment</span><span class=p>:</span><span class=w> </span><span class=l>arb_property of the current pipeline, as set by the custom pipeline loader.</span><span class=w>
-</span><span class=w>    </span><span class=nt>in</span><span class=p>:</span><span class=w>
-</span><span class=w>      </span><span class=nt>pycode</span><span class=p>:</span><span class=w> </span><span class=l>print(context.current_pipeline.pipeline_definition.info.arb_property)</span><span class=w>
-</span><span class=w>  
-</span><span class=w>  </span>- <span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>pypyr.steps.py</span><span class=w>
-</span><span class=w>    </span><span class=nt>comment</span><span class=p>:</span><span class=w> </span><span class=l>arb_property on the 1st pipeline in the pipeline call-stack.</span><span class=w>
-</span><span class=w>             </span><span class=l>this is useful when pypyr.steps.pype calls pipelines within pipelines.</span><span class=w>
-</span><span class=w>    </span><span class=nt>in</span><span class=p>:</span><span class=w>
-</span><span class=w>      </span><span class=nt>pycode</span><span class=p>:</span><span class=w> </span><span class=l>print(context.get_root_pipeline().pipeline_definition.info.arb_property)</span><span class=w>
-</span></code></pre></div><p>You can access your custom metadata properties in exactly the same way on the
-<code>Context</code> object in a <a href=https://pypyr.io/docs/api/step/>custom step</a>.</p>
-<h3 id=non-cascading-loader>non-cascading loader <a href=#non-cascading-loader class=headline-anchor aria-label=anchor><svg class="permalink"><title>permalink</title><use href="https://pypyr.io/icons/external-link.054f8ebb57944b2bc52ea4f0ecd16197.svg#external-link"/></svg></a></h3><p>On <a href=https://pypyr.io/docs/steps/pype/>pypyr.steps.pype</a>, if you do not want to
+metadata class <code>ArbPipeInfo</code> for this loader.</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=kn>from</span> <span class=nn>pathlib</span> <span class=kn>import</span> <span class=n>Path</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=kn>from</span> <span class=nn>pypyr.pipedef</span> <span class=kn>import</span> <span class=n>PipelineDefinition</span><span class=p>,</span> <span class=n>PipelineInfo</span>
+</span></span><span class=line><span class=cl><span class=kn>import</span> <span class=nn>pypyr.yaml</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=n>CWD</span> <span class=o>=</span> <span class=n>Path</span><span class=o>.</span><span class=n>cwd</span><span class=p>()</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>class</span> <span class=nc>ArbPipeInfo</span><span class=p>(</span><span class=n>PipelineInfo</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>    <span class=s2>&#34;&#34;&#34;Custom pipeline meta-data.&#34;&#34;&#34;</span>
+</span></span><span class=line><span class=cl>    <span class=c1># you don&#39;t HAVE to use slots, but it&#39;s a tiny bit more efficient</span>
+</span></span><span class=line><span class=cl>    <span class=vm>__slots__</span> <span class=o>=</span> <span class=p>[</span><span class=s1>&#39;arb_property&#39;</span><span class=p>]</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=k>def</span> <span class=fm>__init__</span><span class=p>(</span><span class=bp>self</span><span class=p>,</span> <span class=n>pipeline_name</span><span class=p>,</span> <span class=n>loader</span><span class=p>,</span> <span class=n>parent</span><span class=p>,</span> <span class=n>arb</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>        <span class=c1># is_parent_cascading &amp; is_loader_cascading default True if not specified</span>
+</span></span><span class=line><span class=cl>        <span class=nb>super</span><span class=p>()</span><span class=o>.</span><span class=fm>__init__</span><span class=p>(</span><span class=n>pipeline_name</span><span class=o>=</span><span class=n>pipeline_name</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>                         <span class=n>loader</span><span class=o>=</span><span class=n>loader</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>                         <span class=n>parent</span><span class=o>=</span><span class=n>parent</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>        <span class=bp>self</span><span class=o>.</span><span class=n>arb_property</span> <span class=o>=</span> <span class=n>arb</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>def</span> <span class=nf>get_pipeline_definition</span><span class=p>(</span><span class=n>pipeline_name</span><span class=p>,</span> <span class=n>parent</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>    <span class=s2>&#34;&#34;&#34;Simple loader gets pipeline_name.yaml in working dir + custom metadata.&#34;&#34;&#34;</span>
+</span></span><span class=line><span class=cl>    <span class=c1># get &amp; parse the pipeline yaml payload</span>
+</span></span><span class=line><span class=cl>    <span class=k>with</span> <span class=nb>open</span><span class=p>(</span><span class=n>CWD</span><span class=o>.</span><span class=n>joinpath</span><span class=p>(</span><span class=sa>f</span><span class=s1>&#39;</span><span class=si>{</span><span class=n>pipeline_name</span><span class=si>}</span><span class=s1>.yaml&#39;</span><span class=p>))</span> <span class=k>as</span> <span class=n>yaml_file</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>        <span class=n>pipeline_yaml</span> <span class=o>=</span> <span class=n>pypyr</span><span class=o>.</span><span class=n>yaml</span><span class=o>.</span><span class=n>get_pipeline_yaml</span><span class=p>(</span><span class=n>yaml_file</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>    
+</span></span><span class=line><span class=cl>    <span class=c1># custom meta-data to associate with pipeline</span>
+</span></span><span class=line><span class=cl>    <span class=n>info</span> <span class=o>=</span> <span class=n>ArbPipeInfo</span><span class=p>(</span><span class=n>pipeline_name</span><span class=o>=</span><span class=n>pipeline_name</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>                       <span class=n>parent</span><span class=o>=</span><span class=n>parent</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>                       <span class=n>loader</span><span class=o>=</span><span class=vm>__name__</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>                       <span class=n>arb_property</span><span class=o>=</span><span class=s1>&#39;some useful value&#39;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=c1># wrap pipeline body in a PipelineDefinition alongside its metadata</span>
+</span></span><span class=line><span class=cl>    <span class=k>return</span> <span class=n>PipelineDefinition</span><span class=p>(</span><span class=n>pipeline</span><span class=o>=</span><span class=n>pipeline_yaml</span><span class=p>,</span> <span class=n>info</span><span class=o>=</span><span class=n>info</span><span class=p>)</span>
+</span></span></code></pre></div><p>If you want to access your custom property from the pipeline at run-time, you
+can get it from the <code>current_pipeline</code> on the <code>Context</code> object:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-yaml data-lang=yaml><span class=line><span class=cl><span class=nt>steps</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span>- <span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>pypyr.steps.py</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nt>comment</span><span class=p>:</span><span class=w> </span><span class=l>arb_property of the current pipeline, as set by the custom pipeline loader.</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nt>in</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>      </span><span class=nt>pycode</span><span class=p>:</span><span class=w> </span><span class=l>print(context.current_pipeline.pipeline_definition.info.arb_property)</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  
+</span></span></span><span class=line><span class=cl><span class=w>  </span>- <span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>pypyr.steps.py</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nt>comment</span><span class=p>:</span><span class=w> </span><span class=l>arb_property on the 1st pipeline in the pipeline call-stack.</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>             </span><span class=l>this is useful when pypyr.steps.pype calls pipelines within pipelines.</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nt>in</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>      </span><span class=nt>pycode</span><span class=p>:</span><span class=w> </span><span class=l>print(context.get_root_pipeline().pipeline_definition.info.arb_property)</span><span class=w>
+</span></span></span></code></pre></div><p>You can access your custom metadata properties in exactly the same way on the
+<code>Context</code> object in a <a href=https://pypyr.io/docs/api/step/>custom step</a>.</p><h3 id=non-cascading-loader>non-cascading loader <a href=#non-cascading-loader class=headline-anchor aria-label=anchor><svg class="permalink"><title>permalink</title><use href="https://pypyr.io/icons/external-link.054f8ebb57944b2bc52ea4f0ecd16197.svg#external-link"/></svg></a></h3><p>On <a href=https://pypyr.io/docs/steps/pype/>pypyr.steps.pype</a>, if you do not want to
 inherit which loader to use from the parent you can set <code>is_loader_cascading</code> to
-<code>False</code> on the <code>PipelineInfo</code> object.</p>
-<p>If you do not cascade your loader setting to child pipelines, your pipeline
+<code>False</code> on the <code>PipelineInfo</code> object.</p><p>If you do not cascade your loader setting to child pipelines, your pipeline
 authors will <em>explictly</em> have to set <code>loader</code> on each <code>pype</code> step, even if it
-is the same as the parent.</p>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=kn>from</span> <span class=nn>pypyr.pipedef</span> <span class=kn>import</span> <span class=n>PipelineDefinition</span><span class=p>,</span> <span class=n>PipelineInfo</span>
-<span class=kn>import</span> <span class=nn>pypyr.yaml</span>
-
-<span class=k>class</span> <span class=nc>ArbPipeInfo</span><span class=p>(</span><span class=n>PipelineInfo</span><span class=p>):</span>
-    <span class=s2>&#34;&#34;&#34;Non-cascading custom pipeline meta-data.&#34;&#34;&#34;</span>
-    <span class=c1># you don&#39;t HAVE to use slots, but it&#39;s a tiny bit more efficient</span>
-    <span class=vm>__slots__</span> <span class=o>=</span> <span class=p>[</span><span class=s1>&#39;arb_property&#39;</span><span class=p>]</span>
-
-    <span class=k>def</span> <span class=fm>__init__</span><span class=p>(</span><span class=bp>self</span><span class=p>,</span> <span class=n>pipeline_name</span><span class=p>,</span> <span class=n>loader</span><span class=p>,</span> <span class=n>parent</span><span class=p>,</span> <span class=n>arb</span><span class=p>):</span>
-        <span class=c1># This is a non-cascading loader.</span>
-        <span class=nb>super</span><span class=p>()</span><span class=o>.</span><span class=fm>__init__</span><span class=p>(</span><span class=n>pipeline_name</span><span class=o>=</span><span class=n>pipeline_name</span><span class=p>,</span>
-                         <span class=n>loader</span><span class=o>=</span><span class=n>loader</span><span class=p>,</span>
-                         <span class=n>parent</span><span class=o>=</span><span class=n>parent</span><span class=p>,</span>
-                         <span class=n>is_loader_cascading</span><span class=o>=</span><span class=kc>False</span><span class=p>)</span>
-        <span class=bp>self</span><span class=o>.</span><span class=n>arb_property</span> <span class=o>=</span> <span class=n>arb</span>
-
-
-<span class=k>def</span> <span class=nf>get_pipeline_definition</span><span class=p>(</span><span class=n>pipeline_name</span><span class=p>,</span> <span class=n>parent</span><span class=p>):</span>
-    <span class=s2>&#34;&#34;&#34;Non-cascading because PipelineInfo has is_loader_cascading False.&#34;&#34;&#34;</span>
-    <span class=c1># get &amp; parse the pipeline yaml payload from somewhere</span>
-    <span class=k>with</span> <span class=n>get_filelike_obj_from_somewhere</span><span class=p>(</span><span class=n>pipeline_name</span><span class=p>)</span> <span class=k>as</span> <span class=n>yaml_file</span><span class=p>:</span>
-        <span class=n>pipeline_yaml</span> <span class=o>=</span> <span class=n>pypyr</span><span class=o>.</span><span class=n>yaml</span><span class=o>.</span><span class=n>get_pipeline_yaml</span><span class=p>(</span><span class=n>yaml_file</span><span class=p>)</span>
-        <span class=n>actual_name</span> <span class=o>=</span> <span class=n>yaml_file</span><span class=o>.</span><span class=n>some_api_property</span>
-        <span class=n>actual_parent</span> <span class=o>=</span> <span class=n>yaml_file</span><span class=o>.</span><span class=n>another_api_property</span>
-    
-    <span class=c1># custom meta-data to associate with pipeline</span>
-    <span class=n>info</span> <span class=o>=</span> <span class=n>ArbPipeInfo</span><span class=p>(</span><span class=n>pipeline_name</span><span class=o>=</span><span class=n>actual_name</span><span class=p>,</span>
-                       <span class=n>parent</span><span class=o>=</span><span class=n>actual_parent</span><span class=p>,</span>
-                       <span class=n>loader</span><span class=o>=</span><span class=vm>__name__</span><span class=p>,</span>
-                       <span class=n>arb_property</span><span class=o>=</span><span class=s1>&#39;some useful value&#39;</span><span class=p>)</span>
-
-    <span class=c1># wrap pipeline body in a PipelineDefinition alongside its metadata</span>
-    <span class=k>return</span> <span class=n>PipelineDefinition</span><span class=p>(</span><span class=n>pipeline</span><span class=o>=</span><span class=n>pipeline_yaml</span><span class=p>,</span> <span class=n>info</span><span class=o>=</span><span class=n>info</span><span class=p>)</span>
-</code></pre></div>
-<h2 id=load-child-pipeline-relative-to-parent>load child pipeline relative to parent <a href=#load-child-pipeline-relative-to-parent class=headline-anchor aria-label=anchor><svg class="permalink"><title>permalink</title><use href="https://pypyr.io/icons/external-link.054f8ebb57944b2bc52ea4f0ecd16197.svg#external-link"/></svg></a></h2><p>If wherever you store your pipelines has a hierarchical structure, you can load
+is the same as the parent.</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=kn>from</span> <span class=nn>pypyr.pipedef</span> <span class=kn>import</span> <span class=n>PipelineDefinition</span><span class=p>,</span> <span class=n>PipelineInfo</span>
+</span></span><span class=line><span class=cl><span class=kn>import</span> <span class=nn>pypyr.yaml</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>class</span> <span class=nc>ArbPipeInfo</span><span class=p>(</span><span class=n>PipelineInfo</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>    <span class=s2>&#34;&#34;&#34;Non-cascading custom pipeline meta-data.&#34;&#34;&#34;</span>
+</span></span><span class=line><span class=cl>    <span class=c1># you don&#39;t HAVE to use slots, but it&#39;s a tiny bit more efficient</span>
+</span></span><span class=line><span class=cl>    <span class=vm>__slots__</span> <span class=o>=</span> <span class=p>[</span><span class=s1>&#39;arb_property&#39;</span><span class=p>]</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=k>def</span> <span class=fm>__init__</span><span class=p>(</span><span class=bp>self</span><span class=p>,</span> <span class=n>pipeline_name</span><span class=p>,</span> <span class=n>loader</span><span class=p>,</span> <span class=n>parent</span><span class=p>,</span> <span class=n>arb</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>        <span class=c1># This is a non-cascading loader.</span>
+</span></span><span class=line><span class=cl>        <span class=nb>super</span><span class=p>()</span><span class=o>.</span><span class=fm>__init__</span><span class=p>(</span><span class=n>pipeline_name</span><span class=o>=</span><span class=n>pipeline_name</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>                         <span class=n>loader</span><span class=o>=</span><span class=n>loader</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>                         <span class=n>parent</span><span class=o>=</span><span class=n>parent</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>                         <span class=n>is_loader_cascading</span><span class=o>=</span><span class=kc>False</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>        <span class=bp>self</span><span class=o>.</span><span class=n>arb_property</span> <span class=o>=</span> <span class=n>arb</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>def</span> <span class=nf>get_pipeline_definition</span><span class=p>(</span><span class=n>pipeline_name</span><span class=p>,</span> <span class=n>parent</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>    <span class=s2>&#34;&#34;&#34;Non-cascading because PipelineInfo has is_loader_cascading False.&#34;&#34;&#34;</span>
+</span></span><span class=line><span class=cl>    <span class=c1># get &amp; parse the pipeline yaml payload from somewhere</span>
+</span></span><span class=line><span class=cl>    <span class=k>with</span> <span class=n>get_filelike_obj_from_somewhere</span><span class=p>(</span><span class=n>pipeline_name</span><span class=p>)</span> <span class=k>as</span> <span class=n>yaml_file</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>        <span class=n>pipeline_yaml</span> <span class=o>=</span> <span class=n>pypyr</span><span class=o>.</span><span class=n>yaml</span><span class=o>.</span><span class=n>get_pipeline_yaml</span><span class=p>(</span><span class=n>yaml_file</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>        <span class=n>actual_name</span> <span class=o>=</span> <span class=n>yaml_file</span><span class=o>.</span><span class=n>some_api_property</span>
+</span></span><span class=line><span class=cl>        <span class=n>actual_parent</span> <span class=o>=</span> <span class=n>yaml_file</span><span class=o>.</span><span class=n>another_api_property</span>
+</span></span><span class=line><span class=cl>    
+</span></span><span class=line><span class=cl>    <span class=c1># custom meta-data to associate with pipeline</span>
+</span></span><span class=line><span class=cl>    <span class=n>info</span> <span class=o>=</span> <span class=n>ArbPipeInfo</span><span class=p>(</span><span class=n>pipeline_name</span><span class=o>=</span><span class=n>actual_name</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>                       <span class=n>parent</span><span class=o>=</span><span class=n>actual_parent</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>                       <span class=n>loader</span><span class=o>=</span><span class=vm>__name__</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>                       <span class=n>arb_property</span><span class=o>=</span><span class=s1>&#39;some useful value&#39;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=c1># wrap pipeline body in a PipelineDefinition alongside its metadata</span>
+</span></span><span class=line><span class=cl>    <span class=k>return</span> <span class=n>PipelineDefinition</span><span class=p>(</span><span class=n>pipeline</span><span class=o>=</span><span class=n>pipeline_yaml</span><span class=p>,</span> <span class=n>info</span><span class=o>=</span><span class=n>info</span><span class=p>)</span>
+</span></span></code></pre></div><h2 id=load-child-pipeline-relative-to-parent>load child pipeline relative to parent <a href=#load-child-pipeline-relative-to-parent class=headline-anchor aria-label=anchor><svg class="permalink"><title>permalink</title><use href="https://pypyr.io/icons/external-link.054f8ebb57944b2bc52ea4f0ecd16197.svg#external-link"/></svg></a></h2><p>If wherever you store your pipelines has a hierarchical structure, you can load
 child pipelines invoked by <a href=https://pypyr.io/docs/steps/pype/>pypyr.steps.pype</a>
 so that the child <code>pipeline_name</code> resolves relative to the parent pipeline&rsquo;s
 location. Use the <code>parent</code> argument on
-<code>def get_pipeline_definition(pipeline_name, parent)</code> to do so.</p>
-<p>The <code>parent</code> property of the calling pipeline will cascade down to the child
+<code>def get_pipeline_definition(pipeline_name, parent)</code> to do so.</p><p>The <code>parent</code> property of the calling pipeline will cascade down to the child
 by default if <code>is_parent_cascading</code> on the <code>PipelineInfo</code> instance is <code>True</code> -
-which it is by default.</p>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=kn>from</span> <span class=nn>pathlib</span> <span class=kn>import</span> <span class=n>Path</span>
-
-<span class=kn>from</span> <span class=nn>pypyr.pipedef</span> <span class=kn>import</span> <span class=n>PipelineDefinition</span><span class=p>,</span> <span class=n>PipelineInfo</span>
-<span class=kn>import</span> <span class=nn>pypyr.yaml</span>
-
-<span class=n>CWD</span> <span class=o>=</span> <span class=n>Path</span><span class=o>.</span><span class=n>cwd</span><span class=p>()</span>
-
-<span class=k>def</span> <span class=nf>get_pipeline_definition</span><span class=p>(</span><span class=n>pipeline_name</span><span class=p>,</span> <span class=n>parent</span><span class=p>):</span>
-    <span class=s2>&#34;&#34;&#34;Simple loader that gets pipeline_name.yaml in parent or working dir.&#34;&#34;&#34;</span>
-    <span class=c1># pipeline_name could be &#34;subdir/mydir/subdir/mypipe&#34;</span>
-    <span class=n>pipeline_path</span> <span class=o>=</span> <span class=p>(</span><span class=n>parent</span><span class=o>.</span><span class=n>joinpath</span><span class=p>(</span><span class=sa>f</span><span class=s1>&#39;</span><span class=si>{</span><span class=n>pipeline_name</span><span class=si>}</span><span class=s1>.yaml&#39;</span><span class=p>)</span>
-                     <span class=k>if</span> <span class=n>parent</span> <span class=k>else</span> <span class=n>CWD</span><span class=o>.</span><span class=n>joinpath</span><span class=p>(</span><span class=sa>f</span><span class=s1>&#39;</span><span class=si>{</span><span class=n>pipeline_name</span><span class=si>}</span><span class=s1>.yaml&#39;</span><span class=p>))</span>
-
-    <span class=k>with</span> <span class=nb>open</span><span class=p>()</span> <span class=k>as</span> <span class=n>yaml_file</span><span class=p>:</span>
-        <span class=n>pipeline_yaml</span> <span class=o>=</span> <span class=n>pypyr</span><span class=o>.</span><span class=n>yaml</span><span class=o>.</span><span class=n>get_pipeline_yaml</span><span class=p>(</span><span class=n>pipeline_path</span><span class=p>)</span>
-    
-    <span class=c1># set parent property so child pipelines can resolve relative to it</span>
-    <span class=n>info</span> <span class=o>=</span> <span class=n>PipelineInfo</span><span class=p>(</span><span class=n>pipeline_name</span><span class=o>=</span><span class=n>pipeline_name</span><span class=p>,</span>
-                        <span class=n>parent</span><span class=o>=</span><span class=n>pipeline_path</span><span class=o>.</span><span class=n>parent</span><span class=p>,</span>
-                        <span class=n>loader</span><span class=o>=</span><span class=vm>__name__</span><span class=p>)</span>
-
-    <span class=c1># wrap pipeline body in a PipelineDefinition alongside its metadata</span>
-    <span class=k>return</span> <span class=n>PipelineDefinition</span><span class=p>(</span><span class=n>pipeline</span><span class=o>=</span><span class=n>pipeline_yaml</span><span class=p>,</span> <span class=n>info</span><span class=o>=</span><span class=n>info</span><span class=p>)</span>
-</code></pre></div><p>The root pipeline will always have <code>parent=None</code>. When this root pipeline calls
+which it is by default.</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=kn>from</span> <span class=nn>pathlib</span> <span class=kn>import</span> <span class=n>Path</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=kn>from</span> <span class=nn>pypyr.pipedef</span> <span class=kn>import</span> <span class=n>PipelineDefinition</span><span class=p>,</span> <span class=n>PipelineInfo</span>
+</span></span><span class=line><span class=cl><span class=kn>import</span> <span class=nn>pypyr.yaml</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=n>CWD</span> <span class=o>=</span> <span class=n>Path</span><span class=o>.</span><span class=n>cwd</span><span class=p>()</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>def</span> <span class=nf>get_pipeline_definition</span><span class=p>(</span><span class=n>pipeline_name</span><span class=p>,</span> <span class=n>parent</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>    <span class=s2>&#34;&#34;&#34;Simple loader that gets pipeline_name.yaml in parent or working dir.&#34;&#34;&#34;</span>
+</span></span><span class=line><span class=cl>    <span class=c1># pipeline_name could be &#34;subdir/mydir/subdir/mypipe&#34;</span>
+</span></span><span class=line><span class=cl>    <span class=n>pipeline_path</span> <span class=o>=</span> <span class=p>(</span><span class=n>parent</span><span class=o>.</span><span class=n>joinpath</span><span class=p>(</span><span class=sa>f</span><span class=s1>&#39;</span><span class=si>{</span><span class=n>pipeline_name</span><span class=si>}</span><span class=s1>.yaml&#39;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>                     <span class=k>if</span> <span class=n>parent</span> <span class=k>else</span> <span class=n>CWD</span><span class=o>.</span><span class=n>joinpath</span><span class=p>(</span><span class=sa>f</span><span class=s1>&#39;</span><span class=si>{</span><span class=n>pipeline_name</span><span class=si>}</span><span class=s1>.yaml&#39;</span><span class=p>))</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=k>with</span> <span class=nb>open</span><span class=p>()</span> <span class=k>as</span> <span class=n>yaml_file</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>        <span class=n>pipeline_yaml</span> <span class=o>=</span> <span class=n>pypyr</span><span class=o>.</span><span class=n>yaml</span><span class=o>.</span><span class=n>get_pipeline_yaml</span><span class=p>(</span><span class=n>pipeline_path</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>    
+</span></span><span class=line><span class=cl>    <span class=c1># set parent property so child pipelines can resolve relative to it</span>
+</span></span><span class=line><span class=cl>    <span class=n>info</span> <span class=o>=</span> <span class=n>PipelineInfo</span><span class=p>(</span><span class=n>pipeline_name</span><span class=o>=</span><span class=n>pipeline_name</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>                        <span class=n>parent</span><span class=o>=</span><span class=n>pipeline_path</span><span class=o>.</span><span class=n>parent</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>                        <span class=n>loader</span><span class=o>=</span><span class=vm>__name__</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=c1># wrap pipeline body in a PipelineDefinition alongside its metadata</span>
+</span></span><span class=line><span class=cl>    <span class=k>return</span> <span class=n>PipelineDefinition</span><span class=p>(</span><span class=n>pipeline</span><span class=o>=</span><span class=n>pipeline_yaml</span><span class=p>,</span> <span class=n>info</span><span class=o>=</span><span class=n>info</span><span class=p>)</span>
+</span></span></code></pre></div><p>The root pipeline will always have <code>parent=None</code>. When this root pipeline calls
 child pipelines with <code>pypyr.steps.pype</code>, the <code>pype</code> step will pass the calling
 pipeline&rsquo;s <code>info.parent</code> property to the loader when retrieving the child
-pipeline.</p>
-<p>In this simple example the <code>parent</code> argument is of type <code>pathlib.Path</code>, but it
-can be any type that works for you.</p>
-<div class="admonition warn" role=figure>
-<div class=admonition-warn-icon></div>
-<div class=admonition-content><p>Although it us up to your loader to interpret the <code>parent</code> argument as it sees
+pipeline.</p><p>In this simple example the <code>parent</code> argument is of type <code>pathlib.Path</code>, but it
+can be any type that works for you.</p><div class="admonition warn" role=figure>
+<div class=admonition-warn-icon></div><div class=admonition-content><p>Although it us up to your loader to interpret the <code>parent</code> argument as it sees
 fit, and it therefore could be any type, whatever type of object <code>parent</code> is
-should have a sensible <code>__str__</code> representation.</p>
-<p>This is a bit tough to explain with a typing hint. 😬</p>
-<p>The reason is that pypyr caches child pipelines by the key
+should have a sensible <code>__str__</code> representation.</p><p>This is a bit tough to explain with a typing hint. 😬</p><p>The reason is that pypyr caches child pipelines by the key
 <code>"{parent}+{pipeline_name}"</code>, so if the string representation of <code>parent</code> is
 not unique enough, you could end up overwriting existing pipelines in cache
-when you load a child pipeline with the same name but different parents.</p>
-</div>
-</div>
-<p>If your pipeline store is flat and/or you identify pipelines solely by name,
+when you load a child pipeline with the same name but different parents.</p></div></div><p>If your pipeline store is flat and/or you identify pipelines solely by name,
 there is no need to use the <code>parent</code> property. The <code>parent</code> property is there
 to deal with the complexities that arise from the file system where it is
 convenient to address a child pipeline relative to the parent&rsquo;s location.
 If wherever you store your pipelines does not allow for this, there is no point
-in implementing anything special for the <code>parent</code> property.</p>
-<p>Pipeline authors can use the <code>parent</code> input on the <code>pype</code> step to over-ride the
+in implementing anything special for the <code>parent</code> property.</p><p>Pipeline authors can use the <code>parent</code> input on the <code>pype</code> step to over-ride the
 value of loader&rsquo;s <code>info.parent</code> property cascading to the child pipeline. This
 will only change the value of <code>parent</code> for the child pipeline load, it does not
 touch the calling pipeline&rsquo;s <code>info.parent</code> property. (<code>info.parent</code> refers to
-the <code>PipelineInfo</code> object assigned to <code>.info</code> on the <code>PipelineDefinition</code>.)</p>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-yaml data-lang=yaml><span class=nt>steps</span><span class=p>:</span><span class=w>
-</span><span class=w></span>- <span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>pypyr.steps.pype</span><span class=w>
-</span><span class=w>  </span><span class=nt>comment</span><span class=p>:</span><span class=w> </span><span class=l>call child pipeline from here</span><span class=w>
-</span><span class=w>  </span><span class=nt>in</span><span class=p>:</span><span class=w>
-</span><span class=w>    </span><span class=nt>pype</span><span class=p>:</span><span class=w>
-</span><span class=w>      </span><span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>pipeline-name</span><span class=w> </span><span class=c># mandatory. string.</span><span class=w>
-</span><span class=w>      </span><span class=nt>parent</span><span class=p>:</span><span class=w> </span><span class=l>myparent</span><span class=w>
-</span></code></pre></div>
-<h3 id=multi-address-pipelines>multi-address pipelines <a href=#multi-address-pipelines class=headline-anchor aria-label=anchor><svg class="permalink"><title>permalink</title><use href="https://pypyr.io/icons/external-link.054f8ebb57944b2bc52ea4f0ecd16197.svg#external-link"/></svg></a></h3><p>If different combinations of <code>parent</code> + <code>pipeline_name</code> could refer to the same
+the <code>PipelineInfo</code> object assigned to <code>.info</code> on the <code>PipelineDefinition</code>.)</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-yaml data-lang=yaml><span class=line><span class=cl><span class=nt>steps</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span>- <span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>pypyr.steps.pype</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=nt>comment</span><span class=p>:</span><span class=w> </span><span class=l>call child pipeline from here</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=nt>in</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nt>pype</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>      </span><span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>pipeline-name</span><span class=w> </span><span class=c># mandatory. string.</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>      </span><span class=nt>parent</span><span class=p>:</span><span class=w> </span><span class=l>myparent</span><span class=w>
+</span></span></span></code></pre></div><h3 id=multi-address-pipelines>multi-address pipelines <a href=#multi-address-pipelines class=headline-anchor aria-label=anchor><svg class="permalink"><title>permalink</title><use href="https://pypyr.io/icons/external-link.054f8ebb57944b2bc52ea4f0ecd16197.svg#external-link"/></svg></a></h3><p>If different combinations of <code>parent</code> + <code>pipeline_name</code> could refer to the same
 underlying pipeline, it is up to your loader to implement a loader specific
-cache if you do not want to parse & load that pipeline >1 in a session.</p>
-<p>For example:</p>
-<ul>
-<li>parent <code>/dir</code> + pipeline name <code>sub/pipe</code></li>
-<li>parent <code>/dir/sub</code> + pipeline name <code>pipe</code></li>
-</ul>
-<p>On the filesystem, both of these is the same - both refer to <code>/dir/sub/pipe</code>.</p>
-<p>If this is a concern for you, you can use pypyr&rsquo;s built-in cache class to make
-your life a bit easier:</p>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=kn>from</span> <span class=nn>pypyr.cache.cache</span> <span class=kn>import</span> <span class=n>Cache</span>
-<span class=kn>from</span> <span class=nn>pypyr.errors</span> <span class=kn>import</span> <span class=n>PipelineNotFoundError</span>
-<span class=kn>from</span> <span class=nn>pypyr.pipedef</span> <span class=kn>import</span> <span class=n>PipelineDefinition</span><span class=p>,</span> <span class=n>PipelineInfo</span>
-<span class=kn>import</span> <span class=nn>pypyr.yaml</span>
-
-<span class=n>_pipedef_cache</span> <span class=o>=</span> <span class=n>Cache</span><span class=p>()</span> 
-
-<span class=k>def</span> <span class=nf>get_pipeline_definition</span><span class=p>(</span><span class=n>pipeline_name</span><span class=p>,</span> <span class=n>parent</span><span class=p>):</span>
-    <span class=s2>&#34;&#34;&#34;Loader with its own cache for combinations of parent+name.&#34;&#34;&#34;</span>
-    <span class=c1># loader has to find UNIQUE canonical path for pipeline here somehow</span>
-    <span class=n>canonical_path</span> <span class=o>=</span> <span class=n>get_canonical_path_somehow</span><span class=p>(</span><span class=n>parent</span><span class=p>,</span> <span class=n>pipeline_name</span><span class=p>)</span>
-
-    <span class=c1># if canonical_path in cache, return it. if not, put it in cache with lambda.</span>
-    <span class=n>pipeline_definition</span> <span class=o>=</span> <span class=n>_pipedef_cache</span><span class=o>.</span><span class=n>get</span><span class=p>(</span>
-        <span class=n>canonical_path</span><span class=p>,</span>
-        <span class=k>lambda</span><span class=p>:</span> <span class=n>load_pipeline_from_somewhere</span><span class=p>(</span><span class=n>canonical_path</span><span class=p>))</span>
-
-    <span class=k>return</span> <span class=n>pipeline_definition</span>
-
-<span class=k>def</span> <span class=nf>load_pipeline_from_somewhere</span><span class=p>(</span><span class=n>canonical_path</span><span class=p>):</span>
-    <span class=s2>&#34;&#34;&#34;Use whatever API you gotta use to get the pipeline here.&#34;&#34;&#34;</span>
-    <span class=c1># if something goes wrong you might want to raise PipelineNotFoundError</span>
-    <span class=k>with</span> <span class=n>get_filelike_obj_from_somewhere</span><span class=p>(</span><span class=n>canonical_path</span><span class=p>)</span> <span class=k>as</span> <span class=n>yaml_file</span><span class=p>:</span>
-        <span class=n>actual_name</span> <span class=o>=</span> <span class=n>yaml_file</span><span class=o>.</span><span class=n>some_api_property</span>
-        <span class=n>actual_parent</span> <span class=o>=</span> <span class=n>yaml_file</span><span class=o>.</span><span class=n>another_api_property</span>
-        
-        <span class=c1># if you prefer to use your own yaml parser, do that here instead of </span>
-        <span class=c1># calling get_pipeline_yaml.</span>
-        <span class=n>pipeline_yaml</span> <span class=o>=</span> <span class=n>pypyr</span><span class=o>.</span><span class=n>yaml</span><span class=o>.</span><span class=n>get_pipeline_yaml</span><span class=p>(</span><span class=n>yaml_file</span><span class=p>)</span>
-
-    <span class=c1># set parent property so child pipelines can resolve relative to it</span>
-    <span class=n>info</span> <span class=o>=</span> <span class=n>PipelineInfo</span><span class=p>(</span><span class=n>pipeline_name</span><span class=o>=</span><span class=n>actual_name</span><span class=p>,</span>
-                        <span class=n>parent</span><span class=o>=</span><span class=n>actual_parent</span><span class=p>,</span>
-                        <span class=n>loader</span><span class=o>=</span><span class=vm>__name__</span><span class=p>)</span>
-
-    <span class=c1># wrap pipeline body in a PipelineDefinition alongside its metadata</span>
-    <span class=k>return</span> <span class=n>PipelineDefinition</span><span class=p>(</span><span class=n>pipeline</span><span class=o>=</span><span class=n>pipeline_yaml</span><span class=p>,</span> <span class=n>info</span><span class=o>=</span><span class=n>info</span><span class=p>)</span>    
-</code></pre></div><p>You do NOT need to worry about this additional caching complexity if a pipeline
+cache if you do not want to parse & load that pipeline >1 in a session.</p><p>For example:</p><ul>
+<li>parent <code>/dir</code> + pipeline name <code>sub/pipe</code></li><li>parent <code>/dir/sub</code> + pipeline name <code>pipe</code></li></ul><p>On the filesystem, both of these is the same - both refer to <code>/dir/sub/pipe</code>.</p><p>If this is a concern for you, you can use pypyr&rsquo;s built-in cache class to make
+your life a bit easier:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=kn>from</span> <span class=nn>pypyr.cache.cache</span> <span class=kn>import</span> <span class=n>Cache</span>
+</span></span><span class=line><span class=cl><span class=kn>from</span> <span class=nn>pypyr.errors</span> <span class=kn>import</span> <span class=n>PipelineNotFoundError</span>
+</span></span><span class=line><span class=cl><span class=kn>from</span> <span class=nn>pypyr.pipedef</span> <span class=kn>import</span> <span class=n>PipelineDefinition</span><span class=p>,</span> <span class=n>PipelineInfo</span>
+</span></span><span class=line><span class=cl><span class=kn>import</span> <span class=nn>pypyr.yaml</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=n>_pipedef_cache</span> <span class=o>=</span> <span class=n>Cache</span><span class=p>()</span> 
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>def</span> <span class=nf>get_pipeline_definition</span><span class=p>(</span><span class=n>pipeline_name</span><span class=p>,</span> <span class=n>parent</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>    <span class=s2>&#34;&#34;&#34;Loader with its own cache for combinations of parent+name.&#34;&#34;&#34;</span>
+</span></span><span class=line><span class=cl>    <span class=c1># loader has to find UNIQUE canonical path for pipeline here somehow</span>
+</span></span><span class=line><span class=cl>    <span class=n>canonical_path</span> <span class=o>=</span> <span class=n>get_canonical_path_somehow</span><span class=p>(</span><span class=n>parent</span><span class=p>,</span> <span class=n>pipeline_name</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=c1># if canonical_path in cache, return it. if not, put it in cache with lambda.</span>
+</span></span><span class=line><span class=cl>    <span class=n>pipeline_definition</span> <span class=o>=</span> <span class=n>_pipedef_cache</span><span class=o>.</span><span class=n>get</span><span class=p>(</span>
+</span></span><span class=line><span class=cl>        <span class=n>canonical_path</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>        <span class=k>lambda</span><span class=p>:</span> <span class=n>load_pipeline_from_somewhere</span><span class=p>(</span><span class=n>canonical_path</span><span class=p>))</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=k>return</span> <span class=n>pipeline_definition</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>def</span> <span class=nf>load_pipeline_from_somewhere</span><span class=p>(</span><span class=n>canonical_path</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>    <span class=s2>&#34;&#34;&#34;Use whatever API you gotta use to get the pipeline here.&#34;&#34;&#34;</span>
+</span></span><span class=line><span class=cl>    <span class=c1># if something goes wrong you might want to raise PipelineNotFoundError</span>
+</span></span><span class=line><span class=cl>    <span class=k>with</span> <span class=n>get_filelike_obj_from_somewhere</span><span class=p>(</span><span class=n>canonical_path</span><span class=p>)</span> <span class=k>as</span> <span class=n>yaml_file</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>        <span class=n>actual_name</span> <span class=o>=</span> <span class=n>yaml_file</span><span class=o>.</span><span class=n>some_api_property</span>
+</span></span><span class=line><span class=cl>        <span class=n>actual_parent</span> <span class=o>=</span> <span class=n>yaml_file</span><span class=o>.</span><span class=n>another_api_property</span>
+</span></span><span class=line><span class=cl>        
+</span></span><span class=line><span class=cl>        <span class=c1># if you prefer to use your own yaml parser, do that here instead of </span>
+</span></span><span class=line><span class=cl>        <span class=c1># calling get_pipeline_yaml.</span>
+</span></span><span class=line><span class=cl>        <span class=n>pipeline_yaml</span> <span class=o>=</span> <span class=n>pypyr</span><span class=o>.</span><span class=n>yaml</span><span class=o>.</span><span class=n>get_pipeline_yaml</span><span class=p>(</span><span class=n>yaml_file</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=c1># set parent property so child pipelines can resolve relative to it</span>
+</span></span><span class=line><span class=cl>    <span class=n>info</span> <span class=o>=</span> <span class=n>PipelineInfo</span><span class=p>(</span><span class=n>pipeline_name</span><span class=o>=</span><span class=n>actual_name</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>                        <span class=n>parent</span><span class=o>=</span><span class=n>actual_parent</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>                        <span class=n>loader</span><span class=o>=</span><span class=vm>__name__</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=c1># wrap pipeline body in a PipelineDefinition alongside its metadata</span>
+</span></span><span class=line><span class=cl>    <span class=k>return</span> <span class=n>PipelineDefinition</span><span class=p>(</span><span class=n>pipeline</span><span class=o>=</span><span class=n>pipeline_yaml</span><span class=p>,</span> <span class=n>info</span><span class=o>=</span><span class=n>info</span><span class=p>)</span>    
+</span></span></code></pre></div><p>You do NOT need to worry about this additional caching complexity if a pipeline
 is only addressable by one and only one combination of <code>parent</code> and
 <code>pipeline_name</code> for your loader, because the pypyr core already caches the
 reference returned from <code>get_pipeline_definition</code> for you. If CPU & memory are
@@ -986,68 +749,36 @@ this. The yaml loading & parsing is the most resource intensive operation in
 pypyr, so this extra cache is only really helpful if you&rsquo;re seeking to
 optimize this by preventing >1 parsing of the same underlying pipeline in the
 edge case where a different parent+name combination refers to an already loaded
-pipeline.</p>
-</article>
-<section class="see-also elevation-02">
-<h2>see also</h2>
-<ul>
-<li><a href=/docs/api/custom-module-search-path/>custom module name resolution</a></li>
-<li><a href=/docs/api/retry-backoff/>custom retry backoff</a></li>
-<li><a href=/docs/api/>api</a></li>
-<li><a href=/docs/api/context-parser/>custom context parser</a></li>
-<li><a href=/docs/api/step/>custom step</a></li>
-</ul>
-</section>
-</main>
-<aside class="grid-taxonomy elevation-02">
+pipeline.</p></article><section class="see-also elevation-02">
+<h2>see also</h2><ul>
+<li><a href=/docs/api/custom-module-search-path/>custom module name resolution</a></li><li><a href=/docs/api/retry-backoff/>custom retry backoff</a></li><li><a href=/docs/api/>api</a></li><li><a href=/docs/api/context-parser/>custom context parser</a></li><li><a href=/docs/api/step/>custom step</a></li></ul></section></main><aside class="grid-taxonomy elevation-02">
 <section class=page-taxonomy aria-label="related topics">
-<h6>topics</h6>
-<ul id=topics class=small-list>
-<li><a href=https://pypyr.io/topics/custom-code/ class=muted-with-hover>custom code</a></li>
-</ul>
-</section>
-<section class=page-taxonomy aria-label="related categories">
-<h6>categories</h6>
-<ul id=categories class=small-list>
-<li><a href=https://pypyr.io/categories/pipelines/ class=muted-with-hover>pipelines</a></li>
-</ul>
-</section>
-</aside>
-<aside class="grid-improve elevation-02" aria-labelledby=feedback>
-<h6 id=feedback>feedback</h6>
-<ul class=small-list>
-<li><a href=https://github.com/pypyr/docs/edit/main/content/docs/api/pipeline-loader.md class=muted-with-hover>edit me</a></li>
-<li><a href="https://github.com/pypyr/docs/issues/new?title=docs%20issue:custom%20pype%20loader&body=File:%20[custom%20pype%20loader]%28https://pypyr.io/docs/api/pipeline-loader/%29" class=muted-with-hover>report typo</a></li>
-<li><a href="https://github.com/pypyr/pypyr/issues/new?title=Re:%20custom%20pype%20loader&labels=bug" class=muted-with-hover>report bug!</a></li>
-</ul>
-</aside>
-<div class="page-git-info elevation-02">
+<h6>topics</h6><ul id=topics class=small-list>
+<li><a href=https://pypyr.io/topics/custom-code/ class=muted-with-hover>custom code</a></li></ul></section><section class=page-taxonomy aria-label="related categories">
+<h6>categories</h6><ul id=categories class=small-list>
+<li><a href=https://pypyr.io/categories/pipelines/ class=muted-with-hover>pipelines</a></li></ul></section></aside><aside class="grid-improve elevation-02" aria-labelledby=feedback>
+<h6 id=feedback>feedback</h6><ul class=small-list>
+<li><a href=https://github.com/pypyr/docs/edit/main/content/docs/api/pipeline-loader.md class=muted-with-hover>edit me</a></li><li><a href="https://github.com/pypyr/docs/issues/new?title=docs%20issue:custom%20pype%20loader&body=File:%20[custom%20pype%20loader]%28https://pypyr.io/docs/api/pipeline-loader/%29" class=muted-with-hover>report typo</a></li><li><a href="https://github.com/pypyr/pypyr/issues/new?title=Re:%20custom%20pype%20loader&labels=bug" class=muted-with-hover>report bug!</a></li></ul></aside><div class="page-git-info elevation-02">
 <small class=small-block>last updated on <time datetime=2022-02-17T18:30:38Z>2022-02-17 18:30</time>.</small>
-</div>
-</div>
-<footer class="footer elevation-01">
+</div></div><footer class="footer elevation-01">
 <a href=/ class=top-nav-logo aria-label=home>
 <img class=top-nav-logo-img src=https://pypyr.io/images/pypyr-logotype.2c9aa98c472f0ea8d436597c26ef1b0f042624ee19cdf69bcb89ac0025d146c4.svg alt="pypyr logo">
 </a>
 <div class=col-1fr-centered>
 <ul class=footer-social-links aria-label="social media links"><li>
 <a href=https://twitter.com/pypyrpipes/ class=footer-social-link>
-<div class=footer-social-links-pre><svg viewBox="0 0 400 400"><title>twitter link</title><use xlink:href="https://pypyr.io/icons/twitter-social-icon-circle-white.d715a98bf8d7170b3d2603d836ca675616731d85583c13d23ec468905e77c59a.svg#twitter-icon"/></svg></div>
-<small>twitter</small>
+<div class=footer-social-links-pre><svg viewBox="0 0 400 400"><title>twitter link</title><use xlink:href="https://pypyr.io/icons/twitter-social-icon-circle-white.d715a98bf8d7170b3d2603d836ca675616731d85583c13d23ec468905e77c59a.svg#twitter-icon"/></svg></div><small>twitter</small>
 </a>
 </li><li>
 <a href=https://github.com/pypyr/pypyr/ class=footer-social-link>
-<div class=footer-social-links-pre><svg viewBox="0 0 32.58 31.77"><title>github link</title><use xlink:href="https://pypyr.io/icons/github-icon.778bc8065fb7e8d1e7109b270cfbd86e15e05bb16ebff30d261935e4bc1560bd.svg#github-icon"/></svg></div>
-<small>github</small>
+<div class=footer-social-links-pre><svg viewBox="0 0 32.58 31.77"><title>github link</title><use xlink:href="https://pypyr.io/icons/github-icon.778bc8065fb7e8d1e7109b270cfbd86e15e05bb16ebff30d261935e4bc1560bd.svg#github-icon"/></svg></div><small>github</small>
 </a>
 </li><li>
 <a href=https://github.com/pypyr/pypyr/discussions class=footer-social-link>
 <div class=footer-social-links-pre><svg viewBox="0 0 16 16"><title>discussion forum link</title><use xlink:href="https://pypyr.io/icons/discussions.a9f14951d81276183aaea73b6d616db95326f8f16350b221d9d6d48ee5a0b16e.svg#discussions-icon"/></svg>
-</div>
-<small>forum</small>
+</div><small>forum</small>
 </a>
-</li></ul>
-<ul class=footer-notices-links aria-label="legal notices"><li>
+</li></ul><ul class=footer-notices-links aria-label="legal notices"><li>
 <a href=/legal/privacy-notice class=muted-with-hover>
 <small>privacy</small>
 </a>
@@ -1059,10 +790,4 @@ pipeline.</p>
 <a href=/press-kit class=muted-with-hover>
 <small>press</small>
 </a>
-</li></ul>
-</div>
-</footer>
-<div class=bottom-spacer aria-hidden=true></div>
-<div id=disabled-state-overlay aria-hidden=true class="disabled-state-overlay hide-overlay"></div>
-</body>
-</html>
+</li></ul></div></footer><div class=bottom-spacer aria-hidden=true></div><div id=disabled-state-overlay aria-hidden=true class="disabled-state-overlay hide-overlay"></div></body></html>

@@ -2,15 +2,14 @@
 <head>
 <meta charset=utf-8>
 <meta name=viewport content="width=device-width,initial-scale=1">
-<title>custom step | pypyr</title>
-<meta name=description content="Create a custom pypyr pipeline task-runner step in a few lines of Python code. Ready-made retries & loops for your code.">
+<title>custom step | pypyr</title><meta name=description content="Create a custom pypyr pipeline task-runner step in a few lines of Python code. Ready-made retries & loops for your code.">
 <link rel=stylesheet href=https://pypyr.io/css/styles.min.ad50c9856a15c2caa608f0b1b8a46d3ff692bb9355af1f7009b1b3938d26a886.css integrity="sha256-rVDJhWoVwsqmCPCxuKRtP/aSu5NVrx9wCbGzk40mqIY=">
 <link rel=stylesheet href=https://pypyr.io/css/code-highlight.min.78f63f1d4f45beaf423efd3dc8e6914c2abdca1b5391cd91368a32efecd9d7e3.css integrity="sha256-ePY/HU9Fvq9CPv09yOaRTCq9yhtTkc2RNooy7+zZ1+M=">
-<script defer src=https://pypyr.io/js/script.min.45064b9f444bbb1631eeef9f9ef2be6985c45b5f06bddb6644ce049732706a06.js integrity="sha256-RQZLn0RLuxYx7u+fnvK+aYXEW18GvdtmRM4ElzJwagY="></script>
+<script defer src=https://pypyr.io/js/script.min.8c51c28efa613c3bc853b2418e260b33482af182f6ca8ebeeb825b5b8e094423.js integrity="sha256-jFHCjvphPDvIU7JBjiYLM0gq8YL2yo6+64JbW44JRCM="></script>
 <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700%7cRoboto+Mono:400,400i&display=swap" rel=stylesheet>
 <link rel=canonical href=https://pypyr.io/docs/api/step/>
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-147150909-1"></script>
-<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','UA-147150909-1')</script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","UA-147150909-1")</script>
 <meta property="og:description" content="Create a custom pypyr pipeline task-runner step in a few lines of Python code. Ready-made retries & loops for your code.">
 <meta property="og:image" content="https://pypyr.io/images/1.91x1/pypyr-taskrunner-yaml-pipeline-automation-1200x628.5aa6465b3b9d2ca8d0d5a9f794ba7f379c522a8ba503129f2a35d2479ea2452d.png">
 <meta property="og:image:alt" content="pypyr is an open-source task-runner for automation pipelines defined in simple human-readable yaml.">
@@ -32,17 +31,13 @@
 <meta name=msapplication-TileColor content="#00aba9">
 <meta name=msapplication-config content="/favicons/browserconfig.bbdaec7f39b7bd1f2d6bc484afdd0c7246e3af9c5b45d91198d8a3b42e024e1f.xml">
 <meta name=theme-color content="#121212">
-</head>
-<body class=docs-grid>
+</head><body class=docs-grid>
 <header class="header elevation-01">
 <a href=/ class=top-nav-logo aria-label=home>
 <img class=top-nav-logo-img src=https://pypyr.io/images/pypyr-logotype.2c9aa98c472f0ea8d436597c26ef1b0f042624ee19cdf69bcb89ac0025d146c4.svg alt="pypyr logo">
 </a>
 <nav class=top-nav-links aria-label="top navigation">
-<ul><li><a href=/docs/ class=top-active>docs</a></li><li><a href=/updates/>updates</a></li><li><a href=/topics/>topics</a></li><li><a href=https://twitter.com/pypyrpipes/><span class=top-nav-links-pre><svg viewBox="0 0 250 203.18"><title>twitter link</title><use xlink:href="https://pypyr.io/images/twitter-logo.4bee83a61c7b1a567b9a00ea1ac9388de3b16ffbffac9e228f998a5411894c59.svg#twitter-logo"/></svg></span></a></li><li><a href=https://github.com/pypyr/pypyr/><span class=top-nav-links-pre><svg viewBox="0 0 477 97.41"><title>github repo</title><use xlink:href="https://pypyr.io/images/github-mark-and-logo.5df312655c6a99a4953b544d02b13a948fa4d66bda21e772206f0ed96663f05b.svg#github-mark-and-logo"/></svg></span></a></li></ul>
-</nav>
-</header>
-<button id=show-leftnav class="neutral-button icon-button primary-button"><svg class="show-leftnav-chevron"><title>open main navigation menu</title><use href="https://pypyr.io/icons/chevron-right.e586e5df0f820697b2ce08d042d0110568a2faeb11c7f0bab5a33df79dd3d6db.svg#chevron-right"/></svg>
+<ul><li><a href=/docs/ class=top-active>docs</a></li><li><a href=/updates/>updates</a></li><li><a href=/topics/>topics</a></li><li><a href=https://twitter.com/pypyrpipes/><span class=top-nav-links-pre><svg viewBox="0 0 250 203.18"><title>twitter link</title><use xlink:href="https://pypyr.io/images/twitter-logo.4bee83a61c7b1a567b9a00ea1ac9388de3b16ffbffac9e228f998a5411894c59.svg#twitter-logo"/></svg></span></a></li><li><a href=https://github.com/pypyr/pypyr/><span class=top-nav-links-pre><svg viewBox="0 0 477 97.41"><title>github repo</title><use xlink:href="https://pypyr.io/images/github-mark-and-logo.5df312655c6a99a4953b544d02b13a948fa4d66bda21e772206f0ed96663f05b.svg#github-mark-and-logo"/></svg></span></a></li></ul></nav></header><button id=show-leftnav class="neutral-button icon-button primary-button"><svg class="show-leftnav-chevron"><title>open main navigation menu</title><use href="https://pypyr.io/icons/chevron-right.e586e5df0f820697b2ce08d042d0110568a2faeb11c7f0bab5a33df79dd3d6db.svg#chevron-right"/></svg>
 </button>
 <nav id=leftnavmenu class="leftnavmenu elevation-03" aria-label="Primary Navigation">
 <button id=hide-leftnav class="neutral-button icon-button"><svg class="hide-leftnav-chevron"><title>close navigation menu</title><use href="https://pypyr.io/icons/chevron-right.e586e5df0f820697b2ce08d042d0110568a2faeb11c7f0bab5a33df79dd3d6db.svg#chevron-right"/></svg>
@@ -57,34 +52,23 @@
 <ul class=nested>
 <li>
 <a href=/docs/getting-started/>overview</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/getting-started/installation/>install pypyr</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/getting-started/run-your-first-pipeline/>run your first pipeline</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/getting-started/basic-concepts/>basic concepts</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/getting-started/variables/>variables</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/getting-started/conditional-logic/>conditional logic</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/getting-started/loops/>loops</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/getting-started/error-handling/>error handling</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/getting-started/config/>config</a>
-</li>
-</ul>
-</li>
-<li>
+</li></ul></li><li>
 <button class="nav-section-chevron-title neutral-button">
 <span class=nav-section-pointer>
 <svg class="nav-chevron"><title>open or close sub-menu</title><use href="https://pypyr.io/icons/chevron-right.e586e5df0f820697b2ce08d042d0110568a2faeb11c7f0bab5a33df79dd3d6db.svg#chevron-right"/></svg><span>cli</span>
@@ -93,16 +77,11 @@
 <ul class=nested>
 <li>
 <a href=/docs/cli/>overview</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/cli/run-a-pipeline/>run a pipeline</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/cli/custom-args/>custom args</a>
-</li>
-</ul>
-</li>
-<li>
+</li></ul></li><li>
 <button class="nav-section-chevron-title neutral-button">
 <span class=nav-section-pointer>
 <svg class="nav-chevron"><title>open or close sub-menu</title><use href="https://pypyr.io/icons/chevron-right.e586e5df0f820697b2ce08d042d0110568a2faeb11c7f0bab5a33df79dd3d6db.svg#chevron-right"/></svg><span>pipelines</span>
@@ -111,19 +90,13 @@
 <ul class=nested>
 <li>
 <a href=/docs/pipelines/>overview</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/pipelines/pipeline-structure/>pipeline structure</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/pipelines/lookup-order/>lookup order</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/pipelines/builtin-pipelines/>built-in pipelines</a>
-</li>
-</ul>
-</li>
-<li>
+</li></ul></li><li>
 <button class="nav-section-chevron-title neutral-button">
 <span class=nav-section-pointer>
 <svg class="nav-chevron"><title>open or close sub-menu</title><use href="https://pypyr.io/icons/chevron-right.e586e5df0f820697b2ce08d042d0110568a2faeb11c7f0bab5a33df79dd3d6db.svg#chevron-right"/></svg><span>context parsers</span>
@@ -132,37 +105,25 @@
 <ul class=nested>
 <li>
 <a href=/docs/context-parsers/>overview</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/context-parsers/dict/>dict</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/context-parsers/json/>json</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/context-parsers/jsonfile/>jsonfile</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/context-parsers/keys/>keys</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/context-parsers/keyvaluepairs/>keyvaluepairs</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/context-parsers/list/>list</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/context-parsers/string/>string</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/context-parsers/tomlfile/>tomlfile</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/context-parsers/yamlfile/>yamlfile</a>
-</li>
-</ul>
-</li>
-<li>
+</li></ul></li><li>
 <button class="nav-section-chevron-title neutral-button">
 <span class=nav-section-pointer>
 <svg class="nav-chevron"><title>open or close sub-menu</title><use href="https://pypyr.io/icons/chevron-right.e586e5df0f820697b2ce08d042d0110568a2faeb11c7f0bab5a33df79dd3d6db.svg#chevron-right"/></svg><span>decorators</span>
@@ -171,40 +132,27 @@
 <ul class=nested>
 <li>
 <a href=/docs/decorators/>overview</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/decorators/comment/>comment</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/decorators/description/>description</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/decorators/foreach/>foreach</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/decorators/in/>in</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/decorators/onerror/>onError</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/decorators/retry/>retry</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/decorators/run/>run</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/decorators/skip/>skip</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/decorators/swallow/>swallow</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/decorators/while/>while</a>
-</li>
-</ul>
-</li>
-<li>
+</li></ul></li><li>
 <button class="nav-section-chevron-title neutral-button">
 <span class=nav-section-pointer>
 <svg class="nav-chevron"><title>open or close sub-menu</title><use href="https://pypyr.io/icons/chevron-right.e586e5df0f820697b2ce08d042d0110568a2faeb11c7f0bab5a33df79dd3d6db.svg#chevron-right"/></svg><span>steps</span>
@@ -213,151 +161,101 @@
 <ul class=nested>
 <li>
 <a href=/docs/steps/>overview</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/steps/add/>add</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/steps/append/>append</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/steps/assert/>assert</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/steps/call/>call</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/steps/cmd/>cmd</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/steps/configvars/>configvars</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/steps/contextclear/>contextclear</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/steps/contextclearall/>contextclearall</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/steps/contextcopy/>contextcopy</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/steps/contextmerge/>contextmerge</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/steps/contextsetf/>contextsetf</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/steps/debug/>debug</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/steps/default/>default</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/steps/echo/>echo</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/steps/env/>env</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/steps/envget/>envget</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/steps/fetchjson/>fetchjson</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/steps/fetchtoml/>fetchtoml</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/steps/fetchyaml/>fetchyaml</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/steps/fileformat/>fileformat</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/steps/fileformatjson/>fileformatjson</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/steps/fileformattoml/>fileformattoml</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/steps/fileformatyaml/>fileformatyaml</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/steps/fileread/>fileread</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/steps/filereplace/>filereplace</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/steps/filewrite/>filewrite</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/steps/filewritejson/>filewritejson</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/steps/filewritetoml/>filewritetoml</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/steps/filewriteyaml/>filewriteyaml</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/steps/glob/>glob</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/steps/jsonparse/>jsonparse</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/steps/jump/>jump</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/steps/now/>now</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/steps/nowutc/>nowutc</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/steps/pathcheck/>pathcheck</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/steps/py/>py</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/steps/pyimport/>pyimport</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/steps/pype/>pype</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/steps/pypyrversion/>pypyrversion</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/steps/python/>python</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/steps/safeshell/>safeshell</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/steps/set/>set</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/steps/shell/>shell</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/steps/stop/>stop</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/steps/stoppipeline/>stoppipeline</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/steps/stopstepgroup/>stopstepgroup</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/steps/tar/>tar</a>
-</li>
-</ul>
-</li>
-<li>
+</li></ul></li><li>
 <button class="nav-section-chevron-title neutral-button">
 <span class=nav-section-pointer>
 <svg class="nav-chevron"><title>open or close sub-menu</title><use href="https://pypyr.io/icons/chevron-right.e586e5df0f820697b2ce08d042d0110568a2faeb11c7f0bab5a33df79dd3d6db.svg#chevron-right"/></svg><span>substitutions</span>
@@ -366,22 +264,15 @@
 <ul class=nested>
 <li>
 <a href=/docs/substitutions/>overview</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/substitutions/format-string/>format string</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/substitutions/jsonify/>jsonify</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/substitutions/py-strings/>py string</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/substitutions/sic-strings/>sic string</a>
-</li>
-</ul>
-</li>
-<li>
+</li></ul></li><li>
 <button class="nav-section-chevron-title neutral-button">
 <span class=nav-section-pointer>
 <svg class="nav-chevron"><title>open or close sub-menu</title><use href="https://pypyr.io/icons/chevron-right.e586e5df0f820697b2ce08d042d0110568a2faeb11c7f0bab5a33df79dd3d6db.svg#chevron-right"/></svg><span>plugins</span>
@@ -390,8 +281,7 @@
 <ul class=nested>
 <li>
 <a href=/docs/plugins/>overview</a>
-</li>
-<li>
+</li><li>
 <button class="nav-section-chevron-title neutral-button">
 <span class=nav-section-pointer>
 <svg class="nav-chevron"><title>open or close sub-menu</title><use href="https://pypyr.io/icons/chevron-right.e586e5df0f820697b2ce08d042d0110568a2faeb11c7f0bab5a33df79dd3d6db.svg#chevron-right"/></svg><span>aws</span>
@@ -400,14 +290,11 @@
 <ul class=nested>
 <li>
 <a href=/docs/plugins/aws/>overview</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/plugins/aws/authentication/>authentication</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/plugins/aws/substitutions/>substitutions</a>
-</li>
-<li>
+</li><li>
 <button class="nav-section-chevron-title neutral-button">
 <span class=nav-section-pointer>
 <svg class="nav-chevron"><title>open or close sub-menu</title><use href="https://pypyr.io/icons/chevron-right.e586e5df0f820697b2ce08d042d0110568a2faeb11c7f0bab5a33df79dd3d6db.svg#chevron-right"/></svg><span>steps</span>
@@ -416,30 +303,19 @@
 <ul class=nested>
 <li>
 <a href=/docs/plugins/aws/steps/>overview</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/plugins/aws/steps/client/>client</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/plugins/aws/steps/ecswaitprep/>ecswaitprep</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/plugins/aws/steps/s3fetchjson/>s3fetchjson</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/plugins/aws/steps/s3fetchyaml/>s3fetchyaml</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/plugins/aws/steps/wait/>wait</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/plugins/aws/steps/waitfor/>waitfor</a>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>
+</li></ul></li></ul></li><li>
 <button class="nav-section-chevron-title neutral-button">
 <span class=nav-section-pointer>
 <svg class="nav-chevron"><title>open or close sub-menu</title><use href="https://pypyr.io/icons/chevron-right.e586e5df0f820697b2ce08d042d0110568a2faeb11c7f0bab5a33df79dd3d6db.svg#chevron-right"/></svg><span>slack</span>
@@ -448,11 +324,9 @@
 <ul class=nested>
 <li>
 <a href=/docs/plugins/slack/>overview</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/plugins/slack/authentication/>authentication</a>
-</li>
-<li>
+</li><li>
 <button class="nav-section-chevron-title neutral-button">
 <span class=nav-section-pointer>
 <svg class="nav-chevron"><title>open or close sub-menu</title><use href="https://pypyr.io/icons/chevron-right.e586e5df0f820697b2ce08d042d0110568a2faeb11c7f0bab5a33df79dd3d6db.svg#chevron-right"/></svg><span>steps</span>
@@ -461,17 +335,9 @@
 <ul class=nested>
 <li>
 <a href=/docs/plugins/slack/steps/>overview</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/plugins/slack/steps/send/>send</a>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>
+</li></ul></li></ul></li></ul></li><li>
 <button class="nav-section-chevron-title neutral-button">
 <span class=nav-section-pointer>
 <svg class="nav-chevron nav-chevron-down"><title>open or close sub-menu</title><use href="https://pypyr.io/icons/chevron-right.e586e5df0f820697b2ce08d042d0110568a2faeb11c7f0bab5a33df79dd3d6db.svg#chevron-right"/></svg><span>api</span>
@@ -480,28 +346,19 @@
 <ul class="nested expand">
 <li>
 <a href=/docs/api/>overview</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/api/custom-module-search-path/>custom module search path</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/api/context-parser/>context parser</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/api/pipeline-loader/>pipeline loader</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/api/retry-backoff/>retry backoff</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/api/run-pipeline/>run pipeline</a>
-</li>
-<li class=currentpage>
+</li><li class=currentpage>
 <a href=/docs/api/step/>step</a>
-</li>
-</ul>
-</li>
-<li>
+</li></ul></li><li>
 <button class="nav-section-chevron-title neutral-button">
 <span class=nav-section-pointer>
 <svg class="nav-chevron"><title>open or close sub-menu</title><use href="https://pypyr.io/icons/chevron-right.e586e5df0f820697b2ce08d042d0110568a2faeb11c7f0bab5a33df79dd3d6db.svg#chevron-right"/></svg><span>contributing</span>
@@ -510,16 +367,11 @@
 <ul class=nested>
 <li>
 <a href=/docs/contributing/>overview</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/contributing/contribute-to-pypyr/>contribute to pypyr</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/contributing/developers-guide/>developer's guide for pypyr</a>
-</li>
-</ul>
-</li>
-<li>
+</li></ul></li><li>
 <button class="nav-section-chevron-title neutral-button">
 <span class=nav-section-pointer>
 <svg class="nav-chevron"><title>open or close sub-menu</title><use href="https://pypyr.io/icons/chevron-right.e586e5df0f820697b2ce08d042d0110568a2faeb11c7f0bab5a33df79dd3d6db.svg#chevron-right"/></svg><span>thank you</span>
@@ -528,224 +380,156 @@
 <ul class=nested>
 <li>
 <a href=/docs/thank-you/>overview</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/thank-you/built-with-hugo/>built with hugo</a>
-</li>
-<li>
+</li><li>
 <a href=/docs/thank-you/dependencies/>dependencies</a>
-</li>
-</ul>
-</li>
-</ul>
-</nav>
-<div class="docs-content content-grid">
+</li></ul></li></ul></nav><div class="docs-content content-grid">
 <ol class=breadcrumb vocab="http://schema.org/" typeof="BreadcrumbList">
 <li property="itemListElement" typeof="ListItem">
 <a property="item" typeof="WebPage" href=https://pypyr.io/><span property="name">pypyr</span></a>
 <meta property="position" content="1">
-</li>
-<li property="itemListElement" typeof="ListItem">
+</li><li property="itemListElement" typeof="ListItem">
 <a property="item" typeof="WebPage" href=https://pypyr.io/docs/><span property="name">docs</span></a>
 <meta property="position" content="2">
-</li>
-<li property="itemListElement" typeof="ListItem">
+</li><li property="itemListElement" typeof="ListItem">
 <a property="item" typeof="WebPage" href=https://pypyr.io/docs/api/><span property="name">api</span></a>
 <meta property="position" content="3">
-</li>
-<li property="itemListElement" typeof="ListItem">
+</li><li property="itemListElement" typeof="ListItem">
 <span property="name">step</span>
 <meta property="position" content="4">
-</li></ol>
-<aside class="grid-toc elevation-02">
-<h6 id=table-of-contents>on this page</h6>
-<nav id=TableOfContents>
+</li></ol><aside class="grid-toc elevation-02">
+<h6 id=table-of-contents>on this page</h6><nav id=TableOfContents>
 <ol>
-<li><a href=#step-function-signature>step function signature</a></li>
-<li><a href=#use-custom-step-in-pipeline>use custom step in pipeline</a>
+<li><a href=#step-function-signature>step function signature</a></li><li><a href=#use-custom-step-in-pipeline>use custom step in pipeline</a>
 <ol>
-<li><a href=#module-path-resolution>module path resolution</a></li>
-<li><a href=#passing-context--decorators>passing context & decorators</a></li>
-</ol>
-</li>
-</ol>
-</nav>
-</aside>
-<main class=grid-main>
+<li><a href=#module-path-resolution>module path resolution</a></li><li><a href=#passing-context--decorators>passing context & decorators</a></li></ol></li></ol></nav></aside><main class=grid-main>
 <article>
 <h1 id=create-a-custom-step>create a custom step <a href=#create-a-custom-step class=headline-anchor aria-label=anchor><svg class="permalink"><title>permalink</title><use href="https://pypyr.io/icons/external-link.054f8ebb57944b2bc52ea4f0ecd16197.svg#external-link"/></svg></a></h1><p>If you can&rsquo;t find a ready-made step that quite scratches your particular itch,
 don&rsquo;t hesitate to code your own step - it&rsquo;s easy, and very much the philosophy
 of pypyr that if you can write a quick couple of lines of python rather than
 contort your pipeline with clumsy step sequences, then do so! I know some
 frameworks don&rsquo;t really encourage you to stray outside the prescribed features,
-but not so pypyr - your custom steps are first-class citizens of the pypyrverse.</p>
-<p>You can freely mix your own custom steps and built-in steps in the same pipeline.</p>
-<p>If you do code your own and you think it could be useful to the rest of the
+but not so pypyr - your custom steps are first-class citizens of the pypyrverse.</p><p>You can freely mix your own custom steps and built-in steps in the same pipeline.</p><p>If you do code your own and you think it could be useful to the rest of the
 community, even if it&rsquo;s trivial, check out the
 <a href=https://pypyr.io/docs/contributing/contribute-to-pypyr/>contribution guide</a> for
 how to submit your code and then you can bask in the glow of making open-source
-a better place.</p>
-<p>If you don&rsquo;t code or that sounds like too much work, but you have an idea for a
+a better place.</p><p>If you don&rsquo;t code or that sounds like too much work, but you have an idea for a
 new step that would make your life better, feel very free to
 <a href="https://github.com/pypyr/pypyr/issues/new?title=step%20suggestion:&labels=feature,type:%20step">get in touch</a>
-with a feature request.</p>
-<h2 id=step-function-signature>step function signature <a href=#step-function-signature class=headline-anchor aria-label=anchor><svg class="permalink"><title>permalink</title><use href="https://pypyr.io/icons/external-link.054f8ebb57944b2bc52ea4f0ecd16197.svg#external-link"/></svg></a></h2><p>A custom step is any Python module that contains a function with this signature:</p>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=n>run_step</span><span class=p>(</span><span class=n>context</span><span class=p>:</span> <span class=n>pypyr</span><span class=o>.</span><span class=n>context</span><span class=o>.</span><span class=n>Context</span><span class=p>)</span> <span class=o>-&gt;</span> <span class=kc>None</span>
-</code></pre></div><p>Here is a fuller example that you can copy & paste to get started:</p>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=kn>import</span> <span class=nn>logging</span>
-
-<span class=kn>from</span> <span class=nn>pypyr.context</span> <span class=kn>import</span> <span class=n>Context</span>
-
-<span class=c1># getLogger will grab the parent logger context, so your loglevel and</span>
-<span class=c1># formatting automatically will inherit correctly from the pypyr core.</span>
-<span class=n>logger</span> <span class=o>=</span> <span class=n>logging</span><span class=o>.</span><span class=n>getLogger</span><span class=p>(</span><span class=vm>__name__</span><span class=p>)</span>
-
-
-<span class=k>def</span> <span class=nf>run_step</span><span class=p>(</span><span class=n>context</span><span class=p>:</span> <span class=n>Context</span><span class=p>)</span> <span class=o>-&gt;</span> <span class=kc>None</span><span class=p>:</span>
-    <span class=s2>&#34;&#34;&#34;Put your code in here. This shows you how to code a custom pipeline step.
-</span><span class=s2>
-</span><span class=s2>    Args:
-</span><span class=s2>      context: dict-like. This is the entire pypyr context.
-</span><span class=s2>               You can mutate context in this step to make
-</span><span class=s2>               keys/values &amp; data available to subsequent
-</span><span class=s2>               pipeline steps.
-</span><span class=s2>
-</span><span class=s2>    Returns:
-</span><span class=s2>      None.
-</span><span class=s2>    &#34;&#34;&#34;</span>
-    <span class=n>logger</span><span class=o>.</span><span class=n>debug</span><span class=p>(</span><span class=s2>&#34;started&#34;</span><span class=p>)</span>
-    <span class=c1># you probably want to do some asserts here to check that the input context</span>
-    <span class=c1># dictionary contains the keys and values you need for your code to work.</span>
-    <span class=n>context</span><span class=o>.</span><span class=n>assert_key_has_value</span><span class=p>(</span><span class=n>key</span><span class=o>=</span><span class=s1>&#39;mykey&#39;</span><span class=p>,</span> <span class=n>caller</span><span class=o>=</span><span class=vm>__name__</span><span class=p>)</span>
-    
-    <span class=c1># do this if you want your step to support substitutions.</span>
-    <span class=c1># get_formatted will also iterate mykey if it&#39;s an iterable</span>
-    <span class=c1># and do substitutions for each item in it.</span>
-    <span class=n>mystep_context</span> <span class=o>=</span> <span class=n>context</span><span class=o>.</span><span class=n>get_formatted</span><span class=p>(</span><span class=s1>&#39;mykey&#39;</span><span class=p>)</span>
-    <span class=c1># assuming input context</span>
-    <span class=c1># mykey:</span>
-    <span class=c1>#  subkey: subkey value</span>
-    <span class=n>nested_value</span> <span class=o>=</span> <span class=n>mystep_context</span><span class=p>[</span><span class=s1>&#39;subkey&#39;</span><span class=p>]</span>
-
-    <span class=c1># get a context item if you don&#39;t care about substitutions</span>
-    <span class=n>context_item</span> <span class=o>=</span> <span class=n>context</span><span class=p>[</span><span class=s1>&#39;arbkey&#39;</span><span class=p>]</span>
-
-    <span class=c1># it&#39;s good form only to use .info and higher log levels when you must.</span>
-    <span class=c1># For .debug() being verbose is very much encouraged.</span>
-    <span class=n>logger</span><span class=o>.</span><span class=n>info</span><span class=p>(</span><span class=s2>&#34;Your clever code goes here. . . &#34;</span><span class=p>)</span>
-
-    <span class=c1># Add or edit context items. These are available to any pipeline steps</span>
-    <span class=c1># following this one.</span>
-    <span class=n>context</span><span class=p>[</span><span class=s1>&#39;existingkey&#39;</span><span class=p>]</span> <span class=o>=</span> <span class=s1>&#39;new value overwrites old value&#39;</span>
-    <span class=n>context</span><span class=p>[</span><span class=s1>&#39;mynewcleverkey&#39;</span><span class=p>]</span> <span class=o>=</span> <span class=s1>&#39;new value&#39;</span>
-
-    <span class=n>logger</span><span class=o>.</span><span class=n>debug</span><span class=p>(</span><span class=s2>&#34;done&#34;</span><span class=p>)</span>
-</code></pre></div>
-<h2 id=use-custom-step-in-pipeline>use custom step in pipeline <a href=#use-custom-step-in-pipeline class=headline-anchor aria-label=anchor><svg class="permalink"><title>permalink</title><use href="https://pypyr.io/icons/external-link.054f8ebb57944b2bc52ea4f0ecd16197.svg#external-link"/></svg></a></h2>
-<h3 id=module-path-resolution>module path resolution <a href=#module-path-resolution class=headline-anchor aria-label=anchor><svg class="permalink"><title>permalink</title><use href="https://pypyr.io/icons/external-link.054f8ebb57944b2bc52ea4f0ecd16197.svg#external-link"/></svg></a></h3><p>The usual <a href=https://pypyr.io/docs/api/custom-module-search-path/>custom module import resolution rules</a> apply.</p>
-<p>Assuming you saved your python with the <code>def run_step(context)</code> function in a
-file like this <code>{pipeline dir}/mydir/mystep.py</code>:</p>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text>|- mypipelinedir/
-  |- mypipe.yaml
-  |- mydir/
-    |- mystep.py
-  |- step1.py
-</code></pre></div><p>You can use use it in your <code>mypipe</code> pipeline like this:</p>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-yaml data-lang=yaml><span class=c># {pipeline dir}/mypipe.yaml</span><span class=w>
-</span><span class=w></span><span class=nt>steps</span><span class=p>:</span><span class=w>
-</span><span class=w>    </span>- <span class=l>step1</span><span class=w> </span><span class=c># run {pipeline dir}/step1.py</span><span class=w>
-</span><span class=w>    </span>- <span class=l>mydir.mystep</span><span class=w> </span><span class=c># run {pipeline dir}/mydir/mystep.py</span><span class=w>
-</span></code></pre></div><p>Because you reference the custom modules relative to the pipeline directory,
-you can run this pipeline from anywhere and it&rsquo;ll work:</p>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>$ pypyr mypipelinedir/mypipe
-</code></pre></div><p>If you package your code and you install the package into the active python
+with a feature request.</p><h2 id=step-function-signature>step function signature <a href=#step-function-signature class=headline-anchor aria-label=anchor><svg class="permalink"><title>permalink</title><use href="https://pypyr.io/icons/external-link.054f8ebb57944b2bc52ea4f0ecd16197.svg#external-link"/></svg></a></h2><p>A custom step is any Python module that contains a function with this signature:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=n>run_step</span><span class=p>(</span><span class=n>context</span><span class=p>:</span> <span class=n>pypyr</span><span class=o>.</span><span class=n>context</span><span class=o>.</span><span class=n>Context</span><span class=p>)</span> <span class=o>-&gt;</span> <span class=kc>None</span>
+</span></span></code></pre></div><p>Here is a fuller example that you can copy & paste to get started:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=kn>import</span> <span class=nn>logging</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=kn>from</span> <span class=nn>pypyr.context</span> <span class=kn>import</span> <span class=n>Context</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># getLogger will grab the parent logger context, so your loglevel and</span>
+</span></span><span class=line><span class=cl><span class=c1># formatting automatically will inherit correctly from the pypyr core.</span>
+</span></span><span class=line><span class=cl><span class=n>logger</span> <span class=o>=</span> <span class=n>logging</span><span class=o>.</span><span class=n>getLogger</span><span class=p>(</span><span class=vm>__name__</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>def</span> <span class=nf>run_step</span><span class=p>(</span><span class=n>context</span><span class=p>:</span> <span class=n>Context</span><span class=p>)</span> <span class=o>-&gt;</span> <span class=kc>None</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>    <span class=s2>&#34;&#34;&#34;Put your code in here. This shows you how to code a custom pipeline step.
+</span></span></span><span class=line><span class=cl><span class=s2>
+</span></span></span><span class=line><span class=cl><span class=s2>    Args:
+</span></span></span><span class=line><span class=cl><span class=s2>      context: dict-like. This is the entire pypyr context.
+</span></span></span><span class=line><span class=cl><span class=s2>               You can mutate context in this step to make
+</span></span></span><span class=line><span class=cl><span class=s2>               keys/values &amp; data available to subsequent
+</span></span></span><span class=line><span class=cl><span class=s2>               pipeline steps.
+</span></span></span><span class=line><span class=cl><span class=s2>
+</span></span></span><span class=line><span class=cl><span class=s2>    Returns:
+</span></span></span><span class=line><span class=cl><span class=s2>      None.
+</span></span></span><span class=line><span class=cl><span class=s2>    &#34;&#34;&#34;</span>
+</span></span><span class=line><span class=cl>    <span class=n>logger</span><span class=o>.</span><span class=n>debug</span><span class=p>(</span><span class=s2>&#34;started&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>    <span class=c1># you probably want to do some asserts here to check that the input context</span>
+</span></span><span class=line><span class=cl>    <span class=c1># dictionary contains the keys and values you need for your code to work.</span>
+</span></span><span class=line><span class=cl>    <span class=n>context</span><span class=o>.</span><span class=n>assert_key_has_value</span><span class=p>(</span><span class=n>key</span><span class=o>=</span><span class=s1>&#39;mykey&#39;</span><span class=p>,</span> <span class=n>caller</span><span class=o>=</span><span class=vm>__name__</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>    
+</span></span><span class=line><span class=cl>    <span class=c1># do this if you want your step to support substitutions.</span>
+</span></span><span class=line><span class=cl>    <span class=c1># get_formatted will also iterate mykey if it&#39;s an iterable</span>
+</span></span><span class=line><span class=cl>    <span class=c1># and do substitutions for each item in it.</span>
+</span></span><span class=line><span class=cl>    <span class=n>mystep_context</span> <span class=o>=</span> <span class=n>context</span><span class=o>.</span><span class=n>get_formatted</span><span class=p>(</span><span class=s1>&#39;mykey&#39;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>    <span class=c1># assuming input context</span>
+</span></span><span class=line><span class=cl>    <span class=c1># mykey:</span>
+</span></span><span class=line><span class=cl>    <span class=c1>#  subkey: subkey value</span>
+</span></span><span class=line><span class=cl>    <span class=n>nested_value</span> <span class=o>=</span> <span class=n>mystep_context</span><span class=p>[</span><span class=s1>&#39;subkey&#39;</span><span class=p>]</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=c1># get a context item if you don&#39;t care about substitutions</span>
+</span></span><span class=line><span class=cl>    <span class=n>context_item</span> <span class=o>=</span> <span class=n>context</span><span class=p>[</span><span class=s1>&#39;arbkey&#39;</span><span class=p>]</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=c1># it&#39;s good form only to use .info and higher log levels when you must.</span>
+</span></span><span class=line><span class=cl>    <span class=c1># For .debug() being verbose is very much encouraged.</span>
+</span></span><span class=line><span class=cl>    <span class=n>logger</span><span class=o>.</span><span class=n>info</span><span class=p>(</span><span class=s2>&#34;Your clever code goes here. . . &#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=c1># Add or edit context items. These are available to any pipeline steps</span>
+</span></span><span class=line><span class=cl>    <span class=c1># following this one.</span>
+</span></span><span class=line><span class=cl>    <span class=n>context</span><span class=p>[</span><span class=s1>&#39;existingkey&#39;</span><span class=p>]</span> <span class=o>=</span> <span class=s1>&#39;new value overwrites old value&#39;</span>
+</span></span><span class=line><span class=cl>    <span class=n>context</span><span class=p>[</span><span class=s1>&#39;mynewcleverkey&#39;</span><span class=p>]</span> <span class=o>=</span> <span class=s1>&#39;new value&#39;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=n>logger</span><span class=o>.</span><span class=n>debug</span><span class=p>(</span><span class=s2>&#34;done&#34;</span><span class=p>)</span>
+</span></span></code></pre></div><h2 id=use-custom-step-in-pipeline>use custom step in pipeline <a href=#use-custom-step-in-pipeline class=headline-anchor aria-label=anchor><svg class="permalink"><title>permalink</title><use href="https://pypyr.io/icons/external-link.054f8ebb57944b2bc52ea4f0ecd16197.svg#external-link"/></svg></a></h2><h3 id=module-path-resolution>module path resolution <a href=#module-path-resolution class=headline-anchor aria-label=anchor><svg class="permalink"><title>permalink</title><use href="https://pypyr.io/icons/external-link.054f8ebb57944b2bc52ea4f0ecd16197.svg#external-link"/></svg></a></h3><p>The usual <a href=https://pypyr.io/docs/api/custom-module-search-path/>custom module import resolution rules</a> apply.</p><p>Assuming you saved your python with the <code>def run_step(context)</code> function in a
+file like this <code>{pipeline dir}/mydir/mystep.py</code>:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>|- mypipelinedir/
+</span></span><span class=line><span class=cl>  |- mypipe.yaml
+</span></span><span class=line><span class=cl>  |- mydir/
+</span></span><span class=line><span class=cl>    |- mystep.py
+</span></span><span class=line><span class=cl>  |- step1.py
+</span></span></code></pre></div><p>You can use use it in your <code>mypipe</code> pipeline like this:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-yaml data-lang=yaml><span class=line><span class=cl><span class=c># {pipeline dir}/mypipe.yaml</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=nt>steps</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span>- <span class=l>step1</span><span class=w> </span><span class=c># run {pipeline dir}/step1.py</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span>- <span class=l>mydir.mystep</span><span class=w> </span><span class=c># run {pipeline dir}/mydir/mystep.py</span><span class=w>
+</span></span></span></code></pre></div><p>Because you reference the custom modules relative to the pipeline directory,
+you can run this pipeline from anywhere and it&rsquo;ll work:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>$ pypyr mypipelinedir/mypipe
+</span></span></code></pre></div><p>If you package your code and you install the package into the active python
 environment (i.e <code>$ pip install mypackage</code>), you can of course use the usual
-python absolute package name instead:</p>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-yaml data-lang=yaml><span class=nt>steps</span><span class=p>:</span><span class=w>
-</span><span class=w>    </span>- <span class=l>step1</span><span class=w> </span><span class=c># run {pipeline dir}/step1.py</span><span class=w>
-</span><span class=w>    </span>- <span class=l>mypackage.mystep</span><span class=w> </span><span class=c># run mypackage.mystep</span><span class=w>
-</span></code></pre></div><p>You can mix both packaged code and ad hoc modules in the same pipeline.</p>
-<h3 id=passing-context--decorators>passing context & decorators <a href=#passing-context--decorators class=headline-anchor aria-label=anchor><svg class="permalink"><title>permalink</title><use href="https://pypyr.io/icons/external-link.054f8ebb57944b2bc52ea4f0ecd16197.svg#external-link"/></svg></a></h3><p>All of the usual step decorators are available to your custom step. This makes
+python absolute package name instead:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-yaml data-lang=yaml><span class=line><span class=cl><span class=nt>steps</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span>- <span class=l>step1</span><span class=w> </span><span class=c># run {pipeline dir}/step1.py</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span>- <span class=l>mypackage.mystep</span><span class=w> </span><span class=c># run mypackage.mystep</span><span class=w>
+</span></span></span></code></pre></div><p>You can mix both packaged code and ad hoc modules in the same pipeline.</p><h3 id=passing-context--decorators>passing context & decorators <a href=#passing-context--decorators class=headline-anchor aria-label=anchor><svg class="permalink"><title>permalink</title><use href="https://pypyr.io/icons/external-link.054f8ebb57944b2bc52ea4f0ecd16197.svg#external-link"/></svg></a></h3><p>All of the usual step decorators are available to your custom step. This makes
 it easy to use retry, looping and conditional logic on your custom step code
-without having to write any additional code.</p>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-yaml data-lang=yaml><span class=nt>steps</span><span class=p>:</span><span class=w>
-</span><span class=w>  </span>- <span class=l>step1</span><span class=w>
-</span><span class=w>  </span>- <span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>mystep</span><span class=w>
-</span><span class=w>    </span><span class=nt>comment</span><span class=p>:</span><span class=w> </span><span class=l>run {pipeline dir}/mystep.py</span><span class=w>
-</span><span class=w>             </span><span class=l>pass input context values to the step.</span><span class=w>
-</span><span class=w>             </span><span class=l>run step 3 times in total for &#34;first&#34;, &#34;second&#34;, &#34;third&#34;</span><span class=w>
-</span><span class=w>             </span><span class=l>retry twice if the step fails.</span><span class=w>
-</span><span class=w>    </span><span class=nt>foreach</span><span class=p>:</span><span class=w> </span><span class=p>[</span><span class=l>first, second, third]</span><span class=w>
-</span><span class=w>    </span><span class=nt>in</span><span class=p>:</span><span class=w>
-</span><span class=w>      </span><span class=nt>set</span><span class=p>:</span><span class=w> </span><span class=l>your own</span><span class=w>
-</span><span class=w>      </span><span class=nt>context</span><span class=p>:</span><span class=w> </span><span class=l>input here</span><span class=w>
-</span><span class=w>      </span><span class=nt>so</span><span class=p>:</span><span class=w> </span><span class=l>your step can use it</span><span class=w>
-</span><span class=w>    </span><span class=nt>retry</span><span class=p>:</span><span class=w>
-</span><span class=w>      </span><span class=nt>max</span><span class=p>:</span><span class=w> </span><span class=m>2</span><span class=w>
-</span><span class=w>  </span>- <span class=l>step3</span><span class=w>
-</span><span class=w>
-</span></code></pre></div>
-</article>
-<section class="see-also elevation-02">
-<h2>see also</h2>
-<ul>
-<li><a href=/docs/api/custom-module-search-path/>custom module name resolution</a></li>
-<li><a href=/docs/api/retry-backoff/>custom retry backoff</a></li>
-<li><a href=/docs/api/>api</a></li>
-<li><a href=/docs/api/context-parser/>custom context parser</a></li>
-<li><a href=/docs/api/pipeline-loader/>custom pype loader</a></li>
-</ul>
-</section>
-</main>
-<aside class="grid-taxonomy elevation-02">
+without having to write any additional code.</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-yaml data-lang=yaml><span class=line><span class=cl><span class=nt>steps</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span>- <span class=l>step1</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span>- <span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>mystep</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nt>comment</span><span class=p>:</span><span class=w> </span><span class=l>run {pipeline dir}/mystep.py</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>             </span><span class=l>pass input context values to the step.</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>             </span><span class=l>run step 3 times in total for &#34;first&#34;, &#34;second&#34;, &#34;third&#34;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>             </span><span class=l>retry twice if the step fails.</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nt>foreach</span><span class=p>:</span><span class=w> </span><span class=p>[</span><span class=l>first, second, third]</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nt>in</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>      </span><span class=nt>set</span><span class=p>:</span><span class=w> </span><span class=l>your own</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>      </span><span class=nt>context</span><span class=p>:</span><span class=w> </span><span class=l>input here</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>      </span><span class=nt>so</span><span class=p>:</span><span class=w> </span><span class=l>your step can use it</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nt>retry</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>      </span><span class=nt>max</span><span class=p>:</span><span class=w> </span><span class=m>2</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span>- <span class=l>step3</span><span class=w>
+</span></span></span></code></pre></div></article><section class="see-also elevation-02">
+<h2>see also</h2><ul>
+<li><a href=/docs/api/custom-module-search-path/>custom module name resolution</a></li><li><a href=/docs/api/retry-backoff/>custom retry backoff</a></li><li><a href=/docs/api/>api</a></li><li><a href=/docs/api/context-parser/>custom context parser</a></li><li><a href=/docs/api/pipeline-loader/>custom pype loader</a></li></ul></section></main><aside class="grid-taxonomy elevation-02">
 <section class=page-taxonomy aria-label="related topics">
-<h6>topics</h6>
-<ul id=topics class=small-list>
-<li><a href=https://pypyr.io/topics/custom-code/ class=muted-with-hover>custom code</a></li>
-</ul>
-</section>
-<section class=page-taxonomy aria-label="related categories">
-<h6>categories</h6>
-<ul id=categories class=small-list>
-<li><a href=https://pypyr.io/categories/steps/ class=muted-with-hover>steps</a></li>
-</ul>
-</section>
-</aside>
-<aside class="grid-improve elevation-02" aria-labelledby=feedback>
-<h6 id=feedback>feedback</h6>
-<ul class=small-list>
-<li><a href=https://github.com/pypyr/docs/edit/main/content/docs/api/step.md class=muted-with-hover>edit me</a></li>
-<li><a href="https://github.com/pypyr/docs/issues/new?title=docs%20issue:custom%20step&body=File:%20[custom%20step]%28https://pypyr.io/docs/api/step/%29" class=muted-with-hover>report typo</a></li>
-<li><a href="https://github.com/pypyr/pypyr/issues/new?title=Re:%20custom%20step&labels=bug" class=muted-with-hover>report bug!</a></li>
-</ul>
-</aside>
-<div class="page-git-info elevation-02">
+<h6>topics</h6><ul id=topics class=small-list>
+<li><a href=https://pypyr.io/topics/custom-code/ class=muted-with-hover>custom code</a></li></ul></section><section class=page-taxonomy aria-label="related categories">
+<h6>categories</h6><ul id=categories class=small-list>
+<li><a href=https://pypyr.io/categories/steps/ class=muted-with-hover>steps</a></li></ul></section></aside><aside class="grid-improve elevation-02" aria-labelledby=feedback>
+<h6 id=feedback>feedback</h6><ul class=small-list>
+<li><a href=https://github.com/pypyr/docs/edit/main/content/docs/api/step.md class=muted-with-hover>edit me</a></li><li><a href="https://github.com/pypyr/docs/issues/new?title=docs%20issue:custom%20step&body=File:%20[custom%20step]%28https://pypyr.io/docs/api/step/%29" class=muted-with-hover>report typo</a></li><li><a href="https://github.com/pypyr/pypyr/issues/new?title=Re:%20custom%20step&labels=bug" class=muted-with-hover>report bug!</a></li></ul></aside><div class="page-git-info elevation-02">
 <small class=small-block>last updated on <time datetime=2021-11-20T15:55:39Z>2021-11-20 15:55</time>.</small>
-</div>
-</div>
-<footer class="footer elevation-01">
+</div></div><footer class="footer elevation-01">
 <a href=/ class=top-nav-logo aria-label=home>
 <img class=top-nav-logo-img src=https://pypyr.io/images/pypyr-logotype.2c9aa98c472f0ea8d436597c26ef1b0f042624ee19cdf69bcb89ac0025d146c4.svg alt="pypyr logo">
 </a>
 <div class=col-1fr-centered>
 <ul class=footer-social-links aria-label="social media links"><li>
 <a href=https://twitter.com/pypyrpipes/ class=footer-social-link>
-<div class=footer-social-links-pre><svg viewBox="0 0 400 400"><title>twitter link</title><use xlink:href="https://pypyr.io/icons/twitter-social-icon-circle-white.d715a98bf8d7170b3d2603d836ca675616731d85583c13d23ec468905e77c59a.svg#twitter-icon"/></svg></div>
-<small>twitter</small>
+<div class=footer-social-links-pre><svg viewBox="0 0 400 400"><title>twitter link</title><use xlink:href="https://pypyr.io/icons/twitter-social-icon-circle-white.d715a98bf8d7170b3d2603d836ca675616731d85583c13d23ec468905e77c59a.svg#twitter-icon"/></svg></div><small>twitter</small>
 </a>
 </li><li>
 <a href=https://github.com/pypyr/pypyr/ class=footer-social-link>
-<div class=footer-social-links-pre><svg viewBox="0 0 32.58 31.77"><title>github link</title><use xlink:href="https://pypyr.io/icons/github-icon.778bc8065fb7e8d1e7109b270cfbd86e15e05bb16ebff30d261935e4bc1560bd.svg#github-icon"/></svg></div>
-<small>github</small>
+<div class=footer-social-links-pre><svg viewBox="0 0 32.58 31.77"><title>github link</title><use xlink:href="https://pypyr.io/icons/github-icon.778bc8065fb7e8d1e7109b270cfbd86e15e05bb16ebff30d261935e4bc1560bd.svg#github-icon"/></svg></div><small>github</small>
 </a>
 </li><li>
 <a href=https://github.com/pypyr/pypyr/discussions class=footer-social-link>
 <div class=footer-social-links-pre><svg viewBox="0 0 16 16"><title>discussion forum link</title><use xlink:href="https://pypyr.io/icons/discussions.a9f14951d81276183aaea73b6d616db95326f8f16350b221d9d6d48ee5a0b16e.svg#discussions-icon"/></svg>
-</div>
-<small>forum</small>
+</div><small>forum</small>
 </a>
-</li></ul>
-<ul class=footer-notices-links aria-label="legal notices"><li>
+</li></ul><ul class=footer-notices-links aria-label="legal notices"><li>
 <a href=/legal/privacy-notice class=muted-with-hover>
 <small>privacy</small>
 </a>
@@ -757,10 +541,4 @@ without having to write any additional code.</p>
 <a href=/press-kit class=muted-with-hover>
 <small>press</small>
 </a>
-</li></ul>
-</div>
-</footer>
-<div class=bottom-spacer aria-hidden=true></div>
-<div id=disabled-state-overlay aria-hidden=true class="disabled-state-overlay hide-overlay"></div>
-</body>
-</html>
+</li></ul></div></footer><div class=bottom-spacer aria-hidden=true></div><div id=disabled-state-overlay aria-hidden=true class="disabled-state-overlay hide-overlay"></div></body></html>
