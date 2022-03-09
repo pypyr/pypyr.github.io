@@ -22,7 +22,7 @@
 <meta property="og:url" content="https://pypyr.io/docs/api/run-pipeline/">
 <meta name=twitter:card content="summary_large_image">
 <meta name=twitter:site content="@pypyrpipes">
-<script type=application/ld+json>{"@context":"https://schema.org","@graph":[{"@id":"https://pypyr.io/#organization","@type":"Organization","name":"pypyr","url":"https://pypyr.io/","description":"The pypyr project is a free open-source task-runner cli \u0026 python api for automation pipelines.","logo":{"@type":"ImageObject","url":"https://pypyr.io/images/pypyr-taskrunner-logo-square.63875e43ff40d8ae40e93a6043b4328b962f54f52974aaa27cedec52220de665.svg","height":112,"width":112},"sameAs":["https://github.com/pypyr/","https://twitter.com/pypyrpipes/","https://pypi.org/user/pypyr/","https://hub.docker.com/u/pypyr/","https://en.gravatar.com/pypyr/"]},{"@type":"TechArticle","author":{"@type":"Person","name":"pypyr contributor"},"articleSection":"api","dateModified":"2022-02-17T18:30:38Z","datePublished":"2020-08-13T00:00:00Z","headline":"Run an automation pipeline programmatically in your own code.","image":[{"@type":"ImageObject","url":"https://pypyr.io/images/1x1/pypyr-taskrunner-yaml-pipeline-automation-1200x1200.52764d3c6f40232b3cdc33f5b8fbaeadad56cc310c8dd5588d30828296b5290d.png","height":1200,"width":1200},{"@type":"ImageObject","url":"https://pypyr.io/images/4x3/pypyr-taskrunner-yaml-pipeline-automation-1200x900.e8e70443377aeb11c190835e8d2ed0c844d31a82a0c2e8a744a9999cd03e0de9.png","height":900,"width":1200},{"@type":"ImageObject","url":"https://pypyr.io/images/16x9/pypyr-taskrunner-yaml-pipeline-automation-1920x1080.cc9ae11626c8312e087058adb13bfff702162ce39c355065170c1b87850f3034.png","height":1080,"width":1920}],"inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https://pypyr.io/docs/api/run-pipeline/"},"publisher":{"@id":"https://pypyr.io/#organization"},"url":"https://pypyr.io/docs/api/run-pipeline/","wordCount":1962}]}</script>
+<script type=application/ld+json>{"@context":"https://schema.org","@graph":[{"@id":"https://pypyr.io/#organization","@type":"Organization","name":"pypyr","url":"https://pypyr.io/","description":"The pypyr project is a free open-source task-runner cli \u0026 python api for automation pipelines.","logo":{"@type":"ImageObject","url":"https://pypyr.io/images/pypyr-taskrunner-logo-square.63875e43ff40d8ae40e93a6043b4328b962f54f52974aaa27cedec52220de665.svg","height":112,"width":112},"sameAs":["https://github.com/pypyr/","https://twitter.com/pypyrpipes/","https://pypi.org/user/pypyr/","https://hub.docker.com/u/pypyr/","https://en.gravatar.com/pypyr/"]},{"@type":"TechArticle","author":{"@type":"Person","name":"pypyr contributor"},"articleSection":"api","dateModified":"2022-03-09T12:15:05Z","datePublished":"2020-08-13T00:00:00Z","headline":"Run an automation pipeline programmatically in your own code.","image":[{"@type":"ImageObject","url":"https://pypyr.io/images/1x1/pypyr-taskrunner-yaml-pipeline-automation-1200x1200.52764d3c6f40232b3cdc33f5b8fbaeadad56cc310c8dd5588d30828296b5290d.png","height":1200,"width":1200},{"@type":"ImageObject","url":"https://pypyr.io/images/4x3/pypyr-taskrunner-yaml-pipeline-automation-1200x900.e8e70443377aeb11c190835e8d2ed0c844d31a82a0c2e8a744a9999cd03e0de9.png","height":900,"width":1200},{"@type":"ImageObject","url":"https://pypyr.io/images/16x9/pypyr-taskrunner-yaml-pipeline-automation-1920x1080.cc9ae11626c8312e087058adb13bfff702162ce39c355065170c1b87850f3034.png","height":1080,"width":1920}],"inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https://pypyr.io/docs/api/run-pipeline/"},"publisher":{"@id":"https://pypyr.io/#organization"},"url":"https://pypyr.io/docs/api/run-pipeline/","wordCount":2248}]}</script>
 <link rel=apple-touch-icon sizes=180x180 href=/favicons/apple-touch-icon.925deabb48d91a80924b5d04ff56d2b8f42ba1d1e1438cb7d8948cce1138208c.png>
 <link rel=icon type=image/png sizes=32x32 href=/favicons/favicon-32x32.b869433d27c4679a5fbce03a8489268a539cbc781259bff14618ae2f018334e6.png>
 <link rel=icon type=image/png sizes=16x16 href=/favicons/favicon-16x16.8bcd9f870e0a86445e0505ce6e816b76a40b08a06e2dcd1ec1f90c395ecbeaf6.png>
@@ -94,6 +94,8 @@
 <a href=/docs/pipelines/pipeline-structure/>pipeline structure</a>
 </li><li>
 <a href=/docs/pipelines/lookup-order/>lookup order</a>
+</li><li>
+<a href=/docs/pipelines/shortcuts/>shortcuts</a>
 </li><li>
 <a href=/docs/pipelines/builtin-pipelines/>built-in pipelines</a>
 </li></ul></li><li>
@@ -405,7 +407,7 @@
 <ol>
 <li><a href=#input-args>input args</a></li><li><a href=#returns>returns</a></li></ol></li><li><a href=#passing-values-to-the-pipeline>passing values to the pipeline</a>
 <ol>
-<li><a href=#args_in-vs-dict_in>args_in vs dict_in</a></li><li><a href=#args_in-list>args_in list</a></li><li><a href=#invoke-pipeline-from-api-with-no-input-context>invoke pipeline from api with no input context</a></li></ol></li><li><a href=#initialize-config>initialize config</a></li><li><a href=#logging>logging</a>
+<li><a href=#args_in-vs-dict_in>args_in vs dict_in</a></li><li><a href=#args_in-list>args_in list</a></li><li><a href=#invoke-pipeline-from-api-with-no-input-context>invoke pipeline from api with no input context</a></li></ol></li><li><a href=#initialize-config>initialize config</a></li><li><a href=#shortcuts>shortcuts</a></li><li><a href=#logging>logging</a>
 <ol>
 <li><a href=#log-levels>log levels</a></li><li><a href=#set_root_logger-input-args>set_root_logger input args</a></li></ol></li></ol></nav></aside><main class=grid-main>
 <article>
@@ -615,7 +617,59 @@ multiple times to reconfigure pypyr on the fly.</p><div class=highlight><pre tab
 </span></span><span class=line><span class=cl><span class=n>out1</span> <span class=o>=</span> <span class=n>pipelinerunner</span><span class=o>.</span><span class=n>run</span><span class=p>(</span><span class=s1>&#39;my-pipeline-1&#39;</span><span class=p>)</span>
 </span></span><span class=line><span class=cl><span class=n>out2</span> <span class=o>=</span> <span class=n>pipelinerunner</span><span class=o>.</span><span class=n>run</span><span class=p>(</span><span class=s1>&#39;my-pipeline-2&#39;</span><span class=p>)</span>
 </span></span></code></pre></div><p>If your code invokes <code>config.init()</code>, you can still bypass the heavy
-initialization sequence on-the-fly by using the <a href=https://pypyr.io/docs/getting-started/config/#pypyr_skip_init>PYPYR_SKIP_INIT</a> environment variable.</p><h2 id=logging>logging <a href=#logging class=headline-anchor aria-label=anchor><svg class="permalink"><title>permalink</title><use href="https://pypyr.io/icons/external-link.054f8ebb57944b2bc52ea4f0ecd16197.svg#external-link"/></svg></a></h2><p>By default python runs with a log level of 30 (WARNING). This means you won&rsquo;t
+initialization sequence on-the-fly by using the <a href=https://pypyr.io/docs/getting-started/config/#pypyr_skip_init>PYPYR_SKIP_INIT</a> environment variable.</p><h2 id=shortcuts>shortcuts <a href=#shortcuts class=headline-anchor aria-label=anchor><svg class="permalink"><title>permalink</title><use href="https://pypyr.io/icons/external-link.054f8ebb57944b2bc52ea4f0ecd16197.svg#external-link"/></svg></a></h2><p>If you <a href=#initialize-config>initialize config</a>, pypyr will automatically check
+if the <code>pipeline_name</code> you pass to <code>run()</code> is a recognized <a href=https://pypyr.io/docs/pipelines/shortcuts/#shortcut-name>shortcut name</a>.</p><p>If it is a shortcut, pypyr will run the pipeline using the inputs configured by
+the shortcut rather than the arguments you pass to <code>run()</code> function. If
+<code>pipeline_name</code> does not match a shortcut, pypyr will continue on to the default
+pipeline discovery process.</p><p>So given shortcut configuration like this:
+<div class=tabs>
+<input type=radio id=shortcuts-radio-config.yaml name=shortcuts-selector class=tab-radio tabindex=0 checked>
+<label for=shortcuts-radio-config.yaml class=tab-label>config.yaml</label>
+<div class=tab>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-yaml data-lang=yaml><span class=line><span class=cl><span class=nt>shortcuts</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=nt>my-shortcut</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nt>pipeline_name</span><span class=p>:</span><span class=w> </span><span class=l>/mydir/my-pipeline</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nt>args</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>      </span><span class=nt>akey</span><span class=p>:</span><span class=w> </span><span class=l>a value</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>      </span><span class=nt>anotherkey</span><span class=p>:</span><span class=w> </span><span class=m>123</span><span class=w>
+</span></span></span></code></pre></div></div><input type=radio id=shortcuts-radio-pyproject.toml name=shortcuts-selector class=tab-radio tabindex=0>
+<label for=shortcuts-radio-pyproject.toml class=tab-label>pyproject.toml</label>
+<div class=tab>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-toml data-lang=toml><span class=line><span class=cl><span class=p>[</span><span class=nx>tool</span><span class=p>.</span><span class=nx>pypyr</span><span class=p>.</span><span class=nx>shortcuts</span><span class=p>]</span>
+</span></span><span class=line><span class=cl><span class=p>[</span><span class=nx>tool</span><span class=p>.</span><span class=nx>pypyr</span><span class=p>.</span><span class=nx>shortcuts</span><span class=p>.</span><span class=nx>my-shortcut</span><span class=p>]</span>
+</span></span><span class=line><span class=cl>    <span class=nx>pipeline_name</span> <span class=p>=</span> <span class=s2>&#34;/mydir/my-pipeline&#34;</span>
+</span></span><span class=line><span class=cl>    <span class=nx>args</span> <span class=p>=</span> <span class=p>{</span><span class=nx>akey</span> <span class=p>=</span> <span class=s2>&#34;a value&#34;</span><span class=p>,</span> <span class=nx>anotherkey</span> <span class=p>=</span> <span class=mi>123</span> <span class=p>}</span>
+</span></span></code></pre></div></div></div></p><p>You can run like this:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=kn>from</span> <span class=nn>pypyr</span> <span class=kn>import</span> <span class=n>pipelinerunner</span>
+</span></span><span class=line><span class=cl><span class=kn>from</span> <span class=nn>pypyr.config</span> <span class=kn>import</span> <span class=n>config</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># initialize config once</span>
+</span></span><span class=line><span class=cl><span class=n>config</span><span class=o>.</span><span class=n>init</span><span class=p>()</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># since config is initialized, pypyr can check for shortcuts too</span>
+</span></span><span class=line><span class=cl><span class=n>out</span> <span class=o>=</span> <span class=n>pipelinerunner</span><span class=o>.</span><span class=n>run</span><span class=p>(</span><span class=s1>&#39;my-shortcut&#39;</span><span class=p>)</span>
+</span></span></code></pre></div><p>If pypyr finds a matching shortcut:</p><ul>
+<li><code>args_in</code>, if any, appends to the end of the shortcut&rsquo;s <code>parser_args</code></li><li><code>dict_in</code>, if any, merges into the shortcut&rsquo;s <code>args</code></li><li><code>parse_args</code> is ignored entirely. The value is calculated only from shortcut
+configuration.
+<ul>
+<li>The calculation is: <code>parse_args</code> will be <code>False</code> if (<code>shortcut.args</code> +
+<code>dict_in</code>) exists and (<code>args_in</code> + <code>shortcut.parser_args</code>) does NOT exist.</li><li>In all other cases, <code>parse_args</code> will be <code>True</code>.</li></ul></li><li>For any of the other arguments, pypyr will fall back to the values you
+provide to the <code>run()</code> function if the shortcut does not specify any.</li></ul><div class=highlight><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=kn>from</span> <span class=nn>pypyr</span> <span class=kn>import</span> <span class=n>pipelinerunner</span>
+</span></span><span class=line><span class=cl><span class=kn>from</span> <span class=nn>pypyr.config</span> <span class=kn>import</span> <span class=n>config</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=n>config</span><span class=o>.</span><span class=n>init</span><span class=p>()</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># inputs to run() treated as fallback defaults</span>
+</span></span><span class=line><span class=cl><span class=n>out</span> <span class=o>=</span> <span class=n>pipelinerunner</span><span class=o>.</span><span class=n>run</span><span class=p>(</span><span class=s1>&#39;my-shortcut&#39;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>                         <span class=n>args_in</span><span class=o>=</span><span class=p>[</span><span class=s1>&#39;one&#39;</span><span class=p>,</span> <span class=s1>&#39;two&#39;</span><span class=p>],</span>
+</span></span><span class=line><span class=cl>                         <span class=n>dict_in</span><span class=o>=</span><span class=p>{</span><span class=s1>&#39;a&#39;</span><span class=p>:</span> <span class=s1>&#39;b&#39;</span><span class=p>},</span>
+</span></span><span class=line><span class=cl>                         <span class=n>loader</span><span class=o>=</span><span class=s1>&#39;myloader&#39;</span><span class=p>)</span>
+</span></span></code></pre></div><p>In this example,</p><ul>
+<li><code>args_in</code> will append to the end of the shortcut <code>parser_args</code>.
+<ul>
+<li>uses <code>args_in</code> if no shortcut <code>parser_args</code> exist.</li></ul></li><li><code>dict_in</code> will merge into the shortcut&rsquo;s <code>args</code>.
+<ul>
+<li>uses <code>dict_in</code> if no shortcut <code>args</code> exist.</li></ul></li><li>if the shortcut does not specify a value for <code>loader</code>, pypyr will fallback
+to use <code>myloader</code>.</li></ul><h2 id=logging>logging <a href=#logging class=headline-anchor aria-label=anchor><svg class="permalink"><title>permalink</title><use href="https://pypyr.io/icons/external-link.054f8ebb57944b2bc52ea4f0ecd16197.svg#external-link"/></svg></a></h2><p>By default python runs with a log level of 30 (WARNING). This means you won&rsquo;t
 see pypyr NOTIFY output like <a href=https://pypyr.io/docs/steps/echo/>pypyr.steps.echo</a>
 or <a href=https://pypyr.io/docs/decorators/description/>description output</a> when you
 invoke the pypyr api from your own code without setting the log-level. This is
@@ -671,7 +725,7 @@ console.</li></ul></li></ul></article><section class="see-also elevation-02">
 <li><a href=https://pypyr.io/topics/custom-code/ class=muted-with-hover>custom code</a></li></ul></section></aside><aside class="grid-improve elevation-02" aria-labelledby=feedback>
 <h6 id=feedback>feedback</h6><ul class=small-list>
 <li><a href=https://github.com/pypyr/docs/edit/main/content/docs/api/run-pipeline.md class=muted-with-hover>edit me</a></li><li><a href="https://github.com/pypyr/docs/issues/new?title=docs%20issue:run%20pipeline%20api&body=File:%20[run%20pipeline%20api]%28https://pypyr.io/docs/api/run-pipeline/%29" class=muted-with-hover>report typo</a></li><li><a href="https://github.com/pypyr/pypyr/issues/new?title=Re:%20run%20pipeline%20api&labels=bug" class=muted-with-hover>report bug!</a></li></ul></aside><div class="page-git-info elevation-02">
-<small class=small-block>last updated on <time datetime=2022-02-17T18:30:38Z>2022-02-17 18:30</time>.</small>
+<small class=small-block>last updated on <time datetime=2022-03-09T12:15:05Z>2022-03-09 12:15</time>.</small>
 </div></div><footer class="footer elevation-01">
 <a href=/ class=top-nav-logo aria-label=home>
 <img class=top-nav-logo-img src=https://pypyr.io/images/pypyr-logotype.2c9aa98c472f0ea8d436597c26ef1b0f042624ee19cdf69bcb89ac0025d146c4.svg alt="pypyr logo">

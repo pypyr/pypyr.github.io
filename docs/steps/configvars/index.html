@@ -22,7 +22,7 @@
 <meta property="og:url" content="https://pypyr.io/docs/steps/configvars/">
 <meta name=twitter:card content="summary_large_image">
 <meta name=twitter:site content="@pypyrpipes">
-<script type=application/ld+json>{"@context":"https://schema.org","@graph":[{"@id":"https://pypyr.io/#organization","@type":"Organization","name":"pypyr","url":"https://pypyr.io/","description":"The pypyr project is a free open-source task-runner cli \u0026 python api for automation pipelines.","logo":{"@type":"ImageObject","url":"https://pypyr.io/images/pypyr-taskrunner-logo-square.63875e43ff40d8ae40e93a6043b4328b962f54f52974aaa27cedec52220de665.svg","height":112,"width":112},"sameAs":["https://github.com/pypyr/","https://twitter.com/pypyrpipes/","https://pypi.org/user/pypyr/","https://hub.docker.com/u/pypyr/","https://en.gravatar.com/pypyr/"]},{"@type":"TechArticle","author":{"@type":"Person","name":"pypyr contributor"},"articleSection":"steps","dateModified":"2022-02-17T18:30:38Z","datePublished":"2022-02-13T13:54:20Z","headline":"Inject variables from config into pypyr pipeline.","image":[{"@type":"ImageObject","url":"https://pypyr.io/images/1x1/pypyr-taskrunner-yaml-pipeline-automation-1200x1200.52764d3c6f40232b3cdc33f5b8fbaeadad56cc310c8dd5588d30828296b5290d.png","height":1200,"width":1200},{"@type":"ImageObject","url":"https://pypyr.io/images/4x3/pypyr-taskrunner-yaml-pipeline-automation-1200x900.e8e70443377aeb11c190835e8d2ed0c844d31a82a0c2e8a744a9999cd03e0de9.png","height":900,"width":1200},{"@type":"ImageObject","url":"https://pypyr.io/images/16x9/pypyr-taskrunner-yaml-pipeline-automation-1920x1080.cc9ae11626c8312e087058adb13bfff702162ce39c355065170c1b87850f3034.png","height":1080,"width":1920}],"inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https://pypyr.io/docs/steps/configvars/"},"publisher":{"@id":"https://pypyr.io/#organization"},"url":"https://pypyr.io/docs/steps/configvars/","wordCount":581}]}</script>
+<script type=application/ld+json>{"@context":"https://schema.org","@graph":[{"@id":"https://pypyr.io/#organization","@type":"Organization","name":"pypyr","url":"https://pypyr.io/","description":"The pypyr project is a free open-source task-runner cli \u0026 python api for automation pipelines.","logo":{"@type":"ImageObject","url":"https://pypyr.io/images/pypyr-taskrunner-logo-square.63875e43ff40d8ae40e93a6043b4328b962f54f52974aaa27cedec52220de665.svg","height":112,"width":112},"sameAs":["https://github.com/pypyr/","https://twitter.com/pypyrpipes/","https://pypi.org/user/pypyr/","https://hub.docker.com/u/pypyr/","https://en.gravatar.com/pypyr/"]},{"@type":"TechArticle","author":{"@type":"Person","name":"pypyr contributor"},"articleSection":"steps","dateModified":"2022-03-09T12:15:05Z","datePublished":"2022-02-13T13:54:20Z","headline":"Inject variables from config into pypyr pipeline.","image":[{"@type":"ImageObject","url":"https://pypyr.io/images/1x1/pypyr-taskrunner-yaml-pipeline-automation-1200x1200.52764d3c6f40232b3cdc33f5b8fbaeadad56cc310c8dd5588d30828296b5290d.png","height":1200,"width":1200},{"@type":"ImageObject","url":"https://pypyr.io/images/4x3/pypyr-taskrunner-yaml-pipeline-automation-1200x900.e8e70443377aeb11c190835e8d2ed0c844d31a82a0c2e8a744a9999cd03e0de9.png","height":900,"width":1200},{"@type":"ImageObject","url":"https://pypyr.io/images/16x9/pypyr-taskrunner-yaml-pipeline-automation-1920x1080.cc9ae11626c8312e087058adb13bfff702162ce39c355065170c1b87850f3034.png","height":1080,"width":1920}],"inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https://pypyr.io/docs/steps/configvars/"},"publisher":{"@id":"https://pypyr.io/#organization"},"url":"https://pypyr.io/docs/steps/configvars/","wordCount":683}]}</script>
 <link rel=apple-touch-icon sizes=180x180 href=/favicons/apple-touch-icon.925deabb48d91a80924b5d04ff56d2b8f42ba1d1e1438cb7d8948cce1138208c.png>
 <link rel=icon type=image/png sizes=32x32 href=/favicons/favicon-32x32.b869433d27c4679a5fbce03a8489268a539cbc781259bff14618ae2f018334e6.png>
 <link rel=icon type=image/png sizes=16x16 href=/favicons/favicon-16x16.8bcd9f870e0a86445e0505ce6e816b76a40b08a06e2dcd1ec1f90c395ecbeaf6.png>
@@ -94,6 +94,8 @@
 <a href=/docs/pipelines/pipeline-structure/>pipeline structure</a>
 </li><li>
 <a href=/docs/pipelines/lookup-order/>lookup order</a>
+</li><li>
+<a href=/docs/pipelines/shortcuts/>shortcuts</a>
 </li><li>
 <a href=/docs/pipelines/builtin-pipelines/>built-in pipelines</a>
 </li></ul></li><li>
@@ -403,7 +405,7 @@
 <ol>
 <li><a href=#pypyr-configyaml>pypyr-config.yaml</a></li><li><a href=#pyprojecttoml>pyproject.toml</a></li><li><a href=#merging-config>merging config</a>
 <ol>
-<li><a href=#global-config>global config</a></li><li><a href=#user-config>user config</a></li><li><a href=#project-config>project config</a></li><li><a href=#merged-global-user--project-config>merged global, user & project config</a></li></ol></li></ol></nav></aside><main class=grid-main>
+<li><a href=#global-config>global config</a></li><li><a href=#user-config>user config</a></li><li><a href=#project-config>project config</a></li><li><a href=#merged-global-user--project-config>merged global, user & project config</a></li></ol></li><li><a href=#set-vars-for-a-specific-pipeline>set vars for a specific pipeline</a></li></ol></nav></aside><main class=grid-main>
 <article>
 <h1 id=pypyrstepsconfigvars>pypyr.steps.configvars <a href=#pypyrstepsconfigvars class=headline-anchor aria-label=anchor><svg class="permalink"><title>permalink</title><use href="https://pypyr.io/icons/external-link.054f8ebb57944b2bc52ea4f0ecd16197.svg#external-link"/></svg></a></h1><p>Use the <code>configvars</code> step to inject variables that you set in <code>pyproject.toml</code>
 or in the pypyr yaml config files into your pipeline. This allows you to
@@ -509,7 +511,12 @@ combined config:</p><div class=highlight><pre tabindex=0 class=chroma><code clas
 </span></span><span class=line><span class=cl>c: from pypproject.toml
 </span></span><span class=line><span class=cl>d: from ./pypyr-config.yaml</span></span></code></pre></div></div></div></p><p>Note that values from earlier in the look-up sequence will overwrite later
 values. Mappings/Dicts & Lists/Arrays with the same name will overwrite, not
-additively merge their content.</p></article><section class="see-also elevation-02">
+additively merge their content.</p><h2 id=set-vars-for-a-specific-pipeline>set vars for a specific pipeline <a href=#set-vars-for-a-specific-pipeline class=headline-anchor aria-label=anchor><svg class="permalink"><title>permalink</title><use href="https://pypyr.io/icons/external-link.054f8ebb57944b2bc52ea4f0ecd16197.svg#external-link"/></svg></a></h2><p>The values you set in <code>vars</code> are available to all pipelines. Any given pipeline
+can pull in these values with the <code>pypyr.steps.configvars</code> step, assuming the
+configuration file with the <code>vars</code> is global or user, or in scope of the current
+working directory.</p><p>If instead what you want to do is selectively inject specific variables only
+applicable to a specific pipeline, you could create a <a href=https://pypyr.io/docs/pipelines/shortcuts/>shortcut</a> or have your pipeline pull your variables in
+via a fetch step such as <a href=https://pypyr.io/docs/steps/fetchyaml/>fetchyaml</a>, <a href=https://pypyr.io/docs/steps/fetchjson/>fetchjson</a> or <a href=https://pypyr.io/docs/steps/fetchtoml/>fetchtoml</a>.</p><p>All of these approaches will work - pick whichever works best for you.</p></article><section class="see-also elevation-02">
 <h2>see also</h2><ul>
 <li><a href=/docs/steps/add/>pypyr.steps.add</a></li><li><a href=/docs/steps/append/>pypyr.steps.append</a></li><li><a href=/docs/steps/set/>pypyr.steps.set</a></li><li><a href=/docs/steps/contextcopy/>pypyr.steps.contextcopy</a></li><li><a href=/docs/steps/default/>pypyr.steps.default</a></li></ul></section></main><aside class="grid-taxonomy elevation-02">
 <section class=page-taxonomy aria-label="related topics">
@@ -519,7 +526,7 @@ additively merge their content.</p></article><section class="see-also elevation-
 <li><a href=https://pypyr.io/categories/steps/ class=muted-with-hover>steps</a></li></ul></section></aside><aside class="grid-improve elevation-02" aria-labelledby=feedback>
 <h6 id=feedback>feedback</h6><ul class=small-list>
 <li><a href=https://github.com/pypyr/docs/edit/main/content/docs/steps/configvars.md class=muted-with-hover>edit me</a></li><li><a href="https://github.com/pypyr/docs/issues/new?title=docs%20issue:pypyr.steps.configvars&body=File:%20[pypyr.steps.configvars]%28https://pypyr.io/docs/steps/configvars/%29" class=muted-with-hover>report typo</a></li><li><a href="https://github.com/pypyr/pypyr/issues/new?title=Re:%20pypyr.steps.configvars&labels=bug" class=muted-with-hover>report bug!</a></li></ul></aside><div class="page-git-info elevation-02">
-<small class=small-block>last updated on <time datetime=2022-02-17T18:30:38Z>2022-02-17 18:30</time>.</small>
+<small class=small-block>last updated on <time datetime=2022-03-09T12:15:05Z>2022-03-09 12:15</time>.</small>
 </div></div><footer class="footer elevation-01">
 <a href=/ class=top-nav-logo aria-label=home>
 <img class=top-nav-logo-img src=https://pypyr.io/images/pypyr-logotype.2c9aa98c472f0ea8d436597c26ef1b0f042624ee19cdf69bcb89ac0025d146c4.svg alt="pypyr logo">
