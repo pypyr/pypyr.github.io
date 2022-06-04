@@ -3,7 +3,6 @@ The difference between pypyr.steps.envget and pypyr.steps.env , is that pypyr.st
 The envget context key must exist.
 All inputs support substitutions.
 See a worked example for getting environment variables with defaults here.
-get an environment variable with a default fallback permalink- name:pypyr.</description></item><item><title>pypyr.steps.env</title><link>https://pypyr.io/docs/steps/env/</link><pubDate>Wed, 01 Jul 2020 17:11:02 +0100</pubDate><guid>https://pypyr.io/docs/steps/env/</guid><description>pypyr.steps.env permalink use environment variables in your pipeline permalinkGet, set or unset environment variables.
+get an environment variable with a default fallback permalink - name: pypyr.</description></item><item><title>pypyr.steps.env</title><link>https://pypyr.io/docs/steps/env/</link><pubDate>Wed, 01 Jul 2020 17:11:02 +0100</pubDate><guid>https://pypyr.io/docs/steps/env/</guid><description>pypyr.steps.env permalink use environment variables in your pipeline permalinkGet, set or unset environment variables.
 The env context key must exist. env can contain a combination of get, set and unset keys. You must specify at least one of get, set and unset.
-env:get:contextkey1:env1contextkey2:env2set:env1:value1env2:value2unset:- env1- env2This step will run whatever combination of Get, Set and Unset you specify. Regardless of combination, execution order is:
-get set unset - name:pypyr.</description></item></channel></rss>
+env: get: contextkey1: env1 contextkey2: env2 set: env1: value1 env2: value2 unset: - env1 - env2 This step will run whatever combination of Get, Set and Unset you specify.</description></item></channel></rss>
